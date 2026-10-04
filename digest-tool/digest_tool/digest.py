@@ -3,7 +3,8 @@
   Team Pulse  the same few items for everyone, so personalization doesn't create silos.
               Ranked by type (phase change > schedule risk > major decision > ...) + severity
               + breadth (how many people and subsystems it touches).
-              On quiet days, still-open problems and questions fill the slots.
+              0 to 3 items: only what scores above the cutoff. A quiet day has an empty pulse;
+              it is never padded with older open problems (the app lists those separately).
   For You     the person's own top items (ranker.py), never repeating what's in the pulse.
 
 The LLM only writes the short intro. Items, channels and reasons always come straight from the
@@ -25,7 +26,6 @@ KIND_LABEL = {
     "new_problem": "New problem", "problem_update": "Problem update", "decision": "Decision",
     "new_question": "Question", "question_unanswered": "Unanswered question",
     "question_answered": "Question answered", "update": "Update", "phase_change": "Phase change",
-    "still_open": "Still open",
 }
 # Team-wide importance of each type of change, before severity and breadth. Type dominates on
 # purpose: phase changes, schedule risks and major decisions are what everyone must know; a routine
@@ -104,23 +104,7 @@ def team_pulse(day, timeline, team):
                                    "thread_ts": c["thread_ts"], "urgency": c["urgency"], "change": c,
                                    "category": CATEGORY[c["kind"]], "reasons": team_reasons(c, relevant, major, team)}))
     scored.sort(key=lambda s: s[0], reverse=True)
-    pulse = [item for _, item in scored[:config.PULSE_SIZE]]
-
-    # Quiet day: remind everyone what's still open, so nothing quietly drops off the radar.
-    if len(pulse) < config.PULSE_SIZE:
-        shown = {i["thread_ts"] for i in pulse}
-        today = date.fromisoformat(day)
-        open_items = ([(o, "Open problem with no resolution yet") for o in state["open_problems"].values()] +
-                      [(o, "Question still has no answer") for o in state["unanswered_questions"].values() if o["flagged"]])
-        # Only older items: something raised today is news, and competes on its own score above.
-        open_items = [(o, why) for o, why in open_items if o["thread_ts"] not in shown and o["since"] < day
-                      and (today - date.fromisoformat(o["last_day"])).days <= config.PULSE_CARRY_OVER_DAYS]
-        open_items.sort(key=lambda ow: (-ow[0]["urgency"], ow[0]["since"]))
-        for o, why in open_items[:config.PULSE_SIZE - len(pulse)]:
-            pulse.append({"label": KIND_LABEL["still_open"], "summary": o["summary"], "channel": o["channel_name"],
-                          "thread_ts": o["thread_ts"], "urgency": o["urgency"], "change": None, "category": "problem",
-                          "reasons": [f"{why} (open since {pretty_day(o['since'])})"]})
-    return pulse
+    return [item for _, item in scored[:config.PULSE_SIZE]]
 
 
 # ---------- For You ----------

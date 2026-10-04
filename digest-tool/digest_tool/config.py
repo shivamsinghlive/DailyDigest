@@ -47,6 +47,9 @@ OWNERSHIP_EVIDENCE = {
     "answer": 2.0,        # you answered someone else's question about it
     "asked_about": 1.5,   # someone tagged or named you next to it
 }
+# Supply chain and the eng manager talk about every part (sourcing, schedule), so what they say
+# about a hardware part is weak evidence of owning it. Topics like purchase orders are exempt.
+OWNERSHIP_ROLE_FACTOR = {"supply_chain": 0.3, "engineering_manager": 0.3}
 OWNERSHIP_HALF_LIFE_DAYS = 7
 LIKELY_MIN_SCORE, LIKELY_MIN_SHARE = 3.0, 0.4      # "likely owner"
 POSSIBLE_MIN_SCORE, POSSIBLE_MIN_SHARE = 1.5, 0.25  # "possible owner"
@@ -76,6 +79,5 @@ FEEDBACK_STEP = 0.1                # each 👍 on a type of item: +10% for that 
 FEEDBACK_BOUNDS = (0.5, 1.5)       # gentle: feedback can halve a type's score, or add 50%, never more
 
 # ---------- Team Pulse (digest.py) ----------
-PULSE_SIZE = 3                     # same items for everyone, for alignment
+PULSE_SIZE = 3                     # at most; same items for everyone, for alignment. Can be 0.
 PULSE_MIN_SCORE = 12.0             # type + severity + breadth; see digest.pulse_score
-PULSE_CARRY_OVER_DAYS = 7          # on quiet days, still-open items from the last week fill the pulse

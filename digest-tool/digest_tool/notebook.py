@@ -98,11 +98,14 @@ def infer_owners(state, day, team):
     declared = listed in team.json; likely / possible = inferred from recency-weighted evidence."""
     today = date.fromisoformat(day)
     declared = declared_owners(team)
+    role = {p["id"]: p["role"] for p in team["people"]}
     scores, counts = {}, {}
     for person, by_part in state["ownership_evidence"].items():
         for part, facts in by_part.items():
+            # Role prior: people whose job is to discuss every part count less, on hardware parts only.
+            prior = config.OWNERSHIP_ROLE_FACTOR.get(role.get(person), 1.0) if team["catalog"]["subsystem_of"].get(part) else 1.0
             for d, kind in facts:
-                weight = config.OWNERSHIP_EVIDENCE[kind] * 0.5 ** ((today - date.fromisoformat(d)).days / config.OWNERSHIP_HALF_LIFE_DAYS)
+                weight = prior * config.OWNERSHIP_EVIDENCE[kind] * 0.5 ** ((today - date.fromisoformat(d)).days / config.OWNERSHIP_HALF_LIFE_DAYS)
                 scores.setdefault(part, {}).setdefault(person, 0.0)
                 scores[part][person] += weight
                 c = counts.setdefault(part, {}).setdefault(person, {"mention": 0, "question": 0, "answer": 0, "asked_about": 0})

@@ -16,6 +16,7 @@ def fixed_thresholds(monkeypatch):
     monkeypatch.setattr(config, "LIKELY_MIN_SHARE", 0.4)
     monkeypatch.setattr(config, "POSSIBLE_MIN_SCORE", 1.5)
     monkeypatch.setattr(config, "POSSIBLE_MIN_SHARE", 0.25)
+    monkeypatch.setattr(config, "OWNERSHIP_ROLE_FACTOR", {})  # role priors have their own tests below
 
 
 def state_with(evidence):
@@ -96,3 +97,18 @@ def test_answer_credit_counted_once_per_thread(team, make_msg):
     answered = set()
     facts = ownership_evidence(r1, question, team, answered) + ownership_evidence(r2, question, team, answered)
     assert sum(1 for f in facts if f == ("U_BEN", "J4 connector", "answer")) == 1
+
+
+# ---------- role priors ----------
+
+def test_supply_chain_mentions_are_weak_evidence_for_hardware(team, monkeypatch):
+    monkeypatch.setattr(config, "OWNERSHIP_ROLE_FACTOR", {"supply_chain": 0.3})
+    evidence = {"U_CY": {"motor driver": ["mention"] * 4}, "U_BEN": {"motor driver": ["mention"] * 4}}
+    owners = infer_owners(state_with(evidence), DAY, team)
+    assert levels(owners, "motor driver") == {"U_BEN": "likely"}  # Cy: 4 x 0.3 = 1.2, below possible
+
+
+def test_role_prior_does_not_apply_to_topics(team, monkeypatch):
+    monkeypatch.setattr(config, "OWNERSHIP_ROLE_FACTOR", {"supply_chain": 0.3})
+    owners = infer_owners(state_with({"U_CY": {"firmware": ["mention"] * 4}}), DAY, team)
+    assert levels(owners, "firmware") == {"U_CY": "likely"}

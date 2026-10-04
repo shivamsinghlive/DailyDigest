@@ -187,7 +187,7 @@ The Team Pulse holds the same top 3 items for everyone. Each change gets a pulse
 - **Severity:** the urgency rating.
 - **Breadth:** the number of people it matters to, plus 0.5 per subsystem it touches.
 
-An item needs a score of 12. Type dominates on purpose: a routine problem only makes the pulse if it is both severe and touches almost everyone. On quiet days, problems and unanswered questions from earlier days that are still open fill the empty slots. Pulse items show a *for you* line when they also matter to you personally. Nobody's feedback changes the pulse, so it stays shared.
+An item needs a score of 12. Type dominates on purpose: a routine problem only makes the pulse if it is both severe and touches almost everyone. The pulse holds 0 to 3 items: only what clears the cutoff. A quiet day has an empty pulse rather than one padded with older open problems. Pulse items show a *for you* line when they also matter to you personally. Nobody's feedback changes the pulse, so it stays shared.
 
 ### Feedback
 
