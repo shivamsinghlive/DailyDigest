@@ -164,7 +164,7 @@ The reason in the digest says which kind it is, for example: *"You likely own th
 | Possible owner | 2 | *You may own the battery pack: …* |
 | Your part, linked only by the LLM | 2 | *… (linked by the LLM)* |
 | Mentioned by first name | 2 | *You're mentioned by name* |
-| Item type matters to your role **at the phase of the subsystem it touches** | 2 | *Problems are a priority for engineering managers at this stage (wrist is in EVT)* |
+| Item type matters to your role **at the phase of the subsystem it touches** (only on top of a personal link: your part, focus or name; the engineering manager doesn't need one) | 2 | *Problems are a priority for engineering managers at this stage (wrist is in EVT)* |
 | Recent focus on a named part (2+ mentions this week, decayed) | up to 3 | *You've been working on the cable harness lately (5 mentions in the last week)* |
 | Urgency | 0.5 per level above 2 | *Marked urgent (4/5)* |
 | × your feedback for this item type | ×0.5 to ×1.5 | *You've rated updates 👍 0× / 👎 3×, so they count less for you (×0.7)* |

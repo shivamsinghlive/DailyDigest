@@ -187,26 +187,32 @@ def score_change(change, person, state, team, focus, prefs=None):
         points += w["mentioned"]
         reasons.append("You're mentioned by name")
 
-    phases = phases_for(change, state, team)
-    matching = [s for s, ph in phases.items() if category in IMPORTANT_FOR[person["role"]].get(ph, [])]
-    if matching:
-        points += w["role_phase"]
-        where = ", ".join(f"{s} is in {phases[s]}" for s in matching)
-        reasons.append(f"{CATEGORY_LABEL[category]} are a priority for {ROLE_LABEL[person['role']]} at this stage ({where})")
-    elif category == "question" and change["urgency"] >= 4 and person["role"] == "engineering_manager":
-        # An urgent open question means someone is blocked on it, in any phase.
-        points += w["role_phase"]
-        reasons.append("An urgent open question: someone is blocked, and unblocking people is the manager's job")
-
+    personal = bool(mine_named or mine_llm or pid in change["people_mentioned"])
     # Focus only uses parts named in the text, so one LLM guess can't pull in unrelated people.
     best_part = max(named, key=lambda p: focus.get(p, 0), default=None)
     # "Lately" means repeated activity: one passing mention isn't focus.
     if best_part and focus.get(best_part, 0) > 0 and raw_mentions(pid, state, change["day"], best_part) >= config.FOCUS_MIN_MENTIONS:
         strength = min(1.0, focus[best_part] / config.FOCUS_SATURATION)
         points += w["focus"] * strength
+        personal = True
         if strength >= 0.3 and best_part not in mine_named:  # "you own it" already says enough
             n = raw_mentions(pid, state, change["day"], best_part)
             reasons.append(f"You've been working on the {best_part} lately ({n} mentions in the last week)")
+
+    # Role and phase only add to a personal link (your part, your focus, your name). Alone they'd send
+    # every urgent problem to everyone with that role. The manager is the exception: overseeing
+    # everything is the job.
+    phases = phases_for(change, state, team)
+    matching = [s for s, ph in phases.items() if category in IMPORTANT_FOR[person["role"]].get(ph, [])]
+    oversees = person["role"] == "engineering_manager"
+    if matching and (personal or oversees):
+        points += w["role_phase"]
+        where = ", ".join(f"{s} is in {phases[s]}" for s in matching)
+        reasons.append(f"{CATEGORY_LABEL[category]} are a priority for {ROLE_LABEL[person['role']]} at this stage ({where})")
+    elif category == "question" and change["urgency"] >= 4 and oversees:
+        # An urgent open question means someone is blocked on it, in any phase.
+        points += w["role_phase"]
+        reasons.append("An urgent open question: someone is blocked, and unblocking people is the manager's job")
 
     if change["urgency"] > 2:
         points += w["urgency_per_level"] * (change["urgency"] - 2)
