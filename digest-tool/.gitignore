@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.streamlit/secrets.toml
+# each user's own 👍/👎 votes
+data/feedback.json
+
+# NOTE: data/cache/ is intentionally NOT ignored. The cached LLM outputs are
+# committed so reviewers can run everything with LLM_PROVIDER=none.

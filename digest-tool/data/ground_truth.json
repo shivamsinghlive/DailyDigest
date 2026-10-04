@@ -1,0 +1,514 @@
+{
+  "notes": [
+    "Day 1 = 2026-09-14. An event is a hit if the person's digest for that day contains the thread.",
+    "People who already posted in the thread are NOT listed: they saw it. Alerting them is not counted either way.",
+    "Noise threads should alert nobody. Threads that are neither events nor noise are not scored.",
+    "section: team_pulse = the whole team should see it (phase changes, schedule risks, major decisions); personal = only the listed people need it.",
+    "F-stories were the V2 holdout; once their results were seen they became tuned data.",
+    "mentions: labelled nicknames for measuring part matching. in_catalog=false means the right behaviour is to flag it as an unknown part (or map it correctly if the LLM can)."
+  ],
+  "stories": {
+    "1": "Wrist motor overheats -> ME+EE debug -> switch motor driver -> 16 wk lead time -> DVT build date at risk",
+    "2": "J4 connector EOL posted only in #supply-chain; Ravi (owner) never comments there",
+    "3": "Design freeze on day 8: gripper, base, cabling -> DVT; wrist stays EVT",
+    "4": "Ravi asks Priya a J7 pinout question on day 9; unanswered until day 12",
+    "5": "Ravi's activity shifts from gripper to cable harness around day 5-6",
+    "F1": "Harness vendor wants to swap the 'umbilical' cable jacket from TPE to PVC; posted in supply-chain, harness is in DVT so the alt material needs an ECO approved by Tom.",
+    "F2": "Wrist absolute encoder ('mag puck', AS5048A) is not on the roster but Priya does all the work on it: zero drift question to Ravi goes unanswered for days, and a supplier NRND notice needs to reach Priya, not the 'wrist' owner.",
+    "F3": "Wrist motor bracket tweak is fine while wrist is in EVT; wrist moves to DVT on day 12, then a weekend bracket rev needs an ECO and blocks Mei's wrist PO."
+  },
+  "events": [
+    {
+      "id": "E1",
+      "story": 1,
+      "section": "personal",
+      "thread_ts": "1789489200.000008",
+      "day": "2026-09-15",
+      "day_number": 2,
+      "what": "Wrist motor hits 92C in thermal test (spec 80C)",
+      "should_alert": [
+        {
+          "user": "U_TOM",
+          "why": "EM should know about a test failure on a core subsystem"
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "story": 1,
+      "section": "team_pulse",
+      "thread_ts": "1789750800.000032",
+      "day": "2026-09-18",
+      "day_number": 5,
+      "what": "Decision: switch wrist motor driver to TMC9660",
+      "should_alert": [
+        {
+          "user": "U_MEI",
+          "why": "Directly asked to check availability and lead time"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "story": 1,
+      "section": "team_pulse",
+      "thread_ts": "1790011800.000041",
+      "day": "2026-09-21",
+      "day_number": 8,
+      "what": "TMC9660 has 16 wk lead time; DVT build slips to late Jan",
+      "should_alert": [
+        {
+          "user": "U_PRIYA",
+          "why": "Owns the motor driver"
+        },
+        {
+          "user": "U_RAVI",
+          "why": "Owns the wrist assembly / wrist motor"
+        },
+        {
+          "user": "U_SARA",
+          "why": "DVT build date (and customer pilot) at risk"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "story": 2,
+      "section": "personal",
+      "thread_ts": "1789662600.000024",
+      "day": "2026-09-17",
+      "day_number": 4,
+      "what": "Molex EOL notice on 43045-0412 = J4 connector",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "Owns the J4 connector; never reads #supply-chain"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "story": 2,
+      "section": "personal",
+      "thread_ts": "1789662600.000024",
+      "day": "2026-09-24",
+      "day_number": 11,
+      "what": "J4 EOL follow-up: still no eng decision, $9k LTB due 10/2",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "Owns the J4 connector; decision deadline is close"
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "story": 3,
+      "section": "team_pulse",
+      "thread_ts": "1790031600.000046",
+      "day": "2026-09-21",
+      "day_number": 8,
+      "what": "Design freeze: gripper, base, cabling -> DVT; wrist stays EVT",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "Phase change affects everyone"
+        },
+        {
+          "user": "U_PRIYA",
+          "why": "Phase change affects everyone"
+        },
+        {
+          "user": "U_SARA",
+          "why": "Phase change affects everyone"
+        }
+      ]
+    },
+    {
+      "id": "E7",
+      "story": 4,
+      "section": "personal",
+      "thread_ts": "1790096400.000049",
+      "day": "2026-09-22",
+      "day_number": 9,
+      "what": "Ravi asks Priya for the J7 pinout",
+      "should_alert": [
+        {
+          "user": "U_PRIYA",
+          "why": "Directly asked; owns J7"
+        }
+      ]
+    },
+    {
+      "id": "E8",
+      "story": 4,
+      "section": "personal",
+      "thread_ts": "1790096400.000049",
+      "day": "2026-09-24",
+      "day_number": 11,
+      "what": "Pinout question unanswered for 48h; Ravi is blocked",
+      "should_alert": [
+        {
+          "user": "U_PRIYA",
+          "why": "Still waiting on her answer"
+        },
+        {
+          "user": "U_TOM",
+          "why": "A teammate is blocked"
+        }
+      ]
+    },
+    {
+      "id": "E9",
+      "story": 5,
+      "section": "personal",
+      "thread_ts": "1790377200.000063",
+      "day": "2026-09-25",
+      "day_number": 12,
+      "what": "Harness rev C released",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "Has been working on the harness all week (doesn't own it)"
+        }
+      ]
+    },
+    {
+      "id": "F1a",
+      "story": "F1",
+      "section": "personal",
+      "thread_ts": "1790097600.000066",
+      "day": "2026-09-22",
+      "day_number": 9,
+      "what": "Harness vendor proposes PVC jacket instead of TPE on the umbilical (cable harness) for DVT lot; needs eng answer by Thu",
+      "should_alert": [
+        {
+          "user": "U_PRIYA",
+          "why": "owns the cable harness ('umbilical'); posted in supply-chain"
+        },
+        {
+          "user": "U_TOM",
+          "why": "material change on a DVT subsystem needs ECO"
+        },
+        {
+          "user": "U_RAVI",
+          "why": "doing harness routing at the elbow; PVC is stiffer"
+        }
+      ]
+    },
+    {
+      "id": "F1b",
+      "story": "F1",
+      "section": "personal",
+      "thread_ts": "1790097600.000066",
+      "day": "2026-09-23",
+      "day_number": 10,
+      "what": "Alt TPE jacket found; Mei asks if it needs an ECO",
+      "should_alert": [
+        {
+          "user": "U_TOM",
+          "why": "approves ECOs; harness is in DVT"
+        }
+      ]
+    },
+    {
+      "id": "F1c",
+      "story": "F1",
+      "section": "personal",
+      "thread_ts": "1790097600.000066",
+      "day": "2026-09-25",
+      "day_number": 12,
+      "what": "ECO-031 approved: harness jacket switched to santoprene TPE",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "harness jacket material changed on the routing he's working on"
+        }
+      ]
+    },
+    {
+      "id": "F2a",
+      "story": "F2",
+      "section": "personal",
+      "thread_ts": "1790115000.000072",
+      "day": "2026-09-22",
+      "day_number": 9,
+      "what": "Wrist encoder zero drifts after thermal cycles, suspected magnet creep in shaft bore",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "owns wrist assembly; possible mech root cause (posted in firmware)"
+        }
+      ]
+    },
+    {
+      "id": "F2b",
+      "story": "F2",
+      "section": "personal",
+      "thread_ts": "1790115000.000072",
+      "day": "2026-09-23",
+      "day_number": 10,
+      "what": "Priya asks Ravi how the encoder magnet is retained and the bore tolerance",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "direct question to you"
+        }
+      ]
+    },
+    {
+      "id": "F2c",
+      "story": "F2",
+      "section": "personal",
+      "thread_ts": "1790115000.000072",
+      "day": "2026-09-25",
+      "day_number": 12,
+      "what": "Question to Ravi still unanswered after 2 days; Priya bumps, needed before wrist goes to DVT",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "your answer is overdue, Priya is blocked"
+        },
+        {
+          "user": "U_TOM",
+          "why": "open wrist issue unresolved as wrist enters DVT"
+        }
+      ]
+    },
+    {
+      "id": "F2d",
+      "story": "F2",
+      "section": "personal",
+      "thread_ts": "1790281200.000076",
+      "day": "2026-09-24",
+      "day_number": 11,
+      "what": "Supplier NRND notice on AS5048A wrist encoder; Mei asks who owns it",
+      "should_alert": [
+        {
+          "user": "U_PRIYA",
+          "why": "actually owns the wrist encoder (does all the encoder work)"
+        }
+      ]
+    },
+    {
+      "id": "F3a",
+      "story": "F3",
+      "section": "personal",
+      "thread_ts": "1790188200.000078",
+      "day": "2026-09-23",
+      "day_number": 10,
+      "what": "Ravi revs wrist motor bracket (rev E) for thermals; wrist still EVT so no ECO needed",
+      "should_alert": [
+        {
+          "user": "U_PRIYA",
+          "why": "shares the wrist motor; thermal change"
+        }
+      ]
+    },
+    {
+      "id": "F3b",
+      "story": "F3",
+      "section": "team_pulse",
+      "thread_ts": "1790377200.000079",
+      "day": "2026-09-25",
+      "day_number": 12,
+      "what": "Wrist moves from EVT to DVT; wrist changes now require ECO",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "owns wrist assembly; changes now need ECO"
+        },
+        {
+          "user": "U_PRIYA",
+          "why": "owns motor driver; wrist now under ECO control"
+        },
+        {
+          "user": "U_SARA",
+          "why": "all subsystems in DVT; affects DVT build/pilot date"
+        }
+      ]
+    },
+    {
+      "id": "F3c",
+      "story": "F3",
+      "section": "personal",
+      "thread_ts": "1790188200.000078",
+      "day": "2026-09-26",
+      "day_number": 13,
+      "what": "Ravi pushes bracket rev F after wrist entered DVT, without an ECO",
+      "should_alert": [
+        {
+          "user": "U_TOM",
+          "why": "DVT wrist part changed without ECO"
+        }
+      ]
+    },
+    {
+      "id": "F3d",
+      "story": "F3",
+      "section": "personal",
+      "thread_ts": "1790188200.000078",
+      "day": "2026-09-27",
+      "day_number": 14,
+      "what": "Tom requires ECO for rev F and asks Mei to hold the bracket PO",
+      "should_alert": [
+        {
+          "user": "U_MEI",
+          "why": "asked to hold the wrist bracket PO (planned at rev E)"
+        }
+      ]
+    }
+  ],
+  "noise": [
+    {
+      "thread_ts": "1789412700.000004",
+      "what": "lunch"
+    },
+    {
+      "thread_ts": "1789515000.000013",
+      "what": "calipers"
+    },
+    {
+      "thread_ts": "1789774200.000037",
+      "what": "drinks"
+    },
+    {
+      "thread_ts": "1789952400.000039",
+      "what": "dog"
+    },
+    {
+      "thread_ts": "1790093700.000048",
+      "what": "standup"
+    },
+    {
+      "thread_ts": "1790182800.000052",
+      "what": "allhands"
+    },
+    {
+      "thread_ts": "1790263800.000055",
+      "what": "visit_today"
+    },
+    {
+      "thread_ts": "1790362800.000062",
+      "what": "pizza"
+    },
+    {
+      "thread_ts": "1790456400.000064",
+      "what": "ci_down"
+    },
+    {
+      "thread_ts": "1790560800.000065",
+      "what": "ac"
+    },
+    {
+      "thread_ts": "1790190900.000083",
+      "what": "h_noise1"
+    },
+    {
+      "thread_ts": "1790289000.000085",
+      "what": "h_noise2"
+    },
+    {
+      "thread_ts": "1790470800.000087",
+      "what": "h_noise3"
+    }
+  ],
+  "mentions": [
+    {
+      "ts": "1789576800.000015",
+      "written": "J-4",
+      "official": "J4 connector",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789578300.000016",
+      "written": "wrist conn",
+      "official": "J4 connector",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789662600.000024",
+      "written": "43045-0412",
+      "official": "J4 connector",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790269200.000057",
+      "written": "molex conector",
+      "official": "J4 connector",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789848000.000038",
+      "written": "wrist conn",
+      "official": "J4 connector",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789579800.000017",
+      "written": "wrist driver",
+      "official": "motor driver",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789750800.000032",
+      "written": "DRV8412",
+      "official": "motor driver",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789666200.000027",
+      "written": "slew ring",
+      "official": "slew bearing",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789596000.000023",
+      "written": "48V pack",
+      "official": "battery pack",
+      "in_catalog": true
+    },
+    {
+      "ts": "1789495200.000011",
+      "written": "base casting",
+      "official": "base casting",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790188200.000078",
+      "written": "wrist mtr mount",
+      "official": "wrist motor bracket",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790096400.000049",
+      "written": "J7",
+      "official": "J7 connector",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790024400.000044",
+      "written": "bundles",
+      "official": "cable harness",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790097600.000066",
+      "written": "arm umbilical",
+      "official": "cable harness",
+      "in_catalog": false
+    },
+    {
+      "ts": "1790115000.000072",
+      "written": "mag puck",
+      "official": null,
+      "in_catalog": false
+    },
+    {
+      "ts": "1790281200.000076",
+      "written": "AS5048A",
+      "official": null,
+      "in_catalog": false
+    }
+  ]
+}

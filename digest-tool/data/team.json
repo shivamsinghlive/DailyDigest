@@ -1,0 +1,20 @@
+{
+  "project": {
+    "name": "Atlas robot arm",
+    "phases": ["Concept", "EVT", "DVT", "PVT", "Production"],
+    "start_phase": "EVT"
+  },
+  "note": "Ownership below is incomplete on purpose (about half the real entries are missing), like a real roster. The tool infers the rest from activity. The real answers are in true_owners.json, which only evaluate.py reads.",
+  "people": [
+    {"id": "U_RAVI", "name": "Ravi Menon", "role": "mechanical_engineer",
+     "owns": ["gripper", "wrist assembly"]},
+    {"id": "U_PRIYA", "name": "Priya Shah", "role": "electrical_engineer",
+     "owns": ["motor driver", "firmware", "power board"]},
+    {"id": "U_MEI", "name": "Mei Lin", "role": "supply_chain",
+     "owns": ["supplier relationships"]},
+    {"id": "U_TOM", "name": "Tom Becker", "role": "engineering_manager",
+     "owns": ["DVT build schedule", "design reviews"]},
+    {"id": "U_SARA", "name": "Sara Kim", "role": "product_manager",
+     "owns": ["product requirements", "customer pilot"]}
+  ]
+}

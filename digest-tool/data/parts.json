@@ -1,0 +1,39 @@
+{
+  "description": "Parts catalog. Every nickname maps to exactly one official name. Parts belong to a subsystem, and each subsystem has its own phase. Topics are things people own that aren't hardware, so they have no phase.",
+  "subsystems": ["gripper", "wrist", "base", "power", "cabling"],
+  "parts": [
+    {"name": "gripper", "subsystem": "gripper",
+     "aliases": ["grip force", "finger", "fingers", "pads", "end effector"]},
+    {"name": "wrist assembly", "subsystem": "wrist",
+     "aliases": ["wrist"]},
+    {"name": "wrist motor", "subsystem": "wrist",
+     "aliases": ["wrist mtr"]},
+    {"name": "wrist motor bracket", "subsystem": "wrist",
+     "aliases": ["wrist mtr mount", "motor bracket", "motor mount", "bracket"]},
+    {"name": "motor driver", "subsystem": "wrist",
+     "aliases": ["driver board", "wrist driver", "DRV8412", "TMC9660"]},
+    {"name": "J7 connector", "subsystem": "wrist",
+     "aliases": ["J7"]},
+    {"name": "base casting", "subsystem": "base",
+     "aliases": ["base", "base plate", "casting"]},
+    {"name": "slew bearing", "subsystem": "base",
+     "aliases": ["slew ring", "turntable bearing", "base bearing"]},
+    {"name": "battery pack", "subsystem": "power",
+     "aliases": ["battery", "48V pack", "pack", "cells"]},
+    {"name": "power board", "subsystem": "power",
+     "aliases": ["PDB", "power distribution board", "BMS"]},
+    {"name": "J4 connector", "subsystem": "cabling",
+     "aliases": ["J4", "43045-0412", "Micro-Fit", "Molex connector", "molex conn", "wrist conn"]},
+    {"name": "cable harness", "subsystem": "cabling",
+     "aliases": ["harness", "bundle", "bundles", "service loop", "P-clips", "cabling", "cable jacket"]}
+  ],
+  "topics": [
+    {"name": "firmware", "aliases": ["fw", "FOC", "current limit"]},
+    {"name": "purchase orders", "aliases": ["PO", "POs"]},
+    {"name": "supplier relationships", "aliases": ["lead time", "EOL", "LTB", "NRND", "broker", "distis"]},
+    {"name": "DVT build schedule", "aliases": ["DVT build", "build date"]},
+    {"name": "design reviews", "aliases": ["design review", "exit review", "ECO"]},
+    {"name": "product requirements", "aliases": ["PRD", "requirements"]},
+    {"name": "customer pilot", "aliases": ["customer", "pilot"]}
+  ]
+}

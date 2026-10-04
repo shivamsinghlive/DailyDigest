@@ -1,0 +1,134 @@
+{
+  "notes": [
+    "HOLDOUT: written by a separate agent that never saw the code. Never tune on these. Same format and rules as ground_truth.json.",
+    "section: team_pulse = the whole team should see it (phase changes, schedule risks, major decisions); personal = only the listed people need it."
+  ],
+  "stories": {
+    "S1": "Priya swaps the battery connector to XT60 in a firmware-channel post (power is EVT, no ECO); it clashes with the DVT base casting slot and is resolved with a pigtail.",
+    "S2": "Mei reports the DVT slew bearing lot slipping ~3 weeks in supply-chain; Tom approves a deviation to build first units on EVT spares and announces the schedule risk to the team."
+  },
+  "events": [
+    {
+      "id": "S1a",
+      "story": "S1",
+      "section": "personal",
+      "thread_ts": "1790112000.000088",
+      "day": "2026-09-22",
+      "day_number": 9,
+      "what": "Priya switching the battery connector XT30->XT60 (power EVT, no ECO), posted in firmware; bigger connector may not fit the DVT base casting",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "connector change may hit the base casting he owns; posted in firmware, which he doesn't read"
+        }
+      ]
+    },
+    {
+      "id": "S1b",
+      "story": "S1",
+      "section": "personal",
+      "thread_ts": "1790112000.000088",
+      "day": "2026-09-23",
+      "day_number": 10,
+      "what": "XT60 clashes with DVT base casting slot; resolved with pigtail, no casting ECO, base casting PO unchanged",
+      "should_alert": [
+        {
+          "user": "U_MEI",
+          "why": "tagged: base casting PO stays as is, nothing to tell foundry"
+        }
+      ]
+    },
+    {
+      "id": "S2a",
+      "story": "S2",
+      "section": "personal",
+      "thread_ts": "1790291400.000095",
+      "day": "2026-09-24",
+      "day_number": 11,
+      "what": "DVT slew bearing lot failed hardness check, ~3 wk slip, only 4 EVT spares",
+      "should_alert": [
+        {
+          "user": "U_RAVI",
+          "why": "owns the slew bearing; posted in supply-chain"
+        },
+        {
+          "user": "U_TOM",
+          "why": "DVT build schedule risk"
+        }
+      ]
+    },
+    {
+      "id": "S2b",
+      "story": "S2",
+      "section": "team_pulse",
+      "thread_ts": "1790373600.000100",
+      "day": "2026-09-25",
+      "day_number": 12,
+      "what": "Tom announces slew bearing slip; first 4 DVT units on EVT spares under deviation; build date still pending",
+      "should_alert": [
+        {
+          "user": "U_SARA",
+          "why": "DVT build date / customer pilot risk"
+        },
+        {
+          "user": "U_PRIYA",
+          "why": "team-wide DVT schedule risk"
+        }
+      ]
+    }
+  ],
+  "noise": [
+    {
+      "thread_ts": "1790190900.000093",
+      "what": "z_noise1"
+    },
+    {
+      "thread_ts": "1790280300.000102",
+      "what": "z_noise2"
+    }
+  ],
+  "mentions": [
+    {
+      "ts": "1790112000.000088",
+      "written": "brick",
+      "official": "battery pack",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790112000.000088",
+      "written": "XT60",
+      "official": null,
+      "in_catalog": false
+    },
+    {
+      "ts": "1790112000.000088",
+      "written": "PDB",
+      "official": "power board",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790179800.000089",
+      "written": "base casting",
+      "official": "base casting",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790291400.000095",
+      "written": "lazy susan",
+      "official": "slew bearing",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790354100.000097",
+      "written": "EVT rings",
+      "official": "slew bearing",
+      "in_catalog": true
+    },
+    {
+      "ts": "1790373600.000100",
+      "written": "slew bearings",
+      "official": "slew bearing",
+      "in_catalog": true
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "U_TOM:2026-09-15:a11f94536a": {
+    "intro": "The entire team is currently focused on completing the EVT phase for all subsystems, including the gripper, wrist, base, power, and cabling. For Tom, this means he must immediately address a critical overheating issue in the wrist motor that has reached 92°C, which poses an urgent risk to the project timeline.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-16:1862598ccc": {
+    "intro": "The entire team is focused on resolving the wrist motor overheating issue that has persisted since Tuesday, so please keep an eye out for any updates on this critical failure. For your specific role as the mechanical engineer owning the wrist assembly, remember that Tom Becker has confirmed a firmware change to reduce the current limit from 4A to 2A, which is essential for preventing further thermal damage during the EVT phase.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-16:812a43fc30": {
+    "intro": "The entire team is currently focused on resolving the wrist motor overheating issue that has been open since Tuesday, as all subsystems are still in EVT. For Priya Shah, there are no immediate tasks to complete today, but understanding this ongoing thermal problem is essential for her work on the gripper and base.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-16:812a43fc30": {
+    "intro": "The entire team is currently focused on resolving the wrist motor overheating issue that has been open since Tuesday, as all subsystems are still in EVT. For you, Mei Lin, there are no immediate tasks to complete today, but this ongoing problem requires your attention because it directly impacts the reliability of the robot's core components.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-16:812a43fc30": {
+    "intro": "The entire team is currently focused on the EVT phase for all subsystems, including the gripper, wrist, base, power, and cabling. For Tom, however, there are no specific tasks to complete today as he has no assigned work.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-16:812a43fc30": {
+    "intro": "The entire team is currently focused on the EVT phase for all subsystems, including the gripper, wrist, base, power, and cabling. However, a critical issue remains open regarding the wrist motor overheating to 92°C after 40 minutes at 45°C ambient. This problem has been unresolved since Tuesday, so everyone should be aware of this ongoing concern. For Sara Kim specifically, there are no immediate tasks or priorities listed for today.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-17:c98fc78cdf": {
+    "intro": "The entire team is focused on resolving the wrist motor overheating issue before we can move to production testing. For Ravi, the most pressing matter is the upcoming EOL notice for the J4 connector, which he likely owns and must decide whether to replace it or manage lead time before DVT.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-17:236dfbe7ab": {
+    "intro": "The entire team is focused on resolving the wrist motor overheating issue during its final engineering test phase. For Priya, the most pressing matter is the upcoming EOL notice for the J4 connector, which she must address before DVT to avoid delays in her cabling work.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-17:812a43fc30": {
+    "intro": "The entire team is focused on the EVT phase of the gripper, wrist, base, power, and cabling subsystems. For you, Mei Lin, there are no specific tasks to complete today as your workload remains light. This means you can focus entirely on supporting the ongoing supply chain discussions without any immediate pressure.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-17:812a43fc30": {
+    "intro": "The entire team is focused on completing the EVT phase for the gripper, wrist, base, power, and cabling subsystems. For Tom, there are no immediate tasks to complete today as all subsystems remain in development.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-17:812a43fc30": {
+    "intro": "The entire team is focused on completing the EVT phase for the gripper, wrist, base, power, and cabling subsystems. For Sara Kim, there are no immediate tasks to prioritize today as all subsystems remain in development.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-18:5d5c7e9941": {
+    "intro": "Ravi, the team has officially switched to the TMC9660 driver for the wrist motor, and you should be aware that this change impacts cabling, power, and wrist subsystems while being marked as urgent.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-18:c109a94178": {
+    "intro": "The entire robotics hardware team is focused on finalizing the wrist motor driver switch to the TMC9660 for DVT, a critical decision that impacts several subsystems and requires immediate attention from Priya. For you, as an electrical engineer, this update matters because it confirms Ravi's support for your cable harness routing next week while simultaneously highlighting the ongoing supply chain EOL notice for J4 connectors that must be resolved before DVT. You own the motor driver mentioned in the decision log, so staying informed about both the new hardware selection and the upcoming connector replacement is essential to ensure a smooth transition.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-18:5d5c7e9941": {
+    "intro": "The entire team is focused on switching the wrist motor driver to a new model, but supply chain has reported an EOL notice for a critical connector that needs immediate attention before DVT. {mei_lin}: This means you need to be aware of both the upcoming hardware change and the urgent need to resolve the J4 connector issue to avoid delays.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-18:5d5c7e9941": {
+    "intro": "Tom, the team has unanimously decided to switch the wrist motor driver from DRV8412 to TMC9660 for DVT, and you should be aware of this urgent change. {fact: 'This decision impacts four people including yourself and touches three subsystems.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-18:5d5c7e9941": {
+    "intro": "The entire team is focused on finalizing the wrist motor driver switch to the TMC9660 for DVT, a critical decision that impacts several subsystems and requires immediate attention. {person}: As a product manager, you should be aware of this urgent transition while also monitoring the ongoing wrist motor overheating issue, which currently lacks a resolution despite electrical engineer findings.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-19:ced80b9ce1": {
+    "intro": "Ravi, the team is currently focused on completing EVT for all subsystems, but two critical open issues remain that could impact our timeline. {fact: 'Wrist motor overheating to 92°C at 45°C ambient; electrical engineer suspects driver current issues but retest shows margin too tight.'} {fact: 'Supply chain is reporting an EOL notice for the J4 connector with a buy deadline of 11/30, requiring a decision on lead time or replacement before DVT.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-19:ced80b9ce1": {
+    "intro": "Priya, the team is currently focused on resolving two critical open issues: a wrist motor overheating that remains unresolved despite electrical engineer's findings, and an upcoming EOL notice for the J4 connector requiring immediate lead time or replacement decisions before DVT. {reasoning: Both problems are marked as 'open' with no resolution yet, creating significant uncertainty across subsystems like gripper, wrist, base, power, and cabling.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-19:ced80b9ce1": {
+    "intro": "The entire team is focused on completing EVT for the gripper, wrist, base, power, and cabling subsystems before moving to DVT. For you, Mei Lin, the most pressing issue remains the open EOL notice for the J4 connector, which requires a decision on lead time or replacement by November 30th to avoid delaying the project.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-19:ced80b9ce1": {
+    "intro": "Tom, the entire team is focused on completing EVT for all subsystems, but two critical open issues remain that could delay progress. {fact: 'Wrist motor overheating to 92°C at 45°C ambient; electrical engineer suspects driver current issues but retest shows margin too tight.'} {fact: 'Supply chain is reporting an EOL notice for the J4 connector with a buy deadline of 11/30, requiring a decision on lead time or replacement before DVT.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-19:ced80b9ce1": {
+    "intro": "Sara Kim and the entire robotics hardware team are currently focused on completing EVT for all subsystems, including the gripper, wrist, base, power, and cabling. {fact: 'All subsystems are at EVT phase'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-20:ced80b9ce1": {
+    "intro": "Ravi, the team is currently focused on resolving two critical open issues: a wrist motor overheating that has persisted since Tuesday, and an impending end-of-life supply chain notice for the J4 connector due to November 30th.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-20:ced80b9ce1": {
+    "intro": "Priya, the team is currently focused on resolving two critical open issues: a wrist motor overheating that remains unresolved despite electrical engineer's findings, and an upcoming EOL notice for the J4 connector requiring immediate lead time or replacement decisions before DVT.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-20:ced80b9ce1": {
+    "intro": "The entire team is focused on resolving the wrist motor overheating issue and securing a replacement for the J4 connector before DVT, as both remain unresolved open problems. For you, Mei Lin, there are no immediate tasks to complete today since your supply chain role has no specific assignments right now. However, staying informed about these critical open issues will help ensure that when your team needs support, it is available and ready.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-20:ced80b9ce1": {
+    "intro": "Tom, the entire team is focused on completing EVT for all subsystems, but two critical open issues remain that could delay progress. {fact: 'Wrist motor overheating to 92°C at 45°C ambient; electrical engineer suspects driver current issues but retest shows margin too tight.'} {fact: 'Supply chain is reporting an EOL notice for the J4 connector with a buy deadline of 11/30, requiring a decision on lead time or replacement before DVT.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-20:ced80b9ce1": {
+    "intro": "The entire team is focused on completing EVT for the gripper, wrist, base, power, and cabling subsystems. For Sara Kim, the most pressing issue is the open J4 connector EOL notice requiring a decision before DVT, alongside an unresolved wrist motor overheating problem.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-21:22e2498feb": {
+    "intro": "Ravi, the team is moving forward with design freeze for the gripper and base while the wrist assembly remains in development due to motor overheating. {general; why: Phase change: base → DVT, cabling → DVT, gripper → DVT (wrist still EVT, power still EVT); Matters to 5 of 5 people: Ravi, Priya, Mei, Tom, Sara; Touches 4 subsystems: base, cabling, gripper, wrist}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-21:22e2498feb": {
+    "intro": "Priya, the team is moving forward with DVTs for the gripper, base, and cabling while the wrist assembly remains in EVT due to motor overheating. {general; why: Phase change: base → DVT, cabling → DVT, gripper → DVT (wrist still EVT, power still EVT); Matters to 5 of 5 people: Ravi, Priya, Mei, Tom, Sara; Touches 4 subsystems: base, cabling, gripper, wrist}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-21:22e2498feb": {
+    "intro": "The team is moving forward with design freezes for the gripper, base, and harness, while the wrist assembly remains in development due to motor overheating concerns. {\"supply-chain\": \"Supply chain is actively investigating alternative brokers for the TMC9660 wrist motor to prevent further delays.\"}, {\"mech\": \"A critical issue persists with the wrist motor, which has reached 92°C despite electrical engineers suspecting driver current problems that have not yet been resolved. {\"supply-chain\": \"Supply chain is actively investigating alternative brokers for the TMC9660 wrist motor to prevent further delays.\"}, {\"mech\": \"A critical issue persists with the wrist motor, which has reached 92°C despite electrical engineers suspecting driver current problems that have not yet been resolved. {\"supply-chain\": \"Supply chain is actively investigating alternative brokers for the TMC9660 wrist motor to prevent further delays.\"}} ",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-21:22e2498feb": {
+    "intro": "Tom, the team is moving forward with design freeze for the gripper and base while the wrist assembly remains in engineering validation due to motor overheating. {general; why: Phase change: base → DVT, cabling → DVT, gripper → DVT (wrist still EVT, power still EVT); Matters to 5 of 5 people: Ravi, Priya, Mei, Tom, Sara; Touches 4 subsystems: base, cabling, gripper, wrist}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-21:22e2498feb": {
+    "intro": "The team is moving forward with design freeze confirmed for the gripper, base, and harness, while the wrist assembly remains in EVT due to motor overheating. {fact: 'Design freeze confirmed for gripper, base, and harness; wrist assembly remains in EVT pending motor overheating resolution.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-22:ce5405f881": {
+    "intro": "The entire team is currently navigating two critical open issues: a persistent wrist motor overheating problem and an impending supply chain EOL notice for the J4 connector that must be resolved before DVT. For Ravi, this week's focus should center on Priya Shah's firmware update regarding encoder zero-offset drift in the wrist assembly, as you own the physical wrist hardware where this adjustment will directly impact performance.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-22:2b7024812d": {
+    "intro": "The team is currently navigating two critical open issues: a wrist motor overheating that requires driver current investigation, and an upcoming EOL notice for the J4 connector that must be resolved before DVT. For Priya Shah, this week's priority is clarifying the pinout for the new TMC9660 driver board to finalize her harness drawing, as she owns both the motor driver and the associated cable harness.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-22:ced80b9ce1": {
+    "intro": "The team is currently navigating two critical open issues: a wrist motor overheating that remains unresolved, and an impending EOL notice for the J4 connector requiring immediate action before DVT. {mei_lin}: While these are important for the broader project, they do not directly impact your current tasks as you work on supply chain logistics.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-22:1a8e8036c1": {
+    "intro": "The engineering team is currently navigating two critical open issues: a wrist motor overheating that remains unresolved, and an impending EOL notice for the J4 connector that must be addressed before DVT. {Tom's focus}: Priya Shah has flagged a power spike during e-stop tests on the battery pack and power board, which you are responsible for reviewing as part of your ECO design work.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-22:ced80b9ce1": {
+    "intro": "Sara Kim and the team are currently navigating two critical open issues: a wrist motor overheating that remains unresolved, and an upcoming EOL notice for the J4 connector requiring immediate decision-making before DVT. {fact: 'The gripper subsystem is in DVT while the wrist and base are in EVT.'} {fact: 'Power and cabling are also in EVT, but the driver current margin issue persists.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-23:174428c482": {
+    "intro": "The team is currently navigating two critical open issues: a wrist motor overheating that has stalled electrical troubleshooting, and an upcoming supply chain deadline for the J4 connector. {Ravi}, your focus today should be on the encoder offset drift in the wrist assembly, as this directly impacts the EVT phase of your own subsystem.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-23:ced80b9ce1": {
+    "intro": "Priya, the team is currently navigating two critical open issues: a wrist motor overheating that electrical engineers suspect stems from driver current problems, and an upcoming EOL notice for the J4 connector requiring immediate lead time decisions before DVT. {reasoning: These are the only known open items affecting your work, so you should focus on them first.}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-23:6759c7c388": {
+    "intro": "The team is currently navigating two critical open issues: a wrist motor overheating that needs immediate electrical review and an upcoming EOL notice for the J4 connector that must be resolved before DVT. For Mei Lin, this means you are directly responsible for addressing the cable width pigtail issue identified by Priya during e-stop testing, as well as investigating the zero offset drift in the wrist encoder caused by thermal cycles.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-23:63e8d563de": {
+    "intro": "The team is currently navigating two critical open issues: a persistent wrist motor overheating problem and an impending supply chain EOL notice for the J4 connector that must be resolved before DVT. {Tom's focus}: While you own the design reviews for the arm umbilical cable harness to meet these DVT requirements, please prioritize investigating Priya's reported encoder drift, as this zero offset issue is a high-priority engineering concern.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-23:ac558b8e6a": {
+    "intro": "The team is currently navigating two critical open issues: a wrist motor overheating that lacks a resolution, and an upcoming EOL notice for the J4 connector that must be addressed before DVT. {sara_focus}: For you, this means prioritizing the new zero-offset drift in the wrist encoder, which requires immediate investigation into magnet installation and shaft bore tolerances to ensure product quality.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-24:194e7dfb72": {
+    "intro": "The entire team needs to be aware that the engineering manager and product manager have agreed to set a firm DVT build date by the end of the month, as this decision could significantly delay the customer pilot. For Ravi specifically, the most critical item is the supply chain update regarding the base casting lot failure, which has caused a three-week re-heat-treat delay affecting his cable harness work. This matters because he likely owns the cable harness and will need to coordinate with Priya Shah to resolve the material change issues on the DVT drawings.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-24:3aebc81486": {
+    "intro": "Priya, the engineering manager and product manager have agreed to set a firm DVT build date by the end of the month, which is critical as a delay could push back the customer pilot. {fact: 'Engineering manager and product manager agree to set a firm DVT build date by end of month or the customer pilot will be delayed.'}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-24:da213f7973": {
+    "intro": "The engineering manager and product manager have agreed to set a firm DVT build date by end of month, which is critical as this decision could delay the customer pilot. For you, Mei Lin, the most important item is Priya Shah's confirmation that a pigtail cable solution will fit within the base casting slot, avoiding an unnecessary design review on the base casting.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-24:8afd049e2a": {
+    "intro": "The entire team is focused on securing a firm DVT build date by the end of the month to avoid delaying the customer pilot, as this decision impacts everyone's schedule. For you, Tom, the most pressing matter is the base casting lot failure and its three-week re-heat-treat delay, which directly affects your ongoing work on the base subsystem. You should prioritize understanding how this supply chain issue will impact your current design reviews and any upcoming hardware milestones.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-24:3aebc81486": {
+    "intro": "The engineering manager and product manager have agreed to set a firm DVT build date by the end of the month, as delaying this could push back the customer pilot. {sara_kim} is aware that the wrist motor has overheated to 92°C despite electrical engineer's concerns about driver current issues, and Ravi is asking Priya for the J7 connector pinout to finish a harness drawing. {sara_kim} should focus on these open problems because they are blocking progress without resolution. {sara_kim} does not need to ask anyone for anything today.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-25:3e5a69f9a1": {
+    "intro": "The team is currently navigating a critical wrist assembly transition to DVT while managing supply chain delays for the base and bearing slip issues in the base and wrist. {\"reason\": \"This affects your work as you own the wrist assembly, which is now moving to DVT, but also impacts the base casting schedule and the current slipping of slew bearings.\"}, ",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-25:cc0711b152": {
+    "intro": "The team is currently navigating a mix of DVT and EVT phases across your wrist, base, and power subsystems, with significant delays expected for the base casting and slew bearings.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-25:fccd5b3166": {
+    "intro": "The team is currently navigating a mix of DVT and EVT phases across our gripper, wrist, base, power, and cabling subsystems. For Mei Lin, the most pressing updates involve supply chain delays affecting the base casting and slipping bearings on the wrist assembly that could impact your build schedule. Additionally, you have been directly involved in an ECO to switch cable materials and are now responsible for a firmware update regarding encoder compatibility.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-25:1f42047929": {
+    "intro": "The team is currently navigating a critical phase transition where the wrist assembly moves to DVT while other subsystems remain in EVT, creating a ripple effect across your workday. {person}: You should be aware that the base casting faces a significant three-week delay due to hardness check failures, which could impact your build schedule. {person}: This matters most because you are directly involved with the wrist assembly's encoder issues and have been working on motor driver updates recently. {person}: Understanding these specific challenges will help you prioritize the firmware solution Priya has proposed for the AS5048A sensor.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-25:4f8014c578": {
+    "intro": "The team is currently navigating a mix of critical phase changes and supply chain delays that will impact our build schedule. For Sara Kim, the most pressing issue right now is Priya Shah's report on an encoder offset drift in the wrist assembly, which requires immediate clarification to determine if it needs a mechanical fix or firmware-only solution. This matters because the wrist is already in DVT, making any resolution essential for meeting product timelines.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-26:f65207a5bd": {
+    "intro": "The team is currently navigating a critical schedule risk as slew bearings slip due to a vendor heat treat issue, which could delay the build date until partial EVT spares arrive. {Ravi's focus}: While you are blocked on the Atlas robot arm harness drawing because Priya hasn't shared the J7 pinout information, this specific task is not urgent for your immediate work as it does not touch any of your subsystems.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-26:f65207a5bd": {
+    "intro": "The team is currently managing a critical schedule risk regarding slipping slew bearings for the DVT, which could delay builds until partial EVT spares arrive. {Priya's focus}: You are also investigating a ~1.5-degree encoder offset drift in the wrist assembly after thermal cycles, as this issue directly impacts your work on the base and wrist subsystems. {Why it matters}: Clarifying whether to fix this mechanically or via firmware is essential because you have no resolution yet, and resolving it will prevent further delays for the entire team.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-26:f65207a5bd": {
+    "intro": "The entire team is currently navigating a critical schedule risk as slew bearings slip due to a vendor heat treat issue, delaying DVT builds until partial EVT spares arrive. {\"person\": \"Mei Lin\", \"day\": \"Sat Sep 26\", \"subsystems\": {\"gripper\": \"DVT\", \"wrist\": \"DVT\", \"base\": \"DVT\", \"power\": \"EVT\", \"cabling\": \"DVT\"}, \"team_items\": [\"Slew bearings slipping due to vendor heat treat issue; team building on EVT spares until partial shipment. (#general; why: Schedule risk: this could move the build date; Matters to 3 of 5 people: Priya, Tom, Sara; Touches 2 subsystems: base, wrist; Marked urgent (4/5))\", \"Priya Shah reports a ~1.5-degree encoder offset drift in the wrist assembly after thermal cycles and requests clarification on magnet installation method to determine if it is a mechanical fix or firmware-only solution. (#firmware; why: Open problem with no resolution yet (open since Wed Sep 23))\", \"Ravi is blocked on the Atlas robot arm harness drawing due to missing J7 pinout information from Priya. (#elec; why: Open problem with no resolution yet (open since Thu Sep 24))\"], \"person_items\": {\"none\": \"(none)\"}}",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-26:f65207a5bd": {
+    "intro": "The entire team is currently navigating a critical schedule risk as the slew bearings for DVT are slipping due to a vendor heat treat issue, with partial shipment of EVT spares in place until further notice. {person}: This matters to you because it directly impacts your product's build timeline and touches two subsystems, so please stay updated on the status of these components. {person}: You don't need to take any action right now since there are no specific tasks assigned for this day.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_RAVI:2026-09-27:bdf6d14f61": {
+    "intro": "The entire team needs to know that Ravi Menon has decided to replace a glued magnet with a mechanical fix for the wrist encoder drift, which is urgent and affects multiple subsystems. For you, this matters because as the owner of the wrist assembly design, you are directly responsible for approving the ECO for your bracket purchase order while holding off on any new bracket purchases until that decision is finalized.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_PRIYA:2026-09-27:9fb2b6a932": {
+    "intro": "The entire team needs to be aware that Ravi Menon has decided to replace the gripper shaft due to encoder drift, a decision that impacts cabling and wrist subsystems. For you, Priya, this matters because Tom Becker is requesting an ECO for your wrist assembly design review, which is critical given your recent involvement in the project.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_MEI:2026-09-27:0e58199360": {
+    "intro": "The entire team needs to know that Ravi Menon has decided to replace the gripper shaft mechanically rather than re-zeroing firmware due to encoder drift. For Mei Lin specifically, this matters because she is directly involved in holding a pending purchase order for the wrist assembly bracket while awaiting design approval. This decision impacts her supply chain workflow as it involves a mechanical fix that touches multiple subsystems and requires immediate attention from the team.",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-27:e974b57301": {
+    "intro": "The engineering team is currently focused on completing the DVT for the gripper, wrist, and base subsystems while advancing the EVT phase for power and cabling. {\"reason\": \"This aligns with our overall goal of finalizing all hardware before moving to integration.\"}, ",
+    "model": "ollama:qwen3.5:2b"
+  },
+  "U_SARA:2026-09-27:e974b57301": {
+    "intro": "The entire team needs to know that Ravi Menon has decided to replace the wrist encoder shaft due to a mechanical fix rather than firmware re-zeroing, as this is a major decision affecting multiple subsystems. {person}: This matters to you because it impacts your work on the gripper and cabling DVT phases while resolving an open issue with the Atlas robot arm harness drawing that Priya is currently blocking. {reason}: You should focus on the new shaft specifications for the wrist and base, as well as the missing J7 pinout details from Priya to keep the project moving forward.",
+    "model": "ollama:qwen3.5:2b"
+  }
+}

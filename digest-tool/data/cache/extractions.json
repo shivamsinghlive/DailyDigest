@@ -1,0 +1,1014 @@
+{
+  "1789401600.000000:2:fc1abfbf": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "EVT2 is the final build; thermal and drop testing scheduled for this week, with an exit review planned for Monday.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789406100.000002:1:6d57dbcf": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon is conducting grip force tests on the gripper finger v4 using foam boxes.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789410600.000003:1:98831a07": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah merged PR #212 to fix encoder filter jitter on the elbow axis.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789412700.000004:3:939a56ee": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI",
+      "U_RAVI",
+      "U_SARA"
+    ],
+    "summary": "Supply chain member Mei Lin asks for lunch; others respond in kind.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789419600.000007:1:b133d47b": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "PO placed for EVT3 6061 bar stock with an ETA of 9/24.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789489200.000008:3:a861d98d": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist motor",
+      "wrist motor"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Wrist motor overheating to 92°C (spec limit 80°C) after 40 minutes at 45°C ambient.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789495200.000011:1:7f9c5ad7": {
+    "type": "update",
+    "parts_mentioned": [
+      "base casting"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Base casting revision B has been delivered from the foundry with a flatness of 0.05 across the mounting face.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789509600.000012:1:2cba8570": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon is testing grip force on the gripper and plans to adjust pads to reach a target of 40N.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789515000.000013:2:8a7823f3": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM",
+      "U_RAVI"
+    ],
+    "summary": "Tom asks for the location of specific Mitutoyo calipers; Ravi suggests a different bench.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789576800.000015:2:85743a11": {
+    "type": "update",
+    "parts_mentioned": [
+      "J4 connector",
+      "wrist motor bracket"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Priya reports a flimsy J4 latch on the wrist motor bracket causing intermittent pops during rotation; Ravi is addressing this by printing a retainer clip.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789579800.000017:2:0c546b78": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor",
+      "wrist motor bracket",
+      "motor driver",
+      "J7 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Priya reports the wrist driver draws excessive current (~2.8A RMS) while holding position; Ravi confirms no mechanical failure and heatsink contact is fine.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789581600.000019:3:64561160": {
+    "type": "decision",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_TOM"
+    ],
+    "summary": "Tom Becker confirms the wrist axis current limit was set to 4A for a quick hack during the July investor demo and has decided to revert it to 2A.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789592400.000022:1:0fcc190c": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon ordered 50A shore pads for the gripper from McMaster.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789596000.000023:1:c049edf2": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah confirms that 48V pack cell balancing is complete and BMS logs are available.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789662600.000024:3:a0bdd68c": {
+    "type": "problem",
+    "parts_mentioned": [
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "Supply chain is reporting an EOL notice for the J4 connector with a buy deadline of 11/30, requiring a decision on lead time or replacement before DVT.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789666200.000027:1:42d09fa5": {
+    "type": "update",
+    "parts_mentioned": [
+      "slew bearing"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon re-shimmed the slew ring on unit 3 to restore preload within specifications.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789668000.000028:1:ae56859f": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Product requirements document updated to maintain a 3kg payload and increase reach by 20mm.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789489200.000008:5:cf8e4e28": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist motor",
+      "wrist motor bracket",
+      "motor driver",
+      "J7 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Wrist motor overheating to 92°C at 45°C ambient; electrical engineer suspects driver current issues but retest shows margin too tight.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789686000.000031:1:3b349d90": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Product manager Sara Kim requests that the lab be kept tidy for a customer visit scheduled for Thursday, September 24th.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789754400.000033:1:ff09c4c1": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "motor driver",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi is closing out the grip force issue and will assist Priya with cable harness routing next week.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789750800.000032:4:0590eff2": {
+    "type": "decision",
+    "parts_mentioned": [
+      "wrist motor",
+      "wrist motor",
+      "wrist motor bracket",
+      "motor driver",
+      "J7 connector",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "The team decided to switch the wrist motor driver from DRV8412 to TMC9660 for DVT, with Priya confirming bench test results and Mei Lin checking availability.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789774200.000037:1:38f06818": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM"
+    ],
+    "summary": "Tom Becker mentions drinking on the patio.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789848000.000038:1:fa4a27da": {
+    "type": "update",
+    "parts_mentioned": [
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon is routing the cable harness in CAD and identified a stiffness issue with the current bundle at the elbow joint.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789952400.000039:2:430c721a": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "JST connector"
+    ],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_SARA"
+    ],
+    "summary": "Priya mentions her dog ate a JST connector; Sara responds with laughter.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790011800.000041:3:7800c9b5": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "Supply chain is investigating broker options for the TMC9660 wrist motor to avoid DVT build delays.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790024400.000044:2:42dfdd53": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi proposes splitting the cable harness into two smaller bundles with an additional service loop; Priya confirms this is feasible electrically.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790031600.000046:2:d048cd07": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "base casting",
+      "wrist assembly",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "Design freeze confirmed for gripper, base, and harness; wrist assembly remains in EVT pending motor overheating resolution.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790093700.000048:1:84238754": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Product Manager Sara Kim reminds the team that tomorrow's meeting will be an all-hands instead of a standup.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790096400.000049:1:e2814065": {
+    "type": "question",
+    "parts_mentioned": [
+      "J7 connector",
+      "wrist motor",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi is asking Priya for the pinout of the J7 connector on the new TMC9660 driver board to complete a harness drawing.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790097600.000066:1:136210a2": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "kestrel",
+      "TPE jacket compound",
+      "arm umbilical"
+    ],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "Supply chain team is requesting engineering confirmation on switching from TPE to PVC jacket compound for the arm umbilical.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790100000.000050:1:5407a9d9": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah started the TMC9660 FOC port on branch fw/tmc9660.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790110800.000051:1:addaf31d": {
+    "type": "update",
+    "parts_mentioned": [
+      "base casting"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Supply chain confirmed DVT PO for 120 base castings with a 6-week lead time.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790115000.000072:1:93d6c369": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist assembly",
+      "wrist motor",
+      "motor driver",
+      "J7 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah reports a ~1.5-degree zero offset drift in the wrist assembly's encoder after thermal cycles and proposes adding re-zeroing to the boot cal routine.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790182800.000052:1:00b0b795": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM"
+    ],
+    "summary": "Engineering manager Tom Becker shared that all-hands slides are available in the drive.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790188200.000078:1:a164bff1": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor",
+      "wrist motor bracket"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon is updating the wrist motor mount design with additional fins and a thermal pad pocket to improve cooling for the new driver.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790115000.000072:2:a83837ce": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist assembly",
+      "wrist motor",
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Priya reports a ~1.5-degree zero offset drift in the wrist encoder after thermal cycles, requiring investigation into magnet installation and shaft bore tolerances.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790190900.000083:2:ac9d4f40": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA",
+      "U_TOM"
+    ],
+    "summary": "Humorous comment about leaving scope probes in the kitchen.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790193600.000053:1:678eeb29": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon reports that printed P-clips for the harness at the elbow fit well.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790097600.000066:3:d14e0a11": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "wrist motor bracket",
+      "motor driver",
+      "base casting",
+      "slew bearing",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Supply chain is requesting an engineering decision on material changes for the arm umbilical cable harness to meet DVT requirements.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790204400.000054:1:9e597ed3": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah reports successful FOC loop closing on the bench board for the wrist motor and notes that tuning gains is still pending.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790263800.000055:1:6310549a": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA",
+      "U_TOM"
+    ],
+    "summary": "Customer visit scheduled for the lab at 10 AM.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790096400.000049:2:bc381b56": {
+    "type": "problem",
+    "parts_mentioned": [
+      "J7 connector",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi is blocked on the Atlas robot arm harness drawing due to missing J7 pinout information from Priya.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1789662600.000024:4:e20f3599": {
+    "type": "update",
+    "parts_mentioned": [
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "Supply chain notified that the J4 connector is EOL with a buy deadline of 11/30; engineering needs input on a replacement lead time calculation.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790281200.000076:1:fefeaff3": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist assembly",
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM",
+      "U_PRIYA"
+    ],
+    "summary": "Supply chain team notified that AS5048A wrist mag encoder is flagged as NRND but remains purchasable until 2027, requesting ownership assignment.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790287200.000058:2:dcc833b4": {
+    "type": "decision",
+    "parts_mentioned": [
+      "wrist motor",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_TOM",
+      "U_MEI",
+      "U_SARA"
+    ],
+    "summary": "Engineering manager and product manager agree to set a firm DVT build date by end of month or the customer pilot will be delayed.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790289000.000085:2:c80efa8b": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Printer nozzle jam reported; spare parts location identified.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790097600.000066:5:9c676cbd": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "wrist motor bracket",
+      "motor driver",
+      "base casting",
+      "slew bearing",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Supply chain confirms TPE jacket allocation for the arm umbilical until November, with Priya Shah proposing a Santoprene alternative that requires an ECO due to material changes on DVT drawings.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790281200.000076:2:ad2bbd22": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist assembly",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_MEI"
+    ],
+    "summary": "Priya Shah confirmed ownership of the AS5048A wrist mag encoder issue and proposed a firmware update to switch to the AS5047P for compatibility.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790097600.000066:6:e82a1def": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "wrist motor bracket",
+      "motor driver",
+      "base casting",
+      "slew bearing",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Supply chain confirms allocation for TPE jacket until November; Priya and Tom have approved an ECO to switch to Santoprene TPE material.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790115000.000072:3:8b96e988": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist assembly",
+      "wrist motor bracket",
+      "motor driver",
+      "J7 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Priya Shah reports a ~1.5-degree encoder offset drift in the wrist assembly after thermal cycles and requests clarification on magnet installation method to determine if it is a mechanical fix or firmware-only solution.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790096400.000049:4:1c9ac54b": {
+    "type": "update",
+    "parts_mentioned": [
+      "J7 connector",
+      "wrist motor"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah provided the J7 pinout for the new TMC9660 driver board.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790362800.000062:1:a34c5fd4": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Supply chain member Mei Lin mentions receiving pizza in the kitchen.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790377200.000063:1:d3bd13e2": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah shared that the harness revision C has been split into two bundles with a +30mm service loop and P-clips added.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790377200.000079:2:9c51757c": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist assembly",
+      "wrist motor",
+      "motor driver",
+      "base casting"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM",
+      "U_PRIYA",
+      "U_MEI"
+    ],
+    "summary": "Tom confirms TMC9660 wrist boards passed validation and the wrist assembly moves to DVT; power remains in EVT until a new battery pack is qualified.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790456400.000064:1:55acf2b7": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah informs the team that CI is scheduled for maintenance this weekend.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790188200.000078:2:e903cb5b": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor bracket",
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon is updating the wrist motor mount design with additional fins and a thermal pad pocket to improve cooling for the new driver.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790470800.000087:1:df87e8be": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Supply chain member Mei Lin asks if the team is watching a race tomorrow.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790188200.000078:3:2a32319b": {
+    "type": "decision",
+    "parts_mentioned": [
+      "wrist motor",
+      "wrist motor bracket",
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "Tom Becker requested an ECO for the wrist assembly design review (rev F) and instructed Mei Lin to hold the bracket purchase order pending approval.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790560800.000065:1:c6f2b02f": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM"
+    ],
+    "summary": "Engineering Manager Tom Becker announces that the lab's AC unit will be serviced on Monday morning and will be warm.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790115000.000072:4:7559a375": {
+    "type": "decision",
+    "parts_mentioned": [
+      "wrist assembly",
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Priya Shah reports wrist encoder drift and asks if the magnet is glued or pressed; Ravi Menon confirms it is glued with Loctite 638 in an H7 bore, deciding to proceed with a mechanical fix (shaft change) rather than firmware re-zero.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790112000.000088:1:a368d532": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "motor driver",
+      "J7 connector",
+      "base casting",
+      "slew bearing",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya Shah reported a power spike issue during e-stop tests on the battery pack and power board.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790112000.000088:4:116b1cae": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "motor driver",
+      "base casting",
+      "slew bearing",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Priya Shah identified a cable width issue during e-stop testing that requires a pigtail to fit the XT60 connector, while Tom Becker confirms no casting ECO is needed.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790190900.000093:2:0ac6e875": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA",
+      "U_TOM"
+    ],
+    "summary": "Team members are requesting a USB-C to barrel adapter and the desk drawer containing it.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790280300.000102:1:0c1ef1e6": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi Menon reports a snapped bandsaw blade and plans to use a hacksaw until the new one arrives on Tuesday.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790291400.000095:1:2398dd0d": {
+    "type": "update",
+    "parts_mentioned": [
+      "base casting"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Supply chain update: Base casting lot failed incoming hardness check; re-heat-treat delay of ~3 weeks.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790112000.000088:5:e7cd4eee": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "wrist assembly",
+      "wrist motor",
+      "motor driver",
+      "base casting",
+      "slew bearing",
+      "battery pack",
+      "power board",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Priya Shah updated the firmware thread by confirming a pigtail cable solution for the XT60 motor driver to fit within the base casting slot, avoiding a design review (ECO) on the base casting.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790291400.000095:5:e3da6273": {
+    "type": "update",
+    "parts_mentioned": [
+      "base casting",
+      "slew bearing"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA",
+      "U_MEI",
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Supply chain reports a 3-week delay for the base casting due to incoming hardness check failures on DVT lot parts, with an estimated partial shipment of ~40 units by Oct 16.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790373600.000100:1:432381bf": {
+    "type": "update",
+    "parts_mentioned": [
+      "slew bearing"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Slew bearings for DVT are slipping due to a vendor heat treat issue; build schedule is delayed until partial shipment.",
+    "_model": "ollama:qwen3.5:2b"
+  },
+  "1790373600.000100:2:984a69ba": {
+    "type": "update",
+    "parts_mentioned": [
+      "slew bearing",
+      "wrist motor bracket"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Slew bearings for DVT are slipping due to a vendor heat treat issue; the team is building on EVT spares until partial shipment.",
+    "_model": "ollama:qwen3.5:2b"
+  }
+}

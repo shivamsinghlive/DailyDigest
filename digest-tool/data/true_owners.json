@@ -1,0 +1,24 @@
+{
+  "description": "TEST ONLY. The real owners of every part and topic. Only evaluate.py may read this file; the tool itself must never use it.",
+  "owners": {
+    "gripper": ["U_RAVI"],
+    "wrist assembly": ["U_RAVI"],
+    "wrist motor": ["U_RAVI", "U_PRIYA"],
+    "wrist motor bracket": ["U_RAVI"],
+    "motor driver": ["U_PRIYA"],
+    "J7 connector": ["U_PRIYA"],
+    "base casting": ["U_RAVI"],
+    "slew bearing": ["U_RAVI"],
+    "battery pack": ["U_PRIYA"],
+    "power board": ["U_PRIYA"],
+    "J4 connector": ["U_RAVI"],
+    "cable harness": ["U_PRIYA"],
+    "firmware": ["U_PRIYA"],
+    "purchase orders": ["U_MEI"],
+    "supplier relationships": ["U_MEI"],
+    "DVT build schedule": ["U_TOM", "U_SARA"],
+    "design reviews": ["U_TOM"],
+    "product requirements": ["U_SARA"],
+    "customer pilot": ["U_SARA"]
+  }
+}

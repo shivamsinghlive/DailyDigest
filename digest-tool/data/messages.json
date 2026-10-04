@@ -1,0 +1,824 @@
+{
+  "channels": [
+    {
+      "id": "C01GENERAL",
+      "name": "general"
+    },
+    {
+      "id": "C02MECH",
+      "name": "mech"
+    },
+    {
+      "id": "C03ELEC",
+      "name": "elec"
+    },
+    {
+      "id": "C04SUPPLY",
+      "name": "supply-chain"
+    },
+    {
+      "id": "C05FIRMWARE",
+      "name": "firmware"
+    }
+  ],
+  "messages": [
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1789401600.000000",
+      "text": "morning all 👋 EVT2 is our last EVT build. thermal + drop testing this wk and next, EVT exit review is mon 9/21. pls get open issues into jira before then",
+      "thread_ts": "1789401600.000000"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1789402200.000001",
+      "text": "👍 updated PRD coming thurs",
+      "thread_ts": "1789401600.000000"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789406100.000002",
+      "text": "gripper finger v4 printed, starting grip force tests on the foam boxes today"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1789410600.000003",
+      "text": "merged PR #212, encoder filter fix for the elbow axis. jitter's gone"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_MEI",
+      "ts": "1789412700.000004",
+      "text": "anyone want pho for lunch?",
+      "thread_ts": "1789412700.000004"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_RAVI",
+      "ts": "1789412760.000005",
+      "text": "in",
+      "thread_ts": "1789412700.000004"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1789412880.000006",
+      "text": "omw",
+      "thread_ts": "1789412700.000004"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1789419600.000007",
+      "text": "PO placed for EVT3 6061 bar stock, ETA 9/24"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789489200.000008",
+      "text": "thermal chamber results from last night: wrist motor hit 92C case temp after 40 min @ 45C ambient 🔥 spec is 80C max. this is a problem",
+      "thread_ts": "1789489200.000008"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_PRIYA",
+      "ts": "1789490700.000009",
+      "text": "case or winding? if the driver is pushing too much current at hold that'd do it. I can scope it today",
+      "thread_ts": "1789489200.000008"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789491000.000010",
+      "text": "case, TC taped to the can. pls do, I'll check heatsink contact on my side",
+      "thread_ts": "1789489200.000008"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789495200.000011",
+      "text": "base casting rev B back from the foundry, flatness 0.05 across the mounting face ✅"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789509600.000012",
+      "text": "grip force test: 38N avg, target is 40N. gonna try softer pads"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_TOM",
+      "ts": "1789515000.000013",
+      "text": "has anyone seen the good mitutoyo calipers? not in the drawer again 🙃",
+      "thread_ts": "1789515000.000013"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789515660.000014",
+      "text": "check the thermal chamber bench lol",
+      "thread_ts": "1789515000.000013"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1789576800.000015",
+      "text": "<@U_RAVI> J-4 latch keeps popping on unit 2 when the wrist rotates past 160°, can you take a look?",
+      "thread_ts": "1789576800.000015"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1789578300.000016",
+      "text": "yeah the latch on that wrist conn is flimsy, I'll print a retainer clip today",
+      "thread_ts": "1789576800.000015"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1789579800.000017",
+      "text": "scoped the wrist driver (DRV8412): ~2.8A RMS just holding position. way more than the load needs. fw current limit isn't doing anything",
+      "thread_ts": "1789579800.000017"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1789581000.000018",
+      "text": "so it's not (just) a mech problem 😅 fwiw heatsink contact looked fine",
+      "thread_ts": "1789579800.000017"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1789581600.000019",
+      "text": "q: who set the wrist axis current limit to 4A in config? intentional?",
+      "thread_ts": "1789581600.000019"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_TOM",
+      "ts": "1789582800.000020",
+      "text": "that was me, quick hack for the july investor demo. should've reverted it, sorry",
+      "thread_ts": "1789581600.000019"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1789582920.000021",
+      "text": "np, dropping it to 2A and retesting tmrw",
+      "thread_ts": "1789581600.000019"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789592400.000022",
+      "text": "ordered 50A shore pads for the gripper from mcmaster, here tmrw"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1789596000.000023",
+      "text": "48V pack cell balancing looks fine after the overnight soak, BMS logs are in the drive"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1789662600.000024",
+      "text": "heads up: Molex sent an EOL notice for 43045-0412 (Micro-Fit 4 pin). last time buy deadline is 11/30. we either LTB enough for DVT+PVT or eng picks a replacement. need a call in the next couple wks",
+      "thread_ts": "1789662600.000024"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_TOM",
+      "ts": "1789663800.000025",
+      "text": "who owns that connector again?",
+      "thread_ts": "1789662600.000024"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1789664100.000026",
+      "text": "pretty sure it's a mech part, I'll chase it down",
+      "thread_ts": "1789662600.000024"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789666200.000027",
+      "text": "re-shimmed the slew ring on unit 3, preload is back in spec"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1789668000.000028",
+      "text": "updated PRD is up in confluence. main change: payload stays 3kg, reach +20mm"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_PRIYA",
+      "ts": "1789684200.000029",
+      "text": "retest w/ 2A current limit: 84C. better but still over spec, and torque margin drops to 1.1x which is too tight",
+      "thread_ts": "1789489200.000008"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789684800.000030",
+      "text": "ugh. so CL alone won't get us there",
+      "thread_ts": "1789489200.000008"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1789686000.000031",
+      "text": "customer visit next thurs 9/24, pls keep the lab tidy 🙏"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1789750800.000032",
+      "text": "proposal for the wrist overheating: swap DRV8412 -> TMC9660. integrated FOC, much better efficiency at low speed. bench test this afternoon",
+      "thread_ts": "1789750800.000032"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1789754400.000033",
+      "text": "gripper v4 w/ 50A pads: 41N avg ✅ closing out the grip force issue. since the wrist driver is changing anyway I'm gonna help Priya with the cable harness routing next wk"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1789768800.000034",
+      "text": "bench results: TMC9660 runs the wrist motor 18C cooler at the same torque. I think this is the move",
+      "thread_ts": "1789750800.000032"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1789769400.000035",
+      "text": "+1 from mech side, fixes it without a new motor",
+      "thread_ts": "1789750800.000032"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_TOM",
+      "ts": "1789770600.000036",
+      "text": "ok decision: we switch the wrist motor driver to TMC9660 for DVT. Priya pls update the schematic. <@U_MEI> can you check availability + lead time?",
+      "thread_ts": "1789750800.000032"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1789774200.000037",
+      "text": "drinks on the patio at 5 🍻"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1789848000.000038",
+      "text": "started routing the cable harness in CAD. current bundle through the elbow is way too stiff, fights the joint at full rotation. wrist conn sits right at the bend too"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_PRIYA",
+      "ts": "1789952400.000039",
+      "text": "my dog just ate a JST connector. he's fine. the connector is not.",
+      "thread_ts": "1789952400.000039"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1789952700.000040",
+      "text": "lol 💀",
+      "thread_ts": "1789952400.000039"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790011800.000041",
+      "text": "re TMC9660 for the wrist: lead time from ADI is 16 wks 😬 distis have ~50 pcs total and we need 120 for the DVT build. if we wait for factory stock the DVT build slips from 10/26 to late jan",
+      "thread_ts": "1790011800.000041"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_TOM",
+      "ts": "1790012700.000042",
+      "text": "that's bad. can you check brokers? let's discuss at thurs review",
+      "thread_ts": "1790011800.000041"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790013000.000043",
+      "text": "on it",
+      "thread_ts": "1790011800.000041"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1790024400.000044",
+      "text": "harness idea: split into 2 smaller bundles through the elbow instead of 1 fat one, + 30mm service loop. Priya does that work electrically?",
+      "thread_ts": "1790024400.000044"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_PRIYA",
+      "ts": "1790026200.000045",
+      "text": "yeah should be fine, just keep the motor phases together",
+      "thread_ts": "1790024400.000044"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790031600.000046",
+      "text": "<!channel> EVT exit review done ✅ design freeze for the gripper, the base and the harness: all three are officially in DVT as of today. the wrist stays in EVT till we've sorted the motor overheating. from now on any design change on a DVT subsystem needs an ECO approved by me. DVT build target is still 10/26",
+      "thread_ts": "1790031600.000046"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_MEI",
+      "ts": "1790032200.000047",
+      "text": "🎉 kicking off DVT POs tmrw",
+      "thread_ts": "1790031600.000046"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1790093700.000048",
+      "text": "reminder: no standup tmrw, all-hands instead"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1790096400.000049",
+      "text": "<@U_PRIYA> what's the pinout on J7 on the new TMC9660 driver board? need it to finish the harness drawing",
+      "thread_ts": "1790096400.000049"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790097600.000066",
+      "text": "kestrel (harness house) says the TPE jacket compound for the arm umbilical is on allocation til nov. they're proposing PVC jacket for the DVT lot, same OD. need an eng yes/no by thurs or they bump us in the queue",
+      "thread_ts": "1790097600.000066"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790100000.000050",
+      "text": "started the TMC9660 FOC port on branch fw/tmc9660"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790110800.000051",
+      "text": "DVT PO for 120 base castings placed w/ the foundry, 6 wk lead time"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790112000.000088",
+      "text": "pulled the logs from the e-stop tests: pack current spikes to ~38A on decel for ~200ms. the XT30 on the brick is only rated 30A and its getting toasty 🔥 swapping to XT60 on the PDB + the pack lead in rev 3. power's still EVT so no ECO needed, just doing it",
+      "thread_ts": "1790112000.000088"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790115000.000072",
+      "text": "wrist abs encoder (the mag puck) zero offset drifts ~1.5deg after every thermal cycle. smells like the magnet creeping in the shaft bore. adding re-zero on boot to the cal routine for now",
+      "thread_ts": "1790115000.000072"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_PRIYA",
+      "ts": "1790179500.000067",
+      "text": "<@U_MEI> just seeing this, PVC is a no for the elbow section. way stiffer + cracks in flex when cold. do they have any other TPE?",
+      "thread_ts": "1790097600.000066"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_RAVI",
+      "ts": "1790179800.000089",
+      "text": "just saw this 😬 an XT60 is ~16mm wide, the cable pass-thru slot in the base casting is 12mm. base is DVT and the 120 castings are already on PO. <@U_TOM> that'd be a casting ECO + pattern change",
+      "thread_ts": "1790112000.000088"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790182800.000052",
+      "text": "all-hands slides are in the drive"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790184600.000090",
+      "text": "ah didnt think about the slot. could do a ~10cm pigtail so the XT60 sits inside the battery bay and only the wire goes thru. no casting change",
+      "thread_ts": "1790112000.000088"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_TOM",
+      "ts": "1790186700.000091",
+      "text": "do the pigtail, no ECO on the casting. <@U_MEI> fyi base casting PO stays as is, nothing to tell the foundry",
+      "thread_ts": "1790112000.000088"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1790188200.000078",
+      "text": "tweaking the wrist mtr mount: +2 fins and a thermal pad pocket under the can now that the new driver runs cooler. bracket rev E in PDM, no fit change",
+      "thread_ts": "1790188200.000078"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790189100.000073",
+      "text": "<@U_RAVI> q for you: is the magnet pressed or glued into the wrist shaft? and whats the bore tol? need to know if this is a mech fix or I just live with re-zero in fw",
+      "thread_ts": "1790115000.000072"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1790190900.000083",
+      "text": "who left scope probes in the kitchen 😂",
+      "thread_ts": "1790190900.000083"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1790190900.000093",
+      "text": "anyone have a usb-c to barrel adapter? the demo laptop charger walked off again",
+      "thread_ts": "1790190900.000093"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790191200.000084",
+      "text": "guilty",
+      "thread_ts": "1790190900.000083"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790191320.000094",
+      "text": "my desk, 2nd drawer. bring it back pls 🙏",
+      "thread_ts": "1790190900.000093"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1790193600.000053",
+      "text": "printed P-clips for the harness at the elbow, fit is good"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790199000.000068",
+      "text": "they can do a santoprene TPE alt, same 85A durometer, no slip on the lot. but thats a material change on a DVT drawing so it needs an ECO right?",
+      "thread_ts": "1790097600.000066"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790204400.000054",
+      "text": "TMC9660 FOC loop closing on the bench board 🎉 still need to tune gains"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1790263800.000055",
+      "text": "customer is here at 10, they'll walk through the lab ~11"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1790267400.000056",
+      "text": "bump, I'm blocked on the harness drawing until I have the J7 pinout",
+      "thread_ts": "1790096400.000049"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790269200.000057",
+      "text": "still need eng input on a replacement for the molex conector. LTB qty calc is due 10/2, after that I'll just buy 2 yrs worth (~$9k)",
+      "thread_ts": "1789662600.000024"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_TOM",
+      "ts": "1790269200.000069",
+      "text": "yes. Priya pls send the ECO w/ the datasheet, I'll approve if flex data looks ok",
+      "thread_ts": "1790097600.000066"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1790280300.000102",
+      "text": "bandsaw blade snapped 🪚 new one comes tues, use the hacksaw til then"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790281200.000076",
+      "text": "fyi ams osram flagged AS5048A (the wrist mag encoder) as NRND. still buyable thru 2027 but they recommend AS5047P for new designs. who owns this one?",
+      "thread_ts": "1790281200.000076"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790287200.000058",
+      "text": "thurs review notes: DVT build date is now TBD until we secure TMC9660s. Mei is chasing broker stock. Sara I know you need a date for the customer",
+      "thread_ts": "1790287200.000058"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1790287800.000059",
+      "text": "yes, need a firm date by EOM or the pilot slips",
+      "thread_ts": "1790287200.000058"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1790289000.000085",
+      "text": "printer jammed again. anyone know where the spare 0.4 nozzles went?",
+      "thread_ts": "1790289000.000085"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_PRIYA",
+      "ts": "1790289900.000086",
+      "text": "top shelf blue bin",
+      "thread_ts": "1790289000.000085"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790291400.000095",
+      "text": "ugh, bearing vendor just emailed: the DVT lot of the big lazy susan for the base (300mm crossed roller) failed incoming hardness check. re-heat-treat pushes ship from 10/9 to ~10/30, so ~3 wk slip. we only have 4 EVT spares in the cage",
+      "thread_ts": "1790291400.000095"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_PRIYA",
+      "ts": "1790293200.000070",
+      "text": "ECO-031 submitted <@U_TOM>. kestrel's sample of the alt jacket did 10k flex cycles on the bench, no cracking",
+      "thread_ts": "1790097600.000066"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790296800.000092",
+      "text": "rev 3 board w/ the pigtail sent to fab, back in ~8 days",
+      "thread_ts": "1790112000.000088"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_PRIYA",
+      "ts": "1790351400.000077",
+      "text": "that's me. 5047P is footprint compatible, diff SPI framing. I'll roll it into the driver board respin, no action for DVT qty",
+      "thread_ts": "1790281200.000076"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_TOM",
+      "ts": "1790351400.000096",
+      "text": "thats right on the critical path once the TMC9660s land. <@U_RAVI> can we build the first DVT units on the EVT spares?",
+      "thread_ts": "1790291400.000095"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_TOM",
+      "ts": "1790352900.000071",
+      "text": "ECO-031 approved ✅ Mei go ahead w/ kestrel on the santoprene jacket",
+      "thread_ts": "1790097600.000066"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_RAVI",
+      "ts": "1790354100.000097",
+      "text": "EVT rings are the older 4-pt contact ones, preload's diff but same bolt pattern. ok for the first 4 units, would need to reshim each like unit 3. rest have to wait for the real ones",
+      "thread_ts": "1790291400.000095"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_TOM",
+      "ts": "1790356500.000098",
+      "text": "ok. EVT bearing on a DVT build is a deviation not an ECO, I'll sign it. Mei pls push them for a partial shipment",
+      "thread_ts": "1790291400.000095"
+    },
+    {
+      "type": "message",
+      "channel": "C04SUPPLY",
+      "user": "U_MEI",
+      "ts": "1790358000.000099",
+      "text": "asked, they think ~40 pcs by 10/16 if we take them unpainted",
+      "thread_ts": "1790291400.000095"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1790359200.000060",
+      "text": "sorry, was buried in the schematic update 🙈 J7: 1 VM, 2 GND, 3-5 phase A/B/C, 6 NTC",
+      "thread_ts": "1790096400.000049"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790359200.000074",
+      "text": "bump <@U_RAVI> - need this before the wrist goes to DVT. re-zero on boot adds ~2s to startup which I'd rather not ship",
+      "thread_ts": "1790115000.000072"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_RAVI",
+      "ts": "1790359500.000061",
+      "text": "perfect, thanks!",
+      "thread_ts": "1790096400.000049"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_MEI",
+      "ts": "1790362800.000062",
+      "text": "pizza in the kitchen 🍕"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790373600.000100",
+      "text": "<!channel> heads up: slew bearings for DVT are slipping ~3 wks (vendor heat treat issue). plan is first 4 DVT units build on EVT spares under a deviation, rest when the partial ships ~10/16. DVT build date still hinges on the TMC9660s too, Sara I'll have a real date for you mon",
+      "thread_ts": "1790373600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "C03ELEC",
+      "user": "U_PRIYA",
+      "ts": "1790377200.000063",
+      "text": "harness rev C released: split into 2 bundles at the elbow, +30mm service loop, P-clips added. drawings are in PDM"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790377200.000079",
+      "text": "<!channel> TMC9660 boards passed validation (thermals + 500 cycle run clean, thx Priya). wrist moves to DVT as of today. power stays in EVT until the new pack is qualified. any wrist changes from here on need an ECO",
+      "thread_ts": "1790377200.000079"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_MEI",
+      "ts": "1790381100.000080",
+      "text": "👍 releasing the wrist POs mon, bracket at rev E",
+      "thread_ts": "1790377200.000079"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_SARA",
+      "ts": "1790446800.000101",
+      "text": "ok thx, need it mon latest. customer keeps asking",
+      "thread_ts": "1790373600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_PRIYA",
+      "ts": "1790456400.000064",
+      "text": "fyi CI is down for maintenance this weekend"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_RAVI",
+      "ts": "1790457000.000081",
+      "text": "one more - moved the pad pocket 2mm to clear the J4 crimps, pushed rev F",
+      "thread_ts": "1790188200.000078"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_MEI",
+      "ts": "1790470800.000087",
+      "text": "anyone watching the race tmrw? 🏎️"
+    },
+    {
+      "type": "message",
+      "channel": "C02MECH",
+      "user": "U_TOM",
+      "ts": "1790530800.000082",
+      "text": "<@U_RAVI> wrist is DVT now, rev F needs an ECO. <@U_MEI> pls hold the bracket PO until it's approved",
+      "thread_ts": "1790188200.000078"
+    },
+    {
+      "type": "message",
+      "channel": "C01GENERAL",
+      "user": "U_TOM",
+      "ts": "1790560800.000065",
+      "text": "heads up lab AC is getting serviced mon morning, it'll be warm"
+    },
+    {
+      "type": "message",
+      "channel": "C05FIRMWARE",
+      "user": "U_RAVI",
+      "ts": "1790562600.000075",
+      "text": "sorry missed this, was heads down on harness stuff. glued (loctite 638), bore is H7. shouldnt creep unless the glue didnt cure, I'll pull one apart mon. if it's a shaft change it's an ECO now 😬",
+      "thread_ts": "1790115000.000072"
+    }
+  ]
+}
