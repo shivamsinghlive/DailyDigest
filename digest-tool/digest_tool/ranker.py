@@ -64,6 +64,7 @@ CATEGORY = {
     "new_problem": "problem", "problem_update": "problem", "decision": "decision",
     "new_question": "question", "question_unanswered": "unanswered_question",
     "question_answered": "update", "update": "update", "phase_change": "phase_change",
+    "change_after_freeze": "change_after_freeze",
 }
 
 ROLE_LABEL = {
@@ -74,6 +75,7 @@ ROLE_LABEL = {
 CATEGORY_LABEL = {
     "problem": "Problems", "decision": "Decisions", "question": "Open questions",
     "unanswered_question": "Unanswered questions", "update": "Updates", "phase_change": "Phase changes",
+    "change_after_freeze": "Changes after design freeze",
 }
 
 
@@ -162,6 +164,14 @@ def score_change(change, person, state, team, focus, prefs=None):
         reasons.append(f"A question about your {sorted(confident)[0]} has had no answer for {change.get('waiting_hours', 48)}h")
     if category == "problem" and confident and change["urgency"] >= 4:
         must = True  # a serious problem on your own part is blocking you whether or not you're tagged
+    if change["kind"] == "change_after_freeze":
+        # The manager approves ECOs; the owner has to know their frozen part just changed.
+        owns_frozen = [p for p in change["frozen_parts"] for o in state["owners"].get(p, [])
+                       if o["person"] == pid and o["confidence"] in ("declared", "likely")]
+        if person["role"] == "engineering_manager" or owns_frozen:
+            must = True
+            where = ", ".join(f"{s} is in {ph}" for s, ph in change["frozen_phases"].items())
+            reasons.append(f"Design change after freeze with no ECO yet: {', '.join(change['frozen_parts'])} ({where})")
 
     # --- scored signals ---
     if mine_named:

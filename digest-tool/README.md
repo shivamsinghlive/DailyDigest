@@ -122,6 +122,8 @@ Code handles everything that has to be **reliable and explainable**:
 - **@-tags.**
 - **"Unanswered for 48h"**, from reply timestamps.
 - **Phase changes**, from phrases like "design freeze", "EVT build done", "DVT units shipped" and "stays in EVT", read one sentence at a time.
+- **Changes after freeze**: a new revision ("pushed rev F", "rev C released") of a part whose subsystem is already in DVT, in a thread with no ECO mentioned.
+- **Closing problems across threads**: a decision or a reported fix that names the same part within 5 days.
 - **Ownership evidence.**
 
 The LLM handles what needs language understanding:
@@ -174,7 +176,8 @@ How the numbers are used:
   - you were `@`-tagged;
   - a question to you, or about your (declared or likely) part, has gone unanswered for 48h;
   - a problem with urgency 4 or higher is on your part;
-  - a subsystem changed phase.
+  - a subsystem changed phase;
+  - a frozen part got a new revision with no ECO (for the engineering manager and the part's owner).
 - **Top 5** items make For You, minus anything already in the pulse.
 
 ### Team Pulse

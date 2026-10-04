@@ -238,6 +238,30 @@ def change_kind(x, is_open_problem):
     return {"decision": "decision", "question": "new_question"}.get(x["type"], "update")
 
 
+# ---------- design changes after freeze ----------
+
+# "pushed rev F", "bracket rev E in PDM", "harness rev C released": a new revision was published.
+# "releasing the POs, bracket at rev E" or "rev F needs an ECO" are about a revision, not a new one.
+REVISION_RE = re.compile(r"\b(?:pushed|released|bumped)\s+rev\s*[A-Z0-9]+\b|\brev\s*[A-Z0-9]+\b[^.!?\n]*\b(?:released|in PDM)\b", re.I)
+ECO_RE = re.compile(r"\bECO\b")
+
+
+def changed_after_freeze(thread, day, state, team):
+    """Frozen parts (subsystem in DVT or later) that get a new revision today, in a thread where nobody
+    has mentioned an ECO yet. After design freeze a change needs an ECO, so the manager should know.
+    The revised part is the thread's subject (its first message): "pushed rev F" follow-ups name
+    whatever they touched ("to clear the J4 crimps"), not what was revised."""
+    so_far = [m for m in thread["messages"] if day_of(m["ts"]) <= day]
+    if any(ECO_RE.search(m["text"]) for m in so_far):
+        return []
+    if not any(REVISION_RE.search(m["text"]) for m in so_far if day_of(m["ts"]) == day):
+        return []
+    cat = team["catalog"]
+    subject = [p for p in match_parts(thread["messages"][0]["text"], cat) if linkable(p, cat)]
+    frozen = PHASES.index("DVT")
+    return sorted(p for p in subject if PHASES.index(state["phases"][cat["subsystem_of"][p]]) >= frozen)
+
+
 # ---------- the replay ----------
 
 def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
@@ -254,6 +278,7 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
         "ownership_evidence": {},    # person -> part -> [[day, kind]]
         "open_problems": {},         # thread_ts -> open_item
         "closed_problems": [],       # open_item + closed_day, closed_by (thread), via_parts
+        "flagged_after_freeze": [],  # thread_ts already reported as a change after freeze (once each)
         "decisions": [],             # [{day, summary, parts, thread_ts}]
         "unanswered_questions": {},  # thread_ts -> open_item + people_mentioned, flagged
         "unknown_parts": {},         # phrase -> {written, threads, first_day, last_day}: for a human to catalog
@@ -339,6 +364,11 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 kind = "question_answered"
 
             extra = {"waiting_hours": round(waiting)} if waiting else {}
+            frozen = [] if ts in state["flagged_after_freeze"] else changed_after_freeze(thread, day, state, team)
+            if frozen:  # a process problem outranks whatever else the thread is: report it as that
+                state["flagged_after_freeze"].append(ts)
+                kind = "change_after_freeze"
+                extra.update(frozen_parts=frozen, frozen_phases={team["catalog"]["subsystem_of"][p]: state["phases"][team["catalog"]["subsystem_of"][p]] for p in frozen})
             if closes:
                 extra["closes"] = [{"thread_ts": p["thread_ts"], "summary": p["summary"], "via_parts": p["via_parts"]} for p in closes]
             changes.append(make_change(kind, day, thread, x, team, **extra))

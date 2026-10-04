@@ -27,12 +27,14 @@ KIND_LABEL = {
     "new_problem": "New problem", "problem_update": "Problem update", "decision": "Decision",
     "new_question": "Question", "question_unanswered": "Unanswered question",
     "question_answered": "Question answered", "update": "Update", "phase_change": "Phase change",
+    "change_after_freeze": "Change after freeze",
 }
 # Team-wide importance of each type of change, before severity and breadth. Type dominates on
 # purpose: phase changes, schedule risks and major decisions are what everyone must know; a routine
 # problem only makes the pulse if it's both severe and touches nearly everyone.
 PULSE_TYPE = {"phase_change": 8, "decision": 1, "new_problem": 1, "question_unanswered": 1,
-              "problem_update": 0.5, "new_question": 0, "update": 0, "question_answered": 0}
+              "problem_update": 0.5, "new_question": 0, "update": 0, "question_answered": 0,
+              "change_after_freeze": 0}  # a process issue for the manager and owner, not team news
 SCHEDULE_RISK_BONUS = 6   # anything that moves the build date matters to everyone
 MAJOR_DECISION_BONUS = 4  # an urgent decision (4+/5) is a major one
 
