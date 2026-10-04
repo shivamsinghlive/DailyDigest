@@ -2,7 +2,11 @@
 the format the tool reads, so it can be evaluated as a holdout without touching any scoring.
 
     python scripts/import_slack_export.py data/holdout2            # writes data/holdout2/tool/
+    python scripts/import_slack_export.py data/holdout2 --spent    # same, ground truth as tuned
     DIGEST_DATA_DIR=data/holdout2/tool python -m digest_tool.evaluate
+
+A holdout is "spent" once its results have been looked at in detail: from then on it's tuning
+data (ground_truth.json), and a new holdout is needed for an honest check.
 
 Input (as written by the separate agent):
   messages.json      [{channel (name), user, ts, thread_ts (null on top-level posts), text}]
@@ -38,7 +42,7 @@ def load(src, name):
         return json.load(f)
 
 
-def convert(src, out):
+def convert(src, out, spent=False):
     raw_msgs, raw_team, raw_parts, raw_gt = (load(src, f) for f in
                                              ("messages.json", "team.json", "parts.json", "ground_truth.json"))
     warnings = []
@@ -110,7 +114,7 @@ def convert(src, out):
     files = {"messages.json": {"channels": channels, "messages": messages},
              "team.json": team,
              "parts.json": {"subsystems": sorted({p["subsystem"] for p in parts}), "parts": parts, "topics": []},
-             "ground_truth_holdout.json": gt,
+             "ground_truth.json" if spent else "ground_truth_holdout.json": gt,
              "true_owners.json": true_owners}
     for name, data in files.items():
         (out / name).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
@@ -129,7 +133,8 @@ def convert(src, out):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if a != "--spent"]
+    if len(args) != 1:
         sys.exit(__doc__)
-    src = Path(sys.argv[1])
-    convert(src, src / "tool")
+    src = Path(args[0])
+    convert(src, src / "tool", spent="--spent" in sys.argv)
