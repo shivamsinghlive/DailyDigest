@@ -88,8 +88,8 @@ def convert(src, out, spent=False):
     true_owners = {"description": "TEST ONLY. Derived from the dataset's parts.json owner + team.json parts_owned.",
                    "owners": {k: sorted(v) for k, v in owners.items()}}
 
-    # ground truth: an event is scored on one thread on one day. source_ts can list several messages;
-    # the thread of the first one is the event's thread.
+    # ground truth: an event is scored on one day. source_ts can list several messages in several
+    # threads; reaching someone through any of them counts (evaluate.event_threads).
     thread_of = {m["ts"]: m.get("thread_ts", m["ts"]) for m in messages}
     events, multi_thread, missing, off_day = [], 0, 0, 0
     for e in raw_gt["events"]:
@@ -105,7 +105,7 @@ def convert(src, out, spent=False):
         if not any(day_of(m["ts"]) == e["date"] for m in messages if thread_of[m["ts"]] == thread_ts):
             off_day += 1
         events.append({"id": e["event_id"], "section": "team_pulse" if e["whole_team"] else "personal",
-                       "thread_ts": thread_ts, "day": e["date"], "what": e["title"],
+                       "thread_ts": thread_ts, "also_threads": threads[1:], "day": e["date"], "what": e["title"],
                        "should_alert": [{"user": u} for u in e["alert_users"]]})
     gt = {"notes": f"Converted from {src.name}/ground_truth.json by scripts/import_slack_export.py",
           "events": events, "noise": [], "mentions": []}
@@ -124,7 +124,7 @@ def convert(src, out, spent=False):
     if missing:
         warnings.append(f"{missing} event(s) cite source_ts not found in messages.json")
     if multi_thread:
-        warnings.append(f"{multi_thread} event(s) span several threads; scored on the first one's thread")
+        warnings.append(f"{multi_thread} event(s) span several threads; any of them counts")
     if off_day:
         warnings.append(f"{off_day} event(s) whose thread has no message on the event date "
                         f"(days are counted in {config.TIMEZONE})")

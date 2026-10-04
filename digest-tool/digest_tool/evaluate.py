@@ -91,18 +91,25 @@ def participants_as_of(messages, thread_ts, day):
     return set()
 
 
-def authors_on(messages, thread_ts, day):
-    return {m.get("user") for m in messages if m.get("thread_ts", m["ts"]) == thread_ts and day_of(m["ts"]) == day}
+def event_threads(e):
+    """An event can span several threads (a decision in one, the announcement in another).
+    Reaching someone through any of them counts."""
+    return [e["thread_ts"]] + e.get("also_threads", [])
+
+
+def authors_on(messages, threads, day):
+    return {m.get("user") for m in messages if m.get("thread_ts", m["ts"]) in threads and day_of(m["ts"]) == day}
 
 
 def score_alerts(seen, mine, gt, messages, team):
     hits_seen = hits_mine = total = false_alerts = 0
     detail = {}
     for e in gt["events"]:
-        expected = {a["user"] for a in e["should_alert"]} - authors_on(messages, e["thread_ts"], e["day"])
-        got_seen = {p["id"] for p in team["people"] if e["thread_ts"] in seen.get((p["id"], e["day"]), set())}
-        got_mine = {p["id"] for p in team["people"] if e["thread_ts"] in mine.get((p["id"], e["day"]), set())}
-        extra = got_mine - expected - participants_as_of(messages, e["thread_ts"], e["day"])
+        threads = event_threads(e)
+        expected = {a["user"] for a in e["should_alert"]} - authors_on(messages, threads, e["day"])
+        got_seen = {p["id"] for p in team["people"] if set(threads) & seen.get((p["id"], e["day"]), set())}
+        got_mine = {p["id"] for p in team["people"] if set(threads) & mine.get((p["id"], e["day"]), set())}
+        extra = got_mine - expected - set().union(*(participants_as_of(messages, t, e["day"]) for t in threads))
         detail[e["id"]] = {"seen": expected & got_seen, "mine": expected & got_mine, "miss": expected - got_seen, "extra": extra}
         total += len(expected)
         hits_seen += len(expected & got_seen)
@@ -122,14 +129,15 @@ def score_alerts(seen, mine, gt, messages, team):
 # ---------- 2. Team Pulse ----------
 
 def score_pulse(pulses, gt):
+    in_pulse = lambda e: bool(set(event_threads(e)) & pulses.get(e["day"], set()))
     should = [e for e in gt["events"] if e["section"] == "team_pulse"]
     personal = [e for e in gt["events"] if e["section"] == "personal"]
     noise = {n["thread_ts"] for n in gt["noise"]}
     return {
-        "should_hit": sum(e["thread_ts"] in pulses.get(e["day"], set()) for e in should), "should_total": len(should),
-        "personal_in": sum(e["thread_ts"] in pulses.get(e["day"], set()) for e in personal), "personal_total": len(personal),
+        "should_hit": sum(in_pulse(e) for e in should), "should_total": len(should),
+        "personal_in": sum(in_pulse(e) for e in personal), "personal_total": len(personal),
         "noise_in": sum(len(p & noise) for p in pulses.values()),
-        "detail": {e["id"]: e["thread_ts"] in pulses.get(e["day"], set()) for e in gt["events"]},
+        "detail": {e["id"]: in_pulse(e) for e in gt["events"]},
     }
 
 
