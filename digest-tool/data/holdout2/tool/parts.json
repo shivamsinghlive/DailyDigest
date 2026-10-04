@@ -1,0 +1,160 @@
+{
+  "subsystems": [
+    "Drivetrain",
+    "Electrical",
+    "Firmware",
+    "Payload Handling",
+    "Perception",
+    "Power",
+    "Safety",
+    "Software",
+    "Structure",
+    "Structure / Safety"
+  ],
+  "parts": [
+    {
+      "name": "Drive Wheel Module Assembly",
+      "subsystem": "Drivetrain",
+      "aliases": [
+        "DWM",
+        "the hub"
+      ]
+    },
+    {
+      "name": "BLDC Drive Motor KM-60",
+      "subsystem": "Drivetrain",
+      "aliases": [
+        "the 60s"
+      ]
+    },
+    {
+      "name": "Scissor Lift Mechanism",
+      "subsystem": "Payload Handling",
+      "aliases": [
+        "the scissor",
+        "the elevator"
+      ]
+    },
+    {
+      "name": "Chassis Weldment",
+      "subsystem": "Structure",
+      "aliases": [
+        "the tub"
+      ]
+    },
+    {
+      "name": "Front Bumper and Sensor Fascia",
+      "subsystem": "Structure / Safety",
+      "aliases": [
+        "the nose"
+      ]
+    },
+    {
+      "name": "Main Power Distribution Board",
+      "subsystem": "Electrical",
+      "aliases": [
+        "PDB",
+        "the big board"
+      ]
+    },
+    {
+      "name": "Motor Driver Board",
+      "subsystem": "Electrical",
+      "aliases": [
+        "MDB",
+        "the sandwich"
+      ]
+    },
+    {
+      "name": "48V Battery Pack",
+      "subsystem": "Power",
+      "aliases": [
+        "the brick"
+      ]
+    },
+    {
+      "name": "Battery Management System Board",
+      "subsystem": "Power",
+      "aliases": [
+        "BMS",
+        "the babysitter"
+      ]
+    },
+    {
+      "name": "2D Safety LiDAR Sensor LX-270",
+      "subsystem": "Perception",
+      "aliases": [
+        "the lighthouse",
+        "the spinny"
+      ]
+    },
+    {
+      "name": "Motor Control Firmware",
+      "subsystem": "Firmware",
+      "aliases": [
+        "mc-fw"
+      ]
+    },
+    {
+      "name": "Navigation and Docking Software Stack",
+      "subsystem": "Software",
+      "aliases": [
+        "nav"
+      ]
+    },
+    {
+      "name": "Main Wiring Harness",
+      "subsystem": "Electrical",
+      "aliases": [
+        "the octopus"
+      ]
+    },
+    {
+      "name": "75mm Swivel Caster Wheel",
+      "subsystem": "Drivetrain",
+      "aliases": [
+        "the dumb wheels",
+        "casters"
+      ]
+    },
+    {
+      "name": "Charging Dock Contact Plates",
+      "subsystem": "Power",
+      "aliases": [
+        "the kiss plates"
+      ]
+    },
+    {
+      "name": "Emergency Stop Button and STO Circuit",
+      "subsystem": "Safety",
+      "aliases": [
+        "big red",
+        "e-stop"
+      ]
+    },
+    {
+      "name": "BMS Firmware",
+      "subsystem": "Firmware",
+      "aliases": [
+        "babysitter fw",
+        "bms fw"
+      ]
+    },
+    {
+      "name": "21700 Li-ion Cell HC-21700-35",
+      "subsystem": "Power",
+      "aliases": [
+        "the cans",
+        "cells"
+      ]
+    },
+    {
+      "name": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+      "subsystem": "Perception",
+      "aliases": [
+        "RL-2"
+      ]
+    }
+  ],
+  "topics": []
+}

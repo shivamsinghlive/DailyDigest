@@ -1,0 +1,76 @@
+{
+  "project": {
+    "name": "warehouse_robot_holdout",
+    "phases": [
+      "Concept",
+      "EVT",
+      "DVT",
+      "PVT",
+      "Production"
+    ],
+    "start_phase": "EVT"
+  },
+  "people": [
+    {
+      "id": "U1001",
+      "name": "Priya Raman",
+      "role": "mechanical_engineer",
+      "owns": [
+        "Drive Wheel Module Assembly",
+        "Scissor Lift Mechanism",
+        "Chassis Weldment",
+        "Front Bumper and Sensor Fascia",
+        "75mm Swivel Caster Wheel"
+      ]
+    },
+    {
+      "id": "U1002",
+      "name": "Marcus Okafor",
+      "role": "electrical_engineer",
+      "owns": [
+        "Main Power Distribution Board",
+        "Motor Driver Board",
+        "48V Battery Pack",
+        "Battery Management System Board",
+        "Main Wiring Harness",
+        "Charging Dock Contact Plates",
+        "Emergency Stop Button and STO Circuit"
+      ]
+    },
+    {
+      "id": "U1003",
+      "name": "Dani Kowalski",
+      "role": "electrical_engineer",
+      "owns": [
+        "2D Safety LiDAR Sensor LX-270",
+        "Motor Control Firmware",
+        "Navigation and Docking Software Stack",
+        "BMS Firmware",
+        "2D Safety LiDAR Sensor RL-2 (second source candidate)"
+      ]
+    },
+    {
+      "id": "U1004",
+      "name": "Leo Tran",
+      "role": "supply_chain",
+      "owns": [
+        "2D Safety LiDAR Sensor LX-270",
+        "75mm Swivel Caster Wheel",
+        "21700 Li-ion Cell HC-21700-35",
+        "2D Safety LiDAR Sensor RL-2 (second source candidate)"
+      ]
+    },
+    {
+      "id": "U1005",
+      "name": "Sam Whitfield",
+      "role": "engineering_manager",
+      "owns": []
+    },
+    {
+      "id": "U1006",
+      "name": "Ana Ferreira",
+      "role": "product_manager",
+      "owns": []
+    }
+  ]
+}

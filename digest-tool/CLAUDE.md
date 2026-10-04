@@ -35,17 +35,22 @@ digest-tool/
     ground_truth_holdout.json # holdout stories (written separately). Never tune on these.
     cache/                    # saved LLM outputs (extractions.json, digests.json) — committed
     feedback.json             # 👍/👎 log (not committed)
-  slack_loader.py       # load_messages(source="fake"|"slack"), thread grouping
-  catalog.py            # nickname -> official part name (exact, normalized, fuzzy) + unknown parts
-  extract.py            # LLM turns each thread into structured data
-  notebook.py           # project state: subsystem phases, owners (declared/likely/possible), open items
-  ranker.py             # scoring + reasons
-  feedback.py           # per-person, per-item-type multipliers from 👍/👎
-  digest.py             # Team Pulse + For You per person per day
-  evaluate.py           # compares results to ground truth
-  app.py                # Streamlit UI
-  config.py             # settings (provider, model, weights)
+  app.py                # Streamlit UI (entry point, stays at the root for `streamlit run app.py`)
+  digest_tool/          # the library; run modules with `python -m digest_tool.<module>`
+    config.py           # settings (provider, model, weights)
+    slack_loader.py     # load_messages(source="fake"|"slack"), thread grouping
+    catalog.py          # nickname -> official part name (exact, normalized, fuzzy) + unknown parts
+    extract.py          # LLM turns each thread into structured data
+    notebook.py         # project state: subsystem phases, owners (declared/likely/possible), open items
+    ranker.py           # scoring + reasons
+    feedback.py         # per-person, per-item-type multipliers from 👍/👎
+    digest.py           # Team Pulse + For You per person per day
+    evaluate.py         # compares results to ground truth
+  tests/                # pytest; tiny made-up inputs only, never the real dataset
+  scripts/make_fake_data.py   # regenerates data/messages.json + ground truth from scripts/sources/
 ```
+Inside digest_tool/ use relative imports (`from .catalog import match_parts`).
+Run `pytest` after any change to catalog, phase detection or ownership.
 
 ## Rules
 - Keep code simple and readable; it will be reviewed by engineers.

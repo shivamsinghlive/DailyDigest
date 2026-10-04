@@ -14,8 +14,8 @@ Every point added comes with a plain-English reason, so the digest can say *why*
 """
 from datetime import date
 
-import config
-from notebook import changes_on, overall_phase, state_as_of
+from . import config
+from .notebook import changes_on, overall_phase, state_as_of
 
 # What kinds of change each role cares about in each phase. Ownership and focus are
 # handled separately, so this table only covers "I'd want to know even if it's not my part".
@@ -234,7 +234,7 @@ def rank_for_person(person, day, timeline, team, top_n=config.TOP_N, prefs=None,
 
 if __name__ == "__main__":
     import sys
-    from notebook import load_notebook
+    from .notebook import load_notebook
 
     timeline, team = load_notebook()
     days = sys.argv[1:] or sorted(timeline)

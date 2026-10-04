@@ -1,0 +1,76 @@
+{
+  "stories": {
+    "H1": "Harness vendor wants to swap the 'umbilical' cable jacket from TPE to PVC; posted in supply-chain, harness is in DVT so the alt material needs an ECO approved by Tom.",
+    "H2": "Wrist absolute encoder ('mag puck', AS5048A) is not on the roster but Priya does all the work on it: zero drift question to Ravi goes unanswered for days, and a supplier NRND notice needs to reach Priya, not the 'wrist' owner.",
+    "H3": "Wrist motor bracket tweak is fine while wrist is in EVT; wrist moves to DVT on day 12, then a weekend bracket rev needs an ECO and blocks Mei's wrist PO."
+  },
+  "messages": [
+    {"key": "h1_root", "reply_to": null, "day": 9, "time": "10:20", "channel": "supply-chain", "user": "U_MEI", "text": "kestrel (harness house) says the TPE jacket compound for the arm umbilical is on allocation til nov. they're proposing PVC jacket for the DVT lot, same OD. need an eng yes/no by thurs or they bump us in the queue"},
+    {"key": null, "reply_to": "h1_root", "day": 10, "time": "09:05", "channel": "supply-chain", "user": "U_PRIYA", "text": "<@U_MEI> just seeing this, PVC is a no for the elbow section. way stiffer + cracks in flex when cold. do they have any other TPE?"},
+    {"key": null, "reply_to": "h1_root", "day": 10, "time": "14:30", "channel": "supply-chain", "user": "U_MEI", "text": "they can do a santoprene TPE alt, same 85A durometer, no slip on the lot. but thats a material change on a DVT drawing so it needs an ECO right?"},
+    {"key": null, "reply_to": "h1_root", "day": 11, "time": "10:00", "channel": "supply-chain", "user": "U_TOM", "text": "yes. Priya pls send the ECO w/ the datasheet, I'll approve if flex data looks ok"},
+    {"key": null, "reply_to": "h1_root", "day": 11, "time": "16:40", "channel": "supply-chain", "user": "U_PRIYA", "text": "ECO-031 submitted <@U_TOM>. kestrel's sample of the alt jacket did 10k flex cycles on the bench, no cracking"},
+    {"key": null, "reply_to": "h1_root", "day": 12, "time": "09:15", "channel": "supply-chain", "user": "U_TOM", "text": "ECO-031 approved ✅ Mei go ahead w/ kestrel on the santoprene jacket"},
+
+    {"key": "h2_root", "reply_to": null, "day": 9, "time": "15:10", "channel": "firmware", "user": "U_PRIYA", "text": "wrist abs encoder (the mag puck) zero offset drifts ~1.5deg after every thermal cycle. smells like the magnet creeping in the shaft bore. adding re-zero on boot to the cal routine for now"},
+    {"key": null, "reply_to": "h2_root", "day": 10, "time": "11:45", "channel": "firmware", "user": "U_PRIYA", "text": "<@U_RAVI> q for you: is the magnet pressed or glued into the wrist shaft? and whats the bore tol? need to know if this is a mech fix or I just live with re-zero in fw"},
+    {"key": null, "reply_to": "h2_root", "day": 12, "time": "11:00", "channel": "firmware", "user": "U_PRIYA", "text": "bump <@U_RAVI> - need this before the wrist goes to DVT. re-zero on boot adds ~2s to startup which I'd rather not ship"},
+    {"key": null, "reply_to": "h2_root", "day": 14, "time": "19:30", "channel": "firmware", "user": "U_RAVI", "text": "sorry missed this, was heads down on harness stuff. glued (loctite 638), bore is H7. shouldnt creep unless the glue didnt cure, I'll pull one apart mon. if it's a shaft change it's an ECO now 😬"},
+
+    {"key": "h2_nrnd", "reply_to": null, "day": 11, "time": "13:20", "channel": "supply-chain", "user": "U_MEI", "text": "fyi ams osram flagged AS5048A (the wrist mag encoder) as NRND. still buyable thru 2027 but they recommend AS5047P for new designs. who owns this one?"},
+    {"key": null, "reply_to": "h2_nrnd", "day": 12, "time": "08:50", "channel": "supply-chain", "user": "U_PRIYA", "text": "that's me. 5047P is footprint compatible, diff SPI framing. I'll roll it into the driver board respin, no action for DVT qty"},
+
+    {"key": "h3_root", "reply_to": null, "day": 10, "time": "11:30", "channel": "mech", "user": "U_RAVI", "text": "tweaking the wrist mtr mount: +2 fins and a thermal pad pocket under the can now that the new driver runs cooler. bracket rev E in PDM, no fit change"},
+    {"key": "h3_dvt", "reply_to": null, "day": 12, "time": "16:00", "channel": "general", "user": "U_TOM", "text": "<!channel> TMC9660 boards passed validation (thermals + 500 cycle run clean, thx Priya). wrist moves to DVT as of today, so all 3 subsystems are DVT now. any wrist changes from here on need an ECO"},
+    {"key": null, "reply_to": "h3_dvt", "day": 12, "time": "17:05", "channel": "general", "user": "U_MEI", "text": "👍 releasing the wrist POs mon, bracket at rev E"},
+    {"key": null, "reply_to": "h3_root", "day": 13, "time": "14:10", "channel": "mech", "user": "U_RAVI", "text": "one more - moved the pad pocket 2mm to clear the J4 crimps, pushed rev F"},
+    {"key": null, "reply_to": "h3_root", "day": 14, "time": "10:40", "channel": "mech", "user": "U_TOM", "text": "<@U_RAVI> wrist is DVT now, rev F needs an ECO. <@U_MEI> pls hold the bracket PO until it's approved"},
+
+    {"key": "h_noise1", "reply_to": null, "day": 10, "time": "12:15", "channel": "general", "user": "U_SARA", "text": "who left scope probes in the kitchen 😂"},
+    {"key": null, "reply_to": "h_noise1", "day": 10, "time": "12:20", "channel": "general", "user": "U_TOM", "text": "guilty"},
+    {"key": "h_noise2", "reply_to": null, "day": 11, "time": "15:30", "channel": "mech", "user": "U_RAVI", "text": "printer jammed again. anyone know where the spare 0.4 nozzles went?"},
+    {"key": null, "reply_to": "h_noise2", "day": 11, "time": "15:45", "channel": "mech", "user": "U_PRIYA", "text": "top shelf blue bin"},
+    {"key": "h_noise3", "reply_to": null, "day": 13, "time": "18:00", "channel": "general", "user": "U_MEI", "text": "anyone watching the race tmrw? 🏎️"}
+  ],
+  "events": [
+    {"id": "H1a", "story": "H1", "key": "h1_root", "day": 9, "what": "Harness vendor proposes PVC jacket instead of TPE on the umbilical (cable harness) for DVT lot; needs eng answer by Thu", "should_alert": [
+      {"user": "U_PRIYA", "why": "owns the cable harness ('umbilical'); posted in supply-chain"},
+      {"user": "U_TOM", "why": "material change on a DVT subsystem needs ECO"},
+      {"user": "U_RAVI", "why": "doing harness routing at the elbow; PVC is stiffer"}
+    ]},
+    {"id": "H1b", "story": "H1", "key": "h1_root", "day": 10, "what": "Alt TPE jacket found; Mei asks if it needs an ECO", "should_alert": [
+      {"user": "U_TOM", "why": "approves ECOs; harness is in DVT"}
+    ]},
+    {"id": "H1c", "story": "H1", "key": "h1_root", "day": 12, "what": "ECO-031 approved: harness jacket switched to santoprene TPE", "should_alert": [
+      {"user": "U_RAVI", "why": "harness jacket material changed on the routing he's working on"}
+    ]},
+    {"id": "H2a", "story": "H2", "key": "h2_root", "day": 9, "what": "Wrist encoder zero drifts after thermal cycles, suspected magnet creep in shaft bore", "should_alert": [
+      {"user": "U_RAVI", "why": "owns wrist assembly; possible mech root cause (posted in firmware)"}
+    ]},
+    {"id": "H2b", "story": "H2", "key": "h2_root", "day": 10, "what": "Priya asks Ravi how the encoder magnet is retained and the bore tolerance", "should_alert": [
+      {"user": "U_RAVI", "why": "direct question to you"}
+    ]},
+    {"id": "H2c", "story": "H2", "key": "h2_root", "day": 12, "what": "Question to Ravi still unanswered after 2 days; Priya bumps, needed before wrist goes to DVT", "should_alert": [
+      {"user": "U_RAVI", "why": "your answer is overdue, Priya is blocked"},
+      {"user": "U_TOM", "why": "open wrist issue unresolved as wrist enters DVT"}
+    ]},
+    {"id": "H2d", "story": "H2", "key": "h2_nrnd", "day": 11, "what": "Supplier NRND notice on AS5048A wrist encoder; Mei asks who owns it", "should_alert": [
+      {"user": "U_PRIYA", "why": "actually owns the wrist encoder (does all the encoder work)"}
+    ]},
+    {"id": "H3a", "story": "H3", "key": "h3_root", "day": 10, "what": "Ravi revs wrist motor bracket (rev E) for thermals; wrist still EVT so no ECO needed", "should_alert": [
+      {"user": "U_PRIYA", "why": "shares the wrist motor; thermal change"}
+    ]},
+    {"id": "H3b", "story": "H3", "key": "h3_dvt", "day": 12, "what": "Wrist moves from EVT to DVT; wrist changes now require ECO", "should_alert": [
+      {"user": "U_RAVI", "why": "owns wrist assembly; changes now need ECO"},
+      {"user": "U_PRIYA", "why": "owns motor driver; wrist now under ECO control"},
+      {"user": "U_SARA", "why": "all subsystems in DVT; affects DVT build/pilot date"}
+    ]},
+    {"id": "H3c", "story": "H3", "key": "h3_root", "day": 13, "what": "Ravi pushes bracket rev F after wrist entered DVT, without an ECO", "should_alert": [
+      {"user": "U_TOM", "why": "DVT wrist part changed without ECO"}
+    ]},
+    {"id": "H3d", "story": "H3", "key": "h3_root", "day": 14, "what": "Tom requires ECO for rev F and asks Mei to hold the bracket PO", "should_alert": [
+      {"user": "U_MEI", "why": "asked to hold the wrist bracket PO (planned at rev E)"}
+    ]}
+  ],
+  "noise": ["h_noise1", "h_noise2", "h_noise3"]
+}

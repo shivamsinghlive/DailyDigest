@@ -1,0 +1,208 @@
+{
+  "notes": "Converted from holdout2/ground_truth.json by scripts/import_slack_export.py",
+  "events": [
+    {
+      "id": "E1",
+      "section": "personal",
+      "thread_ts": "1759768800.000100",
+      "day": "2025-10-07",
+      "what": "Switch casters from rubber to polyurethane",
+      "should_alert": [
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1004"
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "section": "team_pulse",
+      "thread_ts": "1759857600.000100",
+      "day": "2025-10-07",
+      "what": "LiDAR (LX-270) lead time slips from 4 to 14 weeks",
+      "should_alert": [
+        {
+          "user": "U1004"
+        },
+        {
+          "user": "U1003"
+        },
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1005"
+        },
+        {
+          "user": "U1006"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "section": "personal",
+      "thread_ts": "1759934700.000100",
+      "day": "2025-10-08",
+      "what": "Motor driver board FETs exceed thermal spec; late heatsink/standoff change into freeze",
+      "should_alert": [
+        {
+          "user": "U1002"
+        },
+        {
+          "user": "U1003"
+        },
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1005"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "section": "team_pulse",
+      "thread_ts": "1759946400.000100",
+      "day": "2025-10-08",
+      "what": "E-stop latency measured at 118ms avg / 160ms worst vs 50ms requirement",
+      "should_alert": [
+        {
+          "user": "U1003"
+        },
+        {
+          "user": "U1002"
+        },
+        {
+          "user": "U1005"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "section": "personal",
+      "thread_ts": "1760026200.000100",
+      "day": "2025-10-09",
+      "what": "Customer rack beam lip question blocks scissor lift stroke confirmation",
+      "should_alert": [
+        {
+          "user": "U1006"
+        },
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1005"
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "section": "team_pulse",
+      "thread_ts": "1760112000.000100",
+      "day": "2025-10-10",
+      "what": "Mechanical design freeze for DVT completed",
+      "should_alert": [
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1002"
+        },
+        {
+          "user": "U1003"
+        },
+        {
+          "user": "U1004"
+        },
+        {
+          "user": "U1005"
+        },
+        {
+          "user": "U1006"
+        }
+      ]
+    },
+    {
+      "id": "E7",
+      "section": "personal",
+      "thread_ts": "1760047200.000100",
+      "day": "2025-10-10",
+      "what": "Firmware engineer out of office 10/20-10/24",
+      "should_alert": [
+        {
+          "user": "U1005"
+        }
+      ]
+    },
+    {
+      "id": "E8",
+      "section": "personal",
+      "thread_ts": "1760206800.000100",
+      "day": "2025-10-11",
+      "what": "Cell vendor silently derates continuous discharge from 35A to 30A",
+      "should_alert": [
+        {
+          "user": "U1002"
+        },
+        {
+          "user": "U1004"
+        },
+        {
+          "user": "U1003"
+        },
+        {
+          "user": "U1005"
+        }
+      ]
+    },
+    {
+      "id": "E9",
+      "section": "personal",
+      "thread_ts": "1760368200.000100",
+      "day": "2025-10-13",
+      "what": "Chassis weldment FAI failure: 3 of 5 tubs have out-of-tolerance pivot bores",
+      "should_alert": [
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1004"
+        },
+        {
+          "user": "U1005"
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "section": "team_pulse",
+      "thread_ts": "1760464800.000100",
+      "day": "2025-10-14",
+      "what": "DVT build slips from 10/27 to 11/10; pilot moves to early December",
+      "should_alert": [
+        {
+          "user": "U1001"
+        },
+        {
+          "user": "U1002"
+        },
+        {
+          "user": "U1003"
+        },
+        {
+          "user": "U1004"
+        },
+        {
+          "user": "U1005"
+        },
+        {
+          "user": "U1006"
+        }
+      ]
+    }
+  ],
+  "noise": [],
+  "mentions": []
+}

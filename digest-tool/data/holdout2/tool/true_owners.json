@@ -1,0 +1,66 @@
+{
+  "description": "TEST ONLY. Derived from the dataset's parts.json owner + team.json parts_owned.",
+  "owners": {
+    "Drive Wheel Module Assembly": [
+      "U1001"
+    ],
+    "BLDC Drive Motor KM-60": [
+      "U1002"
+    ],
+    "Scissor Lift Mechanism": [
+      "U1001"
+    ],
+    "Chassis Weldment": [
+      "U1001"
+    ],
+    "Front Bumper and Sensor Fascia": [
+      "U1001"
+    ],
+    "Main Power Distribution Board": [
+      "U1002"
+    ],
+    "Motor Driver Board": [
+      "U1002"
+    ],
+    "48V Battery Pack": [
+      "U1002"
+    ],
+    "Battery Management System Board": [
+      "U1002"
+    ],
+    "2D Safety LiDAR Sensor LX-270": [
+      "U1003",
+      "U1004"
+    ],
+    "Motor Control Firmware": [
+      "U1003"
+    ],
+    "Navigation and Docking Software Stack": [
+      "U1003"
+    ],
+    "Main Wiring Harness": [
+      "U1002"
+    ],
+    "75mm Swivel Caster Wheel": [
+      "U1001",
+      "U1004"
+    ],
+    "Charging Dock Contact Plates": [
+      "U1002"
+    ],
+    "Emergency Stop Button and STO Circuit": [
+      "U1002"
+    ],
+    "BMS Firmware": [
+      "U1003"
+    ],
+    "21700 Li-ion Cell HC-21700-35": [
+      "U1002",
+      "U1004"
+    ],
+    "2D Safety LiDAR Sensor RL-2 (second source candidate)": [
+      "U1003",
+      "U1004"
+    ]
+  }
+}

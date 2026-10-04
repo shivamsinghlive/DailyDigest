@@ -5,7 +5,7 @@ A daily Slack digest for a robotics hardware team. Each digest has two parts:
 - **Team Pulse**: the same 3 items for everyone, so personalization doesn't split the team into silos.
 - **For You**: what changed that matters to *this* person, with a plain-English reason for every item.
 
-Actual output for one person on one day (`python digest.py 2026-09-17`; the LLM-written intro is
+Actual output for one person on one day (`python -m digest_tool.digest 2026-09-17`; the LLM-written intro is
 left out because the 2B model mentioned "production testing", which isn't in any item):
 
 ```
@@ -204,12 +204,28 @@ cd digest-tool
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-streamlit run app.py              # the UI
-python evaluate.py                # results: tuned vs holdout (holdout detail hidden)
-python evaluate.py --show-holdout # ...including holdout per-event detail
-python digest.py 2026-09-21       # all digests for one day in the terminal
-python notebook.py                # day-by-day state: phases, changes, owners, unknown parts
-python catalog.py                 # nickname matching examples
+streamlit run app.py                           # the UI
+pytest                                         # unit tests (tiny made-up inputs, no LLM, < 1 s)
+python -m digest_tool.evaluate                 # results: tuned vs holdout (holdout detail hidden)
+python -m digest_tool.evaluate --show-holdout  # ...including holdout per-event detail
+python -m digest_tool.digest 2026-09-21        # all digests for one day in the terminal
+python -m digest_tool.notebook                 # day-by-day state: phases, changes, owners, unknown parts
+python -m digest_tool.catalog                  # nickname matching examples
+python scripts/make_fake_data.py               # regenerate data/messages.json + ground truth
+```
+
+### Project layout
+
+```
+digest-tool/
+  app.py                 Streamlit UI (entry point)
+  digest_tool/           the library: config, slack_loader, catalog, extract, notebook,
+                         ranker, feedback, digest, evaluate
+  tests/                 pytest: catalog matching, phase detection, ownership inference
+  scripts/
+    make_fake_data.py    builds the fake dataset (messages + ground truth)
+    sources/             story sources merged by the generator (incl. the holdout: don't read while tuning)
+  data/                  team, parts catalog, messages, ground truth, cache
 ```
 
 **No API key needed.** The default `LLM_PROVIDER=none` reads the committed cache in `data/cache/`,
@@ -217,7 +233,7 @@ which was generated with Ollama `qwen3.5:2b`. If you delete the cache, it still 
 stand in for the LLM, and templates stand in for the intros.
 
 **With an LLM**, set `LLM_PROVIDER=ollama` (local) or `LLM_PROVIDER=anthropic` (with
-`ANTHROPIC_API_KEY`) in `.env`, then run `python extract.py` and `python digest.py all` to fill in
+`ANTHROPIC_API_KEY`) in `.env`, then run `python -m digest_tool.extract` and `python -m digest_tool.digest all` to fill in
 anything that isn't cached. The Anthropic path follows the SDK docs but hasn't been run (there was
 no key during development). Tested on Python 3.9; Python 3.11 is recommended.
 
@@ -246,7 +262,7 @@ There are two ground-truth files:
   - `evaluate.py` hides holdout per-event detail unless asked.
   - One leak: the agent's environment loads this project's `CLAUDE.md` automatically. It was told to ignore it, but it could have seen the project overview.
 
-`python evaluate.py` reports the following.
+`python -m digest_tool.evaluate` reports the following.
 
 **1. Alerts.** *Seen* = in the person's digest that day (pulse or For You). Precision is measured on For You.
 

@@ -10,14 +10,14 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-import config
+from . import config
 
 TZ = ZoneInfo(config.TIMEZONE)
 
 
 def load_team():
     """team.json plus the parts catalog, so every module gets both from one object."""
-    from catalog import load_catalog
+    from .catalog import load_catalog
     with open(config.DATA_DIR / "team.json") as f:
         team = json.load(f)
     team["catalog"] = load_catalog()

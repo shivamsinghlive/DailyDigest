@@ -6,11 +6,11 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-import config
-from digest import build_digest, load_cache, pretty_day, team_pulse
-from feedback import record_feedback, reset_feedback, type_preferences, votes_by
-from notebook import load_notebook, state_as_of
-from ranker import CATEGORY_LABEL, focus_scores
+from digest_tool import config
+from digest_tool.digest import build_digest, load_cache, pretty_day, team_pulse
+from digest_tool.feedback import record_feedback, reset_feedback, type_preferences, votes_by
+from digest_tool.notebook import load_notebook, state_as_of
+from digest_tool.ranker import CATEGORY_LABEL, focus_scores
 
 st.set_page_config(page_title="Daily Digest", page_icon="📬", layout="wide")
 

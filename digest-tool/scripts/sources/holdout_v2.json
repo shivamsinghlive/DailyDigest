@@ -1,0 +1,46 @@
+{
+  "stories": {
+    "S1": "Priya swaps the battery connector to XT60 in a firmware-channel post (power is EVT, no ECO); it clashes with the DVT base casting slot and is resolved with a pigtail.",
+    "S2": "Mei reports the DVT slew bearing lot slipping ~3 weeks in supply-chain; Tom approves a deviation to build first units on EVT spares and announces the schedule risk to the team."
+  },
+  "messages": [
+    {"key": "z1_xt60", "reply_to": null, "day": 9, "time": "14:20", "channel": "firmware", "user": "U_PRIYA", "text": "pulled the logs from the e-stop tests: pack current spikes to ~38A on decel for ~200ms. the XT30 on the brick is only rated 30A and its getting toasty 🔥 swapping to XT60 on the PDB + the pack lead in rev 3. power's still EVT so no ECO needed, just doing it"},
+    {"key": null, "reply_to": "z1_xt60", "day": 10, "time": "09:10", "channel": "firmware", "user": "U_RAVI", "text": "just saw this 😬 an XT60 is ~16mm wide, the cable pass-thru slot in the base casting is 12mm. base is DVT and the 120 castings are already on PO. <@U_TOM> that'd be a casting ECO + pattern change"},
+    {"key": null, "reply_to": "z1_xt60", "day": 10, "time": "10:30", "channel": "firmware", "user": "U_PRIYA", "text": "ah didnt think about the slot. could do a ~10cm pigtail so the XT60 sits inside the battery bay and only the wire goes thru. no casting change"},
+    {"key": null, "reply_to": "z1_xt60", "day": 10, "time": "11:05", "channel": "firmware", "user": "U_TOM", "text": "do the pigtail, no ECO on the casting. <@U_MEI> fyi base casting PO stays as is, nothing to tell the foundry"},
+    {"key": null, "reply_to": "z1_xt60", "day": 11, "time": "17:40", "channel": "firmware", "user": "U_PRIYA", "text": "rev 3 board w/ the pigtail sent to fab, back in ~8 days"},
+
+    {"key": "z_noise1", "reply_to": null, "day": 10, "time": "12:15", "channel": "general", "user": "U_SARA", "text": "anyone have a usb-c to barrel adapter? the demo laptop charger walked off again"},
+    {"key": null, "reply_to": "z_noise1", "day": 10, "time": "12:22", "channel": "general", "user": "U_TOM", "text": "my desk, 2nd drawer. bring it back pls 🙏"},
+
+    {"key": "z2_slew", "reply_to": null, "day": 11, "time": "16:10", "channel": "supply-chain", "user": "U_MEI", "text": "ugh, bearing vendor just emailed: the DVT lot of the big lazy susan for the base (300mm crossed roller) failed incoming hardness check. re-heat-treat pushes ship from 10/9 to ~10/30, so ~3 wk slip. we only have 4 EVT spares in the cage"},
+    {"key": null, "reply_to": "z2_slew", "day": 12, "time": "08:50", "channel": "supply-chain", "user": "U_TOM", "text": "thats right on the critical path once the TMC9660s land. <@U_RAVI> can we build the first DVT units on the EVT spares?"},
+    {"key": null, "reply_to": "z2_slew", "day": 12, "time": "09:35", "channel": "supply-chain", "user": "U_RAVI", "text": "EVT rings are the older 4-pt contact ones, preload's diff but same bolt pattern. ok for the first 4 units, would need to reshim each like unit 3. rest have to wait for the real ones"},
+    {"key": null, "reply_to": "z2_slew", "day": 12, "time": "10:15", "channel": "supply-chain", "user": "U_TOM", "text": "ok. EVT bearing on a DVT build is a deviation not an ECO, I'll sign it. Mei pls push them for a partial shipment"},
+    {"key": null, "reply_to": "z2_slew", "day": 12, "time": "10:40", "channel": "supply-chain", "user": "U_MEI", "text": "asked, they think ~40 pcs by 10/16 if we take them unpainted"},
+    {"key": "z3_slew_announce", "reply_to": null, "day": 12, "time": "15:00", "channel": "general", "user": "U_TOM", "text": "<!channel> heads up: slew bearings for DVT are slipping ~3 wks (vendor heat treat issue). plan is first 4 DVT units build on EVT spares under a deviation, rest when the partial ships ~10/16. DVT build date still hinges on the TMC9660s too, Sara I'll have a real date for you mon"},
+    {"key": null, "reply_to": "z3_slew_announce", "day": 13, "time": "11:20", "channel": "general", "user": "U_SARA", "text": "ok thx, need it mon latest. customer keeps asking"},
+
+    {"key": "z_noise2", "reply_to": null, "day": 11, "time": "13:05", "channel": "mech", "user": "U_RAVI", "text": "bandsaw blade snapped 🪚 new one comes tues, use the hacksaw til then"}
+  ],
+  "events": [
+    {"id": "S1a", "story": "S1", "key": "z1_xt60", "day": 9, "what": "Priya switching the battery connector XT30->XT60 (power EVT, no ECO), posted in firmware; bigger connector may not fit the DVT base casting", "section": "personal",
+     "should_alert": [{"user": "U_RAVI", "why": "connector change may hit the base casting he owns; posted in firmware, which he doesn't read"}]},
+    {"id": "S1b", "story": "S1", "key": "z1_xt60", "day": 10, "what": "XT60 clashes with DVT base casting slot; resolved with pigtail, no casting ECO, base casting PO unchanged", "section": "personal",
+     "should_alert": [{"user": "U_MEI", "why": "tagged: base casting PO stays as is, nothing to tell foundry"}]},
+    {"id": "S2a", "story": "S2", "key": "z2_slew", "day": 11, "what": "DVT slew bearing lot failed hardness check, ~3 wk slip, only 4 EVT spares", "section": "personal",
+     "should_alert": [{"user": "U_RAVI", "why": "owns the slew bearing; posted in supply-chain"}, {"user": "U_TOM", "why": "DVT build schedule risk"}]},
+    {"id": "S2b", "story": "S2", "key": "z3_slew_announce", "day": 12, "what": "Tom announces slew bearing slip; first 4 DVT units on EVT spares under deviation; build date still pending", "section": "team_pulse",
+     "should_alert": [{"user": "U_SARA", "why": "DVT build date / customer pilot risk"}, {"user": "U_PRIYA", "why": "team-wide DVT schedule risk"}]}
+  ],
+  "noise": ["z_noise1", "z_noise2"],
+  "mentions": [
+    {"contains": "XT30 on the brick", "written": "brick", "official": "battery pack", "in_catalog": true},
+    {"contains": "swapping to XT60", "written": "XT60", "official": null, "in_catalog": false},
+    {"contains": "XT60 on the PDB", "written": "PDB", "official": "power board", "in_catalog": true},
+    {"contains": "slot in the base casting", "written": "base casting", "official": "base casting", "in_catalog": true},
+    {"contains": "big lazy susan", "written": "lazy susan", "official": "slew bearing", "in_catalog": true},
+    {"contains": "EVT rings are", "written": "EVT rings", "official": "slew bearing", "in_catalog": true},
+    {"contains": "slew bearings for DVT", "written": "slew bearings", "official": "slew bearing", "in_catalog": true}
+  ]
+}

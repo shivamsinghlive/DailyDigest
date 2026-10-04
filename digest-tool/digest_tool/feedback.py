@@ -10,7 +10,7 @@ from it, so deleting a line undoes a vote, and reset_feedback() clears the demo.
 import json
 from datetime import datetime
 
-import config
+from . import config
 
 
 def load_feedback():

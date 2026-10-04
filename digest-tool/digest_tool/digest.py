@@ -14,10 +14,10 @@ import json
 import re
 from datetime import date
 
-import config
-from extract import call_provider, model_name
-from notebook import changes_on, state_as_of
-from ranker import CATEGORY, focus_scores, rank_for_person, score_change
+from . import config
+from .extract import call_provider, model_name
+from .notebook import changes_on, state_as_of
+from .ranker import CATEGORY, focus_scores, rank_for_person, score_change
 
 DIGEST_CACHE = config.CACHE_DIR / "digests.json"
 
@@ -251,8 +251,8 @@ def to_markdown(d):
 
 if __name__ == "__main__":
     import sys
-    from feedback import type_preferences
-    from notebook import load_notebook
+    from .feedback import type_preferences
+    from .notebook import load_notebook
 
     # usage: python digest.py [day|all] [provider]   e.g.  python digest.py 2026-09-21 ollama
     timeline, team = load_notebook()

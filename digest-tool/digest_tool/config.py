@@ -5,10 +5,11 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
-ROOT = Path(__file__).parent
-DATA_DIR = ROOT / "data"
+ROOT = Path(__file__).resolve().parent.parent  # the project folder (this file is in digest_tool/)
+load_dotenv(ROOT / ".env")
+# DIGEST_DATA_DIR points the whole tool at another dataset (e.g. one converted by
+# scripts/import_slack_export.py). Relative paths are taken from the project folder.
+DATA_DIR = ROOT / os.getenv("DIGEST_DATA_DIR", "data")
 CACHE_DIR = DATA_DIR / "cache"
 EXTRACTIONS_CACHE = CACHE_DIR / "extractions.json"
 

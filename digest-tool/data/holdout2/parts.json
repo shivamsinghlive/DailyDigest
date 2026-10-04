@@ -1,0 +1,158 @@
+[
+  {
+    "id": "P01",
+    "official_name": "Drive Wheel Module Assembly",
+    "nicknames": ["DWM", "the hub"],
+    "subsystem": "Drivetrain",
+    "owner": "U1001",
+    "supplier": null
+  },
+  {
+    "id": "P02",
+    "official_name": "BLDC Drive Motor KM-60",
+    "nicknames": ["the 60s"],
+    "subsystem": "Drivetrain",
+    "owner": "U1002",
+    "supplier": "Kinetek"
+  },
+  {
+    "id": "P03",
+    "official_name": "Scissor Lift Mechanism",
+    "nicknames": ["the scissor", "the elevator"],
+    "subsystem": "Payload Handling",
+    "owner": "U1001",
+    "supplier": null
+  },
+  {
+    "id": "P04",
+    "official_name": "Chassis Weldment",
+    "nicknames": ["the tub"],
+    "subsystem": "Structure",
+    "owner": "U1001",
+    "supplier": "Kessler Fab"
+  },
+  {
+    "id": "P05",
+    "official_name": "Front Bumper and Sensor Fascia",
+    "nicknames": ["the nose"],
+    "subsystem": "Structure / Safety",
+    "owner": "U1001",
+    "supplier": null
+  },
+  {
+    "id": "P06",
+    "official_name": "Main Power Distribution Board",
+    "nicknames": ["PDB", "the big board"],
+    "subsystem": "Electrical",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P07",
+    "official_name": "Motor Driver Board",
+    "nicknames": ["MDB", "the sandwich"],
+    "subsystem": "Electrical",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P08",
+    "official_name": "48V Battery Pack",
+    "nicknames": ["the brick"],
+    "subsystem": "Power",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P09",
+    "official_name": "Battery Management System Board",
+    "nicknames": ["BMS", "the babysitter"],
+    "subsystem": "Power",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P10",
+    "official_name": "2D Safety LiDAR Sensor LX-270",
+    "nicknames": ["the lighthouse", "the spinny"],
+    "subsystem": "Perception",
+    "owner": "U1003",
+    "procurement_owner": "U1004",
+    "supplier": "Sentrix"
+  },
+  {
+    "id": "P11",
+    "official_name": "Motor Control Firmware",
+    "nicknames": ["mc-fw"],
+    "subsystem": "Firmware",
+    "owner": "U1003",
+    "supplier": null
+  },
+  {
+    "id": "P12",
+    "official_name": "Navigation and Docking Software Stack",
+    "nicknames": ["nav"],
+    "subsystem": "Software",
+    "owner": "U1003",
+    "supplier": null
+  },
+  {
+    "id": "P13",
+    "official_name": "Main Wiring Harness",
+    "nicknames": ["the octopus"],
+    "subsystem": "Electrical",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P14",
+    "official_name": "75mm Swivel Caster Wheel",
+    "nicknames": ["the dumb wheels", "casters"],
+    "subsystem": "Drivetrain",
+    "owner": "U1001",
+    "procurement_owner": "U1004",
+    "supplier": "RollTec"
+  },
+  {
+    "id": "P15",
+    "official_name": "Charging Dock Contact Plates",
+    "nicknames": ["the kiss plates"],
+    "subsystem": "Power",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P16",
+    "official_name": "Emergency Stop Button and STO Circuit",
+    "nicknames": ["big red", "e-stop"],
+    "subsystem": "Safety",
+    "owner": "U1002",
+    "supplier": null
+  },
+  {
+    "id": "P17",
+    "official_name": "BMS Firmware",
+    "nicknames": ["babysitter fw", "bms fw"],
+    "subsystem": "Firmware",
+    "owner": "U1003",
+    "supplier": null
+  },
+  {
+    "id": "P18",
+    "official_name": "21700 Li-ion Cell HC-21700-35",
+    "nicknames": ["the cans", "cells"],
+    "subsystem": "Power",
+    "owner": "U1002",
+    "procurement_owner": "U1004",
+    "supplier": "Hanwa Cell"
+  },
+  {
+    "id": "P19",
+    "official_name": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+    "nicknames": ["RL-2"],
+    "subsystem": "Perception",
+    "owner": "U1003",
+    "procurement_owner": "U1004",
+    "supplier": "Rangewell"
+  }
+]

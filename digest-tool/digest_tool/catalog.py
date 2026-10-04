@@ -15,7 +15,7 @@ import json
 import re
 from difflib import SequenceMatcher
 
-import config
+from . import config
 
 FUZZY_MIN_RATIO = 0.88   # how close a misspelling must be
 FUZZY_MIN_LENGTH = 6     # don't fuzzy-match short nicknames: "pads" vs "pass" is not a typo

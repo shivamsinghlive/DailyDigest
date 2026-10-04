@@ -16,9 +16,9 @@ import re
 
 import requests
 
-import config
-from catalog import find_mentions, match_parts
-from slack_loader import clean_text, load_messages, load_team, ts_to_dt
+from . import config
+from .catalog import find_mentions, match_parts
+from .slack_loader import clean_text, load_messages, load_team, ts_to_dt
 
 TYPES = ["problem", "decision", "question", "update", "noise"]
 
@@ -253,7 +253,7 @@ def extract(thread, team, cache, provider=config.LLM_PROVIDER):
 
 if __name__ == "__main__":
     import sys
-    from slack_loader import all_days, end_of_day, threads_active_on
+    from .slack_loader import all_days, end_of_day, threads_active_on
 
     provider = sys.argv[1] if len(sys.argv) > 1 else config.LLM_PROVIDER
     team, messages, cache = load_team(), load_messages(), load_cache()

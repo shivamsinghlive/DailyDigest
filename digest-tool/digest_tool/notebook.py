@@ -13,10 +13,10 @@ import copy
 import re
 from datetime import date
 
-import config
-from catalog import match_parts
-from extract import extract, load_cache, match_people, unanswered_hours
-from slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
+from . import config
+from .catalog import match_parts
+from .extract import extract, load_cache, match_people, unanswered_hours
+from .slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
 
 # ---------- phases ----------
 

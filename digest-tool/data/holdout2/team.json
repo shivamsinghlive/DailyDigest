@@ -1,0 +1,50 @@
+[
+  {
+    "id": "U1001",
+    "name": "Priya Raman",
+    "aliases": ["Priya", "PR"],
+    "role": "Mechanical Engineer",
+    "responsibilities": "Chassis, lift mechanism, drivetrain mechanics, enclosure, mechanical design freeze package",
+    "parts_owned": ["P01", "P03", "P04", "P05", "P14"]
+  },
+  {
+    "id": "U1002",
+    "name": "Marcus Okafor",
+    "aliases": ["Marcus", "Marco"],
+    "role": "Electrical Engineer",
+    "responsibilities": "Power electronics, motor drive hardware, battery pack and BMS hardware, harnessing, safety circuits",
+    "parts_owned": ["P06", "P07", "P08", "P09", "P13", "P15", "P16"]
+  },
+  {
+    "id": "U1003",
+    "name": "Dani Kowalski",
+    "aliases": ["Dani", "DK"],
+    "role": "Firmware Engineer",
+    "responsibilities": "Motor control firmware, BMS firmware, navigation stack, sensor drivers and LiDAR integration",
+    "parts_owned": ["P10", "P11", "P12", "P17", "P19"]
+  },
+  {
+    "id": "U1004",
+    "name": "Leo Tran",
+    "aliases": ["Leo"],
+    "role": "Supply Chain Lead",
+    "responsibilities": "Procurement, vendor management, lead times, supplier quality for all purchased and fabricated parts",
+    "parts_owned": ["P10", "P14", "P18", "P19"]
+  },
+  {
+    "id": "U1005",
+    "name": "Sam Whitfield",
+    "aliases": ["Sam"],
+    "role": "Engineering Manager",
+    "responsibilities": "Program schedule, DVT build readiness, design freeze gates, ECO approval, safety requirement sign-off",
+    "parts_owned": []
+  },
+  {
+    "id": "U1006",
+    "name": "Ana Ferreira",
+    "aliases": ["Ana"],
+    "role": "Product Manager",
+    "responsibilities": "PRD and requirements, pilot customer relationship (Brightline Logistics), customer-facing commitments",
+    "parts_owned": []
+  }
+]

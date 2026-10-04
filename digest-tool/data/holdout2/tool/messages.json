@@ -1,0 +1,688 @@
+{
+  "channels": [
+    {
+      "id": "dvt-build",
+      "name": "dvt-build"
+    },
+    {
+      "id": "electrical",
+      "name": "electrical"
+    },
+    {
+      "id": "firmware",
+      "name": "firmware"
+    },
+    {
+      "id": "general",
+      "name": "general"
+    },
+    {
+      "id": "mech",
+      "name": "mech"
+    },
+    {
+      "id": "random",
+      "name": "random"
+    },
+    {
+      "id": "supply-chain",
+      "name": "supply-chain"
+    }
+  ],
+  "messages": [
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1005",
+      "ts": "1759759500.000100",
+      "text": "morning all. reminder: mech design freeze for DVT is this Fri (10/10) EOD. after that any change to the tub or the scissor goes through ECO. DVT build still targeting 10/27. shout if that's going to hurt",
+      "thread_ts": "1759759500.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1001",
+      "ts": "1759760400.000100",
+      "text": "tub is basically there. scissor still has the stroke question open but should be fine",
+      "thread_ts": "1759759500.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1002",
+      "ts": "1759761060.000100",
+      "text": "MDB mounting holes are locked on my side. still want thermal numbers before i'd call it done tho",
+      "thread_ts": "1759759500.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1004",
+      "ts": "1759763400.000100",
+      "text": "who keeps putting the oat milk back in the fridge EMPTY. i will find you",
+      "thread_ts": "1759763400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1003",
+      "ts": "1759763640.000100",
+      "text": "not me. black coffee goblin over here",
+      "thread_ts": "1759763400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1759768800.000100",
+      "text": "floor test w/ the dumb wheels on the polished concrete sample Brightline sent us: rubber casters leave marks + squeal on tight turns. trying the PU ones tmrw",
+      "thread_ts": "1759768800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1003",
+      "ts": "1759774500.000100",
+      "text": "pushed mc-fw v0.9.3 to bench bot #2. retuned the current loop, ramps feel way smoother. Marco can you run the 30 min ramp soak on the sandwich when you get a sec",
+      "thread_ts": "1759774500.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1002",
+      "ts": "1759775400.000100",
+      "text": "yep will kick it off tmrw am, thermocouples are on the other bench rn",
+      "thread_ts": "1759774500.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1004",
+      "ts": "1759781100.000100",
+      "text": "PO for 12x lighthouse units (LX-270) went out friday, waiting on ack from Sentrix. quoted lead time was 4 wks so we're fine for DVT"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1759851000.000100",
+      "text": "PU casters: zero marks, quiet. rolling resistance ~8% higher but whatever, the 60s have margin. going with PU. <@U1004> can you swap the order to the 75mm PU version, same mount pattern",
+      "thread_ts": "1759768800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1004",
+      "ts": "1759851720.000100",
+      "text": "on it. same vendor (RollTec), ~$3 more per caster. no lead time change",
+      "thread_ts": "1759768800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1005",
+      "ts": "1759852200.000100",
+      "text": ":+1: good call. log it in the decision log pls",
+      "thread_ts": "1759768800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1004",
+      "ts": "1759857600.000100",
+      "text": "ugh. Sentrix ack came back on the lighthouse PO. lead time is now 14 weeks, not 4. rep says their laser diode supplier had a fab issue. asking if they have any eval stock we can grab",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1003",
+      "ts": "1759857960.000100",
+      "text": "14 WEEKS?? that's after DVT and like halfway into PVT. we have 3 units in house and they're all on bench bots",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1005",
+      "ts": "1759858800.000100",
+      "text": "ok this is a problem. Leo can you get a firm date + whether a partial shipment is possible. Dani what would it take to qualify a second source? the Rangewell RL-2 we looked at in spring?",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1003",
+      "ts": "1759859700.000100",
+      "text": "different driver, different mount. maybe 2 wks of fw if their ROS driver isn't garbage. Priya would need a new bracket",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1001",
+      "ts": "1759860120.000100",
+      "text": "bracket is easy, the problem is the FOV cutout in the nose. RL-2 sits ~12mm taller iirc. that touches the freeze",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1002",
+      "ts": "1759864200.000100",
+      "text": "ramp soak on mc-fw 0.9.3 started. 30 min, 48V, 2x nominal load on the dyno. lid on"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1006",
+      "ts": "1759869000.000100",
+      "text": "fantasy update: my team is 0-5 and i have made peace with it. Leo you're welcome for the free W",
+      "thread_ts": "1759869000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1004",
+      "ts": "1759869180.000100",
+      "text": "i'll take it",
+      "thread_ts": "1759869000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1002",
+      "ts": "1759934700.000100",
+      "text": "soak results from yesterday: sandwich FETs (Q3/Q4) hit 104C at minute 22 and the MDB throttled itself. spec is 85C max steady state. not great",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1003",
+      "ts": "1759935480.000100",
+      "text": "hm 0.9.3 runs PWM at 40k now vs 20k before. could be switching losses. i can drop back to 20k but the motors whine more",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1002",
+      "ts": "1759936200.000100",
+      "text": "try 20k and i'll rerun. but honestly i think the heatsink is undersized regardless. <@U1001> any room to bump the MDB standoffs to 8mm so i can fit a thicker pad + fin?",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1001",
+      "ts": "1759937700.000100",
+      "text": "maybe? the octopus runs right under it. moving standoffs touches the tub cutout pattern. need to know by thurs if you want it in before freeze",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1002",
+      "ts": "1759938000.000100",
+      "text": "will have the 20k data tmrw am",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1006",
+      "ts": "1759940400.000100",
+      "text": "Brightline call recap: they loved the demo video. they asked about 'cold aisle' ops, some zones are 2-4C. told them we'd get back to them. not in the PRD today",
+      "thread_ts": "1759940400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1005",
+      "ts": "1759941300.000100",
+      "text": "let's not promise anything there yet. cells + lidar both have temp specs we'd have to check",
+      "thread_ts": "1759940400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1006",
+      "ts": "1759941420.000100",
+      "text": "yep didn't promise. just flagging",
+      "thread_ts": "1759940400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1003",
+      "ts": "1759946400.000100",
+      "text": "e-stop latency on bench bot #2, big red press -> motor torque off: 118ms avg, 160ms worst case. req is <=50ms. looks like the press goes through the main loop before it hits the MDB enable. that's... not how it's supposed to work",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1002",
+      "ts": "1759947120.000100",
+      "text": "wait, big red isn't hardwired to the enable line? it is in the schematic",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1003",
+      "ts": "1759947600.000100",
+      "text": "it's on the STO pin on rev B, but on rev A it's just a GPIO i think. need to check which rev sandwich is on #2",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1002",
+      "ts": "1759948860.000100",
+      "text": "#2 has a rev A sandwich. rev B is what goes into DVT so we need a number on rev B before anyone relaxes",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1005",
+      "ts": "1759949400.000100",
+      "text": "this has to be closed before DVT, it's a safety req. Dani/Marcus can you get a rev B number by mon?",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1001",
+      "ts": "1759957200.000100",
+      "text": "my dog ate a 3d printed bracket today. the PLA one. he's fine. the bracket is not",
+      "thread_ts": "1759957200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1006",
+      "ts": "1759957440.000100",
+      "text": "pics or it didn't happen",
+      "thread_ts": "1759957200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1001",
+      "ts": "1759957560.000100",
+      "text": "[image: chewed_bracket.jpg]",
+      "thread_ts": "1759957200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1002",
+      "ts": "1760022300.000100",
+      "text": "20k PWM run: FETs peaked at 93C. better but still over 85. we need the bigger heatsink. <@U1001> pls do the standoff change, 8mm, sending the pad stackup in an hr",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1001",
+      "ts": "1760023800.000100",
+      "text": "ok. moving standoffs means rerouting the octopus branch to the scissor motor. doable, adding to the freeze package. tub goes to rev F",
+      "thread_ts": "1759934700.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1760026200.000100",
+      "text": "q for whoever knows: the Brightline racks, do the shelf beams have the ~40mm lip on the front edge or are they flat? scissor stroke is set for flat. if there's a lip the tote won't clear on the top shelf. need to know before fri"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1004",
+      "ts": "1760029200.000100",
+      "text": "update from Sentrix: no eval stock. they can maybe do a partial of 4 units in ~6 wks, rest at 14. nothing firm. asked Rangewell for RL-2 samples + quote",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1005",
+      "ts": "1760029800.000100",
+      "text": "6 wks puts the partial around 11/18. DVT is 10/27 and we need 10 units. so no. keep pushing both",
+      "thread_ts": "1759857600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1003",
+      "ts": "1760034600.000100",
+      "text": "nav: fixed the bug where the bot parked 15cm off the dock when the kiss plates were dirty. we were trusting charge-detect too early. PR up",
+      "thread_ts": "1760034600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1002",
+      "ts": "1760035500.000100",
+      "text": "lol the kiss plates strike again. approved",
+      "thread_ts": "1760034600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1004",
+      "ts": "1760047200.000100",
+      "text": "anyone want in on a pizza order tmrw for freeze-day crunch? taking orders til 11am",
+      "thread_ts": "1760047200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1003",
+      "ts": "1760047500.000100",
+      "text": "pineapple. fight me",
+      "thread_ts": "1760047200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1005",
+      "ts": "1760047800.000100",
+      "text": "i'll expense it, get enough for everyone",
+      "thread_ts": "1760047200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1760112000.000100",
+      "text": "freeze package uploaded to PDM: tub rev F, scissor rev D, nose rev C, DWM rev E. MDB standoffs at 8mm. drawings released to Kessler for the 10 DVT tubs"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1005",
+      "ts": "1760135400.000100",
+      "text": "Mechanical design freeze for DVT is DONE as of today. thanks all, esp Priya for absorbing the late MDB change. from here on any mech change needs an ECO. electrical freeze target is 10/17",
+      "thread_ts": "1760135400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1006",
+      "ts": "1760136000.000100",
+      "text": "huge :tada:",
+      "thread_ts": "1760135400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1002",
+      "ts": "1760136300.000100",
+      "text": "electrical 10/17 is tight with the heatsink + the rev B e-stop check but ok",
+      "thread_ts": "1760135400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1003",
+      "ts": "1760137800.000100",
+      "text": "pizza was elite ty Sam. unrelated but i'm finally doing the portugal trip, out 10/20-10/24, back the 27th. will leave notes",
+      "thread_ts": "1760047200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1004",
+      "ts": "1760139000.000100",
+      "text": "the coffee machine is making The Noise again"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1004",
+      "ts": "1760206800.000100",
+      "text": "random weekend thing: Hanwa rep emailed 'datasheet rev 3.1' for the cans we use in the brick, says 'minor editorial updates'. skimmed it and the continuous discharge column went from 35A to 30A? probably a typo on their end, will ask monday",
+      "thread_ts": "1760206800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1006",
+      "ts": "1760295600.000100",
+      "text": "anyone watching the game",
+      "thread_ts": "1760295600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1004",
+      "ts": "1760295900.000100",
+      "text": "yes and i'm in pain",
+      "thread_ts": "1760295600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1760368200.000100",
+      "text": "FAI on the first 5 tubs from Kessler: 3 of 5 have the lift pivot bores off by 0.4-0.6mm (tol is +/-0.15). scissor pivot pins won't seat without reaming. other 2 are fine",
+      "thread_ts": "1760368200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1004",
+      "ts": "1760369100.000100",
+      "text": "ugh. they used a new fixture for this batch. calling them now. rework or remake?",
+      "thread_ts": "1760368200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1760370000.000100",
+      "text": "ream oversize + bushings could work for DVT but i don't love it on the scissor. remake preferred if they can hold the date",
+      "thread_ts": "1760368200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1004",
+      "ts": "1760373000.000100",
+      "text": "Kessler says remake of the 3 = 8 business days, fixture fix included. so ~10/23 delivery",
+      "thread_ts": "1760368200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1005",
+      "ts": "1760373900.000100",
+      "text": "10/23 is cutting it close to 10/27. ok for now but flag immediately if it slips",
+      "thread_ts": "1760368200.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1002",
+      "ts": "1760375100.000100",
+      "text": "wait, 30A?? <@U1004> that's not editorial. peak draw per parallel string during scissor lift + accel is ~32A. if 30A is real the brick is over spec",
+      "thread_ts": "1760206800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1004",
+      "ts": "1760376000.000100",
+      "text": "asked the rep. they say it's 'a correction to align with updated cell testing'. so... real. applies to all cells shipped after Sep, which includes our DVT lot",
+      "thread_ts": "1760206800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1003",
+      "ts": "1760377200.000100",
+      "text": "i can clamp discharge to 30A/string in bms fw but lift + accel together gets sluggish. or nav sequences them (no accel while lifting)",
+      "thread_ts": "1760206800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1002",
+      "ts": "1760377800.000100",
+      "text": "do the BMS clamp as a stopgap. i'll look at whether a 4p brick fits the envelope. Priya fyi might need more space",
+      "thread_ts": "1760206800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1003",
+      "ts": "1760385600.000100",
+      "text": "e-stop on rev B sandwich (bench #3): 22ms avg, 31ms worst over 200 presses. STO path works as designed, rev A numbers were a red herring. closing this out",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1005",
+      "ts": "1760386200.000100",
+      "text": "great, thx. attach the scope captures to the safety file pls",
+      "thread_ts": "1759946400.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1002",
+      "ts": "1760391000.000100",
+      "text": "who took my good wire strippers. the yellow ones. no questions asked if returned"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1004",
+      "ts": "1760454000.000100",
+      "text": "Rangewell RL-2 samples (2) land thurs. quote is $640/unit vs $910 for LX-270, lead time 5 wks, MOQ 25",
+      "thread_ts": "1760454000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1003",
+      "ts": "1760455200.000100",
+      "text": "cheaper AND available? suspicious but ok. starting on the driver as soon as they land",
+      "thread_ts": "1760454000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1006",
+      "ts": "1760455800.000100",
+      "text": "if we switch does that change anything for the customer? Brightline asked about the safety cert on the lidar",
+      "thread_ts": "1760454000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U1005",
+      "ts": "1760456700.000100",
+      "text": "good q. RL-2 claims the same safety rating but i want to see the actual cert before we say anything to Brightline",
+      "thread_ts": "1760454000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1005",
+      "ts": "1760464800.000100",
+      "text": "Schedule update: moving DVT build start from 10/27 to 11/10. reasons: lighthouse supply (qualifying RL-2 as second source = bracket + nose ECO + fw driver), tub remakes landing 10/23, and the cell rating issue. electrical freeze moves to 10/31. pilot with Brightline shifts from mid Nov to early Dec. Ana let's sync on the customer msg",
+      "thread_ts": "1760464800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1006",
+      "ts": "1760465400.000100",
+      "text": "ok. not thrilled but it makes sense. 2pm tmrw?",
+      "thread_ts": "1760464800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1001",
+      "ts": "1760465700.000100",
+      "text": "nose ECO for the RL-2 cutout: starting once samples are here and i can measure actual height",
+      "thread_ts": "1760464800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "dvt-build",
+      "user": "U1004",
+      "ts": "1760466000.000100",
+      "text": "holding the LX-270 PO open for now, don't want to lose our spot in the queue",
+      "thread_ts": "1760464800.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1006",
+      "ts": "1760475600.000100",
+      "text": "coffee machine is FIXED. it was a hair tie in the drip tray??",
+      "thread_ts": "1760475600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1004",
+      "ts": "1760475900.000100",
+      "text": "justice",
+      "thread_ts": "1760475600.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1002",
+      "ts": "1760541000.000100",
+      "text": "4p brick sketch: works electrically but it's 18mm longer. <@U1001> that eats into the space behind the DWM. non-starter post-freeze?",
+      "thread_ts": "1760541000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U1001",
+      "ts": "1760542800.000100",
+      "text": "it's an ECO either way. 18mm might work if the octopus trunk moves to the side. will look this aftn, not promising",
+      "thread_ts": "1760541000.000100"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U1001",
+      "ts": "1760546400.000100",
+      "text": "bumping my q from last week: anyone know if Brightline's rack beams have the front lip? still no answer and the scissor stroke depends on it. if yes it's another ECO"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U1003",
+      "ts": "1760554800.000100",
+      "text": "bms fw: 30A/string discharge clamp merged, running on bench #3. lift+accel ~15% slower, fine for pilot imo"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U1005",
+      "ts": "1760565600.000100",
+      "text": "reminder: all-hands friday, i'll walk through the new schedule. bring questions"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U1003",
+      "ts": "1760567400.000100",
+      "text": "anyone know where to get a decent travel adapter for portugal"
+    }
+  ]
+}

@@ -19,13 +19,13 @@ Scoring unit for alerts: (person, thread, day).
 import json
 import sys
 
-import config
-from catalog import match_parts
-from digest import team_pulse
-from extract import extract, load_cache
-from notebook import build_notebook, changes_on, declared_owners, state_as_of
-from ranker import CATEGORY, IMPORTANT_FOR, phases_for, rank_for_person
-from slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
+from . import config
+from .catalog import match_parts
+from .digest import team_pulse
+from .extract import extract, load_cache
+from .notebook import build_notebook, changes_on, declared_owners, state_as_of
+from .ranker import CATEGORY, IMPORTANT_FOR, phases_for, rank_for_person
+from .slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
 
 SPLITS = ("tuned", "holdout")
 # Holdout per-item detail (event descriptions, nicknames used) is hidden by default: seeing it
@@ -34,9 +34,12 @@ SHOW_HOLDOUT = "--show-holdout" in sys.argv
 
 
 def load_ground_truth():
-    gt = {"tuned": json.load(open(config.DATA_DIR / "ground_truth.json"))}
-    holdout = config.DATA_DIR / "ground_truth_holdout.json"
-    gt["holdout"] = json.load(open(holdout)) if holdout.exists() else {"events": [], "noise": [], "mentions": []}
+    # Either file may be missing: an imported dataset (scripts/import_slack_export.py) has only a holdout.
+    empty = {"events": [], "noise": [], "mentions": []}
+    gt = {}
+    for split, name in (("tuned", "ground_truth.json"), ("holdout", "ground_truth_holdout.json")):
+        path = config.DATA_DIR / name
+        gt[split] = json.load(open(path)) if path.exists() else empty
     return gt
 
 
