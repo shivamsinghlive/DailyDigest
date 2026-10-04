@@ -34,6 +34,10 @@ PROMPT_VERSION = "v3"
 # A question with no reply from anyone else after this long becomes "unanswered".
 UNANSWERED_AFTER_HOURS = 48
 
+# A decision or fix in another thread closes an open problem that shares a part with it, if the
+# problem's thread was active within this many days (notebook.close_linked_problems).
+LINK_WINDOW_DAYS = 5
+
 # ---------- inferred ownership (notebook.py) ----------
 # team.json is incomplete on purpose. Each person gets an ownership score per part from evidence,
 # with older evidence counting less. Declared owners (team.json) always rank highest.

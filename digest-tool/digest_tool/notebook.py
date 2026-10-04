@@ -167,7 +167,66 @@ def make_change(kind, day, thread, x, team, **extra):
 def open_item(x, thread, day, since):
     """What we remember about an open problem / question, enough to show it again later."""
     return {"thread_ts": thread["thread_ts"], "channel_name": thread["channel_name"], "summary": x["summary"],
-            "urgency": x["urgency"], "parts": x["parts"], "since": since, "last_day": day}
+            "urgency": x["urgency"], "parts": x["parts"], "since": since, "last_day": day, "last_active": day}
+
+
+# ---------- closing problems across threads ----------
+
+# Words that report something as done. Past tense on purpose: "need to fix" doesn't close anything.
+FIX_RE = re.compile(r"\b(fixed|resolved|solved|root[- ]caused|works now|back (?:in|within) spec|swapped|"
+                    r"switch(?:ed|ing) (?:to|over)|replaced|closing (?:it |this )?out|closed out)\b", re.I)
+
+
+def linkable(part, cat):
+    """Parts specific enough to link two threads. Topics ("firmware") and parts that stand for a
+    whole subsystem ("wrist assembly", "gripper") connect almost everything, so they don't count."""
+    sub = cat["subsystem_of"][part]
+    return sub is not None and part.lower() not in (sub.lower(), f"{sub} assembly".lower())
+
+
+def text_parts(x, cat):
+    """Linkable parts written in the thread itself, not just linked by the LLM (too loose to close things)."""
+    return {p for p, evidence in x["parts"].items() if evidence.startswith("mentioned as") and linkable(p, cat)}
+
+
+def sentences(text):
+    return re.split(r"(?<=[.!?\n])\s+", text)
+
+
+def fix_sentences(thread, day):
+    """Today's sentences that report a fix. Per sentence, so "closing out the grip force issue. since
+    the wrist driver is changing anyway..." fixes the gripper, not the driver. A question isn't a fix."""
+    return [s for m in thread["messages"] if day_of(m["ts"]) == day
+            for s in sentences(m["text"]) if "?" not in s and FIX_RE.search(s)]
+
+
+def resolving_parts(thread, x, day, team):
+    """Parts that today's messages settle: named in a decision thread, or in a sentence that reports
+    a fix. A decision that also says the schedule is at risk ("date is TBD until...") settles nothing."""
+    cat = team["catalog"]
+    if x["type"] == "decision":
+        if is_schedule_risk(thread, x):
+            return set()
+        texts = [m["text"] for m in thread["messages"] if day_of(m["ts"]) == day]
+    else:
+        texts = fix_sentences(thread, day)
+    return {p for t in texts for p in match_parts(t, cat) if linkable(p, cat)}
+
+
+def close_linked_problems(state, thread, parts, day):
+    """Threads are linked when they share a part within LINK_WINDOW_DAYS. A decision or fix in one
+    closes the open problems of the others (switching the motor driver closes "wrist motor overheats").
+    Returns the closed problems, each with the thread and the parts that closed it."""
+    closed = []
+    for ts, p in list(state["open_problems"].items()):
+        shared = sorted(set(p.get("linkable_parts", [])) & parts)
+        gap = (date.fromisoformat(day) - date.fromisoformat(p["last_active"])).days
+        if ts != thread["thread_ts"] and shared and gap <= config.LINK_WINDOW_DAYS:
+            del state["open_problems"][ts]
+            closed.append({**p, "closed_day": day, "closed_by": thread["thread_ts"],
+                           "closed_in": thread["channel_name"], "via_parts": shared})
+    state["closed_problems"] += closed
+    return closed
 
 
 def change_kind(x, is_open_problem):
@@ -191,6 +250,7 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
         "owners": {},                # part -> [{person, confidence, score, evidence}]
         "ownership_evidence": {},    # person -> part -> [[day, kind]]
         "open_problems": {},         # thread_ts -> open_item
+        "closed_problems": [],       # open_item + closed_day, closed_by (thread), via_parts
         "decisions": [],             # [{day, summary, parts, thread_ts}]
         "unanswered_questions": {},  # thread_ts -> open_item + people_mentioned, flagged
         "unknown_parts": {},         # phrase -> {written, threads, first_day, last_day}: for a human to catalog
@@ -242,13 +302,23 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
             if x["type"] == "noise":
                 continue
 
+            if ts in state["open_problems"]:
+                state["open_problems"][ts]["last_active"] = day
             kind = change_kind(x, ts in state["open_problems"])
             if kind in ("new_problem", "problem_update"):
                 since = state["open_problems"].get(ts, {}).get("since", day)
                 state["open_problems"][ts] = open_item(x, thread, day, since)
             elif kind == "decision":
                 state["decisions"].append({"day": day, "summary": x["summary"], "parts": list(x["parts"]), "thread_ts": ts})
-                state["open_problems"].pop(ts, None)  # a decision in the same thread settles its problem
+            # A decision or a reported fix settles the thread's own problem, and linked threads' problems.
+            if ts in state["open_problems"]:  # x covers the whole thread so far, so this is all its parts
+                state["open_problems"][ts]["linkable_parts"] = sorted(text_parts(x, team["catalog"]))
+            closes = []
+            if ts in state["open_problems"] and (kind == "decision" or (x["type"] != "problem" and fix_sentences(thread, day))):
+                p = state["open_problems"].pop(ts)
+                closes.append({**p, "closed_day": day, "closed_by": ts, "closed_in": thread["channel_name"], "via_parts": []})
+                state["closed_problems"].append(closes[-1])
+            closes += close_linked_problems(state, thread, resolving_parts(thread, x, day, team), day)
 
             # Questions are tracked by reply behaviour, whatever type the LLM gave the thread.
             waiting = unanswered_hours(thread, eod)
@@ -265,7 +335,10 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 del state["unanswered_questions"][ts]
                 kind = "question_answered"
 
-            changes.append(make_change(kind, day, thread, x, team, **({"waiting_hours": round(waiting)} if waiting else {})))
+            extra = {"waiting_hours": round(waiting)} if waiting else {}
+            if closes:
+                extra["closes"] = [{"thread_ts": p["thread_ts"], "summary": p["summary"], "via_parts": p["via_parts"]} for p in closes]
+            changes.append(make_change(kind, day, thread, x, team, **extra))
 
         # Quiet threads can still change state: a question crosses 48h without any new message.
         active_ts = {t["thread_ts"] for t in active}
@@ -312,6 +385,12 @@ if __name__ == "__main__":
         for c in entry["changes"]:
             print(f"   {c['kind']:<20} u{c['urgency']} #{c['channel_name']:<13} {'SCHEDULE ' if c['schedule_risk'] else ''}{c['summary'][:70]}")
     last = timeline[max(timeline)]["state"]
+    print("\nProblems closed (by which thread, through which part):")
+    for p in last["closed_problems"]:
+        how = f"via {', '.join(p['via_parts'])}" if p["via_parts"] else "in its own thread"
+        print(f"   {p['since']} -> {p['closed_day']}  {p['summary'][:60]!r}\n      closed by #{p['closed_in']} "
+              f"{p['closed_by']} {how}")
+    print(f"Still open: {len(last['open_problems'])}")
     print("\nOwners at the end of the period:")
     for part, owners in sorted(last["owners"].items()):
         print(f"   {part:<24} " + ", ".join(f"{names[o['person']]} ({o['confidence']}, {o['score']})" for o in owners))
