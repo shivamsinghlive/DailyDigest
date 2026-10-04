@@ -1,0 +1,686 @@
+{
+  "1759759500.000100:3:1739705e": {
+    "type": "update",
+    "parts_mentioned": [
+      "Chassis Weldment",
+      "Scissor Lift Mechanism",
+      "Motor Driver Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U1005",
+      "U1001",
+      "U1002"
+    ],
+    "summary": "Mech design freeze for DVT is Friday 10/10 EOD; tub nearly complete, scissor stroke being finalized, MDB mounting locked but thermal validation pending.",
+    "_usage": {
+      "input": 1841,
+      "output": 113
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759763400.000100:2:8efb478e": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1004",
+      "U1003"
+    ],
+    "summary": "Leo complaining about empty oat milk in the fridge.",
+    "_usage": {
+      "input": 1760,
+      "output": 61
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759768800.000100:1:089f7c0b": {
+    "type": "update",
+    "parts_mentioned": [
+      "75mm Swivel Caster Wheel"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1001"
+    ],
+    "summary": "Rubber casters squeal and mark polished concrete; testing polyurethane alternatives tomorrow.",
+    "_usage": {
+      "input": 1762,
+      "output": 74
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759774500.000100:2:9338acd6": {
+    "type": "update",
+    "parts_mentioned": [
+      "Motor Control Firmware",
+      "Motor Driver Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1003",
+      "U1002"
+    ],
+    "summary": "Dani pushed mc-fw v0.9.3 with retuned current loop; Marcus will run thermal soak test on Motor Driver Board tomorrow.",
+    "_usage": {
+      "input": 1807,
+      "output": 92
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759781100.000100:1:dbca28fc": {
+    "type": "update",
+    "parts_mentioned": [
+      "2D Safety LiDAR Sensor LX-270"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1004"
+    ],
+    "summary": "PO for 12 LX-270 LiDAR units placed with Sentrix; 4-week lead time is acceptable for DVT schedule.",
+    "_usage": {
+      "input": 1764,
+      "output": 92
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759768800.000100:4:72ef0d51": {
+    "type": "decision",
+    "parts_mentioned": [
+      "75mm Swivel Caster Wheel",
+      "BLDC Drive Motor KM-60"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1001",
+      "U1004",
+      "U1005"
+    ],
+    "summary": "Switching caster wheels from rubber to polyurethane (PU) based on floor testing; no lead time impact.",
+    "_usage": {
+      "input": 1886,
+      "output": 101
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759857600.000100:5:cde5e56a": {
+    "type": "problem",
+    "parts_mentioned": [
+      "2D Safety LiDAR Sensor LX-270",
+      "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+      "Front Bumper and Sensor Fascia",
+      "Motor Control Firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1004",
+      "U1003",
+      "U1005",
+      "U1001"
+    ],
+    "summary": "LiDAR lead time jumped to 14 weeks (past DVT); team evaluating RL-2 second source but faces fw work and mechanical packaging issues.",
+    "_usage": {
+      "input": 1973,
+      "output": 146
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759864200.000100:1:ef0d9fae": {
+    "type": "update",
+    "parts_mentioned": [
+      "Motor Control Firmware",
+      "48V Battery Pack",
+      "BLDC Drive Motor KM-60"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1002"
+    ],
+    "summary": "Motor Control Firmware 0.9.3 ramp soak test initiated on dyno at 48V with 2x nominal load for 30 minutes.",
+    "_usage": {
+      "input": 1758,
+      "output": 101
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759869000.000100:2:8662930d": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1004",
+      "U1006"
+    ],
+    "summary": "Ana and Leo exchange friendly banter about a fantasy sports league.",
+    "_usage": {
+      "input": 1760,
+      "output": 61
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759934700.000100:5:4f163781": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Motor Driver Board",
+      "Main Wiring Harness",
+      "Chassis Weldment"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1002",
+      "U1003",
+      "U1001"
+    ],
+    "summary": "Motor Driver Board FETs exceed thermal spec (104C vs 85C max); heatsink may be undersized and layout changes needed before design freeze.",
+    "_usage": {
+      "input": 1954,
+      "output": 98
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759940400.000100:3:fcdc21c8": {
+    "type": "update",
+    "parts_mentioned": [
+      "21700 Li-ion Cell HC-21700-35",
+      "2D Safety LiDAR Sensor LX-270"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1006",
+      "U1005"
+    ],
+    "summary": "Brightline customer inquiry about cold aisle operations (2-4C); temperature specs for cells and LiDAR need review before responding.",
+    "_usage": {
+      "input": 1816,
+      "output": 100
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759946400.000100:5:682e9bcc": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Emergency Stop Button and STO Circuit",
+      "Motor Driver Board",
+      "Motor Control Firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 5,
+    "people_mentioned": [
+      "U1003",
+      "U1002",
+      "U1005"
+    ],
+    "summary": "E-stop latency on bench bot #2 is 118-160ms, exceeding 50ms safety requirement; rev A Motor Driver Board has incorrect GPIO wiring instead of STO pin hardwire; rev B must be validated before DVT.",
+    "_usage": {
+      "input": 1944,
+      "output": 117
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759957200.000100:3:1161ed1a": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1001",
+      "U1006"
+    ],
+    "summary": "Dog ate a 3D printed PLA bracket; no project impact.",
+    "_usage": {
+      "input": 1783,
+      "output": 63
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759934700.000100:7:0789baea": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Motor Driver Board",
+      "Main Wiring Harness",
+      "Chassis Weldment",
+      "Scissor Lift Mechanism"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1002",
+      "U1003",
+      "U1001"
+    ],
+    "summary": "Motor Driver Board FETs overheat at 93°C (spec 85°C max); requires larger heatsink with mechanical redesign before design freeze.",
+    "_usage": {
+      "input": 2070,
+      "output": 108
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760026200.000100:1:51b4220d": {
+    "type": "question",
+    "parts_mentioned": [
+      "Scissor Lift Mechanism"
+    ],
+    "unknown_parts": [
+      "Brightline racks",
+      "shelf beams"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1001"
+    ],
+    "summary": "Priya needs to confirm whether Brightline rack shelf beams have a 40mm front lip by Friday; scissor stroke is designed for flat beams and a lip would block totes on top shelf.",
+    "_usage": {
+      "input": 1783,
+      "output": 106
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759857600.000100:7:33278a90": {
+    "type": "problem",
+    "parts_mentioned": [
+      "2D Safety LiDAR Sensor LX-270",
+      "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+      "Front Bumper and Sensor Fascia",
+      "Motor Control Firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1001",
+      "U1002",
+      "U1003",
+      "U1004",
+      "U1005"
+    ],
+    "summary": "LiDAR sensor lead time jumped to 14 weeks, threatening DVT schedule; evaluating second source RL-2 which requires firmware and mechanical changes.",
+    "_usage": {
+      "input": 2079,
+      "output": 139
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760034600.000100:2:c246025b": {
+    "type": "update",
+    "parts_mentioned": [
+      "Navigation and Docking Software Stack",
+      "Charging Dock Contact Plates"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1003",
+      "U1002"
+    ],
+    "summary": "Dani fixed a navigation bug where dirty charging dock plates caused misalignment; PR approved by Marcus.",
+    "_usage": {
+      "input": 1777,
+      "output": 87
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760047200.000100:3:85e56568": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1004",
+      "U1003",
+      "U1005"
+    ],
+    "summary": "Pizza order for tomorrow's freeze-day crunch.",
+    "_usage": {
+      "input": 1781,
+      "output": 64
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760112000.000100:1:0cf3ae2f": {
+    "type": "update",
+    "parts_mentioned": [
+      "Chassis Weldment",
+      "Scissor Lift Mechanism",
+      "Front Bumper and Sensor Fascia",
+      "Drive Wheel Module Assembly",
+      "Motor Driver Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1001"
+    ],
+    "summary": "Freeze package uploaded with final revisions (tub F, scissor D, nose C, DWM E) and drawings released to Kessler for 10 DVT units.",
+    "_usage": {
+      "input": 1774,
+      "output": 124
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760135400.000100:3:a930ac80": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Motor Driver Board",
+      "Emergency Stop Button and STO Circuit"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U1005",
+      "U1001",
+      "U1002",
+      "U1006"
+    ],
+    "summary": "Mechanical design freeze achieved; electrical freeze targeted for 10/17 with heatsink and e-stop rev B review pending.",
+    "_usage": {
+      "input": 1820,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760047200.000100:4:0056e339": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1002",
+      "U1003",
+      "U1004",
+      "U1005"
+    ],
+    "summary": "Pizza order for freeze-day crunch and Dani's out-of-office notice for late October.",
+    "_usage": {
+      "input": 1830,
+      "output": 81
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760139000.000100:1:a83b918e": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1004"
+    ],
+    "summary": "Coffee machine is making an unusual noise.",
+    "_usage": {
+      "input": 1728,
+      "output": 51
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760206800.000100:1:58bd452d": {
+    "type": "question",
+    "parts_mentioned": [
+      "21700 Li-ion Cell HC-21700-35",
+      "48V Battery Pack"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U1004"
+    ],
+    "summary": "Leo flagged a potential datasheet error showing continuous discharge dropping from 35A to 30A for the cells used in the battery pack; will clarify with vendor Monday.",
+    "_usage": {
+      "input": 1788,
+      "output": 99
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760295600.000100:2:556beb0d": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1006",
+      "U1004"
+    ],
+    "summary": "Ana and Leo discussing a sports game.",
+    "_usage": {
+      "input": 1739,
+      "output": 56
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760368200.000100:5:9bf32650": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Scissor Lift Mechanism",
+      "Chassis Weldment"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1001",
+      "U1004",
+      "U1005"
+    ],
+    "summary": "First article inspection found lift pivot bore tolerances off on 3/5 chassis weldments; Kessler remaking in 8 days for ~10/23 delivery, tight against 10/27 deadline.",
+    "_usage": {
+      "input": 1937,
+      "output": 110
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760206800.000100:5:855b4f34": {
+    "type": "problem",
+    "parts_mentioned": [
+      "21700 Li-ion Cell HC-21700-35",
+      "48V Battery Pack",
+      "BMS Firmware",
+      "Scissor Lift Mechanism",
+      "Motor Control Firmware",
+      "Battery Management System Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1002",
+      "U1004",
+      "U1003",
+      "U1001"
+    ],
+    "summary": "Hanwa reduced continuous discharge rating for cells from 35A to 30A; current design risks overdrawing during scissor lift + acceleration, requiring firmware clamp or hardware redesign.",
+    "_usage": {
+      "input": 1987,
+      "output": 132
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1759946400.000100:7:4c424629": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Motor Driver Board",
+      "Emergency Stop Button and STO Circuit"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1003",
+      "U1002",
+      "U1005"
+    ],
+    "summary": "E-stop latency on Motor Driver Board rev A exceeds 50ms safety requirement; rev B meets spec and will be used for DVT.",
+    "_usage": {
+      "input": 2029,
+      "output": 89
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760391000.000100:1:a878bb5e": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1002"
+    ],
+    "summary": "Marcus looking for his missing yellow wire strippers.",
+    "_usage": {
+      "input": 1737,
+      "output": 53
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760454000.000100:4:5b0570ed": {
+    "type": "update",
+    "parts_mentioned": [
+      "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+      "2D Safety LiDAR Sensor LX-270"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U1004",
+      "U1003",
+      "U1006",
+      "U1005"
+    ],
+    "summary": "Rangewell RL-2 LiDAR samples arriving Thursday at $640/unit with 5-week lead time; team evaluating as cheaper alternative to LX-270 pending safety certification review for customer.",
+    "_usage": {
+      "input": 1868,
+      "output": 132
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760464800.000100:4:89876a7e": {
+    "type": "update",
+    "parts_mentioned": [
+      "2D Safety LiDAR Sensor LX-270",
+      "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+      "Front Bumper and Sensor Fascia",
+      "Chassis Weldment",
+      "21700 Li-ion Cell HC-21700-35"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U1005",
+      "U1006",
+      "U1001",
+      "U1004"
+    ],
+    "summary": "DVT build start moved from 10/27 to 11/10 due to LiDAR second-source qualification, chassis remakes, and cell rating issues; electrical freeze to 10/31.",
+    "_usage": {
+      "input": 1908,
+      "output": 172
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760475600.000100:2:687591aa": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1006",
+      "U1004"
+    ],
+    "summary": "Coffee machine fixed; hair tie was causing the problem.",
+    "_usage": {
+      "input": 1748,
+      "output": 59
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760541000.000100:2:dba99742": {
+    "type": "problem",
+    "parts_mentioned": [
+      "48V Battery Pack",
+      "Drive Wheel Module Assembly",
+      "Main Wiring Harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1001",
+      "U1002"
+    ],
+    "summary": "New 4-pack battery design is 18mm longer and risks encroaching on Drive Wheel Module space; mechanical workaround being explored but uncertain post-freeze.",
+    "_usage": {
+      "input": 1807,
+      "output": 105
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760546400.000100:1:32c50731": {
+    "type": "question",
+    "parts_mentioned": [
+      "Scissor Lift Mechanism"
+    ],
+    "unknown_parts": [
+      "Brightline rack beams"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U1001"
+    ],
+    "summary": "Priya needs to know if Brightline rack beams have a front lip to finalize scissor stroke design; missing answer blocks an ECO.",
+    "_usage": {
+      "input": 1764,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760554800.000100:1:9b732c3b": {
+    "type": "update",
+    "parts_mentioned": [
+      "BMS Firmware",
+      "48V Battery Pack"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U1003"
+    ],
+    "summary": "BMS firmware discharge clamp merged and tested; 15% performance reduction acceptable for pilot.",
+    "_usage": {
+      "input": 1756,
+      "output": 73
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760565600.000100:1:41fcead9": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1005"
+    ],
+    "summary": "All-hands meeting Friday to review new schedule.",
+    "_usage": {
+      "input": 1736,
+      "output": 53
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1760567400.000100:1:e9e70568": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U1003"
+    ],
+    "summary": "Dani asking for a travel adapter recommendation for Portugal.",
+    "_usage": {
+      "input": 1733,
+      "output": 55
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  }
+}
