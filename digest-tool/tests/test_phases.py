@@ -63,3 +63,18 @@ def test_notebook_tracks_phase_per_subsystem(team, make_msg):
     assert timeline["2026-09-22"]["state"]["phases"] == timeline["2026-09-21"]["state"]["phases"]
     phase_changes = [c for day in timeline.values() for c in day["changes"] if c["kind"] == "phase_change"]
     assert len(phase_changes) == 1 and phase_changes[0]["new_phases"] == {"gripper": "DVT"}
+
+
+def test_a_planned_freeze_is_not_a_phase_change(team, make_msg):
+    t = thread_of(make_msg("reminder: design freeze for DVT is this Fri (10/10) EOD. after that changes need an ECO", day=21))
+    assert detect_phase_changes(t, DAY, team) == {}
+
+
+def test_a_finished_freeze_is(team, make_msg):
+    t = thread_of(make_msg("Mechanical design freeze for DVT is DONE as of today. thanks all", day=21))
+    assert set(detect_phase_changes(t, DAY, team).values()) == {"DVT"}
+
+
+def test_moving_to_a_phase_next_week_is_a_plan(team, make_msg):
+    t = thread_of(make_msg("we'll move the gripper to DVT next week", day=21))
+    assert detect_phase_changes(t, DAY, team) == {}

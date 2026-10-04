@@ -25,13 +25,24 @@ from .slack_loader import all_days, day_of, end_of_day, group_into_threads, load
 PHASES = ["Concept", "EVT", "DVT", "PVT", "Production"]
 _P = r"(Concept|EVT|DVT|PVT|Production)"
 PHASE_PATTERNS = [
-    (re.compile(r"\bdesign freeze\b", re.I), lambda m: "DVT"),                       # freeze = entering DVT
+    # Freeze = entering DVT, but only once it has happened: "design freeze is DONE as of today",
+    # not "design freeze is this Fri" or "after design freeze, changes need an ECO".
+    (re.compile(r"\bdesign freeze\b[^.!?\n]*?\b(?:done|complete|completed|finished|official|officially|as of today)\b", re.I),
+     lambda m: "DVT"),
     (re.compile(rf"\b{_P}\s+(?:exit|build)(?:\s+review)?\s+(?:is\s+)?(?:done|complete|completed|passed|finished)\b", re.I),
      lambda m: PHASES[min(PHASES.index(canon(m.group(1))) + 1, len(PHASES) - 1)]),  # "EVT build done" -> DVT
     (re.compile(rf"\b{_P}\s+units?\s+(?:shipped|built|delivered)\b", re.I), lambda m: canon(m.group(1))),
     (re.compile(rf"\b(?:officially in|now in|entering|enters|mov(?:es|ing|ed) (?:in)?to|stays? in|remains? in)\s+{_P}\b", re.I),
      lambda m: canon(m.group(1))),
 ]
+
+
+# A sentence about a phase change that hasn't happened yet ("reminder: freeze is this Fri",
+# "we'll move to DVT next week") is a plan, not a change.
+FUTURE_RE = re.compile(r"\b(?:will|going to|gonna|plan(?:ned)? to|reminder|upcoming|tomorrow|tmrw|scheduled for|"
+                       r"next (?:week|month|mon|tue|wed|thu|fri)\w*|this (?:mon|tue|wed|thu|fri|sat|sun)\w*|"
+                       r"by (?:mon|tue|wed|thu|fri|eod|end of)\w*)\b|\w+'ll\b", re.I)
+NOW_RE = re.compile(r"\b(?:done|complete|completed|finished|passed|as of today|officially)\b", re.I)
 
 
 def canon(phase):
@@ -49,7 +60,7 @@ def detect_phase_changes(thread, day, team):
             continue
         for sentence in re.split(r"(?<=[.!?\n])\s+", m["text"]):
             phase = next((fn(hit) for rx, fn in PHASE_PATTERNS for hit in [rx.search(sentence)] if hit), None)
-            if not phase:
+            if not phase or (FUTURE_RE.search(sentence) and not NOW_RE.search(sentence)):
                 continue
             named = {cat["subsystem_of"][n] for n in match_parts(sentence, cat)} - {None}
             for subsystem in sorted(named) or cat["subsystems"]:
