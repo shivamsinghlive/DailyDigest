@@ -54,6 +54,32 @@ def unanswered_hours(thread, as_of):
 
 # ---------- LLM prompt ----------
 
+# Worked examples, from a made-up project (a parcel sorter) so they can't leak answers about this
+# dataset. They target the mistakes small models made: a long lead time is a schedule risk, so it's
+# a "problem" even though nothing is broken; a settled choice is a "decision"; banter is "noise".
+EXAMPLES = """Examples (from a different project; the part names there are not in the list above):
+
+Thread:
+Leo (supply_chain): heads up, Orion quoted 14 wk lead time on the belt motors, was 4 wk last month
+Kim (mechanical_engineer): oof that's past the pilot build
+Leo (supply_chain): yeah. asking about stock at the distributor but no promises
+Answer: {"type": "problem", "urgency": 4, "summary": "Belt motor lead time jumped from 4 to 14 weeks, past the pilot build."}
+
+Thread:
+Kim (mechanical_engineer): ok going with the 2mm aluminium diverter bracket over the steel one, Raj signed off. updating the BOM today
+Answer: {"type": "decision", "urgency": 3, "summary": "Diverter bracket will be 2mm aluminium instead of steel; BOM being updated."}
+
+Thread:
+Raj (electrical_engineer): does anyone know the max inrush on the 24V rail? need it to size the fuse
+Answer: {"type": "question", "urgency": 3, "summary": "Raj needs the 24V rail's max inrush current to size the fuse."}
+
+Thread:
+Kim (mechanical_engineer): who took my good flush cutters from the bench
+Leo (supply_chain): lol check the EE drawer
+Answer: {"type": "noise", "urgency": 1, "summary": "Missing flush cutters."}
+
+(Real answers also fill parts_mentioned, unknown_parts and people_mentioned.)"""
+
 def build_prompt(thread, team):
     names = {p["id"]: p["name"] for p in team["people"]}
     roles = {p["id"]: p["role"] for p in team["people"]}
@@ -75,7 +101,7 @@ def build_prompt(thread, team):
         "unknown_parts: hardware parts mentioned that are NOT in the parts list, exactly as written "
         "(e.g. a part number or nickname you can't map). Empty list if none.\n"
         "people_mentioned: IDs of people addressed or referred to in the text.\n"
-        "summary: one short sentence."
+        "summary: one short sentence.\n\n" + EXAMPLES
     )
     lines = [f"{names.get(m.get('user'), m.get('user'))} ({roles.get(m.get('user'), '?')}): "
              f"{clean_text(m['text'], names)}" for m in thread["messages"]]
@@ -115,20 +141,25 @@ def call_anthropic(system, user, schema):
     import anthropic  # imported lazily so "none"/"ollama" don't need an API key or the SDK
 
     client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY (loaded from .env by config)
-    response = client.beta.messages.create(
-        model=config.ANTHROPIC_MODEL,
-        max_tokens=16000,
-        system=system,
-        messages=[{"role": "user", "content": user}],
-        # Short classification task: low effort keeps it cheap. The schema guarantees valid JSON.
-        output_config={"effort": "low", "format": {"type": "json_schema", "schema": schema}},
-        # If a safety classifier declines, the API retries on a recommended fallback model server-side.
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-    )
+    request = dict(model=config.ANTHROPIC_MODEL, max_tokens=2048, system=system,
+                   messages=[{"role": "user", "content": user}])
+    fmt = {"type": "json_schema", "schema": schema}  # the schema guarantees valid JSON
+    if config.ANTHROPIC_MODEL.startswith("claude-haiku"):
+        # Haiku 4.5 rejects the effort setting and the refusal-fallback beta.
+        response = client.messages.create(**request, output_config={"format": fmt})
+    else:
+        response = client.beta.messages.create(
+            **request,
+            output_config={"effort": "low", "format": fmt},  # short classification task: low effort keeps it cheap
+            # If a safety classifier declines, the API retries on a recommended fallback model server-side.
+            betas=["server-side-fallback-2026-07-01"],
+            fallbacks="default",
+        )
     if response.stop_reason == "refusal":
         raise RuntimeError("Model declined to process this thread")
-    return json.loads(next(b.text for b in response.content if b.type == "text"))
+    result = json.loads(next(b.text for b in response.content if b.type == "text"))
+    result["_usage"] = {"input": response.usage.input_tokens, "output": response.usage.output_tokens}
+    return result
 
 
 def call_provider(system, user, schema, provider):
@@ -251,17 +282,61 @@ def extract(thread, team, cache, provider=config.LLM_PROVIDER):
     }
 
 
+# ---------- cost ----------
+
+def cost_usd(input_tokens, output_tokens):
+    price = config.ANTHROPIC_PRICE_PER_MTOK
+    return (input_tokens * price["input"] + output_tokens * price["output"]) / 1_000_000
+
+
+def print_cost(todo, cache, team):
+    """Spend so far on the current model, and a projection for the snapshots still uncached.
+    The projection uses the measured average per call once there is one, else ~4 chars per token."""
+    used = [v["_usage"] for v in cache.values() if v.get("_model") == model_name("anthropic") and "_usage" in v]
+    if used:
+        per_call = sum(cost_usd(u["input"], u["output"]) for u in used) / len(used)
+        basis = f"measured average of {len(used)} calls"
+    else:
+        chars = sum(len(a) + len(b) for a, b, _ in (build_prompt(t, team) for t in todo))
+        per_call = cost_usd(chars / 4 / max(len(todo), 1), 150)
+        basis = "rough guess: ~4 chars/token in, ~150 tokens out"
+    print(f"\n{config.ANTHROPIC_MODEL}: {len(used)} calls cached, ${sum(cost_usd(u['input'], u['output']) for u in used):.4f} spent")
+    print(f"{len(todo)} snapshots left x ${per_call:.5f}/call = ~${len(todo) * per_call:.3f}  ({basis})")
+
+
 if __name__ == "__main__":
+    # python -m digest_tool.extract [none|ollama|anthropic] [--limit N] [--estimate]
+    #   --limit N    send at most N uncached snapshots to the LLM (a cheap test run), then show the cost
+    #   --estimate   no LLM calls: only show how many snapshots are uncached and what they would cost
     import sys
     from .slack_loader import all_days, end_of_day, threads_active_on
 
-    provider = sys.argv[1] if len(sys.argv) > 1 else config.LLM_PROVIDER
+    args = sys.argv[1:]
+    provider = next((a for a in args if a in ("none", "ollama", "anthropic")), config.LLM_PROVIDER)
+    limit = int(args[args.index("--limit") + 1]) if "--limit" in args else None
     team, messages, cache = load_team(), load_messages(), load_cache()
+    snapshots = [(day, t) for day in all_days(messages) for t in threads_active_on(messages, day)]
+    todo = [t for _, t in snapshots if cache_key(t) not in cache]
+    if "--estimate" in args:
+        print(f"{len(snapshots)} thread snapshots, {len(todo)} not cached")
+        print_cost(todo, cache, team)
+        sys.exit()
+
     print(f"provider={provider}\n")
-    for day in all_days(messages):
-        for thread in threads_active_on(messages, day):
-            x = extract(thread, team, cache, provider)
-            waiting = unanswered_hours(thread, end_of_day(day))
-            flag = f"UNANSWERED {waiting:.0f}h" if waiting and waiting >= config.UNANSWERED_AFTER_HOURS else ""
-            print(f"{day} #{thread['channel_name']:<13} {x['type']:<9} u{x['urgency']} {flag:<15} "
-                  f"parts={','.join(x['parts']) or '-':<45} people={','.join(x['people_mentioned']) or '-'} [{x['source']}]")
+    calls = 0
+    for day, thread in snapshots:
+        if limit is not None and cache_key(thread) not in cache:
+            if calls >= limit:
+                continue
+            calls += 1
+        elif limit is not None:
+            continue  # test run: only show the snapshots that were sent to the LLM
+        x = extract(thread, team, cache, provider)
+        waiting = unanswered_hours(thread, end_of_day(day))
+        flag = f"UNANSWERED {waiting:.0f}h" if waiting and waiting >= config.UNANSWERED_AFTER_HOURS else ""
+        print(f"{day} #{thread['channel_name']:<13} {x['type']:<9} u{x['urgency']} {flag:<15} "
+              f"parts={','.join(x['parts']) or '-':<45} people={','.join(x['people_mentioned']) or '-'} [{x['source']}]")
+        if limit is not None:
+            print(f"    {x['summary']}")
+    if provider == "anthropic":
+        print_cost([t for _, t in snapshots if cache_key(t) not in cache], cache, team)

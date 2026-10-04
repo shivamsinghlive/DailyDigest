@@ -229,13 +229,16 @@ digest-tool/
 ```
 
 **No API key needed.** The default `LLM_PROVIDER=none` reads the committed cache in `data/cache/`,
-which was generated with Ollama `qwen3.5:2b`. If you delete the cache, it still runs: keyword rules
-stand in for the LLM, and templates stand in for the intros.
+which was generated with `claude-haiku-4-5` (extraction for all 69 thread snapshots + 45 intros, about
+$0.25 in total). If you delete the cache, it still runs: keyword rules stand in for the LLM, and
+templates stand in for the intros. An AI intro that names a number, person or part not in the
+digest's items is replaced by the template.
 
 **With an LLM**, set `LLM_PROVIDER=ollama` (local) or `LLM_PROVIDER=anthropic` (with
 `ANTHROPIC_API_KEY`) in `.env`, then run `python -m digest_tool.extract` and `python -m digest_tool.digest all` to fill in
-anything that isn't cached. The Anthropic path follows the SDK docs but hasn't been run (there was
-no key during development). Tested on Python 3.9; Python 3.11 is recommended.
+anything that isn't cached. `python -m digest_tool.extract anthropic --estimate` shows what an
+uncached run would cost first, and `--limit 5` runs a small paid test. Tested on Python 3.9;
+Python 3.11 is recommended.
 
 ## Connecting real Slack
 

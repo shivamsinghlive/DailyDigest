@@ -1010,5 +1010,1325 @@
     ],
     "summary": "Slew bearings for DVT are slipping due to a vendor heat treat issue; the team is building on EVT spares until partial shipment.",
     "_model": "ollama:qwen3.5:2b"
+  },
+  "1789401600.000000:2:b0fb209a": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "EVT2 is final EVT build with thermal and drop testing this week; exit review Monday 9/21; Sara updating PRD by Thursday.",
+    "_usage": {
+      "input": 1671,
+      "output": 82
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789406100.000002:1:511f2515": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Gripper finger v4 printed; grip force testing starting on foam boxes.",
+    "_usage": {
+      "input": 1625,
+      "output": 65
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789410600.000003:1:3691f358": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "elbow axis"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya merged PR #212 fixing encoder jitter on the elbow axis.",
+    "_usage": {
+      "input": 1623,
+      "output": 67
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789412700.000004:3:c44fa172": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI",
+      "U_RAVI",
+      "U_SARA"
+    ],
+    "summary": "Team coordinating lunch plans.",
+    "_usage": {
+      "input": 1634,
+      "output": 63
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789419600.000007:1:bf6a95af": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "6061 bar stock"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Purchase order placed for EVT3 6061 bar stock with delivery expected 9/24.",
+    "_usage": {
+      "input": 1626,
+      "output": 71
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789489200.000008:3:84842caa": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist motor",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Wrist motor case temperature exceeded spec (92°C vs 80°C max) during thermal chamber testing; driver current and heatsink contact under investigation.",
+    "_usage": {
+      "input": 1720,
+      "output": 87
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789495200.000011:1:1e607d65": {
+    "type": "update",
+    "parts_mentioned": [
+      "base casting"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Base casting revision B received from foundry with acceptable flatness of 0.05 across mounting face.",
+    "_usage": {
+      "input": 1632,
+      "output": 70
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789509600.000012:1:0e40f889": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Gripper grip force test achieved 38N average; Ravi will try softer pads to reach 40N target.",
+    "_usage": {
+      "input": 1629,
+      "output": 76
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789515000.000013:2:406610c1": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM",
+      "U_RAVI"
+    ],
+    "summary": "Tom is looking for missing mitutoyo calipers.",
+    "_usage": {
+      "input": 1646,
+      "output": 63
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789576800.000015:2:0e8ffe56": {
+    "type": "problem",
+    "parts_mentioned": [
+      "J4 connector",
+      "wrist assembly"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "J4 connector latch keeps popping on unit 2 during wrist rotation; Ravi will print a retainer clip.",
+    "_usage": {
+      "input": 1678,
+      "output": 91
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789579800.000017:2:ab451305": {
+    "type": "problem",
+    "parts_mentioned": [
+      "motor driver",
+      "firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Wrist motor driver drawing 2.8A RMS at idle with firmware current limit not functioning, causing excessive power draw.",
+    "_usage": {
+      "input": 1680,
+      "output": 85
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789581600.000019:3:04ddccd5": {
+    "type": "update",
+    "parts_mentioned": [
+      "firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_TOM"
+    ],
+    "summary": "Current limit in wrist firmware was temporarily set to 4A for investor demo; Priya reverting to 2A and retesting.",
+    "_usage": {
+      "input": 1678,
+      "output": 83
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789592400.000022:1:954f1f91": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper"
+    ],
+    "unknown_parts": [
+      "50A shore pads"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi ordered gripper shore pads from McMaster arriving tomorrow.",
+    "_usage": {
+      "input": 1627,
+      "output": 69
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789596000.000023:1:124eaf91": {
+    "type": "update",
+    "parts_mentioned": [
+      "battery pack",
+      "power board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Battery pack cell balancing is good after overnight soak; BMS logs are available.",
+    "_usage": {
+      "input": 1628,
+      "output": 70
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789662600.000024:3:061ef985": {
+    "type": "problem",
+    "parts_mentioned": [
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "Molex 43045-0412 connector is EOL with 11/30 last-time-buy deadline; team must decide whether to stock for DVT+PVT or select a replacement.",
+    "_usage": {
+      "input": 1713,
+      "output": 100
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789666200.000027:1:b13f18cf": {
+    "type": "update",
+    "parts_mentioned": [
+      "slew bearing"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi re-shimmed the slew bearing on unit 3 and preload is now within spec.",
+    "_usage": {
+      "input": 1627,
+      "output": 73
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789668000.000028:1:52c91eb1": {
+    "type": "update",
+    "parts_mentioned": [
+      "product requirements"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Product requirements updated: payload remains 3kg, reach increased by 20mm.",
+    "_usage": {
+      "input": 1624,
+      "output": 59
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789489200.000008:5:cc61a03f": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist motor",
+      "motor driver",
+      "firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Wrist motor case temperature exceeds 80C spec even with reduced current limit; thermal design needs revision.",
+    "_usage": {
+      "input": 1789,
+      "output": 78
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789686000.000031:1:c212fe81": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Customer visit scheduled for Thursday 9/24; lab tidiness requested.",
+    "_usage": {
+      "input": 1624,
+      "output": 54
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789754400.000033:1:cb964552": {
+    "type": "update",
+    "parts_mentioned": [
+      "gripper",
+      "motor driver",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Gripper v4 with 50A pads achieves 41N average grip force; Ravi closing out the issue and will help Priya with cable harness routing next week.",
+    "_usage": {
+      "input": 1660,
+      "output": 106
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789750800.000032:4:fec34ace": {
+    "type": "decision",
+    "parts_mentioned": [
+      "wrist motor",
+      "motor driver",
+      "firmware"
+    ],
+    "unknown_parts": [
+      "DRV8412",
+      "TMC9660"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI",
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "Team decided to swap motor driver from DRV8412 to TMC9660 to fix wrist overheating; TMC9660 runs 18C cooler with better FOC efficiency.",
+    "_usage": {
+      "input": 1761,
+      "output": 120
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789774200.000037:1:19e14158": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM"
+    ],
+    "summary": "Tom announcing drinks on the patio.",
+    "_usage": {
+      "input": 1617,
+      "output": 52
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789848000.000038:1:4547f97e": {
+    "type": "problem",
+    "parts_mentioned": [
+      "cable harness",
+      "J4 connector",
+      "wrist assembly"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Cable harness routing through elbow is too stiff and restricts wrist rotation; J4 connector positioned at a critical bend.",
+    "_usage": {
+      "input": 1646,
+      "output": 88
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789952400.000039:2:12e883c0": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "JST connector"
+    ],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_SARA"
+    ],
+    "summary": "Priya's dog ate a JST connector; the connector is damaged but the dog is fine.",
+    "_usage": {
+      "input": 1636,
+      "output": 76
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790011800.000041:3:6ccc4b57": {
+    "type": "problem",
+    "parts_mentioned": [
+      "motor driver",
+      "DVT build schedule"
+    ],
+    "unknown_parts": [
+      "ADI"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "TMC9660 motor driver lead time is 16 weeks with insufficient distributor stock, risking DVT build slip to late January; investigating broker options.",
+    "_usage": {
+      "input": 1712,
+      "output": 96
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790024400.000044:2:8e0b70e2": {
+    "type": "question",
+    "parts_mentioned": [
+      "cable harness",
+      "wrist motor"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi proposes splitting cable harness into two smaller bundles with service loop; Priya confirms it's electrically viable if motor phases stay together.",
+    "_usage": {
+      "input": 1669,
+      "output": 94
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790031600.000046:2:f7b1014e": {
+    "type": "decision",
+    "parts_mentioned": [
+      "gripper",
+      "base casting",
+      "cable harness",
+      "wrist assembly",
+      "wrist motor"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "EVT exit review complete; gripper, base casting, and cable harness move to DVT with design freeze; wrist assembly remains in EVT pending motor overheating fix; DVT build target 10/26.",
+    "_usage": {
+      "input": 1712,
+      "output": 109
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790093700.000048:1:6e0ece2c": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Standup cancelled tomorrow due to all-hands meeting.",
+    "_usage": {
+      "input": 1616,
+      "output": 56
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790096400.000049:1:f265b81f": {
+    "type": "question",
+    "parts_mentioned": [
+      "motor driver",
+      "J7 connector",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi needs the J7 pinout from Priya to complete the cable harness drawing.",
+    "_usage": {
+      "input": 1641,
+      "output": 80
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790097600.000066:1:1c85689d": {
+    "type": "problem",
+    "parts_mentioned": [
+      "cable harness"
+    ],
+    "unknown_parts": [
+      "TPE jacket compound",
+      "PVC jacket",
+      "arm umbilical"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Harness supplier proposing PVC jacket substitute for TPE due to allocation; engineering decision needed by Thursday or queue position lost.",
+    "_usage": {
+      "input": 1665,
+      "output": 84
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790100000.000050:1:891ed52f": {
+    "type": "update",
+    "parts_mentioned": [
+      "motor driver",
+      "firmware"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya started the TMC9660 FOC firmware port on a new branch.",
+    "_usage": {
+      "input": 1623,
+      "output": 70
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790110800.000051:1:0bee3c6d": {
+    "type": "update",
+    "parts_mentioned": [
+      "base casting",
+      "purchase orders"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Purchase order for 120 base castings placed with foundry; 6 week lead time.",
+    "_usage": {
+      "input": 1631,
+      "output": 72
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790112000.000088:1:53e70038": {
+    "type": "update",
+    "parts_mentioned": [
+      "battery pack",
+      "power board"
+    ],
+    "unknown_parts": [
+      "XT30",
+      "XT60"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Priya is upgrading connectors from XT30 to XT60 on the battery pack and power board to handle 38A current spikes during deceleration.",
+    "_usage": {
+      "input": 1690,
+      "output": 99
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790115000.000072:1:a0f7cef8": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor"
+    ],
+    "unknown_parts": [
+      "wrist abs encoder",
+      "mag puck"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Wrist encoder zero offset drifts 1.5° after thermal cycles; adding re-zero-on-boot to firmware as a workaround.",
+    "_usage": {
+      "input": 1655,
+      "output": 93
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790182800.000052:1:8a17f8f7": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM"
+    ],
+    "summary": "All-hands meeting slides have been posted to the shared drive.",
+    "_usage": {
+      "input": 1613,
+      "output": 57
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790112000.000088:4:23e144ef": {
+    "type": "problem",
+    "parts_mentioned": [
+      "battery pack",
+      "power board",
+      "base casting"
+    ],
+    "unknown_parts": [
+      "XT30",
+      "XT60"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI",
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "Battery pack current spikes exceed XT30 connector rating; team pivoting to XT60 with pigtail workaround to avoid casting ECO.",
+    "_usage": {
+      "input": 1860,
+      "output": 107
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790188200.000078:1:d2b730a7": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor bracket",
+      "motor driver"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Wrist motor bracket revised (rev E) with added cooling fins and thermal pad pocket; no fit changes.",
+    "_usage": {
+      "input": 1648,
+      "output": 77
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790115000.000072:2:40cab1ea": {
+    "type": "question",
+    "parts_mentioned": [
+      "firmware"
+    ],
+    "unknown_parts": [
+      "wrist abs encoder",
+      "mag puck",
+      "magnet",
+      "wrist shaft"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Priya needs to know if the wrist encoder magnet is pressed or glued and the bore tolerance to determine if this is a mechanical or firmware fix.",
+    "_usage": {
+      "input": 1718,
+      "output": 106
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790190900.000083:2:95713ff9": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA",
+      "U_TOM"
+    ],
+    "summary": "Sara found scope probes left in the kitchen; Tom took responsibility.",
+    "_usage": {
+      "input": 1625,
+      "output": 64
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790190900.000093:2:c7e9c9fb": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "usb-c to barrel adapter"
+    ],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_SARA",
+      "U_TOM"
+    ],
+    "summary": "Sara's demo laptop charger is missing; Tom has a USB-C to barrel adapter in his desk.",
+    "_usage": {
+      "input": 1649,
+      "output": 80
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790193600.000053:1:4171ae10": {
+    "type": "update",
+    "parts_mentioned": [
+      "cable harness"
+    ],
+    "unknown_parts": [
+      "P-clips"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Ravi printed P-clips for the cable harness at the elbow and confirmed good fit.",
+    "_usage": {
+      "input": 1624,
+      "output": 74
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790097600.000066:3:86581320": {
+    "type": "problem",
+    "parts_mentioned": [
+      "cable harness",
+      "design reviews"
+    ],
+    "unknown_parts": [
+      "TPE jacket compound",
+      "arm umbilical",
+      "PVC jacket",
+      "santoprene TPE"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_PRIYA"
+    ],
+    "summary": "Cable harness supplier proposes material substitution (PVC or alternative TPE) due to allocation; needs engineering approval and design review by Thursday or queue delay.",
+    "_usage": {
+      "input": 1767,
+      "output": 106
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790204400.000054:1:25a06dad": {
+    "type": "update",
+    "parts_mentioned": [
+      "motor driver",
+      "firmware"
+    ],
+    "unknown_parts": [
+      "bench board"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "TMC9660 FOC loop is closing on bench board; gains still need tuning.",
+    "_usage": {
+      "input": 1628,
+      "output": 74
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790263800.000055:1:a8d4a029": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_SARA"
+    ],
+    "summary": "Customer pilot visit scheduled for 10 AM with lab walkthrough at 11 AM.",
+    "_usage": {
+      "input": 1618,
+      "output": 58
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790096400.000049:2:8230ec9f": {
+    "type": "question",
+    "parts_mentioned": [
+      "J7 connector",
+      "motor driver",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi is blocked on the harness drawing and needs the J7 pinout from the TMC9660 driver board from Priya.",
+    "_usage": {
+      "input": 1672,
+      "output": 98
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789662600.000024:4:1e479a8b": {
+    "type": "problem",
+    "parts_mentioned": [
+      "J4 connector",
+      "DVT build schedule"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM"
+    ],
+    "summary": "J4 connector (Molex 43045-0412) EOL with 11/30 last-time-buy deadline; engineering must decide on replacement by 10/2 or supply chain commits ~$9k for 2-year stock.",
+    "_usage": {
+      "input": 1765,
+      "output": 117
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790280300.000102:1:be75db80": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Bandsaw blade broke; replacement arrives Tuesday, use hacksaw temporarily.",
+    "_usage": {
+      "input": 1630,
+      "output": 60
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790281200.000076:1:32d501d5": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist motor"
+    ],
+    "unknown_parts": [
+      "AS5048A",
+      "AS5047P"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "NRND status on AS5048A magnetic encoder (wrist subsystem); AMS OSRAM recommends AS5047P alternative, need design owner decision.",
+    "_usage": {
+      "input": 1656,
+      "output": 95
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790287200.000058:2:f09f00c6": {
+    "type": "problem",
+    "parts_mentioned": [
+      "motor driver",
+      "DVT build schedule"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_TOM",
+      "U_MEI",
+      "U_SARA"
+    ],
+    "summary": "DVT build schedule is at risk; motor driver shortage could delay customer pilot.",
+    "_usage": {
+      "input": 1668,
+      "output": 81
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790289000.000085:2:710ae2b7": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "0.4 nozzles"
+    ],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi's printer jammed; Priya directs him to spare nozzles in the blue bin.",
+    "_usage": {
+      "input": 1642,
+      "output": 84
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790291400.000095:1:bec18c68": {
+    "type": "problem",
+    "parts_mentioned": [
+      "slew bearing",
+      "base casting",
+      "DVT build schedule"
+    ],
+    "unknown_parts": [
+      "300mm crossed roller",
+      "EVT spares"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "DVT slew bearing lot failed hardness check; re-heat-treat delays shipment 3 weeks to ~10/30, leaving only 4 EVT spares available.",
+    "_usage": {
+      "input": 1680,
+      "output": 109
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790097600.000066:5:c2febca2": {
+    "type": "problem",
+    "parts_mentioned": [
+      "cable harness"
+    ],
+    "unknown_parts": [
+      "TPE jacket",
+      "PVC jacket",
+      "santoprene TPE",
+      "umbilical"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_PRIYA",
+      "U_TOM"
+    ],
+    "summary": "Cable harness TPE jacket on allocation until November; team resolving material substitution (santoprene TPE) with ECO approval needed for DVT build schedule.",
+    "_usage": {
+      "input": 1846,
+      "output": 119
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790112000.000088:5:f8590743": {
+    "type": "decision",
+    "parts_mentioned": [
+      "battery pack",
+      "power board",
+      "base casting"
+    ],
+    "unknown_parts": [
+      "XT30",
+      "XT60"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI",
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "Swapping to XT60 connector with pigtail to avoid base casting modification; power board sent to fab.",
+    "_usage": {
+      "input": 1891,
+      "output": 98
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790281200.000076:2:cf7acf64": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor",
+      "motor driver"
+    ],
+    "unknown_parts": [
+      "AS5048A",
+      "AS5047P"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_MEI",
+      "U_PRIYA"
+    ],
+    "summary": "Wrist encoder AS5048A is NRND but available through 2027; Priya will swap in compatible AS5047P on next driver board revision.",
+    "_usage": {
+      "input": 1702,
+      "output": 107
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790097600.000066:6:691fa7fc": {
+    "type": "decision",
+    "parts_mentioned": [
+      "cable harness"
+    ],
+    "unknown_parts": [
+      "TPE jacket compound",
+      "umbilical",
+      "PVC jacket",
+      "santoprene TPE",
+      "85A durometer",
+      "ECO-031"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_PRIYA",
+      "U_TOM"
+    ],
+    "summary": "Cable harness jacket material changed from TPE to santoprene TPE alternative for DVT build; ECO-031 approved and supplier authorized to proceed.",
+    "_usage": {
+      "input": 1882,
+      "output": 118
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790291400.000095:5:d8334b11": {
+    "type": "problem",
+    "parts_mentioned": [
+      "slew bearing",
+      "base casting",
+      "motor driver"
+    ],
+    "unknown_parts": [
+      "300mm crossed roller",
+      "4-pt contact"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_MEI",
+      "U_TOM",
+      "U_RAVI"
+    ],
+    "summary": "DVT slew bearing lot failed hardness check with 3-week slip; first 4 DVT units can use EVT spares but rest blocked until partial shipment by 10/16.",
+    "_usage": {
+      "input": 1864,
+      "output": 113
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790115000.000072:3:e177949b": {
+    "type": "problem",
+    "parts_mentioned": [
+      "firmware",
+      "wrist motor"
+    ],
+    "unknown_parts": [
+      "wrist abs encoder",
+      "mag puck",
+      "wrist shaft"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Wrist encoder zero offset drifts 1.5° after thermal cycles; unclear if mechanical (magnet press/tolerance) or firmware fix needed before DVT build.",
+    "_usage": {
+      "input": 1765,
+      "output": 111
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790096400.000049:4:da56efa0": {
+    "type": "question",
+    "parts_mentioned": [
+      "motor driver",
+      "J7 connector",
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_PRIYA"
+    ],
+    "summary": "Ravi blocked on harness drawing pending J7 pinout from Priya on the TMC9660 driver board.",
+    "_usage": {
+      "input": 1743,
+      "output": 86
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790362800.000062:1:8b432e3a": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Pizza available in the kitchen.",
+    "_usage": {
+      "input": 1612,
+      "output": 50
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790373600.000100:1:152c57b4": {
+    "type": "problem",
+    "parts_mentioned": [
+      "slew bearing",
+      "motor driver",
+      "DVT build schedule"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Slew bearing lead time slipped 3 weeks due to vendor heat treat issue; first 4 DVT units will use EVT spares under deviation, rest ship ~10/16, and TMC9660 availability also affects DVT build date.",
+    "_usage": {
+      "input": 1686,
+      "output": 120
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790377200.000063:1:0dcbaf77": {
+    "type": "update",
+    "parts_mentioned": [
+      "cable harness"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "Cable harness revision C released with elbow split, extended service loop, and P-clips added.",
+    "_usage": {
+      "input": 1640,
+      "output": 70
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790377200.000079:2:74341c82": {
+    "type": "decision",
+    "parts_mentioned": [
+      "motor driver",
+      "wrist assembly",
+      "wrist motor bracket",
+      "battery pack",
+      "design reviews"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U_TOM",
+      "U_PRIYA",
+      "U_MEI"
+    ],
+    "summary": "Motor driver validated; wrist assembly moves to DVT build, power board stays in EVT, bracket at rev E, wrist POs releasing Monday.",
+    "_usage": {
+      "input": 1690,
+      "output": 111
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790373600.000100:2:208ff4bd": {
+    "type": "problem",
+    "parts_mentioned": [
+      "slew bearing",
+      "motor driver",
+      "DVT build schedule"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_TOM",
+      "U_SARA"
+    ],
+    "summary": "Slew bearing delivery delayed 3 weeks due to vendor heat treat issue; DVT build contingent on TMC9660 motor driver availability, schedule update due Monday.",
+    "_usage": {
+      "input": 1706,
+      "output": 93
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790456400.000064:1:e94f677e": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_PRIYA"
+    ],
+    "summary": "CI system will be down for maintenance this weekend.",
+    "_usage": {
+      "input": 1614,
+      "output": 50
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790188200.000078:2:4139fe40": {
+    "type": "update",
+    "parts_mentioned": [
+      "wrist motor bracket",
+      "motor driver",
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U_RAVI"
+    ],
+    "summary": "Wrist motor bracket updated to rev F with thermal pad pocket repositioned to clear J4 connector crimps.",
+    "_usage": {
+      "input": 1682,
+      "output": 84
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790470800.000087:1:d8e6ff15": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_MEI"
+    ],
+    "summary": "Mei asking about watching a race tomorrow.",
+    "_usage": {
+      "input": 1617,
+      "output": 53
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790188200.000078:3:a2a2d4dd": {
+    "type": "decision",
+    "parts_mentioned": [
+      "wrist motor bracket",
+      "motor driver",
+      "J4 connector"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_RAVI",
+      "U_TOM",
+      "U_MEI"
+    ],
+    "summary": "Wrist motor bracket rev F requires ECO approval before PO release due to DVT phase.",
+    "_usage": {
+      "input": 1728,
+      "output": 93
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790560800.000065:1:80e66421": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U_TOM"
+    ],
+    "summary": "Lab AC is being serviced Monday morning and will be warm.",
+    "_usage": {
+      "input": 1620,
+      "output": 52
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790115000.000072:4:fd8218f5": {
+    "type": "problem",
+    "parts_mentioned": [
+      "wrist motor",
+      "firmware",
+      "design reviews"
+    ],
+    "unknown_parts": [
+      "mag puck",
+      "wrist shaft",
+      "wrist encoder"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U_PRIYA",
+      "U_RAVI"
+    ],
+    "summary": "Wrist encoder magnet drifts 1.5° after thermal cycles; needs mechanical root cause analysis before DVT build.",
+    "_usage": {
+      "input": 1837,
+      "output": 95
+    },
+    "_model": "anthropic:claude-haiku-4-5"
   }
 }

@@ -238,5 +238,189 @@
   "U_SARA:2026-09-27:e974b57301": {
     "intro": "The entire team needs to know that Ravi Menon has decided to replace the wrist encoder shaft due to a mechanical fix rather than firmware re-zeroing, as this is a major decision affecting multiple subsystems. {person}: This matters to you because it impacts your work on the gripper and cabling DVT phases while resolving an open issue with the Atlas robot arm harness drawing that Priya is currently blocking. {reason}: You should focus on the new shaft specifications for the wrist and base, as well as the missing J7 pinout details from Priya to keep the project moving forward.",
     "model": "ollama:qwen3.5:2b"
+  },
+  "U_TOM:2026-09-15:511f3d164d": {
+    "intro": "All subsystems are in EVT phase and the team is progressing through testing. Tom, the wrist motor case temperature exceeded specification during thermal chamber testing at 92°C compared to the 80°C maximum, so you'll want to prioritize the investigation into driver current and heatsink contact with the team.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-16:91b07fd3bd": {
+    "intro": "The team is in EVT across all subsystems. Priya is reverting the wrist firmware current limit back to 2A after the investor demo and will retest—this matters to you since you own the wrist assembly and need to be aware of the changes coming through.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-16:2bd963d099": {
+    "intro": "The team has all subsystems in EVT phase as of today. Tom, you've got two urgent electrical issues that need your attention: the J4 connector latch on unit 2 is popping during wrist rotation and Ravi is working on a retainer clip, while the wrist motor driver is pulling 2.8A RMS at idle because the firmware current limit isn't working as intended, both of which could impact the wrist subsystem's progress.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-17:96c801bce6": {
+    "intro": "The team has all subsystems in EVT phase as of today. Ravi, a Molex 43045-0412 connector you work with is reaching end-of-life on November 30th, and the team needs to decide soon whether to stock inventory for DVT and PVT phases or qualify a replacement part.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-17:b40c72df43": {
+    "intro": "All subsystems are in EVT phase as of Thursday. Priya, a critical connector decision has landed in supply chain: the Molex 43045-0412 is end-of-life with an 11/30 deadline, and the team needs to decide whether to stock for DVT and PVT or switch to an alternative part. This is urgent for cabling since you're still in EVT validation.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-17:511f3d164d": {
+    "intro": "All subsystems are moving through EVT this week. Tom, the wrist motor case is running hot—temperatures are exceeding the 80C spec even with reduced current limits—so the thermal design needs a revision to get this sorted before moving forward.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-18:ba38555584": {
+    "intro": "The team decided to swap the wrist motor driver from DRV8412 to TMC9660 to address overheating, with the new driver running 18°C cooler and offering better field-oriented control efficiency. This change is important for you since you'll be integrating the updated electrical subsystem into the mechanical assembly as we move through EVT.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-18:458c6d94d1": {
+    "intro": "The team decided to swap the motor driver from DRV8412 to TMC9660 to fix wrist overheating—the new driver runs 18C cooler with better FOC efficiency. Gripper v4 with 50A pads is hitting 41N average grip force, and Ravi will help you with cable harness routing next week once he closes out that work.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-18:ba38555584": {
+    "intro": "The team decided to swap the motor driver from DRV8412 to TMC9660 to solve the wrist overheating issue—the new driver runs 18°C cooler and has better field-oriented control efficiency. As supply chain lead, you'll need to source the TMC9660 parts and coordinate with the electrical team on timing and quantities for the upcoming builds.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-18:ba38555584": {
+    "intro": "The team has decided to swap the wrist motor driver from DRV8412 to TMC9660, which will run 18°C cooler and improve FOC efficiency to solve the overheating issue. As engineering manager, you'll want to track this change across the team since it impacts four people directly. All five subsystems are in EVT phase, so this is a good time to integrate the new driver before moving forward.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-18:ba38555584": {
+    "intro": "The team made a major decision today to swap the motor driver from DRV8412 to TMC9660 to solve the wrist overheating issue—the new driver runs 18°C cooler with better field-oriented control efficiency. As product manager, this decision directly affects your wrist subsystem timeline and performance targets, so you'll want to coordinate with the electrical team on integration and testing.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-19:ffe0e16db2": {
+    "intro": "The entire team is in EVT across all subsystems. Priya, you have an urgent cable routing issue in the elbow where the harness is too stiff and the J4 connector is positioned at a critical bend, restricting wrist rotation—this needs immediate attention since cabling and the wrist are both in the EVT phase.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-19:7cf1be66c3": {
+    "intro": "The entire team has all five subsystems in EVT phase and moving forward. As engineering manager, you need to prioritize a cable harness routing issue in the elbow that's creating excessive stiffness and restricting wrist rotation, with the J4 connector positioned at a critical bend point—this is urgent since both cabling and wrist are still in early validation testing.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-21:82f1a2fad2": {
+    "intro": "The team just completed EVT exit review, and the gripper, base, and cabling are moving to DVT with design freeze while the wrist stays in EVT to fix a motor overheating issue—DVT build is targeted for October 26th. Ravi, you'll want to keep an eye on the TMC9660 motor driver supply situation since a 16-week lead time could push the whole build into late January, and the team is exploring broker options to help avoid that slip.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-21:82f1a2fad2": {
+    "intro": "The team just completed EVT exit review and is moving the gripper, base, and cabling into DVT with design freeze, though the wrist stays in EVT while we fix the motor overheating issue—DVT build is targeted for October 26th. On the supply side, we're tracking a critical lead time issue with the TMC9660 motor driver that could push our schedule to late January if we don't find broker options, so this is worth your attention as we finalize electrical specs for DVT.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-21:82f1a2fad2": {
+    "intro": "The team just completed the EVT exit review, and gripper, base, and cabling are moving to DVT with design freeze while the wrist stays in EVT to fix a motor overheating issue—we're targeting a DVT build on 10/26. For supply chain, the critical blocker right now is the TMC9660 motor driver with a 16-week lead time and tight distributor stock, so we're working broker options to avoid slipping the build into late January.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-21:82f1a2fad2": {
+    "intro": "The team just completed the EVT exit review and three subsystems—gripper, base, and cabling—are moving to DVT with design freeze, though the wrist stays in EVT waiting on a motor fix and we're targeting a DVT build on 10/26. As engineering manager, you'll want to keep close tabs on the TMC9660 motor driver situation since the 16-week lead time and stock shortage could push that build date all the way to late January if we don't find a broker solution fast.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-21:82f1a2fad2": {
+    "intro": "The team just completed the EVT exit review, and the gripper, base, and cabling are moving to DVT with design freeze while the wrist stays in EVT to fix a motor overheating issue; we're targeting a DVT build on 10/26. Sara, as product manager you need to track the TMC9660 motor driver supply chain issue since the current 16-week lead time could slip the entire build to late January, and supply is investigating broker options to mitigate this risk.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-22:8be4ae57fb": {
+    "intro": "The team is progressing through DVT and EVT phases across gripper, wrist, base, power, and cabling subsystems. Ravi, you need to weigh in on a harness material substitution proposal from our supplier by Thursday—they're pushing PVC instead of TPE due to supply constraints, and we'll lose our queue position if we delay. You should also know that the wrist encoder is drifting 1.5° after thermal cycles, so the firmware team is adding a re-zero-on-boot workaround to keep things stable during DVT.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-22:e1b75eae19": {
+    "intro": "The team has several subsystems progressing through different validation phases this week. You need to get Ravi the J7 pinout to unblock the cable harness drawing, and you'll also want to review the harness supplier's PVC jacket proposal to make a material decision before Thursday's deadline.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-22:9281b4ea49": {
+    "intro": "The team has three subsystems in DVT phase, two in EVT, with no blockers to report. You have a connector upgrade to review on the power board where Priya is moving to XT60 for higher current handling, and a supply-chain decision needed by Thursday on the harness jacket material that could affect our DVT schedule if delayed.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-22:f3fc37d002": {
+    "intro": "The team is moving forward with gripper, base, and cabling all in DVT phase, while wrist and power continue in EVT. Sara, you need to make a call on the harness jacket material by Thursday—the supplier is pushing PVC instead of TPE due to allocation issues, and waiting means losing queue position, so this one needs your attention right away.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-23:33285499f9": {
+    "intro": "The team is moving through DVT and EVT phases across all subsystems this week. Ravi, you have two time-sensitive items: the cable harness supplier needs your engineering approval on a material substitution (PVC or TPE) by Thursday to avoid queue delays, and Priya is waiting to know whether the wrist encoder magnet is pressed or glued and what the bore tolerance is so she can determine if the fix belongs in firmware or mechanics.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-23:f85eefb081": {
+    "intro": "The team is moving forward with multiple subsystems in testing phases, with gripper, base, and cabling in DVT while wrist and power are in EVT. A battery pack current spike issue has emerged that requires switching from XT30 to XT60 connectors with a pigtail workaround, and since you manage the purchase orders for these components, you'll need to get that connector transition sourced and expedited to keep the base hardware on schedule.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-23:9fc5b1a86f": {
+    "intro": "The cabling subsystem is in DVT and facing a potential delay if we don't act quickly on a supplier request. You need to review and approve a material substitution proposal for the cable harness by Thursday—either PVC or an alternative TPE—so we can keep things moving and avoid queue delays. This design review decision is critical right now given where we are in the development cycle.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-23:dc21c7c248": {
+    "intro": "The team is managing several urgent issues across power and cabling subsystems as we progress through DVT and EVT phases. As product manager, you need to track two critical problems: battery pack current spikes requiring a connector upgrade to XT60 with a pigtail workaround, and a cable harness material substitution decision that needs engineering approval by Thursday to prevent supply delays. Both of these are blocking items that could impact our timeline if not resolved quickly.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-24:06ef92ee44": {
+    "intro": "The team is facing critical supply chain challenges: a slew bearing heat-treat failure pushes shipment to late October with only 4 EVT spares, and a motor driver shortage threatens the customer pilot schedule. For you specifically, three urgent material and component issues need quick decisions—the cable harness TPE jacket substitution, the AS5048A encoder NRND status on the wrist, and the J4 connector EOL with a 10/2 decision deadline to avoid a $9k commitment—while the XT60 connector swap for the base is already moving forward to fab.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-24:4b1e63828a": {
+    "intro": "The team is facing two urgent schedule risks: the DVT slew bearing lot failed hardness check and will delay shipment by three weeks to October 30th, and a motor driver shortage could impact the customer pilot timeline. For you, Ravi has been waiting over 60 hours on the J7 pinout from the TMC9660 driver board so he can finalize the harness drawing, plus you'll need to evaluate the AS5047P alternative for the wrist encoder and make a connector replacement decision on the Molex J4 by October 2nd to avoid a $9k supply chain commitment.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-24:456550555a": {
+    "intro": "The team is facing two critical schedule risks this week: the DVT slew bearing lot failed hardness check and needs three weeks of re-heat-treat work, and a motor driver shortage threatens the customer pilot timeline. For you, the cable harness TPE jacket allocation through November needs quick material substitution approval to keep the DVT build on track, and Ravi is waiting on the J7 pinout from Priya to move forward on the harness drawing.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-24:77bca9ff93": {
+    "intro": "The team is facing critical schedule risks from the DVT slew bearing re-heat-treat delay pushing shipment to late October and a motor driver shortage that could impact the customer pilot. As engineering manager, you need to act on three urgent supplier decisions this week: approve the J4 Molex connector replacement by October 2nd to avoid a $9k stock commitment, decide on the AS5047P encoder alternative for the wrist subsystem, and unblock Ravi by getting the J7 pinout from Priya's TMC9660 driver board so the harness drawing can move forward.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-24:3322b19d2e": {
+    "intro": "The team needs to know that a DVT slew bearing lot failed hardness checks and requires re-heat-treating, which delays shipment by three weeks to around October 30th and leaves only four EVT spares available—plus a motor driver shortage is putting the DVT build schedule and customer pilot at risk. For you, two urgent cabling supply issues need immediate attention: the J4 connector hits its last-time-buy deadline on October 2nd (requiring an engineering decision to avoid a $9k two-year stock commitment), and the cable harness TPE jacket is on allocation through November while the team works on a santoprene substitution that needs ECO approval to keep the DVT build on track.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-25:cea9382d6f": {
+    "intro": "The team is moving forward with wrist DVT build after motor driver validation, but a slew bearing heat treat issue has created a 3-week supply delay that could push the build date. For you, the wrist encoder is showing a 1.5° thermal drift that needs investigation before DVT—it's unclear whether this is a mechanical tolerance issue with the magnet press or a firmware fix—and the cable harness jacket material has been approved for change to santoprene TPE, so you can proceed with that material for the build.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-25:97bc840133": {
+    "intro": "The team is facing a critical supply chain issue with slew bearings that slip the schedule by three weeks, though the first four DVT units can proceed with EVT spares while we await partial shipment by October 16th. For you, the cable harness jacket material has been approved to switch from TPE to santoprene TPE alternative under ECO-031, so the supplier is moving forward with DVT build. This material change is important to finalize now since cabling is already in DVT phase and you've been leading the design reviews.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-25:10a284d221": {
+    "intro": "The team is working through a critical slew bearing supply shortage that's blocking DVT builds past the first four units, with a partial shipment expected October 16th—this affects our schedule across base, wrist, and cabling subsystems. For you, ECO-031 for the cable harness material change to santoprene TPE is approved and your supplier is authorized to proceed, and you'll want to monitor the wrist encoder zero offset drift issue since it could impact DVT build readiness. Ravi is also waiting on J7 pinout details from Priya to finalize the harness drawing.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-25:3a593d535c": {
+    "intro": "The team is facing a critical 3-week slew bearing delay that will block DVT builds after the first 4 units, with partial stock arriving October 16th. For you this week, the wrist encoder thermal drift issue needs clarification on whether it's mechanical or firmware-based before DVT build starts, and Ravi's harness work is unblocked now that Priya has the TMC9660 pinout ready.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-25:c5f3e86b6d": {
+    "intro": "The team is moving forward on wrist assembly to DVT build with motor driver validation complete, but we're facing a critical slew bearing supply delay that could slip our build date by three weeks—first four units will use EVT spares while we wait for partial shipment by 10/16. For you, the wrist encoder zero offset drift issue is now urgent before DVT build kicks off Monday; it's unclear whether this is a mechanical tolerance problem with the magnet press or a firmware fix, so you'll want to sync with the firmware team to get clarity on the path forward.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-26:eb2ec7f783": {
+    "intro": "The team needs to be aware that the slew bearing delivery is delayed by three weeks due to a vendor heat treat issue, and the DVT build schedule depends on TMC9660 motor driver availability with a critical update coming Monday. Since you're working on the base and wrist subsystems which are both affected by this delay, this schedule risk is particularly important for your mechanical engineering work on these components.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-26:eb2ec7f783": {
+    "intro": "The team is facing a critical schedule risk—the slew bearing delivery is delayed 3 weeks due to a vendor heat treat issue, and the DVT build is now contingent on TMC9660 motor driver availability, with a schedule update due Monday. As our electrical engineer, Priya, this affects you directly since the power subsystem is in EVT while the base and wrist subsystems are in DVT, and driver availability could impact the overall build timeline.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-26:eb2ec7f783": {
+    "intro": "The team is managing a critical schedule risk: the slew bearing delivery is delayed three weeks due to a vendor heat treat issue, and the DVT build now depends on TMC9660 motor driver availability, with a schedule update coming Monday. For you in supply chain, this delay directly impacts your procurement timeline and the overall build readiness, so tracking the motor driver availability and coordinating with the vendor on the bearing timeline will be essential this week.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-26:eb2ec7f783": {
+    "intro": "The team is managing a critical schedule risk: the slew bearing delivery is delayed by three weeks due to a vendor heat treat issue, and our DVT build is now contingent on TMC9660 motor driver availability, with a schedule update due Monday. As engineering manager, you'll want to track this closely since it affects both the base and wrist subsystems across the team and may impact our build timeline significantly.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-26:eb2ec7f783": {
+    "intro": "The team is managing a critical schedule risk: the slew bearing delivery has been delayed three weeks due to a vendor heat treat issue, and the DVT build timeline now depends on TMC9660 motor driver availability, with a schedule update due Monday. As product manager, you'll want to track this closely since it affects both the base and wrist subsystems and has broad impact across the team.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_RAVI:2026-09-27:667eec7c70": {
+    "intro": "The team needs to know that the wrist motor bracket revision F requires ECO approval before we can release the purchase order, since we're in the DVT phase for that subsystem. This is urgent and affects the wrist and cabling work that you and several others are coordinating on.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_PRIYA:2026-09-27:42d161363b": {
+    "intro": "The team needs to know that wrist motor bracket rev F requires ECO approval before we can release the purchase order, so that's blocking our DVT timeline. For you, the wrist encoder magnet drift issue after thermal cycles is critical to solve before we start the DVT build—we need the mechanical root cause analysis from you first since you've been deep in the wrist assembly work and own the firmware side of this.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_MEI:2026-09-27:4c5caa32e1": {
+    "intro": "The team is waiting on ECO approval for wrist motor bracket rev F before we can release the PO, which is critical since we're in DVT phase. For you, the wrist encoder magnet drift issue discovered after thermal cycling needs mechanical root cause analysis before the DVT build can move forward, and this is affecting the wrist assembly you've been supporting this week.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_TOM:2026-09-27:6fbcdba54f": {
+    "intro": "The team needs to get ECO approval for wrist motor bracket rev F before we can release the PO, since we're in DVT phase. As the engineering manager overseeing our design reviews, you'll want to prioritize the wrist encoder magnet drift issue—it's drifting 1.5° after thermal cycles and needs mechanical root cause analysis before we move into DVT build. This affects both the wrist subsystem and impacts the cabling work downstream.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "U_SARA:2026-09-27:e3226b08ff": {
+    "intro": "The team needs to get wrist motor bracket rev F through ECO approval before we can release the purchase order, which is blocking progress since we're in DVT phase. For you, the wrist encoder magnet drift issue after thermal cycles is critical to resolve before we start the DVT build—this needs a mechanical root cause analysis and it's been flagged as urgent across the team.",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }

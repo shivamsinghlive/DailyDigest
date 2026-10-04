@@ -24,12 +24,13 @@ TIMEZONE = "America/Los_Angeles"
 # ---------- LLM ----------
 # "none" never calls an LLM: cached results are used, and keyword rules fill any gaps.
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "none")
-ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-opus-5-5")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-haiku-4-5")
+ANTHROPIC_PRICE_PER_MTOK = {"input": 1.00, "output": 5.00}  # Haiku 4.5, USD; used for cost estimates
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3.5:2b")
 
 # Part of the cache key. Bump it when the extraction prompt changes so old outputs aren't reused.
-PROMPT_VERSION = "v3"
+PROMPT_VERSION = "v4"
 
 # A question with no reply from anyone else after this long becomes "unanswered".
 UNANSWERED_AFTER_HOURS = 48

@@ -16,6 +16,7 @@ import re
 from datetime import date
 
 from . import config
+from .catalog import match_parts
 from .extract import call_provider, model_name
 from .notebook import changes_on, state_as_of
 from .ranker import CATEGORY, focus_scores, rank_for_person, score_change
@@ -168,7 +169,8 @@ def cache_key(person, day, pulse, mine):
     return f"{person['id']}:{day}:{hashlib.sha256(content.encode()).hexdigest()[:10]}"
 
 
-def llm_intro(person, day, phases, pulse, mine, provider):
+def intro_prompt(person, day, phases, pulse, mine):
+    """(system, user). The user text is also the full list of facts the intro may use."""
     system = (
         "You write the opening of a daily work digest for one person on a robotics hardware team. "
         "Write 2 or 3 short, friendly sentences: first what the whole team should know, then what matters to this "
@@ -178,6 +180,30 @@ def llm_intro(person, day, phases, pulse, mine, provider):
                                   for i in items) or "- (none)"
     user = (f"Person: {person['name']}, {person['role'].replace('_', ' ')}. Day: {pretty_day(day)}. "
             f"Subsystem phases: {phases}.\nTeam-wide items:\n{fmt(pulse)}\nFor this person:\n{fmt(mine)}")
+    return system, user
+
+
+# Writing "10/26" as "October 26th" restates a date, it doesn't invent one.
+DATE_WORDS = set("""january february march april may june july august september october november december
+monday tuesday wednesday thursday friday saturday sunday""".split())
+
+
+def invented_details(intro, facts, team):
+    """Specifics in the intro that aren't in the facts it was given: numbers, names and other
+    capitalized words (not at a sentence start), and catalog parts. Empty list = grounded.
+    It can't catch softer embellishment ("working on" -> "leading"); the prompt has to prevent that."""
+    low = facts.lower()
+    out = [n for n in re.findall(r"\d+(?:[.,:]\d+)*", intro) if n not in facts]
+    for sentence in re.split(r"(?<=[.!?])\s+", intro):
+        for w in re.findall(r"(?<=\s)[A-Z][A-Za-z0-9-]*", sentence):  # skips the sentence's first word
+            if w.lower() not in low and w.lower() not in DATE_WORDS:
+                out.append(w)
+    out += [p for p in match_parts(intro, team["catalog"]) if p not in match_parts(facts, team["catalog"])]
+    return list(dict.fromkeys(out))
+
+
+def llm_intro(person, day, phases, pulse, mine, provider):
+    system, user = intro_prompt(person, day, phases, pulse, mine)
     schema = {"type": "object", "properties": {"intro": {"type": "string"}},
               "required": ["intro"], "additionalProperties": False}
     return call_provider(system, user, schema, provider)["intro"]
@@ -213,6 +239,12 @@ def build_digest(person, day, timeline, team, provider=config.LLM_PROVIDER, cach
     intro = clean_intro(intro)
     if not intro_looks_ok(intro):
         intro, source = template_intro(person, day, state["phases"], pulse, mine), f"template (rejected {source} intro)"
+    elif not source.startswith("template"):
+        # An intro that names a number, person or part the items don't mention is replaced, not shown.
+        invented = invented_details(intro, intro_prompt(person, day, state["phases"], pulse, mine)[1], team)
+        if invented:
+            intro, source = (template_intro(person, day, state["phases"], pulse, mine),
+                             f"template ({source} intro added: {', '.join(invented)})")
 
     return {"person": person, "day": day, "phases": state["phases"], "intro": intro, "intro_source": source,
             "pulse": pulse, "for_you": mine}
