@@ -14,7 +14,9 @@ Scoring unit for alerts: (person, thread, day).
 - seen:     the thread was in their digest that day (Team Pulse or For You)
 - For You:  the personalized section only. The pulse goes to everyone by design, so precision
             is measured on For You.
-- People who already posted in the thread are skipped either way: they saw it.
+- People who already posted in the thread are skipped either way: they saw it. Someone who posted
+  in it that same day is never expected to get an alert (product decision: they already replied),
+  even if a ground-truth file lists them.
 """
 import json
 import sys
@@ -89,11 +91,15 @@ def participants_as_of(messages, thread_ts, day):
     return set()
 
 
+def authors_on(messages, thread_ts, day):
+    return {m.get("user") for m in messages if m.get("thread_ts", m["ts"]) == thread_ts and day_of(m["ts"]) == day}
+
+
 def score_alerts(seen, mine, gt, messages, team):
     hits_seen = hits_mine = total = false_alerts = 0
     detail = {}
     for e in gt["events"]:
-        expected = {a["user"] for a in e["should_alert"]}
+        expected = {a["user"] for a in e["should_alert"]} - authors_on(messages, e["thread_ts"], e["day"])
         got_seen = {p["id"] for p in team["people"] if e["thread_ts"] in seen.get((p["id"], e["day"]), set())}
         got_mine = {p["id"] for p in team["people"] if e["thread_ts"] in mine.get((p["id"], e["day"]), set())}
         extra = got_mine - expected - participants_as_of(messages, e["thread_ts"], e["day"])
