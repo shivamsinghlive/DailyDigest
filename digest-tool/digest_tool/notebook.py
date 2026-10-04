@@ -146,7 +146,10 @@ def infer_owners(state, day, team):
 
 # ---------- changes ----------
 
-SCHEDULE_RE = re.compile(r"\b(slips?|slipping|delay(?:ed)?|late|lead time|TBD|at risk|behind)\b", re.I)
+SCHEDULE_RE = re.compile(
+    r"\b(slips?|slipping|slipped|delay(?:ed)?|late|lead time|TBD|at risk|behind"
+    r"|push(?:ed|ing)?\b[^.!?\n]{0,25}?\b(?:out|back)"           # "pushing the build out a week"
+    r"|from \d{1,2}/\d{1,2} to \d{1,2}/\d{1,2})\b", re.I)     # "moving DVT build start from 10/27 to 11/10"
 
 
 def is_schedule_risk(thread, x):

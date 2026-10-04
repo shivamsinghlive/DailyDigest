@@ -2,7 +2,7 @@
 import pytest
 
 from digest_tool import config
-from digest_tool.notebook import close_linked_problems, linkable, resolving_parts
+from digest_tool.notebook import close_linked_problems, is_schedule_risk, linkable, resolving_parts
 
 
 @pytest.fixture(autouse=True)
@@ -66,3 +66,13 @@ def test_a_question_is_not_a_fix(team, make_msg):
 def test_decision_that_puts_the_schedule_at_risk_settles_nothing(team, make_msg):
     t = thread(make_msg("DVT build date is now TBD until we secure TMC9660s", day=21))
     assert resolving_parts(t, extraction("decision", ["motor driver"]), "2026-09-21", team) == set()
+
+
+@pytest.mark.parametrize("text", ["moving DVT build start from 10/27 to 11/10", "pushing the build out a week",
+                                  "DVT build slipped to late Nov"])
+def test_schedule_moves_are_schedule_risks(team, make_msg, text):
+    assert is_schedule_risk(thread(make_msg(text)), extraction("update"))
+
+
+def test_a_date_without_a_move_is_not(team, make_msg):
+    assert not is_schedule_risk(thread(make_msg("DVT build is on 11/10, kickoff at 9")), extraction("update"))
