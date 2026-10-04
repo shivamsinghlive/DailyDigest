@@ -193,6 +193,10 @@ def score_change(change, person, state, team, focus, prefs=None):
         points += w["role_phase"]
         where = ", ".join(f"{s} is in {phases[s]}" for s in matching)
         reasons.append(f"{CATEGORY_LABEL[category]} are a priority for {ROLE_LABEL[person['role']]} at this stage ({where})")
+    elif category == "question" and change["urgency"] >= 4 and person["role"] == "engineering_manager":
+        # An urgent open question means someone is blocked on it, in any phase.
+        points += w["role_phase"]
+        reasons.append("An urgent open question: someone is blocked, and unblocking people is the manager's job")
 
     # Focus only uses parts named in the text, so one LLM guess can't pull in unrelated people.
     best_part = max(named, key=lambda p: focus.get(p, 0), default=None)
