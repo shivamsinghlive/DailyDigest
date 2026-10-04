@@ -123,6 +123,7 @@ def to_items(ranked):
         "score": r["score"],
         "reasons": r["reasons"],
         "category": r["category"],  # the item type a 👍/👎 is recorded against
+        "change": r["change"],
     } for r in ranked]
 
 
@@ -139,16 +140,15 @@ def personal_note(pulse_item, person, state, team, prefs):
 # ---------- intro ----------
 
 def template_intro(person, day, phases, pulse, mine):
-    stage = " · ".join(f"{s} {p}" for s, p in phases.items())
     if not pulse and not mine:
-        return f"Hi {first_name(person)}, a quiet {pretty_day(day)}: nothing new for you. ({stage})"
+        return f"Hi {first_name(person)}, a quiet {pretty_day(day)}: nothing new for you."
     must = sum(i["must"] for i in mine)
     parts = []
     if pulse:
         parts.append(f"{len(pulse)} team-wide item{'s' if len(pulse) > 1 else ''}")
     if mine:
         parts.append(f"{len(mine)} just for you" + (f" ({must} you shouldn't skip)" if must else ""))
-    return f"Hi {first_name(person)}, {' and '.join(parts)} from {pretty_day(day)}. ({stage})"
+    return f"Hi {first_name(person)}, {' and '.join(parts)} from {pretty_day(day)}."
 
 
 def clean_intro(text):
