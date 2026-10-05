@@ -40,7 +40,7 @@ def _event(store, day, key, change, thread_ts, before=None, after=None, note="")
 
 
 def record(store, day, key, mtype, value, thread_ts=None, summary=None, parts=(), subsystems=(), people=(),
-           confidence=1.0):
+           confidence=1.0, note=""):
     """Remember `key = value` as of `day`. Returns what happened: NEW, UPDATED or UNCHANGED.
     An UPDATED key keeps its old version, marked SUPERSEDED with valid_to = day."""
     assert mtype in TYPES, mtype
@@ -62,7 +62,7 @@ def record(store, day, key, mtype, value, thread_ts=None, summary=None, parts=()
     }
     store["memories"][rec["memory_id"]] = rec
     change = "UPDATED" if cur else "NEW"
-    _event(store, day, key, change, thread_ts, before=cur["value"] if cur else None, after=value)
+    _event(store, day, key, change, thread_ts, before=cur["value"] if cur else None, after=value, note=note)
     return change
 
 

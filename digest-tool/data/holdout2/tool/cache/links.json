@@ -1,0 +1,17 @@
+{
+  "8d8574b6fbf97af5": {
+    "same_as": "none",
+    "reason": "The new report describes an electrical design defect (incorrect GPIO wiring instead of STO pin hardwire) causing safety-critical latency failure in emergency stop. The existing issue addresses thermal management (FET overheating due to undersized heatsink). While both affect the Motor Driver Board, they have different root causes (wiring design vs. thermal design), different failure modes (latency/safety vs. thermal), and require different solutions. These are distinct issues.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "7c2209d8d411866e": {
+    "same_as": "none",
+    "reason": "The new report concerns lift pivot bore tolerances on chassis weldments from Kessler (manufacturing/quality issue), while the existing issue is about Motor Driver Board FET thermal performance (component design issue). These are distinct problems with different root causes, suppliers, and failure modes. No overlap in the underlying technical problems.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "43c19cf5aa92d7cf": {
+    "same_as": "none",
+    "reason": "The new report describes a mechanical space conflict caused by increased battery pack dimensions, while the existing issue concerns thermal management of FETs on the Motor Driver Board. These are distinct problems with different root causes (design dimensional change vs. thermal performance), different components affected (battery pack vs. motor driver), and different mitigation paths (mechanical rerouting vs. heatsink redesign). They are not the same underlying problem.",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "0103b72bdf7f7a27": {
+    "same_as": "none",
+    "reason": "The new report describes a power distribution/electrical issue (5V rail sag during motor startup causing resets) that requires firmware soft-start or capacitive holdup solutions. The existing issue is a mechanical failure (diaphragm cracking at clamp ring) in the pump itself. These are distinct root causes affecting different subsystems—different failure mechanisms, different components, and different solutions needed.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "165108fdceaaa198": {
+    "same_as": "issue:1789490510.000130",
+    "reason": "Both involve hardware availability constraints impacting field deployment timeline. The new report's demo feasibility concern directly stems from the same underlying supply chain delay affecting Terrain-Following Radar Module availability mentioned in the existing issue, which has pushed deliveries to mid-November—after the Oct 6 demo date.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "223f5eb83117d510": {
+    "same_as": "issue:1789490510.000130",
+    "reason": "Both issues stem from critical hardware shortage before the Oct 6 field demo. The wall thickness defect and quarantine of carbon arm tubes directly impacts the limited hardware availability mentioned in issue:1789490510.000130. With only 8 good tubes available for 2 airframes and replacement delayed past Oct 8, this is the root cause constraining the feasibility confirmation needed by Wednesday for the demo scheduled 9 days away.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6385af1580156443": {
+    "same_as": "none",
+    "reason": "The new report describes a supply chain/procurement deadline issue with Cellforge battery cells and PO approval timing. Issue 1789753683.000217 is about a power distribution board electrical problem (brownout/voltage sag during motor startup). These are fundamentally different problems: one is a supply/ordering issue, the other is a hardware design issue with power delivery. They do not share the same root cause.",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}

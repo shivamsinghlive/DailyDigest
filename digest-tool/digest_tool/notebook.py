@@ -16,6 +16,7 @@ from datetime import date
 from . import config
 from .catalog import match_parts
 from .extract import extract, load_cache, match_people, unanswered_hours
+from .issues import find_issue, load_links
 from .memory import latest, new_store, record, reopen, resolve
 from .slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
 
@@ -279,9 +280,12 @@ def changed_after_freeze(thread, day, state, team):
 
 # ---------- the replay ----------
 
-def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
+def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None, links=None):
     """Replay all days. Returns {day: {"state": snapshot at end of day, "changes": [...]}}.
-    Pass cache={} with provider="none" to see what keyword rules alone produce."""
+    Pass cache={} with provider="none" to see what keyword rules alone produce.
+    `links` caches "is this the same issue?" verdicts (issues.py); it defaults to the one on disk,
+    or starts empty alongside an empty extraction cache."""
+    links = (load_links() if cache is None else {}) if links is None else links
     cache = load_cache() if cache is None else cache
     start = team["project"]["start_phase"]
     roots = {m["ts"]: m for m in messages if m.get("thread_ts", m["ts"]) == m["ts"]}
@@ -293,6 +297,7 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
         "ownership_evidence": {},    # person -> part -> [[day, kind]]
         "open_problems": {},         # thread_ts -> open_item
         "closed_problems": [],       # open_item + closed_day, closed_by (thread), via_parts
+        "issue_of": {},              # thread_ts -> memory key of the issue it's about (several threads, one issue)
         "flagged_after_freeze": [],  # thread_ts already reported as a change after freeze (once each)
         "decisions": [],             # [{day, summary, parts, thread_ts}]
         "unanswered_questions": {},  # thread_ts -> open_item + people_mentioned, flagged
@@ -377,24 +382,40 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 closes.append({**p, "closed_day": day, "closed_by": ts, "closed_in": thread["channel_name"], "via_parts": []})
                 state["closed_problems"].append(closes[-1])
             closes += close_linked_problems(state, thread, resolving_parts(thread, x, day, team), day)
+            # Threads about the same issue close together: fixing it in one thread fixes it in all.
+            for p in list(closes):
+                issue = state["issue_of"].get(p["thread_ts"])
+                for sibling, other in list(state["issue_of"].items()):
+                    if other == issue and sibling in state["open_problems"]:
+                        q = state["open_problems"].pop(sibling)
+                        closes.append({**q, "closed_day": day, "closed_by": p["closed_by"], "closed_in": p["closed_in"],
+                                       "via_parts": p["via_parts"], "same_issue_as": p["thread_ts"]})
+                        state["closed_problems"].append(closes[-1])
 
             # Project memory: the same facts, with history. delta = what this change did to memory.
             about = dict(thread_ts=ts, summary=x["summary"], parts=x["parts"], people=x["people_mentioned"],
                          subsystems=[team["catalog"]["subsystem_of"][p] for p in x["parts"] if team["catalog"]["subsystem_of"].get(p)])
-            delta, memory_key = None, None
+            delta, memory_key, linked = None, None, None
             if kind in ("new_problem", "problem_update"):
-                memory_key = f"issue:{ts}"
+                if ts not in state["issue_of"]:  # first problem report in this thread: is it a known issue?
+                    known, why = find_issue(mem, x, team, day, f"issue:{ts}", provider, links)
+                    state["issue_of"][ts] = known or f"issue:{ts}"
+                    if known:
+                        linked = {"issue": known, "since": latest(mem, known)["created_at"], "why": why}
+                memory_key = state["issue_of"][ts]
+                note = f"reported again in #{thread['channel_name']}" if linked else ""
                 if (latest(mem, memory_key) or {}).get("status") == "RESOLVED":
-                    delta = reopen(mem, day, memory_key, ts, note="problem reported again")
+                    delta = reopen(mem, day, memory_key, ts, note=note or "problem reported again")
                     record(mem, day, memory_key, "ISSUE", x["summary"], **about)
                 else:
-                    delta = record(mem, day, memory_key, "ISSUE", x["summary"], **about)
+                    delta = record(mem, day, memory_key, "ISSUE", x["summary"], note=note, **about)
             elif kind == "decision":
                 memory_key = f"decision:{ts}"
                 delta = record(mem, day, memory_key, "DECISION", x["summary"], **about)
             for p in closes:
                 how = f"via {', '.join(p['via_parts'])}" if p["via_parts"] else "in its own thread"
-                resolve(mem, day, f"issue:{p['thread_ts']}", ts, note=f"closed by #{thread['channel_name']} {how}")
+                resolve(mem, day, state["issue_of"].get(p["thread_ts"], f"issue:{p['thread_ts']}"), ts,
+                        note=f"closed by #{thread['channel_name']} {how}")
 
             # Questions are tracked by reply behaviour, whatever type the LLM gave the thread.
             waiting = unanswered_hours(thread, eod)
@@ -425,7 +446,7 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
             if closes:
                 extra["closes"] = [{"thread_ts": p["thread_ts"], "summary": p["summary"], "via_parts": p["via_parts"]} for p in closes]
                 delta = delta if delta not in (None, "UNCHANGED") else "RESOLVED"
-            extra.update(delta=delta, memory_key=memory_key)
+            extra.update(delta=delta, memory_key=memory_key, **({"linked_issue": linked} if linked else {}))
             changes.append(make_change(kind, day, thread, x, team, **extra))
 
         # Quiet threads can still change state: a question crosses 48h without any new message.

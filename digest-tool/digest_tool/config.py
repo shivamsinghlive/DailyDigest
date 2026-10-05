@@ -39,6 +39,11 @@ UNANSWERED_AFTER_HOURS = 48
 # problem's thread was active within this many days (notebook.close_linked_problems).
 LINK_WINDOW_DAYS = 5
 
+# Issue identity (issues.py): how many existing issues a new problem is compared against, and how
+# similar the wording must be to link them when no LLM verdict is available.
+LINK_MAX_CANDIDATES = 5
+LINK_MIN_SIMILARITY = 0.4
+
 # ---------- inferred ownership (notebook.py) ----------
 # team.json is incomplete on purpose. Each person gets an ownership score per part from evidence,
 # with older evidence counting less. Declared owners (team.json) always rank highest.
