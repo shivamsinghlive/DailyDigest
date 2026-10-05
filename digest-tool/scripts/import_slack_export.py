@@ -116,6 +116,8 @@ def convert(src, out, spent=False):
              "parts.json": {"subsystems": sorted({p["subsystem"] for p in parts}), "parts": parts, "topics": []},
              "ground_truth.json" if spent else "ground_truth_holdout.json": gt,
              "true_owners.json": true_owners}
+    if (src / "memory_truth.json").exists():  # long-horizon answer key: refers to message ts, needs no conversion
+        files["memory_truth.json"] = load(src, "memory_truth.json")
     for name, data in files.items():
         (out / name).write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 

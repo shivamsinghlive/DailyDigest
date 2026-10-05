@@ -1,0 +1,183 @@
+{
+  "notes": "Converted from longrun/ground_truth.json by scripts/import_slack_export.py",
+  "events": [
+    {
+      "id": "E01",
+      "section": "team_pulse",
+      "thread_ts": "1772562600.000112",
+      "also_threads": [],
+      "day": "2026-03-03",
+      "what": "Customer targets of record set (weight, runtime, drop, IP65)",
+      "should_alert": [
+        {
+          "user": "U03LENA"
+        },
+        {
+          "user": "U04CARLOS"
+        }
+      ]
+    },
+    {
+      "id": "E02",
+      "section": "personal",
+      "thread_ts": "1773091200.000143",
+      "also_threads": [],
+      "day": "2026-03-09",
+      "what": "Random resets reported on EVT units",
+      "should_alert": [
+        {
+          "user": "U02DEV"
+        },
+        {
+          "user": "U05PRIYA"
+        }
+      ]
+    },
+    {
+      "id": "E03",
+      "section": "personal",
+      "thread_ts": "1773353400.000165",
+      "also_threads": [],
+      "day": "2026-03-12",
+      "what": "Sample cell lot out of spec on internal resistance",
+      "should_alert": [
+        {
+          "user": "U03LENA"
+        },
+        {
+          "user": "U05PRIYA"
+        }
+      ]
+    },
+    {
+      "id": "E04",
+      "section": "team_pulse",
+      "thread_ts": "1773853200.000186",
+      "also_threads": [],
+      "day": "2026-03-18",
+      "what": "Weight target changed by engineering manager",
+      "should_alert": [
+        {
+          "user": "U03LENA"
+        },
+        {
+          "user": "U04CARLOS"
+        }
+      ]
+    },
+    {
+      "id": "E05",
+      "section": "personal",
+      "thread_ts": "1773249300.000156",
+      "also_threads": [],
+      "day": "2026-03-19",
+      "what": "Brownout reset fix verified and issue closed",
+      "should_alert": [
+        {
+          "user": "U04CARLOS"
+        },
+        {
+          "user": "U06SAM"
+        }
+      ]
+    },
+    {
+      "id": "E06",
+      "section": "personal",
+      "thread_ts": "1774306800.000207",
+      "also_threads": [],
+      "day": "2026-03-23",
+      "what": "Scan engine lead time slip",
+      "should_alert": [
+        {
+          "user": "U03LENA"
+        },
+        {
+          "user": "U06SAM"
+        }
+      ]
+    },
+    {
+      "id": "E07",
+      "section": "team_pulse",
+      "thread_ts": "1774456200.000218",
+      "also_threads": [],
+      "day": "2026-03-25",
+      "what": "DVT design freeze (EVT to DVT)",
+      "should_alert": [
+        {
+          "user": "U03LENA"
+        }
+      ]
+    },
+    {
+      "id": "E08",
+      "section": "personal",
+      "thread_ts": "1775172600.000257",
+      "also_threads": [],
+      "day": "2026-04-02",
+      "what": "ECO-001 approved: pogo pin plating change",
+      "should_alert": [
+        {
+          "user": "U02DEV"
+        },
+        {
+          "user": "U04CARLOS"
+        }
+      ]
+    },
+    {
+      "id": "E09",
+      "section": "personal",
+      "thread_ts": "1775582100.000267",
+      "also_threads": [],
+      "day": "2026-04-07",
+      "what": "Alternate battery cell proposed as second source",
+      "should_alert": [
+        {
+          "user": "U01MAYA"
+        },
+        {
+          "user": "U02DEV"
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "section": "team_pulse",
+      "thread_ts": "1775781000.000279",
+      "also_threads": [],
+      "day": "2026-04-09",
+      "what": "Customer demo success and pilot request",
+      "should_alert": [
+        {
+          "user": "U01MAYA"
+        },
+        {
+          "user": "U02DEV"
+        },
+        {
+          "user": "U03LENA"
+        }
+      ]
+    },
+    {
+      "id": "E11",
+      "section": "personal",
+      "thread_ts": "1776101400.000286",
+      "also_threads": [],
+      "day": "2026-04-13",
+      "what": "Brownout resets recur in cold chamber; issue reopened",
+      "should_alert": [
+        {
+          "user": "U04CARLOS"
+        },
+        {
+          "user": "U06SAM"
+        }
+      ]
+    }
+  ],
+  "noise": [],
+  "mentions": []
+}

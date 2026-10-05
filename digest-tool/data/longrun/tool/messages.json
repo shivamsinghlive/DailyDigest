@@ -1,0 +1,1545 @@
+{
+  "channels": [
+    {
+      "id": "electrical",
+      "name": "electrical"
+    },
+    {
+      "id": "firmware",
+      "name": "firmware"
+    },
+    {
+      "id": "general",
+      "name": "general"
+    },
+    {
+      "id": "mech",
+      "name": "mech"
+    },
+    {
+      "id": "random",
+      "name": "random"
+    },
+    {
+      "id": "supply-chain",
+      "name": "supply-chain"
+    }
+  ],
+  "messages": [
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1772471520.000101",
+      "text": "morning all :wave: officially kicking off the EVT push for Ranger. EVT units (12 sets) should land Wed. plan is ~3 weeks of beating on them, then freeze for DVT. tracker is the pinned sheet"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1772472000.000102",
+      "text": "let's go :rocket: I'll post the customer targets tomorrow after the call with Halvorsen Logistics",
+      "thread_ts": "1772471520.000101"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U01MAYA",
+      "ts": "1772472660.000103",
+      "text": "clamshells shipped from Proto Labs this morning, tracking says Wed AM",
+      "thread_ts": "1772471520.000101"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1772474700.000104",
+      "text": "who left the oat milk carton empty in the fridge AGAIN"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1772474820.000105",
+      "text": "not me, black coffee guy",
+      "thread_ts": "1772474700.000104"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U04CARLOS",
+      "ts": "1772475300.000106",
+      "text": "guilty. buying 2 today",
+      "thread_ts": "1772474700.000104"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1772487600.000107",
+      "text": "MLB rev A back from assembly, 14 pcs. 2 have a tombstoned 0402 on the PMIC feedback divider, reworking now"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1772488320.000108",
+      "text": "can I steal a working one today? want to get the bootloader on it",
+      "thread_ts": "1772487600.000107"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1772488500.000109",
+      "text": "grab #04, it's on the ESD mat next to the scope",
+      "thread_ts": "1772487600.000107"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1772493600.000110",
+      "text": "fyi SE-4 eyeballs: Zebrix quoted 8 week lead time for DVT qty (150 pcs). PO goes out once Priya signs"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U05PRIYA",
+      "ts": "1772494860.000111",
+      "text": "signed, send it",
+      "thread_ts": "1772493600.000110"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1772562600.000112",
+      "text": "Customer targets after the Halvorsen call, these are the ones we hold ourselves to:\n• total unit weight (with battery, no strap): 380 g max\n• runtime: a full 10 h shift at their scan rate (~1 scan every 6 s)\n• drop: 1.5 m to concrete, 26 drops\n• IP65\nthey were super clear on weight, their pickers hold this thing all day"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U01MAYA",
+      "ts": "1772563440.000113",
+      "text": "380 is gonna be tight with a PC/ABS clamshell + overmold but ok, challenge accepted",
+      "thread_ts": "1772562600.000112"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U02DEV",
+      "ts": "1772563860.000114",
+      "text": "10 h at 1 scan/6s should be fine on paper with the 5200 mAh brick. will measure once fw has sleep working",
+      "thread_ts": "1772562600.000112"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1772564520.000115",
+      "text": "these are the targets of record. if anything needs to move it comes through me",
+      "thread_ts": "1772562600.000112"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1772576100.000116",
+      "text": "bootloader up on MLB #04. USB DFU works, BLE stack not yet. eyeball talks over UART at 115200 but decode lib returns garbage on 1D codes, probably my config"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1772577600.000117",
+      "text": "nvm, symbology mask was wrong. Code128 + DataMatrix decoding now :tada:",
+      "thread_ts": "1772576100.000116"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1772584200.000118",
+      "text": "DFM notes on the clamshell from Proto Labs: they want +0.5° draft on the grip ribs. folding it into rev B"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U01MAYA",
+      "ts": "1772643900.000119",
+      "text": "EVT clamshells are here! 12 sets. assembly party in the lab at 1pm, pizza on Priya"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1772644020.000120",
+      "text": "pizza on Priya confirmed :pizza:",
+      "thread_ts": "1772643900.000119"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U04CARLOS",
+      "ts": "1772644800.000121",
+      "text": "I'll bring the screw kits, the M2 thread formers came in yesterday",
+      "thread_ts": "1772643900.000119"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1772655300.000122",
+      "text": "place on 4th has 2-for-1 today, ordering from there unless someone objects"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U06SAM",
+      "ts": "1772655480.000123",
+      "text": "no objections, get one without olives pls",
+      "thread_ts": "1772655300.000122"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1772673000.000124",
+      "text": "first full EVT unit on the scale: 412 g with battery, no strap. so 32 g over. biggest chunks: brick 104 g, clamshell 96 g, overmold 38 g, window + bezel 22 g"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U06SAM",
+      "ts": "1772673900.000125",
+      "text": "oof. what's realistic to cut?",
+      "thread_ts": "1772673000.000124"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1772674800.000126",
+      "text": "coring the grip ribs maybe 8-10 g, thinner overmold another ~5. the rest has to come out of the pack or the board stack",
+      "thread_ts": "1772673000.000124"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U02DEV",
+      "ts": "1772675280.000127",
+      "text": "I can drop the metal radio can for a shield sticker, couple of grams",
+      "thread_ts": "1772673000.000124"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1772734800.000128",
+      "text": "pinning this so nobody gets surprised later: the battery bay in the clamshell is designed around a 9.0 mm max pack thickness (cells + PCM + kapton wrap, end-of-life swell included). hard limit. any thicker and the back door doesn't close and we lose the IP65 seal on the door gasket. @Dev @Carlos please treat 9.0 mm as the ceiling when looking at cells"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U02DEV",
+      "ts": "1772735640.000129",
+      "text": "ack. current pack is 8.4 mm nominal, 8.7 mm at end-of-life swell per Amptek data",
+      "thread_ts": "1772734800.000128"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U04CARLOS",
+      "ts": "1772736060.000130",
+      "text": "noted, adding it to the cell spec sheet we send vendors",
+      "thread_ts": "1772734800.000128"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1772744400.000131",
+      "text": "trigger debounce is way too twitchy, getting double scans. bumping it to 25 ms"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U01MAYA",
+      "ts": "1772745120.000132",
+      "text": "that's the paddle spring, rev A has the stiff one and it rings. rev B spring is softer",
+      "thread_ts": "1772744400.000131"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1772753400.000133",
+      "text": "charging through the pogo pins works on the cradle proto, 1.5 A CC. pins get to 41 °C after an hour, inside spec"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1772757900.000134",
+      "text": "Amptek confirmed the 5200 mAh pouch cells for DVT: 300 pcs, 6 wk lead time. sample lot of 40 is already here"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1772823600.000135",
+      "text": "week 1 recap: 12 EVT units built, 10 functional, 2 waiting on MLB rework. weight is the big open item (412 vs 380). drop testing starts Mon. have a good weekend"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U06SAM",
+      "ts": "1772839800.000136",
+      "text": "anyone doing the trail run tomorrow? Rancho San Antonio 8am"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U01MAYA",
+      "ts": "1772840520.000137",
+      "text": "in",
+      "thread_ts": "1772839800.000136"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1772841900.000138",
+      "text": "if it doesn't rain",
+      "thread_ts": "1772839800.000136"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U01MAYA",
+      "ts": "1772918400.000139",
+      "text": "trail run pics in the shared drive. Sam fell in the creek, there is video",
+      "thread_ts": "1772839800.000136"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773076200.000140",
+      "text": "drop test day 1: 26 drops at 1.5 m on units #2 and #5. #2 clean. #5 the window popped out of the bezel on drop 19, glass fine. bezel snap retention is too weak"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U05PRIYA",
+      "ts": "1773077100.000141",
+      "text": "design fix or tolerance?",
+      "thread_ts": "1773076200.000140"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773077880.000142",
+      "text": "design. adding 2 more snaps + an adhesive ring under the window for rev B",
+      "thread_ts": "1773076200.000140"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1773091200.000143",
+      "text": "weird one: unit #3 just randomly reset while I was hammering the trigger. no watchdog entry, no hardfault log, straight back to the boot logo. 3x in ~200 pulls. anyone else seen this?"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U06SAM",
+      "ts": "1773092100.000144",
+      "text": "unit 7 did that Friday during the demo, I thought I bumped the battery door",
+      "thread_ts": "1773091200.000143"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1773093000.000145",
+      "text": "ok so not just mine. adding a reset-reason register dump to the boot log",
+      "thread_ts": "1773091200.000143"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773097200.000146",
+      "text": "radio can removed on 2 MLBs, replaced with a shield sticker. BLE RSSI only ~1 dB worse. saves 3.1 g"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1773161100.000147",
+      "text": "reset reason register says BOR (brown-out). so the MCU supply is dipping, not a fw crash. @Dev I think this one is yours :sweat_smile:",
+      "thread_ts": "1773091200.000143"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U02DEV",
+      "ts": "1773162120.000148",
+      "text": "ugh. ok, scope goes on it today",
+      "thread_ts": "1773091200.000143"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773167400.000149",
+      "text": "first runtime number: 9.2 h on unit #6 at 1 scan/6s, BLE connected, screen at 50%. short of the shift. sleep current between scans is ~18 mA which is way too high"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1773168300.000150",
+      "text": "sleep isn't really sleep yet, I'm only gating the eyeball. display + radio still awake. give me a week",
+      "thread_ts": "1773167400.000149"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U06SAM",
+      "ts": "1773168600.000151",
+      "text": "phew ok, so it's a fw thing not a brick thing?",
+      "thread_ts": "1773167400.000149"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773169260.000152",
+      "text": "mostly, yeah",
+      "thread_ts": "1773167400.000149"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1773176400.000153",
+      "text": "Proto Labs quote for rev B clamshells: $38/set at 25 qty, 7 business days. ready to go once Maya releases CAD"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1773184800.000154",
+      "text": "the lab microwave is making a new noise. a bad one"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U04CARLOS",
+      "ts": "1773184920.000155",
+      "text": "it's been doing that since december lol",
+      "thread_ts": "1773184800.000154"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773249300.000156",
+      "text": "scoped VBAT at the MLB input during a scan. when the eyeball fires illuminator AND aimer laser together we get a ~600 mV sag for ~1.5 ms. below ~3.6 V battery that pulls the 3V3 LDO input under dropout and the MCU browns out. that's Lena's mystery reset"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1773250200.000157",
+      "text": "so worse on a half-empty battery? matches, #3 was at ~40%",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773250860.000158",
+      "text": "yep. options: bulk cap near the engine, soft turn-on, or stagger illuminator/aimer in fw",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U05PRIYA",
+      "ts": "1773251700.000159",
+      "text": "whatever is least invasive for DVT. keep me posted",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773264600.000160",
+      "text": "rev B clamshell CAD released: cored grip ribs, thinner overmold (1.2 -> 0.9 mm), 2 extra bezel snaps, adhesive ring for the window. @Carlos go for the PO"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U04CARLOS",
+      "ts": "1773265200.000161",
+      "text": "PO sent",
+      "thread_ts": "1773264600.000160"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773339600.000162",
+      "text": "weighed a frankenunit (rev A shell + shaved overmold + Dev's stickered MLB): 401 g. down 11 g. still 21 g over 380"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U06SAM",
+      "ts": "1773340500.000163",
+      "text": "progress! where do the next 20 come from?",
+      "thread_ts": "1773339600.000162"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773341400.000164",
+      "text": "honestly the brick, 104 g is a lot. rev B shell coring should get ~8 g more",
+      "thread_ts": "1773339600.000162"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1773353400.000165",
+      "text": "heads up from Amptek QA: our 40 pc sample lot measured 65-72 mΩ internal resistance on their side, spec is ≤45 mΩ. they say it's a storage/aging thing on samples and production will be in spec. could that be related to the brownout thing Dev is chasing?"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U02DEV",
+      "ts": "1773354600.000166",
+      "text": "it absolutely makes it worse. 70 mΩ x ~7 A inrush is ~0.5 V right there, that's most of the sag",
+      "thread_ts": "1773353400.000165"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1773355320.000167",
+      "text": "ok, pushing them for IR test data on the production lot before it ships",
+      "thread_ts": "1773353400.000165"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1773359400.000168",
+      "text": "BLE pairing with the Halvorsen WMS tablet works. first end-to-end scan into their app :tada:"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U06SAM",
+      "ts": "1773359700.000169",
+      "text": ":clap: sending a video to their ops lead",
+      "thread_ts": "1773359400.000168"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1773421200.000170",
+      "text": "week 2 recap: drop test found the bezel retention issue (fix in rev B), random resets root-caused to VBAT sag + high-IR sample cells, runtime 9.2 h with partial sleep, weight 401 g. rev B shells arrive ~Mar 20"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1773433800.000171",
+      "text": "pi day is tomorrow and it's a saturday. bringing pie monday, no excuses"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1773434400.000172",
+      "text": ":pie: :pie: :pie:",
+      "thread_ts": "1773433800.000171"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1773677400.000173",
+      "text": "pie is in the kitchen. apple and a slightly sad pecan",
+      "thread_ts": "1773433800.000171"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773684000.000174",
+      "text": "ordered 470 µF polymer caps + some 220 µF backups for the VBAT bulk experiment, arriving tomorrow"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1773694800.000175",
+      "text": "sleep update: display off + radio in sniff mode between scans. bench sleep current is now 6 mA. Dev can you rerun runtime when you get a sec"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U02DEV",
+      "ts": "1773696000.000176",
+      "text": "yep, tomorrow or wed",
+      "thread_ts": "1773694800.000175"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773700200.000177",
+      "text": "rev B paddle spring tested: 1.8 N actuation vs 2.6 N before, no ringing on the scope. Lena you can drop debounce back to 10 ms"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U03LENA",
+      "ts": "1773700860.000178",
+      "text": "done, in tonight's build",
+      "thread_ts": "1773700200.000177"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773768600.000179",
+      "text": "470 µF on VBAT right at the engine connector cuts the sag from 600 to ~250 mV with the sample cells. 0 resets in 500 pulls at 3.5 V",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1773771000.000180",
+      "text": "I also have a build that delays the aimer 2 ms after the illuminator. want to try both together?",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773771240.000181",
+      "text": "yes",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1773781200.000182",
+      "text": "Amptek sent production lot IR data: 38-43 mΩ across 20 cells, in spec. lot ships Apr 6"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1773788400.000183",
+      "text": "Halvorsen asked for a demo at their Reno DC on Apr 9. one unit, ideally a rev B shell. doable?"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1773789600.000184",
+      "text": "doable. Maya can you reserve one rev B shell",
+      "thread_ts": "1773788400.000183"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U01MAYA",
+      "ts": "1773789900.000185",
+      "text": "yep",
+      "thread_ts": "1773788400.000183"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1773853200.000186",
+      "text": "Decision on weight: Sam and I talked to Halvorsen's ops lead yesterday. they'd rather have the full-shift runtime with margin than hit 380 g. New weight target of record is 395 g max (with battery, no strap). 380 is retired. Maya please update the PRD"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U01MAYA",
+      "ts": "1773853920.000187",
+      "text": "updated, 395 g max is in PRD rev 3",
+      "thread_ts": "1773853200.000186"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1773854400.000188",
+      "text": "confirming from the customer side, they're happy at 395 if runtime is solid",
+      "thread_ts": "1773853200.000186"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U02DEV",
+      "ts": "1773855000.000189",
+      "text": "that gives me room to keep the brick as-is :pray:",
+      "thread_ts": "1773853200.000186"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773871200.000190",
+      "text": "runtime rerun with Lena's new sleep build: 10.6 h on unit #6, same profile (1 scan/6s, BLE on, 50% screen). we clear the 10 h shift"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1773871800.000191",
+      "text": "not done yet, MCU is still in run mode between scans, there's more in there",
+      "thread_ts": "1773871200.000190"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U06SAM",
+      "ts": "1773872400.000192",
+      "text": "great news, telling Halvorsen",
+      "thread_ts": "1773871200.000190"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1773942300.000193",
+      "text": "Brownout fix: 470 µF polymer bulk cap on VBAT at the engine connector (going on MLB rev B) + Lena's 2 ms aimer stagger (fw 0.4.2). ran 2000 trigger pulls at 3.4 V on the bad sample cells: 0 resets. calling the reset issue closed.",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1773943080.000194",
+      "text": "fw 0.4.2 tagged with the stagger :white_check_mark:",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U05PRIYA",
+      "ts": "1773943500.000195",
+      "text": "nice work both, closing it in the tracker",
+      "thread_ts": "1773249300.000156"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1773954000.000196",
+      "text": "closing the loop here: fixed with MLB rev B bulk cap + fw 0.4.2, details in #electrical",
+      "thread_ts": "1773091200.000143"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1773963000.000197",
+      "text": "IP65 spray test on a rev A unit: water in the battery bay through the door hinge. door gasket needs more squish, fixing in the rev B door"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1774029600.000198",
+      "text": "rev B shells in! 25 sets. they look so much nicer, the bezel snaps are crispy"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U04CARLOS",
+      "ts": "1774030200.000199",
+      "text": "Proto Labs actually hit their date for once",
+      "thread_ts": "1774029600.000198"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1774044000.000200",
+      "text": "week 3 recap: brownout fixed (cap + fw), runtime 10.6 h, weight target moved to 395 g. DVT design freeze planned for Wed Mar 25, get your last changes in"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1774049400.000201",
+      "text": "friday playlist thread, go"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1774049700.000202",
+      "text": "anything but the lab radio station",
+      "thread_ts": "1774049400.000201"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U06SAM",
+      "ts": "1774050000.000203",
+      "text": "boards of canada, appropriately",
+      "thread_ts": "1774049400.000201"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1774285200.000204",
+      "text": "MLB rev B gerbers out to fab: bulk cap, sticker shield, PMIC divider footprint fix. 5 day turn"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1774296900.000205",
+      "text": "rev B door with the deeper gasket groove passes the IP65 spray test, bay bone dry :tada:"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1774303200.000206",
+      "text": "fw 0.5.0: MCU goes to stop mode between scans, wakes on trigger IRQ. bench sleep current now 2.1 mA"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1774306800.000207",
+      "text": "Zebrix update: SE-4 lead time slipping from 8 to 12 weeks for our DVT qty, they're blaming a CMOS sensor shortage. our 150 eyeballs now land ~May 8 instead of Apr 17"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U05PRIYA",
+      "ts": "1774307700.000208",
+      "text": "that's a problem. what do we have in hand?",
+      "thread_ts": "1774306800.000207"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1774308000.000209",
+      "text": "22 in bonded stock",
+      "thread_ts": "1774306800.000207"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U05PRIYA",
+      "ts": "1774308900.000210",
+      "text": "ok, options at standup tomorrow. don't panic yet",
+      "thread_ts": "1774306800.000207"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1774375200.000211",
+      "text": "full rev B build on the scale: 392 g. under the new 395 target with 3 g to spare"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U05PRIYA",
+      "ts": "1774375800.000212",
+      "text": "nice",
+      "thread_ts": "1774375200.000211"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U06SAM",
+      "ts": "1774376100.000213",
+      "text": ":muscle:",
+      "thread_ts": "1774375200.000211"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1774386000.000214",
+      "text": "Zebrix can partial-ship 40 pcs Apr 20, the rest May 8. Priya ok to build DVT in two waves?",
+      "thread_ts": "1774306800.000207"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U05PRIYA",
+      "ts": "1774387800.000215",
+      "text": "yes. wave 1 = the 40 partial + the 22 in stock, wave 2 = the rest",
+      "thread_ts": "1774306800.000207"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U03LENA",
+      "ts": "1774393200.000216",
+      "text": "anyone have the USB-C to pogo adapter? the lab one vanished"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U02DEV",
+      "ts": "1774393800.000217",
+      "text": "my desk, top drawer. bring it back pls",
+      "thread_ts": "1774393200.000216"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1774456200.000218",
+      "text": ":rotating_light: DVT design freeze is in effect as of today, Ranger is officially in DVT. Frozen: clamshell rev B, door rev B, MLB rev B, trigger rev B spring, SE-4 engine, Amptek 5200 mAh pack. any hardware change from here goes through an ECO and I approve it. fw keeps iterating under normal review"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U01MAYA",
+      "ts": "1774456800.000219",
+      "text": "CAD tagged DVT-B in PDM",
+      "thread_ts": "1774456200.000218"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U02DEV",
+      "ts": "1774457100.000220",
+      "text": "MLB rev B is the DVT board, tagged",
+      "thread_ts": "1774456200.000218"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U04CARLOS",
+      "ts": "1774457520.000221",
+      "text": "updating the BOM to DVT-1 and sending to K-Tech",
+      "thread_ts": "1774456200.000218"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1774458300.000222",
+      "text": "huge milestone, thanks team :tada:",
+      "thread_ts": "1774456200.000218"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U04CARLOS",
+      "ts": "1774467000.000223",
+      "text": "freeze cake in the kitchen :cake:"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1774467240.000224",
+      "text": "is it frozen cake. please say it's frozen cake",
+      "thread_ts": "1774467000.000223"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1774548000.000225",
+      "text": "fuel gauge reads ~8% high at the bottom end, units die at 'reported 6%'. recalibrating the OCV table"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U02DEV",
+      "ts": "1774549200.000226",
+      "text": "use the Amptek curves I dropped in the drive, not the generic ones",
+      "thread_ts": "1774548000.000225"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1774560600.000227",
+      "text": "K-Tech DVT quote: $61/unit assembly + test for wave 1, test fixture NRE $8.4k"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U05PRIYA",
+      "ts": "1774561500.000228",
+      "text": "fixture NRE is fine, send me the PO to approve",
+      "thread_ts": "1774560600.000227"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1774566000.000229",
+      "text": "DVT shell drawing package sent to the tool shop for the soft tool. T1 shots ~Apr 7"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1774630800.000230",
+      "text": "week 4 recap: DVT freeze done, weight 392 g, IP65 door fixed, SE-4 lead time slipped so DVT builds in two waves. reminder the Reno demo is Apr 9"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U06SAM",
+      "ts": "1774648800.000231",
+      "text": "board game night next thursday, who's in"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1774649100.000232",
+      "text": "me, bringing Wingspan",
+      "thread_ts": "1774648800.000231"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U01MAYA",
+      "ts": "1774649400.000233",
+      "text": "in",
+      "thread_ts": "1774648800.000231"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U04CARLOS",
+      "ts": "1774650600.000234",
+      "text": "can't, kid's recital",
+      "thread_ts": "1774648800.000231"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1774731600.000235",
+      "text": "pushed the gauge fix to the branch, will test monday. don't @ me it's saturday",
+      "thread_ts": "1774548000.000225"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1774891800.000236",
+      "text": "MLB rev B boards back. zero tombstones this time, bulk cap fitted. running brownout regression today"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1774893600.000238",
+      "text": "gauge recal done, units now cut off at 0-1% reported. merged in 0.5.2",
+      "thread_ts": "1774548000.000225"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1774904400.000237",
+      "text": "regression: 1000 pulls at 3.4 V, 0 resets. good",
+      "thread_ts": "1774891800.000236"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1774908000.000239",
+      "text": "drop test on rev B unit #R2: 26/26 at 1.5 m, window stayed put, minor scuff on a corner bumper. pass"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U06SAM",
+      "ts": "1774908600.000240",
+      "text": "awesome",
+      "thread_ts": "1774908000.000239"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1774976400.000241",
+      "text": "Amptek production lot confirmed shipping Apr 6, 300 pcs, CoC + IR data attached"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1774987200.000242",
+      "text": "draft Reno demo script is in the drive. 30 min: scan-to-WMS flow, drop demo (carefully lol), runtime chart. comments by Thu pls"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1774988400.000243",
+      "text": "will review tonight",
+      "thread_ts": "1774987200.000242"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1774996200.000244",
+      "text": "pogo pin contact resistance on the cradle creeping up after 500 insertion cycles (40 -> 95 mΩ). gold flash too thin I think, want the 30 µin option"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U04CARLOS",
+      "ts": "1774997100.000245",
+      "text": "I'll get pricing on 30 µin plating",
+      "thread_ts": "1774996200.000244"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1775064600.000246",
+      "text": "hand strap mount boss, two options: A adds 6 g, B adds 2 g but needs a metal insert"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U03LENA",
+      "ts": "1775065500.000247",
+      "text": "wait, isn't weight still capped at 380 g? I thought that was the number, in which case 392 is already over and neither option works?",
+      "thread_ts": "1775064600.000246"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U06SAM",
+      "ts": "1775065920.000248",
+      "text": "strap isn't counted in the weight number anyway, customer weighs it without",
+      "thread_ts": "1775064600.000246"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1775066400.000249",
+      "text": "going with B then, the insert is cheap",
+      "thread_ts": "1775064600.000246"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1775077200.000250",
+      "text": "for the record the cat boot logo was a 10/10 and reverting it was a mistake"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U05PRIYA",
+      "ts": "1775077800.000251",
+      "text": "it was a 10/10 and it is not shipping",
+      "thread_ts": "1775077200.000250"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1775152800.000252",
+      "text": "runtime with fw 0.5.2 on a rev B unit: 11.4 h, same profile. ~1.4 h margin over the shift"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U06SAM",
+      "ts": "1775153700.000253",
+      "text": "putting 11+ h in the demo deck",
+      "thread_ts": "1775152800.000252"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U03LENA",
+      "ts": "1775154000.000254",
+      "text": "stop mode was the big one",
+      "thread_ts": "1775152800.000252"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1775167200.000255",
+      "text": "30 µin gold on the cradle pins: +$0.22/pin, 4 pins per cradle. supplier rates it for 5000 cycles"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U02DEV",
+      "ts": "1775168400.000256",
+      "text": "worth it. ECO incoming",
+      "thread_ts": "1775167200.000255"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1775172600.000257",
+      "text": "ECO-001 approved: cradle pogo pin plating to 30 µin gold. Carlos please cut the PO change"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1775235600.000258",
+      "text": "week 5 recap: runtime 11.4 h, drop pass on rev B, ECO-001 pogo plating. next week: T1 shots, Amptek lot arrives, Reno demo Thu"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U01MAYA",
+      "ts": "1775242800.000259",
+      "text": "anyone want leftover kapton tape, cleaning my bench"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1775243400.000260",
+      "text": "yes. all of it",
+      "thread_ts": "1775242800.000259"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1775253600.000261",
+      "text": "T1 date confirmed for Tue at the tool shop, I'll drive over"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1775498400.000262",
+      "text": "Amptek lot arrived, 300 pcs. incoming inspection on 30 samples (dims, OCV, IR): all pass, IR 39-44 mΩ"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1775505600.000263",
+      "text": "fw 0.6.0 RC for the demo: gauge fix, stop mode, BLE reconnect rework. please break it"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U06SAM",
+      "ts": "1775507400.000264",
+      "text": "broke it: BLE didn't reconnect after the tablet went to sleep",
+      "thread_ts": "1775505600.000263"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1775509800.000265",
+      "text": "fixed in 0.6.1 :upside_down_face:",
+      "thread_ts": "1775505600.000263"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1775514600.000266",
+      "text": "K-Tech test fixture first article arrived. pogo bed alignment off ~0.3 mm on two test points, they're shimming it"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1775582100.000267",
+      "text": "proposal: Amptek is warning that the next 300 cells (wave 2 / volume) could slip 4+ weeks. found an alternate: Kestrel KP-5800 pouch, 5800 mAh (more runtime!), $0.40 cheaper per cell, 3 wk lead time. finished pack with PCM + wrap comes out at 9.6 mm thick. datasheet in the drive. thinking we qualify it as a second source for wave 2?"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U06SAM",
+      "ts": "1775583000.000268",
+      "text": "5800 mAh would be a great story for Halvorsen, +11% capacity. I'm for it",
+      "thread_ts": "1775582100.000267"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1775583660.000269",
+      "text": "cool, asking Kestrel for 20 samples",
+      "thread_ts": "1775582100.000267"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1775595600.000270",
+      "text": "T1 shots in hand. shells look good, minor sink mark near the trigger boss, tool shop will tweak the core cooling"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1775667600.000271",
+      "text": "DVT config with the T1 molded shell + strap boss B: 386 g. molded shell is lighter than the Proto Labs ones. 9 g of margin under 395"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U05PRIYA",
+      "ts": "1775668320.000272",
+      "text": "love it",
+      "thread_ts": "1775667600.000271"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1775673000.000273",
+      "text": "demo unit flashed with 0.6.1, battery at 100%, packed in the Pelican case"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1775682000.000274",
+      "text": "driving to Reno tomorrow at 6am with Priya. wish us luck"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U02DEV",
+      "ts": "1775682300.000275",
+      "text": "don't drop it. unless it's 1.5 m onto concrete, then go ahead",
+      "thread_ts": "1775682000.000274"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U04CARLOS",
+      "ts": "1775689200.000276",
+      "text": "board game night is tonight right? or thursday"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U06SAM",
+      "ts": "1775689500.000277",
+      "text": "tomorrow, but I'll be in Reno so play without me",
+      "thread_ts": "1775689200.000276"
+    },
+    {
+      "type": "message",
+      "channel": "electrical",
+      "user": "U02DEV",
+      "ts": "1775757600.000278",
+      "text": "fixture shim done, K-Tech ran 5 golden boards through, all pass"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1775781000.000279",
+      "text": "Reno demo went great. scanned ~300 totes on their pick line in 40 min, zero misses, ops lead loved how light it is. they want 10 DVT units for a 2-week pilot in May"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1775781900.000280",
+      "text": "excellent. Carlos let's make sure wave 1 covers those 10",
+      "thread_ts": "1775781000.000279"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U04CARLOS",
+      "ts": "1775782200.000281",
+      "text": "wave 1 is 62 units, plenty",
+      "thread_ts": "1775781000.000279"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1775840400.000282",
+      "text": "week 6 recap: Reno demo success, pilot ask for 10 units in May, T1 shells good, weight 386 g, Amptek lot in. next week: cold/hot chamber runs on pre-DVT builds"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1775851200.000283",
+      "text": "Kestrel samples (20) ship Monday, should be here Wed",
+      "thread_ts": "1775582100.000267"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U03LENA",
+      "ts": "1775858400.000284",
+      "text": "Wingspan rematch next week, Maya won by a frankly suspicious margin"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U01MAYA",
+      "ts": "1775859000.000285",
+      "text": "skill",
+      "thread_ts": "1775858400.000284"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1776101400.000286",
+      "text": "cold chamber run on pre-DVT unit #D3 at -10 °C: it blacked out mid-scan and came back on the boot logo. twice in ~150 scans, battery showing ~55%. D3 has MLB rev B with the bulk cap. warmed it back to room temp and couldn't make it happen again"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U03LENA",
+      "ts": "1776102600.000287",
+      "text": "pulled the boot log off D3: reset reason is BOR again. it's the brownout, just at cold",
+      "thread_ts": "1776101400.000286"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U02DEV",
+      "ts": "1776103500.000288",
+      "text": "cold roughly doubles cell IR at -10 °C, so the 470 µF fix only had margin at room temp. reopening, I'll get the scope in the chamber",
+      "thread_ts": "1776101400.000286"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U05PRIYA",
+      "ts": "1776104400.000289",
+      "text": "reopened in the tracker. this blocks the pilot if it isn't fixed, Halvorsen's cold storage aisles run around -5 °C",
+      "thread_ts": "1776101400.000286"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1776114000.000290",
+      "text": "trying a fw mitigation: lower illuminator drive current when pack temp < 0 °C. testing tomorrow"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1776119400.000291",
+      "text": "Kestrel samples showed up early, 20 pcs on my desk",
+      "thread_ts": "1775582100.000267"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U02DEV",
+      "ts": "1776187800.000292",
+      "text": "scope in the chamber on D3: sag at -10 °C is ~520 mV even with the bulk cap. need a bigger cap (no room on rev B without an ECO) or the fw derate",
+      "thread_ts": "1776101400.000286"
+    },
+    {
+      "type": "message",
+      "channel": "mech",
+      "user": "U01MAYA",
+      "ts": "1776189600.000294",
+      "text": "T2 shots scheduled for Apr 21, sink mark fix is in"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U06SAM",
+      "ts": "1776200400.000295",
+      "text": "pilot logistics: Halvorsen is thinking mid-May, exact date TBD. I'm saying 'targeting', not 'promising'"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1776201600.000296",
+      "text": "good call",
+      "thread_ts": "1776200400.000295"
+    },
+    {
+      "type": "message",
+      "channel": "firmware",
+      "user": "U03LENA",
+      "ts": "1776204000.000293",
+      "text": "illuminator derate below 0 °C: resets went from 2/150 to 1/400 at -10. better, not fixed",
+      "thread_ts": "1776114000.000290"
+    },
+    {
+      "type": "message",
+      "channel": "supply-chain",
+      "user": "U04CARLOS",
+      "ts": "1776272400.000297",
+      "text": "Kestrel incoming check on 5 samples: 5810-5840 mAh, IR 36 mΩ. looking good so far. sending 4 to Dev for pack builds",
+      "thread_ts": "1775582100.000267"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U02DEV",
+      "ts": "1776279600.000298",
+      "text": "taco truck is back :taco:"
+    },
+    {
+      "type": "message",
+      "channel": "random",
+      "user": "U01MAYA",
+      "ts": "1776279900.000299",
+      "text": "omw",
+      "thread_ts": "1776279600.000298"
+    },
+    {
+      "type": "message",
+      "channel": "general",
+      "user": "U05PRIYA",
+      "ts": "1776294000.000300",
+      "text": "mid-week update: the cold brownout is reopened and is top priority for the pilot, Dev + Lena own it. everything else on track"
+    }
+  ]
+}

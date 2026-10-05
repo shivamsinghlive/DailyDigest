@@ -1,0 +1,96 @@
+{
+  "subsystems": [
+    "electrical",
+    "firmware",
+    "mechanical",
+    "optics",
+    "power"
+  ],
+  "parts": [
+    {
+      "name": "Main Enclosure (Clamshell Housing)",
+      "subsystem": "mechanical",
+      "aliases": [
+        "clamshell",
+        "shell",
+        "the tub"
+      ]
+    },
+    {
+      "name": "Trigger Assembly",
+      "subsystem": "mechanical",
+      "aliases": [
+        "paddle",
+        "trigger"
+      ]
+    },
+    {
+      "name": "Scan Window",
+      "subsystem": "mechanical",
+      "aliases": [
+        "window",
+        "lens cover",
+        "glass"
+      ]
+    },
+    {
+      "name": "Battery Door and Bezel Gaskets",
+      "subsystem": "mechanical",
+      "aliases": [
+        "squish ring",
+        "door gasket"
+      ]
+    },
+    {
+      "name": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "subsystem": "power",
+      "aliases": [
+        "brick",
+        "the pack",
+        "cells"
+      ]
+    },
+    {
+      "name": "Main Logic Board",
+      "subsystem": "electrical",
+      "aliases": [
+        "mobo",
+        "MLB"
+      ]
+    },
+    {
+      "name": "Charging Cradle Contacts",
+      "subsystem": "electrical",
+      "aliases": [
+        "pogo pins",
+        "cradle contacts"
+      ]
+    },
+    {
+      "name": "BLE/Wi-Fi Radio Module",
+      "subsystem": "electrical",
+      "aliases": [
+        "radio",
+        "the can"
+      ]
+    },
+    {
+      "name": "SE-4 Scan Engine Module",
+      "subsystem": "optics",
+      "aliases": [
+        "eyeball",
+        "engine",
+        "SE4"
+      ]
+    },
+    {
+      "name": "Main Firmware Image",
+      "subsystem": "firmware",
+      "aliases": [
+        "the build",
+        "fw"
+      ]
+    }
+  ],
+  "topics": []
+}

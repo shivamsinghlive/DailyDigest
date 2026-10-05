@@ -19,6 +19,7 @@ Scoring unit for alerts: (person, thread, day).
   even if a ground-truth file lists them.
 """
 import json
+import re
 import sys
 
 from . import config
@@ -207,6 +208,82 @@ def score_ownership(timeline, team):
     return rows, per_part
 
 
+# ---------- 5. memory (long-horizon datasets with a memory_truth.json answer key) ----------
+
+def value_match(a, b):
+    """Same value however it's written: "745 g" == "745g", "6.5 hrs" ~ "6.5 hours" (same numbers)."""
+    from .facts import normalized
+    if normalized(a) == normalized(b):
+        return True
+    nums = lambda v: sorted(re.findall(r"\d+(?:\.\d+)?", str(v)))
+    return bool(nums(a)) and nums(a) == nums(b)
+
+
+def score_memory(truth, timeline, messages):
+    """Checks project memory against the answer key, by message timestamps only. Returns (counts, details)."""
+    from .digest import what_changed
+    from .memory import history, latest, value_as_of
+    thread = {m["ts"]: m.get("thread_ts") or m["ts"] for m in messages}  # top-level: thread_ts missing or null
+    final = timeline[max(timeline)]["state"]
+    mem = final["memory"]
+    fact_keys = sorted({m["key"] for m in mem["memories"].values() if m["type"] in ("FACT", "CONSTRAINT")})
+    events = {k: history(mem, k) for k in fact_keys}
+    c, details = {}, []
+
+    def tally(name, ok, what):
+        c.setdefault(name, [0, 0])
+        c[name][0] += bool(ok)
+        c[name][1] += 1
+        details.append((name, "✓" if ok else "✗", what))
+
+    def keys_set_in(ts, day, value, changes=("NEW", "UPDATED")):
+        return [k for k, evs in events.items() for e in evs
+                if e["thread_ts"] == thread[ts] and e["day"] == day and e["change"] in changes and value_match(e["after"], value)]
+
+    for v in truth.get("value_history", []):
+        tally("value changes captured", keys_set_in(v["source_ts"], v["date"], v["value"]), f"{v['name']} = {v['value']} on {v['date']}")
+    first_value = {v["source_ts"]: v for v in truth.get("value_history", [])}
+    for q in truth.get("as_of", []):
+        first = first_value.get(q["first_source_ts"])
+        keys = keys_set_in(q["first_source_ts"], first["date"], first["value"]) if first else []
+        got = [value_as_of(mem, k, q["date"]) for k in keys]
+        tally("value on a given date", any(g is not None and value_match(g, q["expected_value"]) for g in got),
+              f"{q['name']} on {q['date']}: expected {q['expected_value']}, memory says {got or 'nothing'}")
+    for q in truth.get("conflicts", []):
+        flagged = keys_set_in(q["source_ts"], q["date"], q["stated_value"], changes=("CONFLICTING",))
+        overwritten = keys_set_in(q["source_ts"], q["date"], q["stated_value"], changes=("UPDATED",))
+        tally("conflicts flagged", flagged, f"{q['name']}: '{q['stated_value']}' on {q['date']}")
+        tally("conflicts not overwritten", not overwritten, f"{q['name']} kept {q['value_in_force']}")
+    issue_of = final["issue_of"]
+    groups = [{thread[ts] for ts in i["source_ts"]} for i in truth.get("issues", [])]
+    for i, g in zip(truth.get("issues", []), groups):
+        keys = {issue_of.get(t) for t in g}
+        tally("issue threads linked", len(keys) == 1 and None not in keys,
+              f"{i['name']}: {len(g)} threads -> {len(keys - {None})} issue key(s){' (some never a problem)' if None in keys else ''}")
+        key = next((issue_of[t] for t in g if t in issue_of), None)
+        evs = history(mem, key) if key else []
+        if i.get("resolved_date"):
+            tally("issue resolved on the right day", any(e["change"] == "RESOLVED" and e["day"] == i["resolved_date"] for e in evs),
+                  f"{i['name']} resolved {i['resolved_date']}")
+        if i.get("reopened_date"):
+            tally("issue reopened on the right day", any(e["change"] == "REOPENED" and e["day"] == i["reopened_date"] for e in evs),
+                  f"{i['name']} reopened {i['reopened_date']}")
+        status = ("resolved" if latest(mem, key)["status"] == "RESOLVED" else "open") if key else None
+        tally("issue status at the end", status == i["status_at_end"], f"{i['name']}: expected {i['status_at_end']}, memory says {status}")
+    merged = sum(1 for a in range(len(groups)) for b in range(a + 1, len(groups))
+                 if {issue_of.get(t) for t in groups[a]} & {issue_of.get(t) for t in groups[b]} - {None})
+    c["different issues merged (lower is better)"] = [merged, len(groups) * (len(groups) - 1) // 2]
+    for r in truth.get("long_range", []):
+        day, t = r["later_date"], thread[r["later_source_ts"]]
+        change = next((x for x in changes_on(timeline, day) if x["thread_ts"] == t), None)
+        lines = what_changed(change, state_as_of(timeline, day))[1] if change else []
+        reminded = any(l.startswith("Still in force") and value_match(l.rsplit("=", 1)[-1].split("(since")[0], r["constraint_value"])
+                       for l in lines)
+        tally("old constraint shown when it matters again", reminded,
+              f"{r['constraint_name']} = {r['constraint_value']} on {day}" + ("" if change else " (thread had no change that day)"))
+    return c, details
+
+
 # ---------- report ----------
 
 def main():
@@ -280,6 +357,19 @@ def main():
         print(f"{r['level']:<16}{r['predicted']:>10}{r['correct']:>9}{r['precision']:>11.0%}{r['recall']:>8.0%}"
               f"{r['hidden_found']:>15}/{r['hidden_total']}")
     print("(hidden owners = true owners that team.json leaves out)\n")
+    memory_truth = config.DATA_DIR / "memory_truth.json"
+    if memory_truth.exists():
+        print("\n" + "=" * 30 + " 5. MEMORY (vs memory_truth.json) " + "=" * 30 + "\n")
+        counts, details = score_memory(json.load(open(memory_truth)), llm_timeline, messages)
+        for name, (ok, total) in counts.items():
+            print(f"   {name:<46}{ok:>4}/{total}")
+        if SHOW_HOLDOUT:
+            for name, mark, what in details:
+                print(f"   {mark} {name}: {what}")
+        else:
+            print("   (per-item detail hidden: run with --show-holdout)")
+    if not SHOW_HOLDOUT and not gt["tuned"]["events"]:
+        return  # a pure holdout dataset: the per-part list below would show its part names and owners
     for part, truth, got in per_part:
         got_s = ", ".join(f"{names[p]} ({c})" for p, c in got.items()) or "-"
         ok = "✓" if set(truth) <= set(got) else ("~" if set(truth) & set(got) else "✗")

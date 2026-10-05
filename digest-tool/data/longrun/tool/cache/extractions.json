@@ -1,0 +1,1867 @@
+{
+  "1772471520.000101:3:4aa60ddf": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U05PRIYA",
+      "U06SAM",
+      "U01MAYA"
+    ],
+    "summary": "EVT push officially started; 12 unit sets arriving Wednesday with 3-week test window before DVT freeze.",
+    "_usage": {
+      "input": 1575,
+      "output": 88
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772474700.000104:3:8362a2e6": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV",
+      "U04CARLOS"
+    ],
+    "summary": "Oat milk carton left empty in the fridge; Carlos will replace it.",
+    "_usage": {
+      "input": 1509,
+      "output": 68
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772487600.000107:3:82a24557": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Logic Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA"
+    ],
+    "summary": "MLB rev A arrived with 14 units; 2 have tombstoned components being reworked; Lena taking a working unit for bootloader testing.",
+    "_usage": {
+      "input": 1550,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772493600.000110:2:9086aba6": {
+    "type": "update",
+    "parts_mentioned": [
+      "SE-4 Scan Engine Module"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U05PRIYA"
+    ],
+    "summary": "SE-4 Scan Engine Module PO for 150 units approved with 8-week lead time from Zebrix.",
+    "_usage": {
+      "input": 1519,
+      "output": 88
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772562600.000112:4:8e7a870c": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U06SAM",
+      "U01MAYA",
+      "U02DEV",
+      "U05PRIYA"
+    ],
+    "summary": "Customer targets locked: 380g max weight, 10h runtime, 1.5m drop/26x, IP65; targets of record require change approval through Priya.",
+    "_usage": {
+      "input": 1671,
+      "output": 142
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772576100.000116:2:4edeccff": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Logic Board",
+      "BLE/Wi-Fi Radio Module",
+      "SE-4 Scan Engine Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA"
+    ],
+    "summary": "Lena fixed bootloader and scan engine decoding on MLB #04; USB DFU and Code128/DataMatrix now working.",
+    "_usage": {
+      "input": 1537,
+      "output": 104
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772584200.000118:1:78bcd108": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "Maya incorporating Proto Labs DFM feedback (+0.5° draft on grip ribs) into clamshell rev B.",
+    "_usage": {
+      "input": 1497,
+      "output": 79
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772643900.000119:3:46553886": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [
+      "M2 thread formers"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA",
+      "U05PRIYA",
+      "U04CARLOS"
+    ],
+    "summary": "EVT clamshells arrived; assembly party scheduled with screw kits ready.",
+    "_usage": {
+      "input": 1542,
+      "output": 95
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772655300.000122:2:cd79ea1c": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U02DEV",
+      "U06SAM"
+    ],
+    "summary": "Dev and Sam discussing lunch plans with a 2-for-1 deal.",
+    "_usage": {
+      "input": 1503,
+      "output": 67
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772673000.000124:4:7a980230": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Enclosure (Clamshell Housing)",
+      "Scan Window",
+      "Battery Door and Bezel Gaskets",
+      "BLE/Wi-Fi Radio Module",
+      "Main Logic Board"
+    ],
+    "unknown_parts": [
+      "overmold",
+      "strap"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U01MAYA",
+      "U06SAM",
+      "U02DEV"
+    ],
+    "summary": "EVT unit is 32g over target weight at 412g; team exploring design cuts to battery, board, enclosure, and radio module.",
+    "_usage": {
+      "input": 1617,
+      "output": 160
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772734800.000128:3:0b0ee8b3": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Battery Door and Bezel Gaskets"
+    ],
+    "unknown_parts": [
+      "Amptek data",
+      "PCM",
+      "kapton wrap"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U01MAYA",
+      "U02DEV",
+      "U04CARLOS"
+    ],
+    "summary": "Battery pack thickness hard limit of 9.0 mm for IP65 seal closure; current pack at 8.4 mm nominal, 8.7 mm end-of-life.",
+    "_usage": {
+      "input": 1624,
+      "output": 157
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772744400.000131:2:09d616f5": {
+    "type": "update",
+    "parts_mentioned": [
+      "Trigger Assembly"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U03LENA",
+      "U01MAYA"
+    ],
+    "summary": "Trigger debounce increased to 25 ms to fix double scans; mechanical spring revision may also be needed.",
+    "_usage": {
+      "input": 1519,
+      "output": 80
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772753400.000133:1:f9279b25": {
+    "type": "update",
+    "parts_mentioned": [
+      "Charging Cradle Contacts",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "Charging cradle prototype successfully delivers 1.5 A CC; pogo pins reach 41°C after one hour, within specification.",
+    "_usage": {
+      "input": 1496,
+      "output": 99
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772757900.000134:1:bf2337d8": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS"
+    ],
+    "summary": "Amptek confirmed 300 pcs of 5200 mAh pouch cells for DVT with 6-week lead time; sample lot of 40 already received.",
+    "_usage": {
+      "input": 1505,
+      "output": 106
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772823600.000135:1:3b3bc6fe": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Logic Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U05PRIYA"
+    ],
+    "summary": "Week 1 recap: 12 EVT units built with 10 functional, 2 pending MLB rework; weight issue (412g vs 380g target) is open; drop testing starts Monday.",
+    "_usage": {
+      "input": 1514,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772839800.000136:3:52a20086": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U06SAM",
+      "U01MAYA",
+      "U03LENA"
+    ],
+    "summary": "Team members planning a trail run at Rancho San Antonio.",
+    "_usage": {
+      "input": 1503,
+      "output": 70
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1772839800.000136:4:abcbf602": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U06SAM",
+      "U01MAYA",
+      "U03LENA"
+    ],
+    "summary": "Team members organizing and discussing a trail run outing.",
+    "_usage": {
+      "input": 1531,
+      "output": 68
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773076200.000140:3:33c5792d": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Scan Window",
+      "Battery Door and Bezel Gaskets",
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U01MAYA",
+      "U05PRIYA"
+    ],
+    "summary": "Drop test revealed window popping out of bezel on unit #5; design fix planned with additional snaps and adhesive ring for rev B.",
+    "_usage": {
+      "input": 1570,
+      "output": 102
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773091200.000143:3:c246e8d2": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Trigger Assembly",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Battery Door and Bezel Gaskets",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U03LENA",
+      "U06SAM"
+    ],
+    "summary": "Units randomly resetting during trigger pulls with no logged error; affects at least two devices, cause unknown.",
+    "_usage": {
+      "input": 1567,
+      "output": 107
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773097200.000146:1:8befebfa": {
+    "type": "update",
+    "parts_mentioned": [
+      "BLE/Wi-Fi Radio Module",
+      "Main Logic Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "Dev removed the radio module from 2 MLBs and replaced it with a shield sticker, achieving only 1 dB worse BLE RSSI while saving 3.1g.",
+    "_usage": {
+      "input": 1499,
+      "output": 94
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773091200.000143:5:3a70a774": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Trigger Assembly",
+      "Battery Door and Bezel Gaskets",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U03LENA",
+      "U06SAM",
+      "U02DEV"
+    ],
+    "summary": "Units randomly resetting during trigger stress and demo due to MCU brown-out; power supply voltage dip issue requires investigation.",
+    "_usage": {
+      "input": 1636,
+      "output": 104
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773167400.000149:4:ef305a9c": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "BLE/Wi-Fi Radio Module",
+      "SE-4 Scan Engine Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA",
+      "U06SAM"
+    ],
+    "summary": "Runtime is only 9.2 hours (short of shift), sleep current at 18 mA is too high because display and radio aren't actually sleeping; firmware fixes needed within a week.",
+    "_usage": {
+      "input": 1590,
+      "output": 145
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773176400.000153:1:2ff0196e": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U01MAYA"
+    ],
+    "summary": "Proto Labs quoted $38/set for rev B clamshells at 25 qty with 7-day lead time, awaiting Maya's CAD release.",
+    "_usage": {
+      "input": 1498,
+      "output": 98
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773184800.000154:2:e3c45792": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U03LENA",
+      "U04CARLOS"
+    ],
+    "summary": "Lab microwave is making a strange noise since December.",
+    "_usage": {
+      "input": 1493,
+      "output": 62
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773249300.000156:4:e27e98e8": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Logic Board",
+      "SE-4 Scan Engine Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA",
+      "U05PRIYA"
+    ],
+    "summary": "VBAT sag during simultaneous illuminator and laser fire causes MCU brownout on low battery; root cause of mystery resets identified.",
+    "_usage": {
+      "input": 1632,
+      "output": 122
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773264600.000160:2:1aa26451": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)",
+      "Scan Window",
+      "Battery Door and Bezel Gaskets"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U01MAYA",
+      "U04CARLOS"
+    ],
+    "summary": "Revision B clamshell CAD released with design improvements; purchase order sent.",
+    "_usage": {
+      "input": 1533,
+      "output": 89
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773339600.000162:3:98391469": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)",
+      "Main Logic Board",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U01MAYA",
+      "U06SAM",
+      "U02DEV"
+    ],
+    "summary": "Frankenunit prototype weighs 401g (down 11g), still 21g over 380g target; battery pack and rev B shell coring identified as next weight reduction opportunities.",
+    "_usage": {
+      "input": 1563,
+      "output": 137
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773353400.000165:3:b28a2675": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U02DEV"
+    ],
+    "summary": "Battery sample internal resistance is 65-72 mΩ (spec ≤45 mΩ) and is exacerbating the brownout issue; production IR data needed before shipment.",
+    "_usage": {
+      "input": 1612,
+      "output": 111
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773359400.000168:2:d2d2db56": {
+    "type": "update",
+    "parts_mentioned": [
+      "BLE/Wi-Fi Radio Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA",
+      "U06SAM"
+    ],
+    "summary": "BLE pairing with Halvorsen WMS tablet confirmed working; first end-to-end scan successful.",
+    "_usage": {
+      "input": 1510,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773421200.000170:1:b87776d5": {
+    "type": "update",
+    "parts_mentioned": [
+      "Battery Door and Bezel Gaskets",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U05PRIYA"
+    ],
+    "summary": "Week 2 progress: bezel retention issue found and scheduled for rev B, random resets traced to battery cell quality, runtime 9.2h, rev B shells arriving ~Mar 20.",
+    "_usage": {
+      "input": 1529,
+      "output": 133
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773433800.000171:2:4a7604c0": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA"
+    ],
+    "summary": "Dev bringing pie to the office on Monday to celebrate Pi Day.",
+    "_usage": {
+      "input": 1497,
+      "output": 64
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773433800.000171:3:4b057efc": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA"
+    ],
+    "summary": "Dev bringing pie to the office Monday for pi day celebration.",
+    "_usage": {
+      "input": 1520,
+      "output": 63
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773684000.000174:1:21b8c102": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "470 µF polymer caps",
+      "220 µF backups"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "Dev ordered capacitors for VBAT bulk experiment arriving tomorrow.",
+    "_usage": {
+      "input": 1489,
+      "output": 95
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773694800.000175:2:f5c80146": {
+    "type": "update",
+    "parts_mentioned": [
+      "BLE/Wi-Fi Radio Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV"
+    ],
+    "summary": "Sleep mode firmware achieves 6 mA bench current; runtime testing pending.",
+    "_usage": {
+      "input": 1514,
+      "output": 83
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773700200.000177:2:07f0cf0a": {
+    "type": "update",
+    "parts_mentioned": [
+      "Trigger Assembly",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA",
+      "U03LENA"
+    ],
+    "summary": "Trigger Assembly rev B spring passes testing with 1.8 N actuation; debounce reduced to 10 ms in tonight's firmware build.",
+    "_usage": {
+      "input": 1524,
+      "output": 94
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773249300.000156:7:acda7734": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Logic Board",
+      "SE-4 Scan Engine Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA",
+      "U05PRIYA"
+    ],
+    "summary": "MCU brownout resets during scan when battery voltage sags below 3.6V; root cause identified and two hardware/firmware fixes proposed for DVT.",
+    "_usage": {
+      "input": 1739,
+      "output": 134
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773781200.000182:1:88818736": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS"
+    ],
+    "summary": "Battery cell production lot passes IR spec (38-43 mΩ), shipping April 6.",
+    "_usage": {
+      "input": 1495,
+      "output": 83
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773788400.000183:3:bacdae07": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U06SAM",
+      "U05PRIYA",
+      "U01MAYA"
+    ],
+    "summary": "Rev B shell reserved for Halvorsen demo at Reno DC on April 9.",
+    "_usage": {
+      "input": 1530,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773853200.000186:4:e3c64a8b": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U05PRIYA",
+      "U06SAM",
+      "U01MAYA",
+      "U02DEV"
+    ],
+    "summary": "Weight target increased from 380 g to 395 g max to prioritize full-shift runtime; battery pack specifications remain unchanged.",
+    "_usage": {
+      "input": 1608,
+      "output": 105
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773871200.000190:3:6b5ae880": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image",
+      "BLE/Wi-Fi Radio Module"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA",
+      "U06SAM"
+    ],
+    "summary": "Runtime test with new firmware build achieved 10.6h on unit #6, exceeding 10h shift requirement; further optimizations in progress.",
+    "_usage": {
+      "input": 1559,
+      "output": 95
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773249300.000156:10:63d2bb90": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Logic Board",
+      "SE-4 Scan Engine Module",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U02DEV",
+      "U03LENA",
+      "U05PRIYA"
+    ],
+    "summary": "Brownout reset issue fixed with 470µF bulk cap on VBAT at engine connector plus 2ms aimer firmware stagger; confirmed stable over 2000 pulls at 3.4V.",
+    "_usage": {
+      "input": 1884,
+      "output": 137
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773091200.000143:6:d8268f4f": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Main Logic Board",
+      "Main Firmware Image",
+      "Battery Door and Bezel Gaskets"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U03LENA",
+      "U06SAM",
+      "U02DEV"
+    ],
+    "summary": "Units randomly resetting during trigger use due to brown-out on MCU supply; fixed with MLB rev B bulk cap and firmware 0.4.2.",
+    "_usage": {
+      "input": 1671,
+      "output": 102
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1773963000.000197:1:a2517ae7": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Battery Door and Bezel Gaskets"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "Water ingress in battery bay during IP65 spray test; door gasket compression being increased for rev B.",
+    "_usage": {
+      "input": 1499,
+      "output": 77
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774029600.000198:2:3d0c3e3d": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA",
+      "U04CARLOS"
+    ],
+    "summary": "Rev B clamshell housings arrived on time from Proto Labs; 25 sets with improved bezel snaps.",
+    "_usage": {
+      "input": 1506,
+      "output": 89
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774044000.000200:1:4f99ecc0": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [
+      "cap"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U05PRIYA"
+    ],
+    "summary": "Week 3 recap: brownout fixed with capacitor and firmware update, runtime 10.6h, weight target 395g, DVT design freeze Mar 25.",
+    "_usage": {
+      "input": 1511,
+      "output": 84
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774049400.000201:3:bc178c71": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV",
+      "U06SAM"
+    ],
+    "summary": "Team sharing music preferences for Friday playlist.",
+    "_usage": {
+      "input": 1498,
+      "output": 65
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774285200.000204:1:e1a018f0": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Logic Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "Main Logic Board rev B gerbers sent to fab with 5-day turnaround; includes bulk capacitor, sticker shield, and PMIC divider footprint fix.",
+    "_usage": {
+      "input": 1491,
+      "output": 81
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774296900.000205:1:7fba8514": {
+    "type": "update",
+    "parts_mentioned": [
+      "Battery Door and Bezel Gaskets"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "Revision B battery door with deeper gasket groove passes IP65 spray test.",
+    "_usage": {
+      "input": 1486,
+      "output": 66
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774303200.000206:1:5bbe0b11": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA"
+    ],
+    "summary": "Firmware 0.5.0 implements MCU stop mode between scans with trigger IRQ wake; bench sleep current now 2.1 mA.",
+    "_usage": {
+      "input": 1497,
+      "output": 85
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774306800.000207:4:a1371a30": {
+    "type": "problem",
+    "parts_mentioned": [
+      "SE-4 Scan Engine Module"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U05PRIYA"
+    ],
+    "summary": "SE-4 Scan Engine Module lead time slipped from 8 to 12 weeks; DVT delivery pushed from Apr 17 to May 8 due to CMOS sensor shortage.",
+    "_usage": {
+      "input": 1588,
+      "output": 98
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774375200.000211:3:beb2478c": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U01MAYA",
+      "U05PRIYA",
+      "U06SAM"
+    ],
+    "summary": "Rev B full build weighs 392 g, meeting the 395 g target with 3 g margin.",
+    "_usage": {
+      "input": 1517,
+      "output": 82
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774306800.000207:6:07c30ff1": {
+    "type": "problem",
+    "parts_mentioned": [
+      "SE-4 Scan Engine Module"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U05PRIYA"
+    ],
+    "summary": "SE-4 lead time slipped from 8 to 12 weeks due to CMOS shortage; DVT build will proceed in two waves using partial shipment and bonded stock.",
+    "_usage": {
+      "input": 1672,
+      "output": 101
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774393200.000216:2:8eb55387": {
+    "type": "noise",
+    "parts_mentioned": [
+      "Charging Cradle Contacts"
+    ],
+    "unknown_parts": [
+      "USB-C to pogo adapter"
+    ],
+    "urgency": 1,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV"
+    ],
+    "summary": "Lena looking for the USB-C to pogo adapter; Dev has it at his desk.",
+    "_usage": {
+      "input": 1498,
+      "output": 88
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774456200.000218:5:d887e30a": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)",
+      "Battery Door and Bezel Gaskets",
+      "Main Logic Board",
+      "Trigger Assembly",
+      "SE-4 Scan Engine Module",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [
+      "Amptek 5200 mAh pack",
+      "K-Tech"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U05PRIYA",
+      "U01MAYA",
+      "U02DEV",
+      "U04CARLOS",
+      "U06SAM"
+    ],
+    "summary": "DVT design freeze in effect; hardware frozen (clamshell, door, MLB, trigger spring, SE-4, battery pack); all changes require ECO approval; firmware continues iterating.",
+    "_usage": {
+      "input": 1636,
+      "output": 184
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774467000.000223:2:19b3a5fe": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U03LENA"
+    ],
+    "summary": "Kitchen has cake; Lena hopes it's frozen.",
+    "_usage": {
+      "input": 1490,
+      "output": 57
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774548000.000225:2:68a2f214": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [
+      "OCV table",
+      "Amptek curves"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV"
+    ],
+    "summary": "Fuel gauge reads 8% high at low battery; Lena recalibrating OCV table using Dev's Amptek curves instead of generic ones.",
+    "_usage": {
+      "input": 1517,
+      "output": 122
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774560600.000227:2:f47f100c": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U05PRIYA"
+    ],
+    "summary": "K-Tech quoted $61/unit for DVT assembly and test with $8.4k fixture NRE; Priya approves and requests PO.",
+    "_usage": {
+      "input": 1519,
+      "output": 86
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774566000.000229:1:8cb3ac61": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "DVT clamshell housing drawing package sent to tool shop; T1 shots expected around April 7.",
+    "_usage": {
+      "input": 1486,
+      "output": 76
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774630800.000230:1:8fa214db": {
+    "type": "update",
+    "parts_mentioned": [
+      "SE-4 Scan Engine Module",
+      "Battery Door and Bezel Gaskets"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U05PRIYA"
+    ],
+    "summary": "DVT freeze complete at 392g with IP65 door sealed; SE-4 lead time slip requires two-wave DVT builds before Apr 9 Reno demo.",
+    "_usage": {
+      "input": 1513,
+      "output": 104
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774648800.000231:4:78ed2d45": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U06SAM",
+      "U03LENA",
+      "U01MAYA",
+      "U04CARLOS"
+    ],
+    "summary": "Board game night next Thursday; Lena and Maya in, Carlos out.",
+    "_usage": {
+      "input": 1514,
+      "output": 79
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774548000.000225:3:d7d0ad1f": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [
+      "OCV table",
+      "Amptek curves"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV"
+    ],
+    "summary": "Lena recalibrating fuel gauge using Dev's Amptek curves; fix pushed to branch for Monday testing.",
+    "_usage": {
+      "input": 1546,
+      "output": 106
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774548000.000225:4:9915148c": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+      "Main Firmware Image"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA",
+      "U02DEV"
+    ],
+    "summary": "Lena recalibrated fuel gauge OCV table using Amptek curves; fix merged into firmware 0.5.2.",
+    "_usage": {
+      "input": 1581,
+      "output": 101
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774891800.000236:2:e0c272ae": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Logic Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "Main Logic Board rev B passed brownout regression testing with zero resets at 1000 pulls at 3.4V.",
+    "_usage": {
+      "input": 1515,
+      "output": 75
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774908000.000239:2:5837215f": {
+    "type": "update",
+    "parts_mentioned": [
+      "Scan Window"
+    ],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U01MAYA",
+      "U06SAM"
+    ],
+    "summary": "Drop test on rev B unit passed all 26 drops at 1.5 m with no window damage, only minor cosmetic scuff.",
+    "_usage": {
+      "input": 1511,
+      "output": 85
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774976400.000241:1:a290a074": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [
+      "Amptek"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS"
+    ],
+    "summary": "Amptek production lot of 300 units confirmed shipping April 6 with certificates of conformance and IR data.",
+    "_usage": {
+      "input": 1486,
+      "output": 73
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774987200.000242:2:a65c103f": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U06SAM",
+      "U05PRIYA"
+    ],
+    "summary": "Sam shared draft demo script for Reno; Priya will review by Thursday.",
+    "_usage": {
+      "input": 1516,
+      "output": 69
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1774996200.000244:2:a4f684f3": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Charging Cradle Contacts"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U02DEV",
+      "U04CARLOS"
+    ],
+    "summary": "Pogo pin contact resistance degrading after 500 cycles; switching to 30 µin gold plating spec to address wear.",
+    "_usage": {
+      "input": 1528,
+      "output": 87
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775064600.000246:4:aee81fdd": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [
+      "hand strap mount boss",
+      "metal insert"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA",
+      "U03LENA",
+      "U06SAM"
+    ],
+    "summary": "Hand strap mount boss will use option B (lighter with metal insert) after clarifying strap weight is not counted against device cap.",
+    "_usage": {
+      "input": 1581,
+      "output": 100
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775077200.000250:2:3e4e3c79": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U03LENA",
+      "U05PRIYA"
+    ],
+    "summary": "Discussion about a cat boot logo design decision for branding.",
+    "_usage": {
+      "input": 1508,
+      "output": 58
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775152800.000252:3:ea9488c9": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV",
+      "U06SAM",
+      "U03LENA"
+    ],
+    "summary": "Firmware 0.5.2 achieves 11.4 h runtime on rev B unit with 1.4 h margin; stop mode optimization was the key improvement.",
+    "_usage": {
+      "input": 1532,
+      "output": 124
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775167200.000255:2:dff00da0": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Charging Cradle Contacts"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U02DEV"
+    ],
+    "summary": "Team approved 30 µin gold plating on cradle contacts (+$0.22/pin) rated for 5000 cycles; ECO to follow.",
+    "_usage": {
+      "input": 1516,
+      "output": 93
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775172600.000257:1:cd32656d": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Charging Cradle Contacts"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U05PRIYA",
+      "U04CARLOS"
+    ],
+    "summary": "ECO-001 approved: cradle pogo pin plating specification changed to 30 µin gold; PO change requested.",
+    "_usage": {
+      "input": 1493,
+      "output": 82
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775235600.000258:1:ce2af5c2": {
+    "type": "update",
+    "parts_mentioned": [
+      "Charging Cradle Contacts"
+    ],
+    "unknown_parts": [
+      "ECO-001",
+      "Amptek lot",
+      "T1 shots"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U05PRIYA"
+    ],
+    "summary": "Week 5 progress: 11.4h runtime achieved, rev B drop test passed, pogo pin plating ECO approved; T1 samples and Amptek parts arriving next week.",
+    "_usage": {
+      "input": 1513,
+      "output": 112
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775242800.000259:2:75713400": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U01MAYA",
+      "U02DEV"
+    ],
+    "summary": "Maya is giving leftover kapton tape to Dev.",
+    "_usage": {
+      "input": 1488,
+      "output": 61
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775253600.000261:1:a3e27847": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "Maya confirmed T1 tooling date for Tuesday at the shop and will drive there.",
+    "_usage": {
+      "input": 1480,
+      "output": 62
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775498400.000262:1:0269a0e9": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "Amptek"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U04CARLOS"
+    ],
+    "summary": "300-piece battery lot received and passed incoming inspection on dimensions, OCV, and internal resistance.",
+    "_usage": {
+      "input": 1503,
+      "output": 85
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775505600.000263:3:296bdaa8": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image",
+      "BLE/Wi-Fi Radio Module"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA",
+      "U06SAM"
+    ],
+    "summary": "FW 0.6.0 RC released for demo testing; BLE reconnect issue found and fixed in 0.6.1.",
+    "_usage": {
+      "input": 1542,
+      "output": 97
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775514600.000266:1:a3e5fcfe": {
+    "type": "update",
+    "parts_mentioned": [
+      "Charging Cradle Contacts"
+    ],
+    "unknown_parts": [
+      "K-Tech test fixture"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "K-Tech test fixture first article has minor pogo pin alignment issues; vendor is shimming it.",
+    "_usage": {
+      "input": 1491,
+      "output": 79
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775582100.000267:3:2075cbf2": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "Kestrel KP-5800 pouch"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U06SAM"
+    ],
+    "summary": "Switching to Kestrel KP-5800 cells (5800 mAh, 3-week lead time) as second source for wave 2 to avoid Amptek 4+ week slip; samples being ordered.",
+    "_usage": {
+      "input": 1634,
+      "output": 137
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775595600.000270:1:fd511c60": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)",
+      "Trigger Assembly"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "First article shells received; minor sink mark near trigger boss being corrected by tool shop via core cooling adjustment.",
+    "_usage": {
+      "input": 1490,
+      "output": 78
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775667600.000271:2:0eb43f1c": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [
+      "T1 molded shell",
+      "strap boss B"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA",
+      "U05PRIYA"
+    ],
+    "summary": "DVT configuration with T1 molded shell weighs 386g, 9g under the 395g target.",
+    "_usage": {
+      "input": 1520,
+      "output": 103
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775673000.000273:1:0911b08a": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "Pelican case"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA"
+    ],
+    "summary": "Demo unit flashed with firmware 0.6.1 and fully charged, packed for transport.",
+    "_usage": {
+      "input": 1485,
+      "output": 93
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775682000.000274:2:956396d8": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U06SAM",
+      "U05PRIYA",
+      "U02DEV"
+    ],
+    "summary": "Sam and Priya are driving to Reno; Dev makes a joke about dropping the device.",
+    "_usage": {
+      "input": 1509,
+      "output": 78
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775689200.000276:2:784c9397": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U06SAM"
+    ],
+    "summary": "Board game night scheduling; Sam won't attend due to travel.",
+    "_usage": {
+      "input": 1494,
+      "output": 63
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775757600.000278:1:9b0d644a": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U02DEV"
+    ],
+    "summary": "Fixture shim is complete; K-Tech validated 5 golden boards and all passed.",
+    "_usage": {
+      "input": 1479,
+      "output": 59
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775781000.000279:3:6dd40de5": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U06SAM",
+      "U05PRIYA",
+      "U04CARLOS"
+    ],
+    "summary": "Reno demo successful with 300 scans in 40 minutes; customer wants 10 DVT units for May pilot, wave 1 production of 62 units confirmed adequate.",
+    "_usage": {
+      "input": 1563,
+      "output": 92
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775840400.000282:1:b7885da9": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [
+      "Amptek lot",
+      "pre-DVT builds"
+    ],
+    "urgency": 2,
+    "people_mentioned": [
+      "U05PRIYA"
+    ],
+    "summary": "Week 6 recap: Reno demo successful, pilot needs 10 units in May, production shells weight 386g, Amptek lot arrived; cold/hot chamber testing planned for pre-DVT builds next week.",
+    "_usage": {
+      "input": 1518,
+      "output": 119
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775582100.000267:4:2bf8f350": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "Kestrel KP-5800 pouch",
+      "PCM"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U06SAM"
+    ],
+    "summary": "Kestrel KP-5800 pouch cells approved as second source for wave 2 to mitigate Amptek delay; samples arriving Wednesday.",
+    "_usage": {
+      "input": 1659,
+      "output": 124
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775858400.000284:2:289afeda": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U01MAYA",
+      "U03LENA"
+    ],
+    "summary": "Lena and Maya are discussing a Wingspan game rematch.",
+    "_usage": {
+      "input": 1488,
+      "output": 65
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776101400.000286:4:0e48fff1": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Main Logic Board",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "bulk cap",
+      "470 µF fix",
+      "BOR"
+    ],
+    "urgency": 4,
+    "people_mentioned": [
+      "U01MAYA",
+      "U03LENA",
+      "U02DEV",
+      "U05PRIYA"
+    ],
+    "summary": "Pre-DVT unit D3 browns out during cold chamber scans at -10°C; battery IR doubles in cold, 470µF capacitor fix insufficient; blocks pilot build for cold storage customer.",
+    "_usage": {
+      "input": 1665,
+      "output": 138
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776114000.000290:1:670dd329": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U03LENA"
+    ],
+    "summary": "Lena is implementing a firmware mitigation to reduce illuminator drive current at low battery temperatures, testing tomorrow.",
+    "_usage": {
+      "input": 1484,
+      "output": 90
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775582100.000267:5:c3bb2939": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "Kestrel KP-5800 pouch",
+      "Amptek cells"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U06SAM"
+    ],
+    "summary": "Carlos sourced 20 Kestrel KP-5800 sample cells as potential alternate to Amptek for wave 2 production, offering 5800 mAh capacity, cost savings, and faster lead time.",
+    "_usage": {
+      "input": 1686,
+      "output": 134
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776101400.000286:5:ee6c0f25": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Main Logic Board",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U01MAYA",
+      "U03LENA",
+      "U02DEV",
+      "U05PRIYA"
+    ],
+    "summary": "Pre-DVT unit D3 exhibits brownout resets at -10°C despite bulk capacitor fix; pilot build is blocked pending either a larger capacitor or firmware derate.",
+    "_usage": {
+      "input": 1723,
+      "output": 121
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776189600.000294:1:cfc57c66": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Enclosure (Clamshell Housing)"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U01MAYA"
+    ],
+    "summary": "T2 tooling shots scheduled for April 21 with sink mark fix incorporated.",
+    "_usage": {
+      "input": 1478,
+      "output": 70
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776200400.000295:2:5608461d": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U06SAM",
+      "U05PRIYA"
+    ],
+    "summary": "Pilot build logistics targeting mid-May; exact date still to be determined.",
+    "_usage": {
+      "input": 1507,
+      "output": 61
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776114000.000290:2:5bb6ccbb": {
+    "type": "update",
+    "parts_mentioned": [
+      "Main Firmware Image",
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "illuminator"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U03LENA"
+    ],
+    "summary": "Firmware mitigation reduces illuminator drive at cold temperatures; partial improvement in stability but not fully resolved.",
+    "_usage": {
+      "input": 1528,
+      "output": 91
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1775582100.000267:6:80baf059": {
+    "type": "update",
+    "parts_mentioned": [
+      "Li-ion Battery Pack (1S2P pouch, 5200 mAh)"
+    ],
+    "unknown_parts": [
+      "Kestrel KP-5800"
+    ],
+    "urgency": 3,
+    "people_mentioned": [
+      "U04CARLOS",
+      "U06SAM",
+      "U02DEV"
+    ],
+    "summary": "Kestrel KP-5800 pouch cells (5800 mAh) arrived as alternate to Amptek; samples passed incoming check and 4 units sent to Dev for pack qualification builds.",
+    "_usage": {
+      "input": 1742,
+      "output": 134
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776279600.000298:2:8e506d3c": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U02DEV",
+      "U01MAYA"
+    ],
+    "summary": "Taco truck arrived; team members heading out.",
+    "_usage": {
+      "input": 1483,
+      "output": 61
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1776294000.000300:1:0ae8d185": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U05PRIYA",
+      "U02DEV",
+      "U03LENA"
+    ],
+    "summary": "Cold brownout issue reopened as top priority for pilot; Dev and Lena assigned ownership.",
+    "_usage": {
+      "input": 1496,
+      "output": 78
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  }
+}

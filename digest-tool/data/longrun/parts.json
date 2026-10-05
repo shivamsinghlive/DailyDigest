@@ -1,0 +1,106 @@
+[
+  {
+    "id": "P-ENC",
+    "official_name": "Main Enclosure (Clamshell Housing)",
+    "nicknames": [
+      "clamshell",
+      "shell",
+      "the tub"
+    ],
+    "subsystem": "mechanical",
+    "owner": "U01MAYA"
+  },
+  {
+    "id": "P-TRG",
+    "official_name": "Trigger Assembly",
+    "nicknames": [
+      "paddle",
+      "trigger"
+    ],
+    "subsystem": "mechanical",
+    "owner": "U01MAYA"
+  },
+  {
+    "id": "P-WIN",
+    "official_name": "Scan Window",
+    "nicknames": [
+      "window",
+      "lens cover",
+      "glass"
+    ],
+    "subsystem": "mechanical",
+    "owner": "U01MAYA"
+  },
+  {
+    "id": "P-GSK",
+    "official_name": "Battery Door and Bezel Gaskets",
+    "nicknames": [
+      "squish ring",
+      "door gasket"
+    ],
+    "subsystem": "mechanical",
+    "owner": "U01MAYA"
+  },
+  {
+    "id": "P-BAT",
+    "official_name": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+    "nicknames": [
+      "brick",
+      "the pack",
+      "cells"
+    ],
+    "subsystem": "power",
+    "owner": "U02DEV"
+  },
+  {
+    "id": "P-MLB",
+    "official_name": "Main Logic Board",
+    "nicknames": [
+      "mobo",
+      "MLB"
+    ],
+    "subsystem": "electrical",
+    "owner": "U02DEV"
+  },
+  {
+    "id": "P-DCK",
+    "official_name": "Charging Cradle Contacts",
+    "nicknames": [
+      "pogo pins",
+      "cradle contacts"
+    ],
+    "subsystem": "electrical",
+    "owner": "U02DEV"
+  },
+  {
+    "id": "P-RAD",
+    "official_name": "BLE/Wi-Fi Radio Module",
+    "nicknames": [
+      "radio",
+      "the can"
+    ],
+    "subsystem": "electrical",
+    "owner": "U02DEV"
+  },
+  {
+    "id": "P-SCN",
+    "official_name": "SE-4 Scan Engine Module",
+    "nicknames": [
+      "eyeball",
+      "engine",
+      "SE4"
+    ],
+    "subsystem": "optics",
+    "owner": "U03LENA"
+  },
+  {
+    "id": "P-FW",
+    "official_name": "Main Firmware Image",
+    "nicknames": [
+      "the build",
+      "fw"
+    ],
+    "subsystem": "firmware",
+    "owner": "U03LENA"
+  }
+]

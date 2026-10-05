@@ -1,0 +1,35 @@
+{
+  "description": "TEST ONLY. Derived from the dataset's parts.json owner + team.json parts_owned.",
+  "owners": {
+    "Main Enclosure (Clamshell Housing)": [
+      "U01MAYA"
+    ],
+    "Trigger Assembly": [
+      "U01MAYA"
+    ],
+    "Scan Window": [
+      "U01MAYA"
+    ],
+    "Battery Door and Bezel Gaskets": [
+      "U01MAYA"
+    ],
+    "Li-ion Battery Pack (1S2P pouch, 5200 mAh)": [
+      "U02DEV"
+    ],
+    "Main Logic Board": [
+      "U02DEV"
+    ],
+    "Charging Cradle Contacts": [
+      "U02DEV"
+    ],
+    "BLE/Wi-Fi Radio Module": [
+      "U02DEV"
+    ],
+    "SE-4 Scan Engine Module": [
+      "U03LENA"
+    ],
+    "Main Firmware Image": [
+      "U03LENA"
+    ]
+  }
+}

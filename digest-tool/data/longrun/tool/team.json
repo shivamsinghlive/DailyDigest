@@ -1,0 +1,64 @@
+{
+  "project": {
+    "name": "longrun",
+    "phases": [
+      "Concept",
+      "EVT",
+      "DVT",
+      "PVT",
+      "Production"
+    ],
+    "start_phase": "EVT"
+  },
+  "people": [
+    {
+      "id": "U01MAYA",
+      "name": "Maya Okafor",
+      "role": "mechanical_engineer",
+      "owns": [
+        "Main Enclosure (Clamshell Housing)",
+        "Trigger Assembly",
+        "Scan Window",
+        "Battery Door and Bezel Gaskets"
+      ]
+    },
+    {
+      "id": "U02DEV",
+      "name": "Dev Raman",
+      "role": "electrical_engineer",
+      "owns": [
+        "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "Main Logic Board",
+        "Charging Cradle Contacts",
+        "BLE/Wi-Fi Radio Module"
+      ]
+    },
+    {
+      "id": "U03LENA",
+      "name": "Lena Fischer",
+      "role": "electrical_engineer",
+      "owns": [
+        "SE-4 Scan Engine Module",
+        "Main Firmware Image"
+      ]
+    },
+    {
+      "id": "U04CARLOS",
+      "name": "Carlos Mendez",
+      "role": "supply_chain",
+      "owns": []
+    },
+    {
+      "id": "U05PRIYA",
+      "name": "Priya Natarajan",
+      "role": "engineering_manager",
+      "owns": []
+    },
+    {
+      "id": "U06SAM",
+      "name": "Sam Whitaker",
+      "role": "product_manager",
+      "owns": []
+    }
+  ]
+}

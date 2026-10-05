@@ -1,0 +1,2800 @@
+{
+  "cf32aea31eadb17d": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "evt_units_quantity",
+        "value": "12 sets",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "evt_arrival_date",
+        "value": "Wed",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "evt_duration",
+        "value": "~3 weeks",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "shipment_arrival_date",
+        "value": "Wed AM",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3e7668a79a9f8c9c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "bf2b4b39e43eb6ec": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "assembled_quantity",
+        "value": "14 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "defect_tombstoned_component_count",
+        "value": "2",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:25e1034798b098e2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:824343b5aa0ee8ab": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a11e7e1463caded2": {
+    "facts": [
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "lead_time",
+        "value": "8 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "dvt_quantity",
+        "value": "150 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:857623fa0960e199": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3d62df312606eb1b": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "total_unit_weight_max",
+        "value": "380 g",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "runtime_min",
+        "value": "10 h",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "drop_height",
+        "value": "1.5 m",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "drop_count",
+        "value": "26",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "ip_rating",
+        "value": "IP65",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "scan_rate",
+        "value": "1 scan every 6 s",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:09eb8cd4651aa5b4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1aeefa0e65ee606b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1e4188af88398a1a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e5bb4aaf20a12c06": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:77a8031d37a08905": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f89160e3243d05ac": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "aa2192c1f8726ea0": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "uart_baud_rate",
+        "value": "115200",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5197a7316d3e01fa": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "de96ea4f9179da26": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "draft_angle_grip_ribs",
+        "value": "+0.5°",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6c67df3eb751828c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d677df282d03cc8c": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "evt_quantity",
+        "value": "12",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:238aa97e3b9ded59": {
+    "same_as": "fact:project.evt_units_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "95e6e35928477dbf": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "evt_build_weight",
+        "value": "412 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight_target",
+        "value": "380 g",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "current_weight",
+        "value": "96 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "BLE/Wi-Fi Radio Module",
+        "attribute": "current_weight",
+        "value": "104 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "overmold_weight",
+        "value": "38 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Scan Window",
+        "attribute": "current_weight",
+        "value": "22 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "coring_grip_ribs_weight_reduction",
+        "value": "8-10 g",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "thinner_overmold_weight_reduction",
+        "value": "5 g",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "BLE/Wi-Fi Radio Module",
+        "attribute": "weight_reduction_shield_sticker",
+        "value": "2 g",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:abe728b4d99a1798": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4a48e65e1269f3e0": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:31e1d12d49275887": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f87eaa74cd55e2d8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:06227986f332c58b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3e841d6f01a7144a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:143cd79d744eaa76": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cb215bae652f8295": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:34ced1369ea70532": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "37edb80663353b4a": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "thickness_max",
+        "value": "9.0 mm",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "thickness_nominal",
+        "value": "8.4 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "thickness_eol_swell",
+        "value": "8.7 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:16b3228f8f38caa3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8d10c6cdae31aeca": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a8a0c4ae5ddaacd5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "fd15262b29c4c885": {
+    "facts": [
+      {
+        "entity": "Trigger Assembly",
+        "attribute": "debounce_time",
+        "value": "25 ms",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9a5b655613b8fd76": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "fecd39b26deb0b18": {
+    "facts": [
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "max_current",
+        "value": "1.5 A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "temp_after_1h_charge",
+        "value": "41 °C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:88a07bc47389dd1d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1d7e76d21ef09468": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "096fd7d82416aaf6": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "dvt_quantity",
+        "value": "300 pcs",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "lead_time",
+        "value": "6 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:05614a6ee419c856": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e36099b803c50a4b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "8568b8e576ed0ef1": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "evt_units_built",
+        "value": "12",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "evt_units_functional",
+        "value": "10",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "evt_units_mlb_rework",
+        "value": "2",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight_current",
+        "value": "412g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight_target",
+        "value": "380g",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "drop_testing_start_date",
+        "value": "Monday",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cfa6c41bb0582d80": {
+    "same_as": "fact:project.evt_units_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3569d71761875e05": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f80c6e40aa75d3a6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3dfeb3c200ba1b1f": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).current_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:559447b8a16b9b01": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "23aae4812162022b": {
+    "facts": [
+      {
+        "entity": "Scan Window",
+        "attribute": "drop_test_height",
+        "value": "1.5 m",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Scan Window",
+        "attribute": "drop_test_count",
+        "value": "26",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Scan Window",
+        "attribute": "failure_mode",
+        "value": "popped out of bezel on drop 19",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:05984ebc6b628426": {
+    "same_as": "constraint:project.drop_height",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:433f30fbc823ddde": {
+    "same_as": "constraint:project.drop_count",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:78df66f4f4036725": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "c5bad87e35813a77": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "67467133e1c08379": {
+    "facts": [
+      {
+        "entity": "BLE/Wi-Fi Radio Module",
+        "attribute": "mass_savings",
+        "value": "3.1 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "BLE/Wi-Fi Radio Module",
+        "attribute": "rssi_degradation",
+        "value": "1 dB",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:240265fcd79309a1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f771cb189aa94843": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "f74a67d20bcad938": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "runtime_duration",
+        "value": "9.2 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "scan_rate",
+        "value": "1 scan/6s",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "display_brightness",
+        "value": "50%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "sleep_current",
+        "value": "~18 mA",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "fix_lead_time",
+        "value": "1 week",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:23849b459b3ea218": {
+    "same_as": "constraint:project.runtime_min",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f9e1f44fba22a0ff": {
+    "same_as": "constraint:project.scan_rate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ad00b99a280065e3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:22ddf1113c90b3d7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:98ddd47a3cd1ecd8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1222233c86674dc2": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "quote_price",
+        "value": "$38/set",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "quote_minimum_quantity",
+        "value": "25",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "lead_time",
+        "value": "7 business days",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:00d9349f9191dfa4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:92fd16ff4acfa220": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:43b12a266d7ae1ac": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "101f8df526c5f8e2": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "vbat_sag_amplitude",
+        "value": "600 mV",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "vbat_sag_duration",
+        "value": "1.5 ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "dropout_threshold",
+        "value": "3.6 V",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3c0725b191dc12c4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b5405ef75b0be1ee": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:74d27ac4a2dfe99d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "454d1293e184a4ce": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "overmold_thickness",
+        "value": "0.9 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "bezel_snaps_count",
+        "value": "2 extra",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4c89f5dde513a4ad": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f2d10d1f98b38874": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "dd41ba926b8d3227": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight_current",
+        "value": "401 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight_target",
+        "value": "380 g",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "weight",
+        "value": "104 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight_reduction_expected",
+        "value": "8 g",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:eb6ee03671c53ffc": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).current_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:09afb5afac05a0c8": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6e02f281904ae697": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b009c53b89f8973d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "589749c285dabad9": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "internal_resistance_spec",
+        "value": "≤45 mΩ",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "internal_resistance_measured",
+        "value": "65-72 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0acbd021fbd0fa8d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6b92f8f70818968f": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_spec",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ea1793c4e843d0ad": {
+    "facts": [
+      {
+        "entity": "Battery Door and Bezel Gaskets",
+        "attribute": "bezel_retention_issue",
+        "value": "found in drop test",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "random_resets_root_cause",
+        "value": "VBAT sag + high-IR sample cells",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "runtime_with_partial_sleep",
+        "value": "9.2 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight",
+        "value": "401 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "rev_b_shells_arrival_date",
+        "value": "~Mar 20",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:705cae564d88b44a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0ef41946f8b73f4a": {
+    "same_as": "fact:project.evt_build_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8896f260668eae0b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "5177a0cff799f5ca": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "polymer_caps_ordered",
+        "value": "470 µF",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "polymer_caps_backup_ordered",
+        "value": "220 µF",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "polymer_caps_arrival_date",
+        "value": "tomorrow",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ec467c49f69c347d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3914e372b908b58c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e3b356c72a059b5e": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "sleep_current_bench",
+        "value": "6 mA",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b97c35a6aa720abd": {
+    "same_as": "fact:project.sleep_current",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d953a0c95841fe63": {
+    "facts": [
+      {
+        "entity": "Trigger Assembly",
+        "attribute": "actuation_force",
+        "value": "1.8 N",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Trigger Assembly",
+        "attribute": "actuation_force_previous",
+        "value": "2.6 N",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Trigger Assembly",
+        "attribute": "debounce_delay",
+        "value": "10 ms",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:34240b97fee7ed56": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ab5e2b9bfa5da63c": {
+    "same_as": "fact:Trigger Assembly.actuation_force",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c09a1844b7c6e127": {
+    "same_as": "constraint:Trigger Assembly.debounce_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e47a889b9915696c": {
+    "facts": [
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "vbat_bulk_cap",
+        "value": "470 µF",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "vbat_sag_reduction",
+        "value": "600 to 250 mV",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "reset_test_pulls",
+        "value": "500",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "reset_test_voltage",
+        "value": "3.5 V",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "aimer_delay",
+        "value": "2 ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ba343ae941a2f3e3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:726bdbf55f7c970b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a18fc620870c55dd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cdb43ce206863ac6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:93701cbc977ebc36": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "34399bbbf922a1f1": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "production_lot_ir_range",
+        "value": "38-43 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "production_lot_ship_date",
+        "value": "Apr 6",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4dbb5e7ff1b6f281": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_spec",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c4caabd68ce793f1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "29c8614ad370be95": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "demo_date",
+        "value": "Apr 9",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "demo_units_required",
+        "value": "1",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "demo_revision",
+        "value": "rev B",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bfe4f181d61c51bb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bc9bf7c68e918f50": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e9ff6ab3b65c549e": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "weight_max",
+        "value": "395 g",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight_max",
+        "value": "395 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:aa2e6bbddad72af1": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f0a8112921c35f59": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "83aa3aa40cdcc17b": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "runtime_test_result",
+        "value": "10.6 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "runtime_requirement",
+        "value": "10 h",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b9f3bfdff556c265": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:93d8e6ce86e7f84a": {
+    "same_as": "constraint:project.runtime_min",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "363bada0ef1d00d9": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "bulk_cap_vbat",
+        "value": "470 µF polymer",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "version",
+        "value": "0.4.2",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "aimer_stagger_delay",
+        "value": "2 ms",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e1744b00427a0952": {
+    "same_as": "fact:Main Logic Board.polymer_caps_ordered",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:857ed0552239cb7f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d585dde55411acff": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a9d79aba7921ce12": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "50648469b4d69671": {
+    "facts": [
+      {
+        "entity": "Battery Door and Bezel Gaskets",
+        "attribute": "ip65_spray_test_result",
+        "value": "water ingress at door hinge",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Battery Door and Bezel Gaskets",
+        "attribute": "revision",
+        "value": "B",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6dac6153e78efd93": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "rev_b_inventory",
+        "value": "25 sets",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "proto_labs_delivery_met",
+        "value": "on schedule",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:60e21b45e48d53a6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "9c7273a76f799608": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "runtime",
+        "value": "10.6 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight_target",
+        "value": "395 g",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_design_freeze_date",
+        "value": "Wed Mar 25",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7a13e816a3a49292": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:da804e090b6a7004": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a14bd5ec8992f907": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a5c95269cc551aae": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "gerber_turn_time",
+        "value": "5 days",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:69137632b6b8d4ba": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "8a6a7a6561e99fec": {
+    "facts": [
+      {
+        "entity": "Battery Door and Bezel Gaskets",
+        "attribute": "ip65_spray_test",
+        "value": "pass",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "24cbcedef09ebc93": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "version",
+        "value": "0.5.0",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "sleep_current",
+        "value": "2.1 mA",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:894268843b4674b7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "f14456edbeccd92f": {
+    "facts": [
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "lead_time",
+        "value": "12 weeks",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "lead_time_previous",
+        "value": "8 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "dvt_delivery_date",
+        "value": "May 8",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "dvt_delivery_date_previous",
+        "value": "Apr 17",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "bonded_stock_qty",
+        "value": "22",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:828ba89d6f32486a": {
+    "same_as": "fact:SE-4 Scan Engine Module.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fd67452d2b900221": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:70b96c5ae334ba2a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8f0161c7e88e9fdf": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:608375ef6feabd9a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a841925f6afe4e4b": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "weight",
+        "value": "392 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight_target",
+        "value": "395 g",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:19be7e6b73860014": {
+    "same_as": "fact:project.evt_build_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f6e8fe6ccc2de150": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "788b6cd314d94509": {
+    "facts": [
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "partial_ship_qty",
+        "value": "40 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "partial_ship_date",
+        "value": "Apr 20",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_wave_1_qty",
+        "value": "62 pcs",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6ac44d75f010c010": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:31f70a5fb5c75f19": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f1e518a8830b7412": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3e8f1e2532dbb2cc": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "dvt_revision",
+        "value": "B",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Battery Door and Bezel Gaskets",
+        "attribute": "dvt_revision",
+        "value": "B",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "dvt_revision",
+        "value": "B",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Trigger Assembly",
+        "attribute": "dvt_revision",
+        "value": "B",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "dvt_freeze_status",
+        "value": "frozen",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "dvt_freeze_status",
+        "value": "frozen",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "8dc56c8c2639e1cd": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "fuel_gauge_error_low",
+        "value": "8%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "shutdown_voltage",
+        "value": "6%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a6923efc532efcfe": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:621563b8f3a37aab": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "60805b3a9c07c919": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "dvt_assembly_test_cost_per_unit",
+        "value": "$61",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "project",
+        "attribute": "test_fixture_nre_cost",
+        "value": "$8400",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "project",
+        "attribute": "test_fixture_nre_approved",
+        "value": "yes",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1b4a826ea61bb748": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:412452c594b1992e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "b87f2334258c4371": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "soft_tool_t1_shots_date",
+        "value": "4/7",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f85fef322e407022": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "64e936120e6f82b2": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "dvt_freeze_date",
+        "value": "week 4",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight",
+        "value": "392 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Battery Door and Bezel Gaskets",
+        "attribute": "ip65_status",
+        "value": "fixed",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "SE-4 Scan Engine Module",
+        "attribute": "lead_time_slip",
+        "value": "slipped",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "reno_demo_date",
+        "value": "Apr 9",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7da7037cda3546e9": {
+    "same_as": "constraint:project.dvt_design_freeze_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4dce2735ab01c476": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).current_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f1ec18091feabbf4": {
+    "same_as": "constraint:project.demo_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6b87ef35401993a5": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "cutoff_voltage_reported",
+        "value": "0-1%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:128609d9b125e384": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).shutdown_voltage",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "7fbb728e58f64f95": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "brownout_test_voltage",
+        "value": "3.4 V",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "brownout_test_pulls",
+        "value": "1000",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "brownout_test_resets",
+        "value": "0",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d516e84cd4f9d167": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:41444d8aaf53cc6b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9ccb675ad59a383c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ca2c91ebebeacf0e": {
+    "facts": [
+      {
+        "entity": "Scan Window",
+        "attribute": "drop_test_result",
+        "value": "26/26 at 1.5 m",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "drop_test_result",
+        "value": "pass",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:559bb85e75ea3672": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "25c92ca05a6b64a0": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "production_ship_date",
+        "value": "Apr 6",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "production_quantity",
+        "value": "300 pcs",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7c6f54ed0f23f5f2": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).production_lot_ship_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0e182cab7b1f46e5": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).dvt_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "bd890fda8960d5d9": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "06c12cf5061d9d82": {
+    "facts": [
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "contact_resistance_at_500_cycles",
+        "value": "95 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "contact_resistance_initial",
+        "value": "40 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "gold_flash_thickness_required",
+        "value": "30 µin",
+        "kind": "constraint",
+        "certainty": "unsure",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e7808617b5355dd2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:eb797ea8ee9815f0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2a560aa24c03b0bb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "f7cda7ba59736480": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "hand_strap_mount_boss_weight_option_a",
+        "value": "6 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "hand_strap_mount_boss_weight_option_b",
+        "value": "2 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "weight_cap",
+        "value": "380 g",
+        "kind": "constraint",
+        "certainty": "unsure",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bd828dd9cd443b83": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3eae866cd88ef0b0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e8aada5a3056981a": {
+    "same_as": "constraint:Main Enclosure (Clamshell Housing).weight_target",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e9768f5d8d06629a": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "runtime_duration",
+        "value": "11.4 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "runtime_margin_over_shift",
+        "value": "1.4 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "demo_runtime_target",
+        "value": "11+ h",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:eb0aa4b856a4db52": {
+    "same_as": "fact:Main Firmware Image.runtime_test_result",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:87706deeccfe1761": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:12db93127768cd2d": {
+    "same_as": "constraint:project.runtime_min",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "743f7ad00f2d45d7": {
+    "facts": [
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "gold_plating",
+        "value": "30 µin",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "cost_per_pin",
+        "value": "+$0.22",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "pins_per_cradle",
+        "value": "4",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "cycle_rating",
+        "value": "5000 cycles",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3fa68f303ee03b0c": {
+    "same_as": "constraint:Charging Cradle Contacts.gold_flash_thickness_required",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:27f0cd30a93f8d0f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:38be5bcc7edf3f0d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cc9ee4ba6d6c9312": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "72c1233b333b2de8": {
+    "facts": [
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "pogo_pin_plating_thickness",
+        "value": "30 µin",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "pogo_pin_plating_material",
+        "value": "gold",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ac3d0721b8650569": {
+    "same_as": "constraint:Charging Cradle Contacts.gold_flash_thickness_required",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "fc2b1eb3b12bbe9f": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "runtime",
+        "value": "11.4 h",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "drop_test",
+        "value": "pass",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Charging Cradle Contacts",
+        "attribute": "plating_change",
+        "value": "ECO-001",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:af5be1e388cd9695": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1d0a7246f8ed2971": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "t1_date",
+        "value": "Tuesday",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "4908eb23dd457e30": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "amptek_lot_quantity",
+        "value": "300 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "inspection_sample_size",
+        "value": "30 samples",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "ir_resistance_min",
+        "value": "39 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "ir_resistance_max",
+        "value": "44 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6747400ebc03b04f": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).dvt_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cc0d459474c435e0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a751f13b34d9e47a": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_spec",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5414329e0c6c171a": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_spec",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1c6ab992101f8b5d": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "version",
+        "value": "0.6.0",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "version",
+        "value": "0.6.1",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "b2199f25a45d96fb": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "pogo_bed_alignment_error",
+        "value": "0.3 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c4f2c19f40bd5fc9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6886e7cb1a9c3a3d": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "lead_time_alternate",
+        "value": "3 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "cost_per_cell_alternate",
+        "value": "$0.40 cheaper",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "thickness_with_pcm",
+        "value": "9.6 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "amptek_wave2_lead_time_risk",
+        "value": "4+ weeks slip",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "project",
+        "attribute": "kestrel_kp5800_capacity",
+        "value": "5800 mAh",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:51ea4a34e178e447": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4abab28bfe6f978b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a217c22b130bf180": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9a4cc89ccdd021b5": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:20a15ae451bce24b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1ae7f1fc6234b1e1": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "sink_mark_location",
+        "value": "near trigger boss",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "cdd5bff34a89f10b": {
+    "facts": [
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "dvt_weight",
+        "value": "386g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight_limit",
+        "value": "395g",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7b1dde9e42a3eb89": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).current_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a4af1484ef7287d2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "187aa1dcb6ecc19b": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "demo_version",
+        "value": "0.6.1",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "charge_level",
+        "value": "100%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:58dabf0fb9001cc2": {
+    "same_as": "fact:Main Firmware Image.version",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:66e50ff4dfb35c70": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d421830ba8fc9249": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "golden_board_tests_passed",
+        "value": "5",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4e9131f6e74d4904": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "bafc99d6f18a6316": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "scan_count_demo",
+        "value": "300 totes",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "demo_duration",
+        "value": "40 min",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_units_requested",
+        "value": "10",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "pilot_duration",
+        "value": "2 weeks",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "pilot_month",
+        "value": "May",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "wave_1_quantity",
+        "value": "62 units",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5937aad70ee25865": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b7bfc83a9e684485": {
+    "same_as": "constraint:project.evt_duration",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ebf45f14a4876980": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:855f6269812f45d9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7ad888b386a2a3ed": {
+    "same_as": "constraint:project.dvt_wave_1_qty",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "2cde3a31234125ec": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "demo_status",
+        "value": "success",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "pilot_units_requested",
+        "value": "10",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "project",
+        "attribute": "pilot_deadline",
+        "value": "May",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "weight",
+        "value": "386 g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5db940135e6b7080": {
+    "same_as": "constraint:project.dvt_units_requested",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:431424bb4044a9a0": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).current_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e227a4f3efd49d34": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "lead_time",
+        "value": "3 wk",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "thickness_with_pcm_wrap",
+        "value": "9.6 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "sample_quantity",
+        "value": "20",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "sample_ship_date",
+        "value": "Monday",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "sample_arrival_date",
+        "value": "Wednesday",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:02a8637bd1f5ee4b": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0d03a5e783ab145b": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).thickness_with_pcm",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:69ffd1aaa823ed8f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "9a0bf165101eddeb": {
+    "facts": [
+      {
+        "entity": "Main Logic Board",
+        "attribute": "bulk_cap_revision",
+        "value": "rev B",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "cold_test_soc",
+        "value": "~55%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "cold_chamber_test_temp",
+        "value": "-10 °C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "cold_chamber_test_scan_count",
+        "value": "~150",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "cold_failure_count",
+        "value": "2",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "cell_ir_cold_multiplier",
+        "value": "~2x",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "bulk_cap_value",
+        "value": "470 µF",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "halvorsen_cold_storage_temp",
+        "value": "-5 °C",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Natarajan"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ad161b4bfe29b3ee": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:60f0909d802d416b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:21bd3f7f4615654b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4ee0ef9711d7d87d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:34dcd83afaeea164": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0c0bb249b9b0b22c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a2d75f13ecc8ff44": {
+    "same_as": "fact:project.cold_chamber_test_temp",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "7f57b02353af43aa": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "illuminator_drive_current_reduction_temp",
+        "value": "0 °C",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:437a4198c2c79608": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6001ea1e3f181794": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "lead_time_risk",
+        "value": "4+ weeks slip",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "alternate_capacity",
+        "value": "5800 mAh",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "alternate_cost_per_cell",
+        "value": "$0.40 cheaper",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "alternate_lead_time",
+        "value": "3 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "alternate_thickness",
+        "value": "9.6 mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "sample_quantity_received",
+        "value": "20 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:84bf4b33f8348c63": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bf530ec592b7991c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:91be4862febd8ae4": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).cost_per_cell_alternate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b4d5cc78c4737b7f": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5fb91980463a2215": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4bbf05f305f2b486": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).sample_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ab55626e86225165": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "cell_ir_multiplier_at_cold",
+        "value": "2x at -10 °C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      },
+      {
+        "entity": "Main Logic Board",
+        "attribute": "voltage_sag_at_cold",
+        "value": "520 mV at -10 °C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dev Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:126b99e79073c764": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0210489ca05806ad": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "2ebfb5a080207ab5": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "t2_build_date",
+        "value": "04/21",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Maya Okafor"
+      },
+      {
+        "entity": "Main Enclosure (Clamshell Housing)",
+        "attribute": "sink_mark_fix",
+        "value": "completed",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Maya Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ac681ae5af333717": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ff1058c7b3c45145": {
+    "facts": [
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "illuminator_derate_temp_threshold",
+        "value": "0 °C",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Main Firmware Image",
+        "attribute": "illuminator_derate_resets_at_minus_10c",
+        "value": "1/400",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5f49566671fb04a0": {
+    "same_as": "constraint:Main Firmware Image.illuminator_drive_current_reduction_temp",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3c3aa30f5549bd26": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a252d5e5c7f19ca8": {
+    "facts": [
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "capacity_measured",
+        "value": "5810-5840 mAh",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      },
+      {
+        "entity": "Li-ion Battery Pack (1S2P pouch, 5200 mAh)",
+        "attribute": "internal_resistance",
+        "value": "36 mΩ",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Carlos Mendez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9850df108f3dda50": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).alternate_capacity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:41cdb5496a5d0501": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_spec",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "value_history": [
+    {
+      "name": "unit weight",
+      "kind": "fact",
+      "source_ts": "1772673000.000124",
+      "date": "2026-03-04",
+      "value": "412 g",
+      "authoritative": true
+    },
+    {
+      "name": "unit weight",
+      "kind": "fact",
+      "source_ts": "1773339600.000162",
+      "date": "2026-03-12",
+      "value": "401 g",
+      "authoritative": true
+    },
+    {
+      "name": "unit weight",
+      "kind": "fact",
+      "source_ts": "1774375200.000211",
+      "date": "2026-03-24",
+      "value": "392 g",
+      "authoritative": true
+    },
+    {
+      "name": "unit weight",
+      "kind": "fact",
+      "source_ts": "1775667600.000271",
+      "date": "2026-04-08",
+      "value": "386 g",
+      "authoritative": true
+    },
+    {
+      "name": "unit weight target",
+      "kind": "constraint",
+      "source_ts": "1772562600.000112",
+      "date": "2026-03-03",
+      "value": "380 g max",
+      "authoritative": true
+    },
+    {
+      "name": "unit weight target",
+      "kind": "constraint",
+      "source_ts": "1773853200.000186",
+      "date": "2026-03-18",
+      "value": "395 g max",
+      "authoritative": true
+    },
+    {
+      "name": "battery runtime",
+      "kind": "fact",
+      "source_ts": "1773167400.000149",
+      "date": "2026-03-10",
+      "value": "9.2 h",
+      "authoritative": true
+    },
+    {
+      "name": "battery runtime",
+      "kind": "fact",
+      "source_ts": "1773871200.000190",
+      "date": "2026-03-18",
+      "value": "10.6 h",
+      "authoritative": true
+    },
+    {
+      "name": "battery runtime",
+      "kind": "fact",
+      "source_ts": "1775152800.000252",
+      "date": "2026-04-02",
+      "value": "11.4 h",
+      "authoritative": true
+    },
+    {
+      "name": "runtime target",
+      "kind": "constraint",
+      "source_ts": "1772562600.000112",
+      "date": "2026-03-03",
+      "value": "10 h shift",
+      "authoritative": true
+    },
+    {
+      "name": "drop requirement",
+      "kind": "constraint",
+      "source_ts": "1772562600.000112",
+      "date": "2026-03-03",
+      "value": "1.5 m to concrete, 26 drops",
+      "authoritative": true
+    },
+    {
+      "name": "battery pack max thickness",
+      "kind": "constraint",
+      "source_ts": "1772734800.000128",
+      "date": "2026-03-05",
+      "value": "9.0 mm",
+      "authoritative": true
+    },
+    {
+      "name": "sleep current",
+      "kind": "fact",
+      "source_ts": "1773167400.000149",
+      "date": "2026-03-10",
+      "value": "18 mA",
+      "authoritative": true
+    },
+    {
+      "name": "sleep current",
+      "kind": "fact",
+      "source_ts": "1773694800.000175",
+      "date": "2026-03-16",
+      "value": "6 mA",
+      "authoritative": true
+    },
+    {
+      "name": "sleep current",
+      "kind": "fact",
+      "source_ts": "1774303200.000206",
+      "date": "2026-03-23",
+      "value": "2.1 mA",
+      "authoritative": true
+    },
+    {
+      "name": "SE-4 lead time",
+      "kind": "fact",
+      "source_ts": "1772493600.000110",
+      "date": "2026-03-02",
+      "value": "8 weeks",
+      "authoritative": true
+    },
+    {
+      "name": "SE-4 lead time",
+      "kind": "fact",
+      "source_ts": "1774306800.000207",
+      "date": "2026-03-23",
+      "value": "12 weeks",
+      "authoritative": true
+    }
+  ],
+  "as_of": [
+    {
+      "name": "unit weight",
+      "first_source_ts": "1772673000.000124",
+      "date": "2026-03-06",
+      "expected_value": "412 g"
+    },
+    {
+      "name": "unit weight",
+      "first_source_ts": "1772673000.000124",
+      "date": "2026-03-13",
+      "expected_value": "401 g"
+    },
+    {
+      "name": "unit weight",
+      "first_source_ts": "1772673000.000124",
+      "date": "2026-03-20",
+      "expected_value": "401 g"
+    },
+    {
+      "name": "unit weight",
+      "first_source_ts": "1772673000.000124",
+      "date": "2026-03-27",
+      "expected_value": "392 g"
+    },
+    {
+      "name": "unit weight",
+      "first_source_ts": "1772673000.000124",
+      "date": "2026-04-03",
+      "expected_value": "392 g"
+    },
+    {
+      "name": "unit weight",
+      "first_source_ts": "1772673000.000124",
+      "date": "2026-04-15",
+      "expected_value": "386 g"
+    },
+    {
+      "name": "unit weight target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-03-10",
+      "expected_value": "380 g max"
+    },
+    {
+      "name": "unit weight target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-03-17",
+      "expected_value": "380 g max"
+    },
+    {
+      "name": "unit weight target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-03-18",
+      "expected_value": "395 g max"
+    },
+    {
+      "name": "unit weight target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-04-01",
+      "expected_value": "395 g max"
+    },
+    {
+      "name": "unit weight target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-04-15",
+      "expected_value": "395 g max"
+    },
+    {
+      "name": "battery runtime",
+      "first_source_ts": "1773167400.000149",
+      "date": "2026-03-13",
+      "expected_value": "9.2 h"
+    },
+    {
+      "name": "battery runtime",
+      "first_source_ts": "1773167400.000149",
+      "date": "2026-03-27",
+      "expected_value": "10.6 h"
+    },
+    {
+      "name": "battery runtime",
+      "first_source_ts": "1773167400.000149",
+      "date": "2026-04-15",
+      "expected_value": "11.4 h"
+    },
+    {
+      "name": "runtime target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-03-20",
+      "expected_value": "10 h shift"
+    },
+    {
+      "name": "runtime target",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-04-15",
+      "expected_value": "10 h shift"
+    },
+    {
+      "name": "drop requirement",
+      "first_source_ts": "1772562600.000112",
+      "date": "2026-04-15",
+      "expected_value": "1.5 m to concrete, 26 drops"
+    },
+    {
+      "name": "battery pack max thickness",
+      "first_source_ts": "1772734800.000128",
+      "date": "2026-03-20",
+      "expected_value": "9.0 mm"
+    },
+    {
+      "name": "battery pack max thickness",
+      "first_source_ts": "1772734800.000128",
+      "date": "2026-04-07",
+      "expected_value": "9.0 mm"
+    },
+    {
+      "name": "battery pack max thickness",
+      "first_source_ts": "1772734800.000128",
+      "date": "2026-04-15",
+      "expected_value": "9.0 mm"
+    },
+    {
+      "name": "sleep current",
+      "first_source_ts": "1773167400.000149",
+      "date": "2026-03-13",
+      "expected_value": "18 mA"
+    },
+    {
+      "name": "sleep current",
+      "first_source_ts": "1773167400.000149",
+      "date": "2026-03-20",
+      "expected_value": "6 mA"
+    },
+    {
+      "name": "sleep current",
+      "first_source_ts": "1773167400.000149",
+      "date": "2026-04-15",
+      "expected_value": "2.1 mA"
+    },
+    {
+      "name": "SE-4 lead time",
+      "first_source_ts": "1772493600.000110",
+      "date": "2026-03-13",
+      "expected_value": "8 weeks"
+    },
+    {
+      "name": "SE-4 lead time",
+      "first_source_ts": "1772493600.000110",
+      "date": "2026-04-15",
+      "expected_value": "12 weeks"
+    }
+  ],
+  "conflicts": [
+    {
+      "name": "unit weight target",
+      "source_ts": "1775065500.000247",
+      "date": "2026-04-01",
+      "stated_value": "380 g max",
+      "value_in_force": "395 g max"
+    }
+  ],
+  "issues": [
+    {
+      "name": "brownout resets on trigger pull",
+      "source_ts": [
+        "1773091200.000143",
+        "1773249300.000156",
+        "1773353400.000165",
+        "1776101400.000286"
+      ],
+      "resolved_ts": "1773942300.000193",
+      "resolved_date": "2026-03-19",
+      "reopened_ts": "1776101400.000286",
+      "reopened_date": "2026-04-13",
+      "status_at_end": "open"
+    },
+    {
+      "name": "cradle pogo pin contact wear",
+      "source_ts": [
+        "1774996200.000244",
+        "1775167200.000255",
+        "1775172600.000257"
+      ],
+      "resolved_ts": "1775172600.000257",
+      "resolved_date": "2026-04-02",
+      "reopened_ts": null,
+      "reopened_date": null,
+      "status_at_end": "resolved"
+    }
+  ],
+  "long_range": [
+    {
+      "constraint_name": "battery pack max thickness",
+      "constraint_source_ts": "1772734800.000128",
+      "constraint_value": "9.0 mm",
+      "later_source_ts": "1775582100.000267",
+      "later_date": "2026-04-07",
+      "alert_users": [
+        "U04CARLOS",
+        "U06SAM",
+        "U02DEV",
+        "U01MAYA"
+      ]
+    }
+  ]
+}

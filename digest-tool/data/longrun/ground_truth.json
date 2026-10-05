@@ -1,0 +1,147 @@
+{
+  "events": [
+    {
+      "event_id": "E01",
+      "title": "Customer targets of record set (weight, runtime, drop, IP65)",
+      "date": "2026-03-03",
+      "source_ts": [
+        "1772562600.000112"
+      ],
+      "alert_users": [
+        "U03LENA",
+        "U04CARLOS"
+      ],
+      "whole_team": true
+    },
+    {
+      "event_id": "E02",
+      "title": "Random resets reported on EVT units",
+      "date": "2026-03-09",
+      "source_ts": [
+        "1773091200.000143"
+      ],
+      "alert_users": [
+        "U02DEV",
+        "U05PRIYA"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E03",
+      "title": "Sample cell lot out of spec on internal resistance",
+      "date": "2026-03-12",
+      "source_ts": [
+        "1773353400.000165"
+      ],
+      "alert_users": [
+        "U03LENA",
+        "U05PRIYA"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E04",
+      "title": "Weight target changed by engineering manager",
+      "date": "2026-03-18",
+      "source_ts": [
+        "1773853200.000186"
+      ],
+      "alert_users": [
+        "U03LENA",
+        "U04CARLOS"
+      ],
+      "whole_team": true
+    },
+    {
+      "event_id": "E05",
+      "title": "Brownout reset fix verified and issue closed",
+      "date": "2026-03-19",
+      "source_ts": [
+        "1773942300.000193"
+      ],
+      "alert_users": [
+        "U04CARLOS",
+        "U06SAM"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E06",
+      "title": "Scan engine lead time slip",
+      "date": "2026-03-23",
+      "source_ts": [
+        "1774306800.000207"
+      ],
+      "alert_users": [
+        "U03LENA",
+        "U06SAM"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E07",
+      "title": "DVT design freeze (EVT to DVT)",
+      "date": "2026-03-25",
+      "source_ts": [
+        "1774456200.000218"
+      ],
+      "alert_users": [
+        "U03LENA"
+      ],
+      "whole_team": true
+    },
+    {
+      "event_id": "E08",
+      "title": "ECO-001 approved: pogo pin plating change",
+      "date": "2026-04-02",
+      "source_ts": [
+        "1775172600.000257"
+      ],
+      "alert_users": [
+        "U02DEV",
+        "U04CARLOS"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E09",
+      "title": "Alternate battery cell proposed as second source",
+      "date": "2026-04-07",
+      "source_ts": [
+        "1775582100.000267"
+      ],
+      "alert_users": [
+        "U01MAYA",
+        "U02DEV"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E10",
+      "title": "Customer demo success and pilot request",
+      "date": "2026-04-09",
+      "source_ts": [
+        "1775781000.000279"
+      ],
+      "alert_users": [
+        "U01MAYA",
+        "U02DEV",
+        "U03LENA"
+      ],
+      "whole_team": true
+    },
+    {
+      "event_id": "E11",
+      "title": "Brownout resets recur in cold chamber; issue reopened",
+      "date": "2026-04-13",
+      "source_ts": [
+        "1776101400.000286"
+      ],
+      "alert_users": [
+        "U04CARLOS",
+        "U06SAM"
+      ],
+      "whole_team": false
+    }
+  ]
+}

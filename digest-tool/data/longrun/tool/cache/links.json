@@ -1,0 +1,32 @@
+{
+  "95c4c03227472122": {
+    "same_as": "none",
+    "reason": "The new report describes a structural/mechanical failure (window popping out of bezel during drop test) requiring design fixes with additional snaps and adhesive ring. The existing issue is about weight management and design cuts to meet a weight target. These are different root causes and different failure modes—one is a mechanical integrity issue, the other is a weight optimization issue. They do not represent the same underlying problem.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "140fbfb717e4318a": {
+    "same_as": "none",
+    "reason": "The new report is about firmware-level power management issues (display and radio not entering sleep states), causing excessive sleep current and reduced runtime. Issue 1772673000.000124 is about hardware weight reduction through design changes. Issue 1773091200.000143 is about random resets due to MCU brown-out from voltage dips. While all three affect battery runtime, they have different root causes: firmware sleep implementation vs. hardware weight vs. power supply voltage stability. None match the underlying problem of firmware failing to put peripherals into sleep states.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "890d56c822f4606f": {
+    "same_as": "issue:1773091200.000143",
+    "reason": "Both issues describe the same root cause: MCU brown-out caused by voltage sag under high power demand (simultaneous illuminator and laser fire vs. trigger stress). The new report identifies the specific VBAT sag mechanism that was the mystery behind the random resets reported in issue:1773091200.000143.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "55d02ef851d9d46d": {
+    "same_as": "none",
+    "reason": "The new water ingress issue during IP65 testing with gasket compression adjustment is distinct from all existing issues. Issue 1773091200 involves MCU brown-out/random resets, issue 1773076200 involves window bezel mechanical failure, and issue 1772673000 involves weight management. None of these share the same failure mode (water ingress) or root cause (gasket/seal performance).",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "47bcdbf30bd20e67": {
+    "same_as": "none",
+    "reason": "The new report describes a supply chain lead time issue with the CMOS sensor causing a DVT schedule slip. Issue 1773167400.000149 is about runtime and sleep current problems due to firmware not properly putting display and radio into sleep states. These are fundamentally different root causes: one is a supplier/procurement issue, the other is a firmware power management defect. They affect different modules (SE-4 vs power management) and have different solutions.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "dd7226885f886f53": {
+    "same_as": "issue:1773091200.000143",
+    "reason": "Both reports describe brown-out failures caused by inadequate bulk capacitance under load conditions. The new report shows battery IR doubling in cold (-10°C) reducing effective capacitance, and the 470µF fix being insufficient - the same root cause (insufficient bulk capacitance on MCU supply) as the previous issue which was resolved with MLB rev B bulk cap. The cold temperature exacerbates the existing capacitance problem rather than introducing a new failure mode.",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}

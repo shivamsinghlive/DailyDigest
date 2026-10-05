@@ -1,0 +1,51 @@
+[
+  {
+    "id": "U01MAYA",
+    "name": "Maya Okafor",
+    "role": "Mechanical Engineer",
+    "parts_owned": [
+      "P-ENC",
+      "P-TRG",
+      "P-WIN",
+      "P-GSK"
+    ]
+  },
+  {
+    "id": "U02DEV",
+    "name": "Dev Raman",
+    "role": "Electrical Engineer",
+    "parts_owned": [
+      "P-BAT",
+      "P-MLB",
+      "P-DCK",
+      "P-RAD"
+    ]
+  },
+  {
+    "id": "U03LENA",
+    "name": "Lena Fischer",
+    "role": "Firmware Engineer",
+    "parts_owned": [
+      "P-SCN",
+      "P-FW"
+    ]
+  },
+  {
+    "id": "U04CARLOS",
+    "name": "Carlos Mendez",
+    "role": "Supply Chain Lead",
+    "parts_owned": []
+  },
+  {
+    "id": "U05PRIYA",
+    "name": "Priya Natarajan",
+    "role": "Engineering Manager",
+    "parts_owned": []
+  },
+  {
+    "id": "U06SAM",
+    "name": "Sam Whitaker",
+    "role": "Product Manager",
+    "parts_owned": []
+  }
+]
