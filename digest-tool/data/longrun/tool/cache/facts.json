@@ -2796,5 +2796,617 @@
   "match:41cdb5496a5d0501": {
     "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_spec",
     "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:14b872906eaee02b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8a34a3c78b18c105": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5b86c7aefe8f65da": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:846d9d7d61e2fb24": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ceaac47aeb36c67b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8c38ae9e0df12e5f": {
+    "same_as": "fact:project.evt_units_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:31c204b7c41afea6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0b9e9a1bee1125ba": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:779879221c37ab9e": {
+    "same_as": "fact:project.evt_build_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:00faebef40425d06": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a9a988f9caf1868f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c935983b2707e74f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:612fbb2c5185572e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f9cb825de4365e29": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).overmold_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6af5f8e8c637d12e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f0dcb568eb87248c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8b4ebfb03b0240b7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7703a3155a6c5929": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:706e9cdfac567a13": {
+    "same_as": "fact:project.evt_units_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e7c52b2b112aed88": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d769dacd37a0da7a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9151e93356ac48c2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c43578a5819dcf65": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ebd4c9ce0f926bf2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:50f154d1e029a45c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:559699683cc3f9de": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:39e3c1ea6569363b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f0a7401adca674a9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f7296e7842a83220": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7281149e86cf0def": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a1b3adee0c3a5fd3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bace9e53fd839bf0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d94d66c30a0924fd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:99304a4bf30ce015": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c011f8105ab198d1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1a90c7d85d9504fc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:954d7129de20fbab": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b704d038259e9d0c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:160061bd70cb67d8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:469dc2a05f5a05b2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:642c6f956941e1d9": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).coring_grip_ribs_weight_reduction",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1234b5acb0fe33a9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:377f81de33f16de6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5296636a8f824715": {
+    "same_as": "fact:project.runtime_duration",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ad53cf5400cc745a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2f49b4060d7ec70f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6410feb0822877cc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cf1c73b8dac59216": {
+    "same_as": "fact:Main Logic Board.polymer_caps_ordered",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6fb64ea1af167abf": {
+    "same_as": "fact:project.sleep_current",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:72ed32745a4fc52a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ce1120b952163b72": {
+    "same_as": "constraint:Trigger Assembly.debounce_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0efd146fab33b946": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:779795eaa5b2ebf7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6a0ca9e783a36fb6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a0214158112091dd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7589a5303ff508cc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:42ee89f53c4cdfa7": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0d42672da4505804": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d05ce7fbd8cd2221": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8a8d6aea96e4d5ff": {
+    "same_as": "constraint:project.runtime_min",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:52657547c2f98ae7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:34069012d33f3c6f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1cb556f454fd5a8c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5dbe6501ebeebf0b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8bae2d47cde3660d": {
+    "same_as": "fact:Main Firmware Image.runtime_test_result",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:864f708e609ed9a8": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5a17963493e8666a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1b3c544697a1eab0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:184eba63b4c8a023": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4aff1648effddeca": {
+    "same_as": "fact:SE-4 Scan Engine Module.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a5c41140aee24b4f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:788ec0e19e9d95ff": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2730f74ded0826f1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ae9578a8a8b9a90d": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0303ba5df16d99d1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ced0f3f012b9e7a3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3aa0c11b76a29c4f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:de2bb5b66d086e96": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f27460b4e1ffbf83": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:13cc10d44f62219d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cdbb53d91724e957": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:619b3c256a417fad": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:36a05e3e84f8fdec": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).weight_current",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0a8f93eef489c7fc": {
+    "same_as": "constraint:project.demo_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:32d14f7ad358a46e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:37a09f806a1d60c6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f732f7d894581051": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:95177e4261a09dac": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f269680d4f1b51ec": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c2297f851a9d462a": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).production_lot_ship_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:874948418dbf7c8e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d3c4cda0d407305f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f8a72df07d2af30c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:506b8a6068cc0979": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1390a08fcc66133e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:660a5ec5976833b8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:31970e7ae2019f70": {
+    "same_as": "constraint:project.total_unit_weight_max",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0b6cdd188289a749": {
+    "same_as": "fact:Main Firmware Image.runtime_test_result",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8a5c3cb03f1cf9b7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:840d2bc4e5f3bc87": {
+    "same_as": "constraint:project.runtime_min",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:942ef9ab74915124": {
+    "same_as": "constraint:Charging Cradle Contacts.gold_flash_thickness_required",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9dc4f88aa41eaabd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:23ecf9ba32fcd6d6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7333a9426443ef47": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9aace7a0a6bca437": {
+    "same_as": "constraint:Charging Cradle Contacts.gold_flash_thickness_required",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7af742b177804bcd": {
+    "same_as": "fact:Main Firmware Image.runtime_test_result",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5a76c940265028a8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ac4bfc549bcd24ab": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).production_quantity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8d1e197965accdf5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:aa9db87792d8f2de": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_measured",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f5fcbbc2694f1d5a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:41a1a69e6a65b3a1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a5a16b0856b5e424": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:679d9c966c62a28e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a04b20e6aae93dd2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e6a3620d41a7d9d5": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a34d58f45812a469": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1c91f0c94b8858f1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:34d5cd55a8ddfa88": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:94ce72739eb9dc40": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:26e3bc389a704f77": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0bdca543c739f66a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8beee1cc11ad910b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2a9df1072ed707db": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f18a8fe1ce428b23": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3f1344b829a19808": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5e04654995a2fa27": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0ee6ce0a0e0e3819": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a9c2d837b4e17d28": {
+    "same_as": "fact:Main Enclosure (Clamshell Housing).dvt_weight",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:65c7b8d5f6601f66": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f9111433e2db4713": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).thickness_with_pcm",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a602d2abc3740968": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).inspection_sample_size",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:18d754796a8413db": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fc2b50e8b8abc242": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:42cdda3b1d7eb40f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:61e18372a8d12e8f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:dad002d63014219e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:42efed3e0601b4e3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9125f8610fd38254": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cdd10abf5cbe8167": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:89b15460f1ae6100": {
+    "same_as": "constraint:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4030de995180fb12": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1d47c7f84add4dd4": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).cost_per_cell_alternate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bfe2a37620befb67": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a7229b7d8e389b09": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).thickness_with_pcm",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6287c5536ec876cf": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).inspection_sample_size",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:dc91448e31a05953": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:55131bfefeb1f3e3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8873bc1f0d412431": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1e8c11255a216db5": {
+    "same_as": "constraint:Main Firmware Image.illuminator_drive_current_reduction_temp",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2a9396880b8cee01": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:84339f8b79589d7d": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).alternate_capacity",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4e8ecf7ec753ad8b": {
+    "same_as": "fact:Li-ion Battery Pack (1S2P pouch, 5200 mAh).internal_resistance_measured",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }

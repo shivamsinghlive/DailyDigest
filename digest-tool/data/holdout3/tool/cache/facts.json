@@ -671,5 +671,89 @@
   "match:8fbf646723b44cad": {
     "same_as": "none",
     "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0705410913095edf": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:44909ca3f74208f2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d80aba6466736dc3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:09aa08ba9c7e597d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6ead7695198b4dd3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:308b5ba309b28344": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8307d8decad30e13": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:dcfdbe2249142cc5": {
+    "same_as": "fact:Flow Control Board.pwm_ramp_duration",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:62e135a8d87f1e3f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9191a3a82ca58a97": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:728bfb101aae8a2c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3a1a5eaa3446cb95": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7fc7707d5d0902a3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:176259fb724ba4d1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b47eea51f4966207": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d5dc443a360ea625": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2495331a39712b28": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ac1aae24e90ab278": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:348c22deea7f9bc6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7422ccf7fe5c63fc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2544cb19c7d5d8fc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }

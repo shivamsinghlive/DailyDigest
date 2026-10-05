@@ -32,6 +32,8 @@ And a week later, for the whole team (`2026-09-24`):
 
 The 92C → 84C, the 80C limit set two days earlier, "same issue as 3 days ago" and 10/26 → TBD all come from project memory, not from re-reading old messages.
 
+It runs on the bundled demo datasets with no keys at all, or **live on a Slack workspace**: read the channels, reply to a thread straight from a digest card, and look up any part, person or keyword (see [Using the app](#using-the-app) and [Live Slack mode](#live-slack-mode)).
+
 ## The problem
 
 A hardware team's Slack holds everything: thermal test results, vendor emails, design decisions,
@@ -175,8 +177,10 @@ flowchart LR
 | `ranker.py` | For You: scores each change for each person and returns the top 5 with reasons |
 | `feedback.py` | 👍/👎 log → per-person, per-item-type multipliers; reset |
 | `digest.py` | Team Pulse (shared) + For You (personal), each item with a delta badge and "what changed" lines from memory; catch-up mode. An LLM writes the intro; items and reasons always come from code |
+| `lookup.py` | Lookup: resolve a part (any nickname or typo), a person or keywords; part and person profiles; matching conversations in a date range |
+| `actions.py` | Live Slack actions: reply in a thread for a person (via the app's bot), links that open a thread in Slack |
 | `evaluate.py` | Alerts, Team Pulse, nicknames, ownership and (with an answer key) memory, for tuned and holdout separately |
-| `app.py` | Streamlit: who's reading, day (and catch-up), phase tiles, badges and "what changed" on every card, the Slack conversation behind each item, 👍/👎, two-week activity and focus charts, team view, project notebook with facts and history |
+| `app.py` | Streamlit: digest, Lookup, team view and project notebook tabs; see [Using the app](#using-the-app) |
 
 ### What the LLM does, and what it doesn't
 
@@ -272,6 +276,19 @@ Every item, pulse or For You, has 👍/👎 buttons. A vote is recorded against 
 
 It's gentle, it's personal, and it can be explained in one sentence. "Reset feedback" in the sidebar clears it so the demo can be repeated.
 
+## Using the app
+
+`streamlit run app.py`. Pick **who's reading** in the sidebar and a **day** on the timeline across the top (◆ marks a phase change; ‹ › step a day). The header shows today at a glance (team-wide, for you, don't skip) and every subsystem's phase on its way from Concept to Production.
+
+| Tab | What it's for |
+|---|---|
+| **📬 My digest** | The Team Pulse and For You items as cards. The colored edge says what kind of item it is (red problem, blue decision, violet phase change, amber question, orange freeze issue or reopened, green resolved). Each card shows who started the thread, a badge for how it changed memory (New, Updated, Resolved, Reopened, Needs clarification), a blue "what changed" box, why you're seeing it, 👍/👎, and the full Slack conversation one click away. On live Slack: **↩ Reply** and **Open in Slack**. |
+| **🔎 Lookup** | Type a part by any nickname or typo ("wrist conn", "43045-0412", "molex conector"), a person, or words like "lead time". A part gets a profile (phase, owners, facts and constraints with earlier values and disputes, issues, decisions), a person gets theirs (role, parts, questions waiting on them), and matching conversations are listed with a date range and type filters. No LLM, no cost. |
+| **👥 Team view** | Who got what that day: the same pulse for everyone, the rest personal. |
+| **📓 Project notebook** | What the tool knows at the end of the day: open and closed problems (and what closed them), facts and constraints with history, decisions, changes after freeze, owners, and the memory log of every change. |
+
+The sidebar also has **catch-up** (everything since an earlier day, one item per thread) and, on live Slack, **Refresh from Slack**. Works in light and dark mode.
+
 ## Running it
 
 ```bash
@@ -289,6 +306,10 @@ python -m digest_tool.memory                   # current project memory by type 
 DIGEST_DATA_DIR=data/longrun/tool python -m digest_tool.evaluate   # any other dataset, e.g. the 45-day one
 python -m digest_tool.catalog                  # nickname matching examples
 python scripts/make_fake_data.py               # regenerate data/messages.json + ground truth
+
+# live Slack (see "Live Slack mode")
+DIGEST_DATA_DIR=data/slack MESSAGE_SOURCE=slack streamlit run app.py
+python scripts/seed_slack.py --round 1         # preview demo conversations for a test workspace (--post sends)
 ```
 
 ### Project layout
@@ -298,15 +319,18 @@ digest-tool/
   app.py                 Streamlit UI (entry point)
   digest_tool/           the library: config, slack_loader, catalog, extract, notebook, memory,
                          issues, facts, ranker, feedback, digest, evaluate
-  tests/                 pytest: tiny made-up inputs only (catalog, phases, ownership, closing,
-                         freeze, memory, issues, facts, delta digest, ranking, intros, scorers)
+  tests/                 pytest, 111 tests: tiny made-up inputs only, no LLM, no Slack (catalog, phases,
+                         ownership, closing, freeze, memory, issues, facts, delta digest, ranking,
+                         intros, scorers, Slack reader, replies, lookup)
   scripts/
     make_fake_data.py    builds the main dataset (messages + ground truth)
     import_slack_export.py  converts an independently written export into the tool's format
+    seed_slack.py        posts demo conversations to a test Slack workspace, in rounds
     sources/             story sources merged by the generator
   data/                  main dataset: team, parts catalog, messages, ground truth, cache
     holdout2/ holdout3/  independent 10-day datasets (raw export + converted tool/ folder)
     longrun/             independent 45-day dataset with a memory answer key
+    slack/               live workspace: team.json, parts.json, cache (git-ignored, stays local)
 ```
 
 **No API key needed.** The default `LLM_PROVIDER=none` reads the committed cache in `data/cache/`,
@@ -321,17 +345,38 @@ anything that isn't cached. `python -m digest_tool.extract anthropic --estimate`
 uncached run would cost first, and `--limit 5` runs a small paid test. Tested on Python 3.9;
 Python 3.11 is recommended.
 
-## Connecting real Slack
+## Live Slack mode
 
-`MESSAGE_SOURCE=slack` calls the Slack Web API with `SLACK_BOT_TOKEN`:
+The same pipeline runs on a real workspace. Tested on a small test workspace with four people and four channels.
 
-- `conversations.list` lists the channels.
-- `conversations.history` fetches each channel the bot has joined.
-- `conversations.replies` fetches the replies for every message that has them.
+**Setup (once, about 10 minutes):**
 
-All three calls follow cursor pagination. Scopes needed: `channels:read` and `channels:history`.
-Messages keep Slack's own fields, so nothing downstream changes. This path hasn't been run against
-a real workspace.
+1. At **api.slack.com/apps**, create an app from a manifest with these **bot** scopes:
+   `channels:read`, `channels:history` (read), `chat:write` (reply), `chat:write.customize` (post as "<name> via Daily Digest"), `users:read` (names).
+   Leave token rotation off.
+2. **Install it** to the workspace and copy the **Bot User OAuth Token** (`xoxb-…`) into `digest-tool/.env` as `SLACK_BOT_TOKEN=…`. `.env` is git-ignored everywhere in the repo.
+3. In Slack, run `/invite @Daily Digest` in each channel it should read. Bots only see channels they're in.
+4. Create `data/slack/team.json` (git-ignored) with the real Slack user IDs, roles and owned parts, and the team's time zone, and copy `data/parts.json` next to it:
+   ```json
+   {"project": {"name": "Atlas robot arm (live Slack)", "phases": ["Concept", "EVT", "DVT", "PVT", "Production"],
+                "start_phase": "EVT", "timezone": "America/New_York"},
+    "people": [{"id": "U0123ABCD", "name": "Shivam Singh", "role": "mechanical_engineer", "owns": ["gripper"]}]}
+   ```
+5. Run `DIGEST_DATA_DIR=data/slack MESSAGE_SOURCE=slack streamlit run app.py`.
+
+**What the reader does.** It lists the channels, fetches the history of every channel the bot is in, and the replies of every thread, all with cursor pagination. Slack's system messages ("X has joined the channel", topic changes) are skipped; thread broadcasts and file shares are kept. Days are split in the team's time zone.
+
+**Replying from the app.** ↩ Reply on a card shows exactly where the reply will go ("Posts to #elec, in kittuworks01's thread, as Shivam Singh (via Daily Digest)") and posts it into that thread. The bot posts it, so it needs no per-user sign-in. The reply carries the person in Slack message metadata, and the reader counts it as that person's message: the question is answered in project memory, and the item leaves their digest after the refresh. The demo datasets have no Reply button, so their evaluation can't change.
+
+**Refresh from Slack** re-reads the workspace. New thread snapshots go through Claude once (about $0.002 each) and are cached like everything else.
+
+**Demo conversations.** `python scripts/seed_slack.py --round N` previews a round of realistic conversations, and `--post` sends it, picking people by role from `data/slack/team.json`. Round 1 is a problem, an end-of-life notice, a decision and questions. Round 2 adds a design freeze and a revision after it, a hedged contradiction ("I thought the target was still 45N?"), a schedule slip and one issue in two channels. Round 3 holds follow-ups to post on a later day (a fix, an answer). Seeded messages show "<name> (via Daily Digest)" and count as that person's, like replies.
+
+Running on real messages found four bugs that the synthetic data never triggered, all fixed with tests:
+- join notices counted as conversations;
+- a revision to a part named after its subsystem ("gripper") wasn't a change after freeze;
+- a target could be merged into a measurement ("target 40N" overwrote "measured 41N");
+- "hardness" fuzzy-matched "harness".
 
 ## Evaluation
 
@@ -351,7 +396,7 @@ Rules: a holdout is scored with totals only; once its per-item results have been
 
 | | Reached | For You precision | Wrong alerts | | Role only: reached / precision | Send everything: precision |
 |---|---|---|---|---|---|---|
-| Main, tuned (30) | **97%** | 75% | 6 | | 83% / 69% | 26% |
+| Main, tuned (30) | **97%** | 78% | 5 | | 83% / 69% | 26% |
 | Main, holdout (6) | 83% | 50% | 1 | | 83% / 50% | 29% |
 | holdout2, now tuned (12) | 58% | 100% | 0 | | 25% / 30% | 43% |
 | **holdout3** (22) | **64%** | **92%** | 1 | | 55% / 57% | 55% |
@@ -367,12 +412,12 @@ Rules: a holdout is scored with totals only; once its per-item results have been
 
 | Check | Result |
 |---|---|
-| Value changes captured (set or changed on the right day, from the right thread) | **15/17** |
-| Value in force on a given date | 12/25 |
-| Hedged contradiction flagged as a conflict | 0/1 |
+| Value changes captured (set or changed on the right day, from the right thread) | **16/17** |
+| Value in force on a given date | 6/25 |
+| Hedged contradiction flagged as a conflict | **1/1** |
 | …and not written over the value in force | **1/1** |
 | Threads about one issue linked into one issue | 0/2 |
-| Issue resolved / reopened on the right day | 1/2, **1/1** |
+| Issue resolved / reopened on the right day | 1/2, 0/1 |
 | Issue status at the end | **2/2** |
 | Different issues wrongly merged | **0** |
 | Week-1 constraint shown when its part comes up again in week 6 | 0/1 |
@@ -381,27 +426,29 @@ Rules: a holdout is scored with totals only; once its per-item results have been
 
 - **On fresh 10-day data the tool is precise and fairly complete**: holdout3 reached 64% of the people who should know with 92% precision, ahead of role-only filtering on both. Before this round's fixes, the first independent set (holdout2) reached 33%.
 - **On 45 days it's weaker**: 55% reached, below role-only's 68%. The pulse and multi-week stories are where it loses people.
-- **Memory captures values well (15/17) but doesn't always chain them (12/25).** The values are there; the misses are mostly the same quantity stored under two names, so "the value on day X" looks up the wrong one. That's the consistent-naming problem, and it's the first thing to fix.
+- **Memory captures values well (16/17) but often doesn't chain them (6/25).** The values are there; the misses are the same quantity stored under two names, so "the value on day X" looks up the wrong one. That's the consistent-naming problem, and it's the first thing to fix.
+- **A trade-off from live data:** after real Slack showed "target 40N" being merged into "measured 41N", targets now only merge with targets. That's why the contradiction is now flagged (0/1 → 1/1). On the 45-day set, chaining dropped (12/25 → 6/25), most likely because the same quantity is extracted as a target in one message and a measurement in another. It's a sealed holdout, so I report it rather than tune to it.
 - **Linking is cautious.** It never merged two different issues, but it also didn't link either multi-thread issue in the 45-day set. In the main set it links 4 pairs correctly.
-- **Contradictions are never written over the truth (1/1), but weren't flagged either (0/1)**: the hedged statement was probably stored under a different name, the same naming problem again.
+- **Contradictions are never written over the truth (1/1), and are now flagged (1/1)** with a "needs clarification" item for the owner and the manager.
 - **The tuned numbers (97%) are optimistic** by construction: I wrote that data alongside the code.
 
 ## Assumptions & Limitations
 
 - **Test data is synthetic**, and the main set was written by me alongside the code. The independent sets are small (22 alerts each, one 45-day project), so one miss moves a number by 5 points or more.
-- **Fact names drift.** The same quantity can be stored as two facts; the "same quantity?" check catches some cases, not all. It's the main reason for 12/25 above.
+- **Fact names drift.** The same quantity can be stored as two facts, or as a target in one message and a measurement in another; the "same quantity?" check catches some cases, not all. It's the main reason for 6/25 above.
 - **Fact extraction is noisy**: it sometimes records statuses or plans as facts, and "still in force" can show a constraint that isn't really relevant to the item.
 - **Issue linking needs a shared specific part** (not "wrist assembly", not a topic). Issues described only by symptoms in one thread and by a supplier in another, with no common part name, aren't linked.
 - **Authority is by role and ownership**: the engineering manager and a part's owner can change its constraints by stating them. A real team may need a richer rule (who approved the ECO).
 - **The scoring weights are tuned guesses.** Feedback adjusts item types per person, not the underlying weights.
 - **Phase detection is pattern-based**: finished freezes and phase moves in plain words, not "we're good to start PVT next sprint".
 - **Roles**: there's no firmware-engineer profile; firmware engineers are treated as electrical engineers.
-- **The live Slack connection** hasn't been run against a real workspace.
+- **Live Slack is tested on a small test workspace only.** Replies post as the app's bot ("<name> via Daily Digest"); posting as the person themselves would need each user to sign in to Slack through the app. Only public channels are read.
 
 ## Next steps
 
 - **Consistent fact names**: a small controlled vocabulary per part type (weight, runtime, lead time, date), and matching new facts against it before asking the LLM.
 - **Link issues by symptom, not only by part**: add the shortlist's lexical similarity on summaries, so "trigger sticks" and "switch supplier recall" can meet even without a shared part name.
 - **Retire holdout3 and longrun** once their per-item results are studied, and write the next independent set before tuning on them.
-- **Real Slack connection**: a bot, a morning run per person, the digest as a DM with 👍/👎 buttons, and live alerts for must-include items.
+- **Slack, further**: a scheduled morning run that sends each person their digest as a DM with 👍/👎 buttons, live alerts for must-include items, private channels, and file links on cards.
+- **Ask**: a question box on top of Lookup ("what's the latest on the J4 connector?") that answers from the part's facts, issues and recent threads, always a capped amount.
 - **Build the catalog and ownership from BOM/PLM**: part numbers, official names and owners from the source of truth, with the unknown-parts list as a review queue.

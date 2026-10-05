@@ -1342,5 +1342,225 @@
   "match:8b14a6036b1c958d": {
     "same_as": "none",
     "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9ad183d2026cc6ad": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8ec7c0a6c091bdf1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2b3c8ddb9523cb0d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d008463ef7a128d9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3efa357d0b87d0e6": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e1f75c1be3de18f5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a7d9968630cac235": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d052fdaff6f27314": {
+    "same_as": "fact:wrist motor.case_temp_measured",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:42729bc40327771b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d488c97cf8306dfc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ca6713e49c6a4ada": {
+    "same_as": "fact:gripper.grip_force_avg",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f56d88796cce0957": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0ed6f06e95f2711e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3653a03e549c27d7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:357357fb5b9d11e0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fd3391355702baad": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:23f3cf36a0f73019": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:dbac5a371dfc7883": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4f6a45fc27f793f7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9ea13aa180991420": {
+    "same_as": "constraint:power board.connector_change_to_xt60",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:22d6b1237823836f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fbf641b2732faa1c": {
+    "same_as": "fact:battery pack.current_spike_decel",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:dd1d0484fc606705": {
+    "same_as": "constraint:power board.connector_change_to_xt60",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6611d4704513ecdb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fcb7374de3b37c9d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8dcc3d8ec650f02b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ffda889e4440958f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:692e9d472ba9e647": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6261e29a84cbabab": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:52e7958fad534cce": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2959def025b7929a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:49e9122840fbace1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:333e8711b7c77f35": {
+    "same_as": "fact:slew bearing.dvt_ship_date_original",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e2992f4551054d19": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ed5bc7f3d35fff51": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a37971e7d8a77e61": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5c4b2c911ea43bb1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6acb8bff34b2b2a1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:02a7fc212d2b999f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7b1b0f1c263c17be": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:db179e777ee785fb": {
+    "same_as": "fact:slew bearing.dvt_ship_date_original",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2378a2b4f55c8bc8": {
+    "same_as": "fact:slew bearing.dvt_ship_delay_weeks",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a6ed8decdce273a0": {
+    "same_as": "fact:slew bearing.evt_spares_available",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0b5a61a3be167f05": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:adfbbbc078022169": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c59dd565ad484e8e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3d49cf27b2f68d47": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:525a27a84f909a6d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9b1a5f75bc8733a8": {
+    "same_as": "fact:slew bearing.dvt_ship_delay_weeks",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d697a0b5cbec5216": {
+    "same_as": "fact:slew bearing.partial_shipment_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ec5ce4e2dee15379": {
+    "same_as": "constraint:slew bearing.dvt_units_from_evt_spares",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:89738da6936bed1c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6d5d226a426a0f35": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5ab79269f0fd6260": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:66a77791cd7d1727": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }

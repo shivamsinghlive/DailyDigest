@@ -971,5 +971,137 @@
   "match:eeae4a1b79d0fd56": {
     "same_as": "none",
     "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:22b33974c4d2c798": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2aa79c1e390bc732": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:616b56fb98637700": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9a2ee6414642a35b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6eef051d82661608": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0dca45689f2d000a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9a2e52abbab300b2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:62202f08b7a3fbda": {
+    "same_as": "constraint:Motor Driver Board.case_temp_spec_steady_state",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0e27f450e4419bcf": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0e8c8fb22f92e2e1": {
+    "same_as": "fact:2D Safety LiDAR Sensor LX-270.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d8c21e0a3b8d1aa3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8f8e17897f838223": {
+    "same_as": "fact:2D Safety LiDAR Sensor LX-270.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3f9f45f0de753946": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e5c200e6daab17ba": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:628a7be52c6fa9fb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1cbf7f80670dec56": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cae82f0e68b09c86": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8a567e392f4a5b1b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b8c7b3a1aecf0de3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f28708c65e78f4ec": {
+    "same_as": "constraint:project.dvt_build_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b91148605fe3c100": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a967f77494d5d21a": {
+    "same_as": "fact:Emergency Stop Button and STO Circuit.e_stop_latency_avg",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:36834891dfc5cf67": {
+    "same_as": "fact:Emergency Stop Button and STO Circuit.e_stop_latency_worst_case",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:53813ebf9da5b0c5": {
+    "same_as": "constraint:Emergency Stop Button and STO Circuit.e_stop_latency_requirement",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:81c8c448c26dc691": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bda1652c3a9f13e1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6b3b37431be1654a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:46810274f2b65f6d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:916e625b36bacb48": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6bb88e4bee755e2c": {
+    "same_as": "constraint:project.dvt_build_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d63ee0a2456c4240": {
+    "same_as": "constraint:project.electrical_freeze_target",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ae422deb4d44097b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a656b30cd69d6f5d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }
