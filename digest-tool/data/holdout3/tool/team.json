@@ -1,0 +1,67 @@
+{
+  "project": {
+    "name": "holdout3",
+    "phases": [
+      "Concept",
+      "EVT",
+      "DVT",
+      "PVT",
+      "Production"
+    ],
+    "start_phase": "EVT"
+  },
+  "people": [
+    {
+      "id": "U07QH2K1A",
+      "name": "Priya Raman",
+      "role": "mechanical_engineer",
+      "owns": [
+        "Carbon Fiber Airframe Rev C",
+        "Folding Arm Hinge Assembly",
+        "Carbon Arm Tube 30mm OD",
+        "Folding Spray Boom",
+        "16L Payload Tank",
+        "Diaphragm Spray Pump"
+      ]
+    },
+    {
+      "id": "U07QH3M8B",
+      "name": "Marcus Okafor",
+      "role": "electrical_engineer",
+      "owns": [
+        "Power Distribution Board",
+        "14S 22Ah Flight Battery Pack",
+        "Electronic Speed Controller 80A",
+        "Brushless Propulsion Motor 10kW"
+      ]
+    },
+    {
+      "id": "U07QJ9F2C",
+      "name": "Lena Fischer",
+      "role": "electrical_engineer",
+      "owns": [
+        "Flight Controller",
+        "Flow Control Board",
+        "Terrain-Following Radar Module MR-24"
+      ]
+    },
+    {
+      "id": "U07QK4T7D",
+      "name": "Diego Alvarez",
+      "role": "supply_chain",
+      "owns": []
+    },
+    {
+      "id": "U07QL1R5E",
+      "name": "Hannah Cho",
+      "role": "engineering_manager",
+      "owns": []
+    },
+    {
+      "id": "U07QM6W3F",
+      "name": "Sam Whitaker",
+      "role": "product_manager",
+      "owns": []
+    }
+  ]
+}

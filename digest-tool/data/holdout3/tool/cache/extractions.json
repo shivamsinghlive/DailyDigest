@@ -1,0 +1,700 @@
+{
+  "1789401120.000100:2:c059ee93": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QL1R5E",
+      "U07QM6W3F"
+    ],
+    "summary": "Hannah will be 5 minutes late to standup; Sam will start the meeting.",
+    "_usage": {
+      "input": 1702,
+      "output": 76
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789412725.000115:3:fb054964": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QK4T7D",
+      "U07QJ9F2C",
+      "U07QH3M8B"
+    ],
+    "summary": "Taco truck order coordination.",
+    "_usage": {
+      "input": 1709,
+      "output": 75
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789409674.000106:4:90e12b59": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Diaphragm Spray Pump"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U07QH2K1A",
+      "U07QH3M8B"
+    ],
+    "summary": "Diaphragm pump diaphragm cracking at clamp ring after 38-41 hours at 100% duty cycle; root cause unclear (chemical or torque).",
+    "_usage": {
+      "input": 1828,
+      "output": 101
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789428153.000127:1:46263ad5": {
+    "type": "update",
+    "parts_mentioned": [
+      "Flight Controller"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QJ9F2C"
+    ],
+    "summary": "Flight Controller build 0.9.3 deployed to bench unit with arming beep loop fix.",
+    "_usage": {
+      "input": 1683,
+      "output": 73
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789490510.000130:3:5899464e": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Terrain-Following Radar Module MR-24"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U07QK4T7D",
+      "U07QJ9F2C"
+    ],
+    "summary": "Terrain-Following Radar Module lead time jumped from 3 to 9 weeks; 20 units now arriving mid-November, blocking field fleet deployment.",
+    "_usage": {
+      "input": 1780,
+      "output": 99
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789493441.000139:2:1c2f586e": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QH2K1A",
+      "U07QH3M8B"
+    ],
+    "summary": "Priya looking for 2.5mm hex drivers; Marcus may have borrowed them.",
+    "_usage": {
+      "input": 1704,
+      "output": 77
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789506735.000145:3:f8cc19eb": {
+    "type": "update",
+    "parts_mentioned": [
+      "Power Distribution Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH3M8B",
+      "U07QL1R5E"
+    ],
+    "summary": "Power Distribution Board rev B arrived from fab (10 units); bring-up starting tomorrow with improved layout and capacitors.",
+    "_usage": {
+      "input": 1731,
+      "output": 87
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789517406.000154:2:bc0d7ea1": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QM6W3F",
+      "U07QH2K1A"
+    ],
+    "summary": "Sam revived a sourdough starter and named it Glyphosate; Priya objects.",
+    "_usage": {
+      "input": 1691,
+      "output": 80
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789578340.000160:5:bd0c1878": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Folding Arm Hinge Assembly"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U07QH2K1A",
+      "U07QL1R5E"
+    ],
+    "summary": "Folding arm hinge assembly will be machined 6061 aluminum instead of printed PA12 due to flex issues; BOM and drawings being updated.",
+    "_usage": {
+      "input": 1835,
+      "output": 96
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789583405.000175:1:49f01eb1": {
+    "type": "update",
+    "parts_mentioned": [
+      "Terrain-Following Radar Module MR-24"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QJ9F2C"
+    ],
+    "summary": "Radar firmware evaluation shows clean altitude readings over gravel but needs testing under real canopy due to grass noise.",
+    "_usage": {
+      "input": 1688,
+      "output": 78
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789588822.000178:1:df9ac754": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QM6W3F"
+    ],
+    "summary": "Customer interview recordings from Fresno trip are available on the shared drive.",
+    "_usage": {
+      "input": 1691,
+      "output": 63
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789599039.000181:2:55e0ed09": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QH3M8B",
+      "U07QK4T7D"
+    ],
+    "summary": "Marcus complaining about oat milk placement in the fridge.",
+    "_usage": {
+      "input": 1681,
+      "output": 71
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789601413.000187:1:4597c8db": {
+    "type": "update",
+    "parts_mentioned": [
+      "Diaphragm Spray Pump"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Unit 3 of the spray pump assembled and running plain water test to check for cracking.",
+    "_usage": {
+      "input": 1695,
+      "output": 73
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789665150.000190:1:4f16af00": {
+    "type": "question",
+    "parts_mentioned": [
+      "Flow Control Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U07QJ9F2C",
+      "U07QM6W3F"
+    ],
+    "summary": "Lena needs Sam to confirm min/max application rate requirements for flow tuning before locking PID gains.",
+    "_usage": {
+      "input": 1720,
+      "output": 86
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789668347.000193:1:4edc881f": {
+    "type": "update",
+    "parts_mentioned": [
+      "Power Distribution Board",
+      "14S 22Ah Flight Battery Pack"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH3M8B"
+    ],
+    "summary": "PDB rev B bring-up progressing: two boards pass bench testing, battery integration planned for tomorrow.",
+    "_usage": {
+      "input": 1691,
+      "output": 79
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789670404.000196:2:967f0648": {
+    "type": "update",
+    "parts_mentioned": [
+      "Flat Fan Nozzle 110-02"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QK4T7D",
+      "U07QH2K1A"
+    ],
+    "summary": "Nozzle samples arrived and delivered to Priya's desk.",
+    "_usage": {
+      "input": 1697,
+      "output": 79
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789676438.000202:3:55c4f9eb": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QJ9F2C",
+      "U07QM6W3F",
+      "U07QL1R5E"
+    ],
+    "summary": "Fantasy league draft happening tonight at 7pm.",
+    "_usage": {
+      "input": 1703,
+      "output": 78
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789686029.000211:1:92ca29c7": {
+    "type": "update",
+    "parts_mentioned": [
+      "Folding Spray Boom"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Boom fold v2 printed with improved wing locking; latch is slightly stiff.",
+    "_usage": {
+      "input": 1682,
+      "output": 71
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789692346.000214:1:6415ee58": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QL1R5E"
+    ],
+    "summary": "Hannah will be out tomorrow afternoon for a dentist appointment.",
+    "_usage": {
+      "input": 1676,
+      "output": 60
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789753683.000217:4:c019c6d9": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Power Distribution Board",
+      "14S 22Ah Flight Battery Pack",
+      "Diaphragm Spray Pump",
+      "Flow Control Board"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U07QH3M8B",
+      "U07QJ9F2C"
+    ],
+    "summary": "Power distribution board browns out when pump motor starts, causing 5V rail sag and flow control board resets; firmware soft-start or hardware holdup capacitor needed.",
+    "_usage": {
+      "input": 1819,
+      "output": 125
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789766411.000229:1:0927412f": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Unit 3 survived 46 hours without cracking; Unit 4 test starting with surrogate fluid and correct torque to isolate the failure cause.",
+    "_usage": {
+      "input": 1704,
+      "output": 82
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789774228.000232:2:4dde3644": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QK4T7D",
+      "U07QH3M8B"
+    ],
+    "summary": "Beer fridge has been restocked for the weekend.",
+    "_usage": {
+      "input": 1682,
+      "output": 69
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789841702.000238:2:c49e98a5": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QM6W3F",
+      "U07QH2K1A"
+    ],
+    "summary": "Casual weekend conversation about a competitor's demo booth at a farmers market.",
+    "_usage": {
+      "input": 1702,
+      "output": 73
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789766411.000229:2:42e79f5a": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Unit 3 endurance test at 46 hrs with no crack; unit 4 starting with surrogate and correct torque, at 72 hrs still fine.",
+    "_usage": {
+      "input": 1734,
+      "output": 85
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790006753.000247:4:931706f6": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Carbon Fiber Airframe Rev C",
+      "Folding Arm Hinge Assembly",
+      "Terrain-Following Radar Module MR-24",
+      "14S 22Ah Flight Battery Pack"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U07QM6W3F",
+      "U07QL1R5E",
+      "U07QJ9F2C",
+      "U07QH2K1A"
+    ],
+    "summary": "Field demo moved forward to Oct 6 (9 days away); team has limited hardware availability and must confirm feasibility by Wednesday.",
+    "_usage": {
+      "input": 1807,
+      "output": 139
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790013601.000259:2:66070278": {
+    "type": "update",
+    "parts_mentioned": [
+      "Flow Control Board",
+      "14S 22Ah Flight Battery Pack",
+      "Carbon Fiber Airframe Rev C"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QJ9F2C",
+      "U07QH3M8B"
+    ],
+    "summary": "Soft start merged with 200ms pump PWM ramp; flowbo stable; holdup cap change confirmed in rev C schematic.",
+    "_usage": {
+      "input": 1713,
+      "output": 112
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790019035.000265:3:18ab042c": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QK4T7D",
+      "U07QL1R5E",
+      "U07QJ9F2C"
+    ],
+    "summary": "Coffee machine making grinding noise; suggested fix is unplug and replug.",
+    "_usage": {
+      "input": 1709,
+      "output": 84
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790024726.000274:1:3b4db0d8": {
+    "type": "update",
+    "parts_mentioned": [
+      "Folding Arm Hinge Assembly"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QK4T7D"
+    ],
+    "summary": "Bayline Machining confirmed PO for 48 aluminum folding arm hinge assemblies shipping Wednesday.",
+    "_usage": {
+      "input": 1685,
+      "output": 77
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790094643.000277:3:09c5d9f8": {
+    "type": "problem",
+    "parts_mentioned": [
+      "Brushless Propulsion Motor 10kW",
+      "Folding Arm Hinge Assembly",
+      "Flat Fan Nozzle 110-02",
+      "Terrain-Following Radar Module MR-24",
+      "Carbon Arm Tube 30mm OD"
+    ],
+    "unknown_parts": [],
+    "urgency": 4,
+    "people_mentioned": [
+      "U07QK4T7D"
+    ],
+    "summary": "Carbon arm tubes have wall thickness defect (1.6mm vs 2.0mm spec); batch quarantined with replacement delayed past Oct 8; only 8 good tubes available for 2 airframes.",
+    "_usage": {
+      "input": 1794,
+      "output": 147
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790100034.000286:1:fa6f3a23": {
+    "type": "update",
+    "parts_mentioned": [
+      "14S 22Ah Flight Battery Pack",
+      "16L Payload Tank"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QM6W3F"
+    ],
+    "summary": "PRD v0.7 published with new refill-time requirement of under 90 seconds for battery and tank swap.",
+    "_usage": {
+      "input": 1686,
+      "output": 86
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790109651.000289:3:70ef06f1": {
+    "type": "update",
+    "parts_mentioned": [
+      "Electronic Speed Controller 80A"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH3M8B",
+      "U07QJ9F2C"
+    ],
+    "summary": "ESC thermal testing shows 92C at full hover with margin to 105C limit; firmware thermal derate being added as safety measure.",
+    "_usage": {
+      "input": 1743,
+      "output": 94
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790115342.000298:2:586dc806": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QH2K1A",
+      "U07QM6W3F"
+    ],
+    "summary": "Priya's dog ate a zip tie; vet says it's fine.",
+    "_usage": {
+      "input": 1695,
+      "output": 75
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1789766411.000229:3:7a207695": {
+    "type": "update",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Root cause of cracking identified as under-torque in assembly fixture; work instruction being updated.",
+    "_usage": {
+      "input": 1788,
+      "output": 68
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790179233.000307:3:aecd4d5d": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Carbon Fiber Airframe Rev C",
+      "Folding Arm Hinge Assembly",
+      "Folding Spray Boom",
+      "16L Payload Tank"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U07QL1R5E",
+      "U07QH2K1A",
+      "U07QH3M8B"
+    ],
+    "summary": "Design freeze on mechanical Rev C effective immediately; electrical Rev C freeze set for 9/30; all changes require ECO approval.",
+    "_usage": {
+      "input": 1762,
+      "output": 131
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790189424.000316:1:b5f402df": {
+    "type": "update",
+    "parts_mentioned": [
+      "Carbon Fiber Airframe Rev C",
+      "Folding Spray Boom"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Boom latch tweak committed to PDM; Rev C airframe package complete.",
+    "_usage": {
+      "input": 1681,
+      "output": 84
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790194241.000319:1:14679c1d": {
+    "type": "problem",
+    "parts_mentioned": [
+      "14S 22Ah Flight Battery Pack"
+    ],
+    "unknown_parts": [],
+    "urgency": 5,
+    "people_mentioned": [
+      "U07QK4T7D",
+      "U07QH3M8B",
+      "U07QL1R5E"
+    ],
+    "summary": "Cellforge will release 140 battery cells unless PO is approved by 3pm today; next batch is 6 weeks out.",
+    "_usage": {
+      "input": 1719,
+      "output": 108
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790197258.000322:2:9930fd12": {
+    "type": "decision",
+    "parts_mentioned": [
+      "Carbon Fiber Airframe Rev C",
+      "Terrain-Following Radar Module MR-24"
+    ],
+    "unknown_parts": [],
+    "urgency": 3,
+    "people_mentioned": [
+      "U07QM6W3F",
+      "U07QL1R5E"
+    ],
+    "summary": "Ridgeview demo scheduled for Oct 6 with one drone and eval radar; second airframe is backup only.",
+    "_usage": {
+      "input": 1707,
+      "output": 98
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790202632.000328:1:cbfb01bf": {
+    "type": "update",
+    "parts_mentioned": [
+      "Flight Controller"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QJ9F2C"
+    ],
+    "summary": "Flight Controller firmware 0.9.5 has thermal derating; throttle ceiling ramps down between 95–105C, currently being tested.",
+    "_usage": {
+      "input": 1686,
+      "output": 83
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790207149.000331:2:11385358": {
+    "type": "noise",
+    "parts_mentioned": [],
+    "unknown_parts": [],
+    "urgency": 1,
+    "people_mentioned": [
+      "U07QH3M8B",
+      "U07QK4T7D"
+    ],
+    "summary": "Half-eaten burrito left on the soldering station since Monday.",
+    "_usage": {
+      "input": 1689,
+      "output": 72
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  },
+  "1790209223.000337:1:3d86a56c": {
+    "type": "update",
+    "parts_mentioned": [
+      "Diaphragm Spray Pump"
+    ],
+    "unknown_parts": [],
+    "urgency": 2,
+    "people_mentioned": [
+      "U07QH2K1A"
+    ],
+    "summary": "Diaphragm spray pump clamp ring assembly updated to 2.4 Nm torque spec with click driver; old fixture retired.",
+    "_usage": {
+      "input": 1689,
+      "output": 89
+    },
+    "_model": "anthropic:claude-haiku-4-5"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "subsystems": [
+    "Avionics",
+    "Power",
+    "Propulsion",
+    "Spray System",
+    "Structure"
+  ],
+  "parts": [
+    {
+      "name": "Carbon Fiber Airframe Rev C",
+      "subsystem": "Structure",
+      "aliases": [
+        "spider",
+        "the X",
+        "airframe"
+      ]
+    },
+    {
+      "name": "Folding Arm Hinge Assembly",
+      "subsystem": "Structure",
+      "aliases": [
+        "knuckle",
+        "knuckles",
+        "elbow",
+        "elbows"
+      ]
+    },
+    {
+      "name": "Carbon Arm Tube 30mm OD",
+      "subsystem": "Structure",
+      "aliases": [
+        "carbon tubes",
+        "arm tubes",
+        "sticks"
+      ]
+    },
+    {
+      "name": "Folding Spray Boom",
+      "subsystem": "Spray System",
+      "aliases": [
+        "wings",
+        "boom"
+      ]
+    },
+    {
+      "name": "16L Payload Tank",
+      "subsystem": "Spray System",
+      "aliases": [
+        "the jug",
+        "jug"
+      ]
+    },
+    {
+      "name": "Diaphragm Spray Pump",
+      "subsystem": "Spray System",
+      "aliases": [
+        "pumpy",
+        "the heart"
+      ]
+    },
+    {
+      "name": "Flat Fan Nozzle 110-02",
+      "subsystem": "Spray System",
+      "aliases": [
+        "tips",
+        "drippers"
+      ]
+    },
+    {
+      "name": "Power Distribution Board",
+      "subsystem": "Power",
+      "aliases": [
+        "pancake",
+        "PDB"
+      ]
+    },
+    {
+      "name": "14S 22Ah Flight Battery Pack",
+      "subsystem": "Power",
+      "aliases": [
+        "the brick",
+        "brick"
+      ]
+    },
+    {
+      "name": "Electronic Speed Controller 80A",
+      "subsystem": "Propulsion",
+      "aliases": [
+        "escs",
+        "the toasters",
+        "toasters"
+      ]
+    },
+    {
+      "name": "Brushless Propulsion Motor 10kW",
+      "subsystem": "Propulsion",
+      "aliases": [
+        "big boys",
+        "motors"
+      ]
+    },
+    {
+      "name": "Flight Controller",
+      "subsystem": "Avionics",
+      "aliases": [
+        "the brain",
+        "fc"
+      ]
+    },
+    {
+      "name": "Flow Control Board",
+      "subsystem": "Spray System",
+      "aliases": [
+        "flowbo"
+      ]
+    },
+    {
+      "name": "Terrain-Following Radar Module MR-24",
+      "subsystem": "Avionics",
+      "aliases": [
+        "the bat",
+        "bat"
+      ]
+    },
+    {
+      "name": "RTK GNSS Receiver",
+      "subsystem": "Avionics",
+      "aliases": [
+        "the puck",
+        "puck"
+      ]
+    }
+  ],
+  "topics": []
+}

@@ -1,0 +1,138 @@
+{
+  "events": [
+    {
+      "event_id": "E1",
+      "title": "Spray pump diaphragm cracking early in endurance test",
+      "date": "2026-09-14",
+      "source_ts": [
+        "1789409674.000106",
+        "1789425616.000124"
+      ],
+      "alert_users": [
+        "U07QL1R5E",
+        "U07QK4T7D"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E2",
+      "title": "Radar module lead time slips from 3 to 9 weeks",
+      "date": "2026-09-15",
+      "source_ts": [
+        "1789490510.000130"
+      ],
+      "alert_users": [
+        "U07QL1R5E",
+        "U07QM6W3F"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E3",
+      "title": "Decision: machined aluminum arm knuckle replaces printed version",
+      "date": "2026-09-16",
+      "source_ts": [
+        "1789578340.000160",
+        "1789580671.000169"
+      ],
+      "alert_users": [
+        "U07QK4T7D"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E4",
+      "title": "Unanswered question on required application rate range",
+      "date": "2026-09-17",
+      "source_ts": [
+        "1789665150.000190"
+      ],
+      "alert_users": [
+        "U07QM6W3F"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E5",
+      "title": "PDB 5V brownout resets flow board when pump starts",
+      "date": "2026-09-18",
+      "source_ts": [
+        "1789753683.000217"
+      ],
+      "alert_users": [
+        "U07QH2K1A",
+        "U07QL1R5E"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E6",
+      "title": "Customer field demo pulled in from Oct 15 to Oct 6",
+      "date": "2026-09-21",
+      "source_ts": [
+        "1790006753.000247"
+      ],
+      "alert_users": [
+        "U07QH3M8B",
+        "U07QK4T7D"
+      ],
+      "whole_team": true
+    },
+    {
+      "event_id": "E7",
+      "title": "Carbon arm tubes fail incoming inspection; replacements after Oct 8",
+      "date": "2026-09-22",
+      "source_ts": [
+        "1790097300.000280"
+      ],
+      "alert_users": [
+        "U07QH2K1A",
+        "U07QL1R5E",
+        "U07QM6W3F"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E8",
+      "title": "Airframe rev C design freeze",
+      "date": "2026-09-23",
+      "source_ts": [
+        "1790179233.000307"
+      ],
+      "alert_users": [
+        "U07QJ9F2C",
+        "U07QK4T7D",
+        "U07QM6W3F"
+      ],
+      "whole_team": true
+    },
+    {
+      "event_id": "E9",
+      "title": "Urgent: battery cell PO approval needed by 3pm",
+      "date": "2026-09-23",
+      "source_ts": [
+        "1790194241.000319"
+      ],
+      "alert_users": [
+        "U07QH3M8B",
+        "U07QL1R5E"
+      ],
+      "whole_team": false
+    },
+    {
+      "event_id": "E10",
+      "title": "Decision: Oct 6 demo with single drone and eval radar",
+      "date": "2026-09-23",
+      "source_ts": [
+        "1790197258.000322"
+      ],
+      "alert_users": [
+        "U07QH2K1A",
+        "U07QH3M8B",
+        "U07QJ9F2C",
+        "U07QK4T7D"
+      ],
+      "whole_team": true
+    }
+  ]
+}

@@ -1,0 +1,562 @@
+[
+  {
+    "channel": "general",
+    "user": "U07QL1R5E",
+    "ts": "1789401120.000100",
+    "thread_ts": null,
+    "text": "morning all. standup at 9:30, I'll be ~5 min late, school dropoff. Sam can you kick it off?"
+  },
+  {
+    "channel": "general",
+    "user": "U07QM6W3F",
+    "ts": "1789401497.000103",
+    "thread_ts": "1789401120.000100",
+    "text": "yep got it"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1789409674.000106",
+    "thread_ts": null,
+    "text": "pumpy endurance update: stopped the rig at 41.2 hrs, diaphragm has a crack along the clamp ring 😬 rated for 500. pics in the drive folder. not sure yet if it's the chem mix (we were running the glyphosate surrogate) or clamp torque"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH3M8B",
+    "ts": "1789410051.000109",
+    "thread_ts": "1789409674.000106",
+    "text": "oof. was duty cycle still 100%? I left it at 100 over the weekend"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1789410368.000112",
+    "thread_ts": "1789409674.000106",
+    "text": "yeah 100 the whole time. tearing down the second unit after lunch"
+  },
+  {
+    "channel": "random",
+    "user": "U07QK4T7D",
+    "ts": "1789412725.000115",
+    "thread_ts": null,
+    "text": "anyone want in on the taco truck order? closes 12:20"
+  },
+  {
+    "channel": "random",
+    "user": "U07QJ9F2C",
+    "ts": "1789412862.000118",
+    "thread_ts": "1789412725.000115",
+    "text": "al pastor x2 pls 🙏"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH3M8B",
+    "ts": "1789412999.000121",
+    "thread_ts": "1789412725.000115",
+    "text": "carnitas burrito"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1789425616.000124",
+    "thread_ts": "1789409674.000106",
+    "text": "second unit pulled at 38 hrs, same spot, crack just starting. so not a one-off"
+  },
+  {
+    "channel": "firmware",
+    "user": "U07QJ9F2C",
+    "ts": "1789428153.000127",
+    "thread_ts": null,
+    "text": "pushed fc build 0.9.3 to the bench unit, fixes the arming beep loop. nothing exciting"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1789490510.000130",
+    "thread_ts": null,
+    "text": "bad news on the bat. Altiscan just emailed, MR-24 modules are now 9 wks lead instead of 3. blaming chip allocation. our 20 units won't land till mid-Nov at this rate"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QJ9F2C",
+    "ts": "1789491307.000133",
+    "thread_ts": "1789490510.000130",
+    "text": "ugh. I have 2 eval units on the bench, fine for fw dev but not for a field fleet"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1789491804.000136",
+    "thread_ts": "1789490510.000130",
+    "text": "asking if they can split ship 6 earlier. also pinging a broker but broker pricing is ~3x"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH2K1A",
+    "ts": "1789493441.000139",
+    "thread_ts": null,
+    "text": "anyone seen the 2.5mm hex drivers? the good ones w/ the orange handles"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH3M8B",
+    "ts": "1789493698.000142",
+    "thread_ts": "1789493441.000139",
+    "text": "check the electrical bench drawer, I may have borrowed them... sorry"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1789506735.000145",
+    "thread_ts": null,
+    "text": "pancake rev B boards back from fab, 10 pcs. starting bring-up tomorrow"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QL1R5E",
+    "ts": "1789507832.000148",
+    "thread_ts": "1789506735.000145",
+    "text": "nice. anything changed from rev A besides the current sense fix?"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1789508509.000151",
+    "thread_ts": "1789506735.000145",
+    "text": "moved the 5V buck closer to the connector + bigger bulk caps. should be cleaner"
+  },
+  {
+    "channel": "random",
+    "user": "U07QM6W3F",
+    "ts": "1789517406.000154",
+    "thread_ts": null,
+    "text": "my sourdough starter finally came back to life. naming it Glyphosate"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH2K1A",
+    "ts": "1789517723.000157",
+    "thread_ts": "1789517406.000154",
+    "text": "please don't"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH2K1A",
+    "ts": "1789578340.000160",
+    "thread_ts": null,
+    "text": "ok knuckle debate time. printed PA12 elbows flexed ~3mm at the tip with a full jug in the static test. machined 6061 version is $38/ea more but basically zero flex. I'd vote aluminum"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QL1R5E",
+    "ts": "1789579377.000163",
+    "thread_ts": "1789578340.000160",
+    "text": "x4 per unit so ~$150/drone. for the pilot fleet of 10 that's fine. weight hit?"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH2K1A",
+    "ts": "1789579814.000166",
+    "thread_ts": "1789578340.000160",
+    "text": "+210g total. we have margin, AUW still under 24.9 kg wet"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QL1R5E",
+    "ts": "1789580671.000169",
+    "thread_ts": "1789578340.000160",
+    "text": "ok let's go aluminum. printed knuckle is dead, not revisiting this"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH2K1A",
+    "ts": "1789580808.000172",
+    "thread_ts": "1789578340.000160",
+    "text": "👍 updating the BOM and sending drawings out today"
+  },
+  {
+    "channel": "firmware",
+    "user": "U07QJ9F2C",
+    "ts": "1789583405.000175",
+    "thread_ts": null,
+    "text": "radar fw: got the bat eval unit giving clean altitude over the gravel lot. grass is noisier, need to try a real canopy"
+  },
+  {
+    "channel": "general",
+    "user": "U07QM6W3F",
+    "ts": "1789588822.000178",
+    "thread_ts": null,
+    "text": "reminder: customer interview recordings from the Fresno trip are in the shared drive. worth a listen, esp the almond grower one re: refill time"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH3M8B",
+    "ts": "1789599039.000181",
+    "thread_ts": null,
+    "text": "who keeps putting the oat milk on the top shelf"
+  },
+  {
+    "channel": "random",
+    "user": "U07QK4T7D",
+    "ts": "1789599176.000184",
+    "thread_ts": "1789599039.000181",
+    "text": "guilty"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1789601413.000187",
+    "thread_ts": null,
+    "text": "pumpy: unit 3 assembled w/ clamp ring torqued to spec, running plain water as a control. let's see if it cracks"
+  },
+  {
+    "channel": "product",
+    "user": "U07QJ9F2C",
+    "ts": "1789665150.000190",
+    "thread_ts": null,
+    "text": "@Sam quick q for flow tuning: what min/max application rate do we need to support? I've been assuming 5–20 L/ha but the almond guy in the interview mentioned way lower rates for some fungicides. need this before I lock the PID gains on flowbo"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1789668347.000193",
+    "thread_ts": null,
+    "text": "PDB rev B bring-up: boards 1 & 2 pass, rails look good on the bench supply. trying it on the brick tomorrow"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1789670404.000196",
+    "thread_ts": null,
+    "text": "nozzle samples (the 110-02 tips) arrived, dropping them at Priya's desk"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QH2K1A",
+    "ts": "1789671501.000199",
+    "thread_ts": "1789670404.000196",
+    "text": "ty!"
+  },
+  {
+    "channel": "random",
+    "user": "U07QJ9F2C",
+    "ts": "1789676438.000202",
+    "thread_ts": null,
+    "text": "fantasy league draft is tonight 7pm, last call"
+  },
+  {
+    "channel": "random",
+    "user": "U07QM6W3F",
+    "ts": "1789676695.000205",
+    "thread_ts": "1789676438.000202",
+    "text": "I'm in, prepare to lose"
+  },
+  {
+    "channel": "random",
+    "user": "U07QL1R5E",
+    "ts": "1789677012.000208",
+    "thread_ts": "1789676438.000202",
+    "text": "I'll autodraft and regret it"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH2K1A",
+    "ts": "1789686029.000211",
+    "thread_ts": null,
+    "text": "boom fold v2 printed, the wings lock way better now. latch still a bit stiff"
+  },
+  {
+    "channel": "general",
+    "user": "U07QL1R5E",
+    "ts": "1789692346.000214",
+    "thread_ts": null,
+    "text": "fyi I'm out tomorrow afternoon (dentist). call my phone if something's on fire"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1789753683.000217",
+    "thread_ts": null,
+    "text": "lol so pancake browned out on the brick today. every time pumpy spins up the 5V rail sags to ~4.3V for like 8ms and flowbo reboots. fun times. pretty sure it's pump motor inrush"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QJ9F2C",
+    "ts": "1789754120.000220",
+    "thread_ts": "1789753683.000217",
+    "text": "that explains the random flowbo resets I saw tuesday that I blamed on my own code 🙃"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1789754557.000223",
+    "thread_ts": "1789753683.000217",
+    "text": "yeah. options are soft-start in fw or more holdup on the 5V. soft-start is free if you can do it"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QJ9F2C",
+    "ts": "1789755054.000226",
+    "thread_ts": "1789753683.000217",
+    "text": "can ramp pump PWM over 200ms, easy. but hw fix should happen too imo"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1789766411.000229",
+    "thread_ts": null,
+    "text": "unit 3 (water, correct torque) at 46 hrs, no crack. so it's chemistry or torque. unit 4 starting now w/ surrogate + correct torque"
+  },
+  {
+    "channel": "random",
+    "user": "U07QK4T7D",
+    "ts": "1789774228.000232",
+    "thread_ts": null,
+    "text": "happy friday, beer fridge restocked 🍺"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH3M8B",
+    "ts": "1789774425.000235",
+    "thread_ts": "1789774228.000232",
+    "text": "legend"
+  },
+  {
+    "channel": "random",
+    "user": "U07QM6W3F",
+    "ts": "1789841702.000238",
+    "thread_ts": null,
+    "text": "anyone at the farmers market? there's a guy with a DJI Agras demo booth lol"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH2K1A",
+    "ts": "1789843219.000241",
+    "thread_ts": "1789841702.000238",
+    "text": "spying on the competition on a saturday, respect"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1789960236.000244",
+    "thread_ts": "1789766411.000229",
+    "text": "checked the rig remotely, unit 4 at 72 hrs still fine"
+  },
+  {
+    "channel": "general",
+    "user": "U07QM6W3F",
+    "ts": "1790006753.000247",
+    "thread_ts": null,
+    "text": "heads up: Ridgeview Farms wants to move our field demo UP from Oct 15 to Oct 6. their harvest got pulled forward and the block we'd spray won't be available after. told them I'd confirm by Wed. we need to talk about whether we can make it"
+  },
+  {
+    "channel": "general",
+    "user": "U07QL1R5E",
+    "ts": "1790007610.000250",
+    "thread_ts": "1790006753.000247",
+    "text": "that's ~2 weeks out. production radar won't be here so we'd fly the eval bat on one drone. let's discuss in standup"
+  },
+  {
+    "channel": "general",
+    "user": "U07QJ9F2C",
+    "ts": "1790007867.000253",
+    "thread_ts": "1790006753.000247",
+    "text": "one drone with the eval bat is doable. two is not"
+  },
+  {
+    "channel": "general",
+    "user": "U07QH2K1A",
+    "ts": "1790008844.000256",
+    "thread_ts": "1790006753.000247",
+    "text": "airframe's ok if the knuckles show up this week"
+  },
+  {
+    "channel": "firmware",
+    "user": "U07QJ9F2C",
+    "ts": "1790013601.000259",
+    "thread_ts": null,
+    "text": "soft start merged, pump PWM ramps over 200ms now. flowbo hasn't rebooted since. Marcus still want the holdup cap change on rev C"
+  },
+  {
+    "channel": "firmware",
+    "user": "U07QH3M8B",
+    "ts": "1790014518.000262",
+    "thread_ts": "1790013601.000259",
+    "text": "yep already in the rev C schematic"
+  },
+  {
+    "channel": "random",
+    "user": "U07QK4T7D",
+    "ts": "1790019035.000265",
+    "thread_ts": null,
+    "text": "the coffee machine is making the grinding noise again"
+  },
+  {
+    "channel": "random",
+    "user": "U07QL1R5E",
+    "ts": "1790019112.000268",
+    "thread_ts": "1790019035.000265",
+    "text": "unplug, wait 10s, replug. it's a firmware thing 😏"
+  },
+  {
+    "channel": "random",
+    "user": "U07QJ9F2C",
+    "ts": "1790019189.000271",
+    "thread_ts": "1790019035.000265",
+    "text": "not my firmware"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1790024726.000274",
+    "thread_ts": null,
+    "text": "aluminum knuckle PO with Bayline Machining confirmed, 48 pcs. they say Wed ship"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1790094643.000277",
+    "thread_ts": null,
+    "text": "weekly inbound: big boys ✅ received, knuckles shipping tomorrow, tips ✅, bat still 9 wks (no split ship yet), carbon tubes landed yesterday, inspecting today"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1790097300.000280",
+    "thread_ts": "1790094643.000277",
+    "text": "update on the carbon tubes: incoming inspection shows wall thickness at 1.6mm on about half the batch vs 2.0 spec. quarantined them. supplier will replace but earliest ship is after Oct 8 bc of their national holiday"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1790097497.000283",
+    "thread_ts": "1790094643.000277",
+    "text": "we have 8 good tubes, so 2 airframes' worth of arms"
+  },
+  {
+    "channel": "product",
+    "user": "U07QM6W3F",
+    "ts": "1790100034.000286",
+    "thread_ts": null,
+    "text": "PRD v0.7 is in drive, added the refill-time requirement (<90s battery + tank swap). comments welcome"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1790109651.000289",
+    "thread_ts": null,
+    "text": "ESC thermal test: the toasters hit 92C at full hover, 16kg payload, chamber at 35C ambient. limit is 105. tight but ok"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QJ9F2C",
+    "ts": "1790110328.000292",
+    "thread_ts": "1790109651.000289",
+    "text": "want a thermal derate in fw? I can pull the throttle ceiling down above 95C"
+  },
+  {
+    "channel": "electrical",
+    "user": "U07QH3M8B",
+    "ts": "1790110885.000295",
+    "thread_ts": "1790109651.000289",
+    "text": "yes please, as a safety net"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH2K1A",
+    "ts": "1790115342.000298",
+    "thread_ts": null,
+    "text": "my dog ate a zip tie. vet says she's fine. she's not sorry."
+  },
+  {
+    "channel": "random",
+    "user": "U07QM6W3F",
+    "ts": "1790115659.000301",
+    "thread_ts": "1790115342.000298",
+    "text": "pics or it didn't happen"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1790121616.000304",
+    "thread_ts": "1789766411.000229",
+    "text": "unit 4 (surrogate + correct torque) at 100 hrs, no crack. calling it: root cause was clamp under-torque from the assembly fixture. updating the work instruction"
+  },
+  {
+    "channel": "general",
+    "user": "U07QL1R5E",
+    "ts": "1790179233.000307",
+    "thread_ts": null,
+    "text": "📌 Design freeze: airframe rev C (frame, knuckles, boom, tank mounts) is frozen as of EOD today. after that any change needs an ECO through me. electrical rev C freeze is next Wed 9/30. get your last tweaks in today"
+  },
+  {
+    "channel": "general",
+    "user": "U07QH2K1A",
+    "ts": "1790180150.000310",
+    "thread_ts": "1790179233.000307",
+    "text": "boom latch tweak going in by noon, then I'm done"
+  },
+  {
+    "channel": "general",
+    "user": "U07QH3M8B",
+    "ts": "1790181007.000313",
+    "thread_ts": "1790179233.000307",
+    "text": "noted for 9/30"
+  },
+  {
+    "channel": "mech",
+    "user": "U07QH2K1A",
+    "ts": "1790189424.000316",
+    "thread_ts": null,
+    "text": "boom latch tweak pushed to PDM. rev C airframe package is complete from my side"
+  },
+  {
+    "channel": "supply-chain",
+    "user": "U07QK4T7D",
+    "ts": "1790194241.000319",
+    "thread_ts": null,
+    "text": "URGENT: Cellforge is holding 140 cells for the brick but needs the PO signed by 3pm today or they release the allocation. next batch is 6 wks out. @Marcus @Hannah can one of you approve? it's in Procurify"
+  },
+  {
+    "channel": "product",
+    "user": "U07QM6W3F",
+    "ts": "1790197258.000322",
+    "thread_ts": null,
+    "text": "decision on Ridgeview: we're doing Oct 6 with one drone + the eval radar. confirmed with them this morning. second airframe is backup only"
+  },
+  {
+    "channel": "product",
+    "user": "U07QL1R5E",
+    "ts": "1790197815.000325",
+    "thread_ts": "1790197258.000322",
+    "text": "👍 thanks Sam"
+  },
+  {
+    "channel": "firmware",
+    "user": "U07QJ9F2C",
+    "ts": "1790202632.000328",
+    "thread_ts": null,
+    "text": "thermal derate in fc 0.9.5, throttle ceiling ramps down 95–105C. on the bench now"
+  },
+  {
+    "channel": "random",
+    "user": "U07QH3M8B",
+    "ts": "1790207149.000331",
+    "thread_ts": null,
+    "text": "who left a half eaten burrito on the soldering station"
+  },
+  {
+    "channel": "random",
+    "user": "U07QK4T7D",
+    "ts": "1790207226.000334",
+    "thread_ts": "1790207149.000331",
+    "text": "that's from monday. not mine though"
+  },
+  {
+    "channel": "hw-test",
+    "user": "U07QH2K1A",
+    "ts": "1790209223.000337",
+    "thread_ts": null,
+    "text": "updated assembly WI for the pumpy clamp ring: 2.4 Nm with the click driver, old fixture retired"
+  }
+]

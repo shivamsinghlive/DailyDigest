@@ -1,0 +1,44 @@
+{
+  "description": "TEST ONLY. Derived from the dataset's parts.json owner + team.json parts_owned.",
+  "owners": {
+    "Carbon Fiber Airframe Rev C": [
+      "U07QH2K1A"
+    ],
+    "Folding Arm Hinge Assembly": [
+      "U07QH2K1A"
+    ],
+    "Carbon Arm Tube 30mm OD": [
+      "U07QH2K1A"
+    ],
+    "Folding Spray Boom": [
+      "U07QH2K1A"
+    ],
+    "16L Payload Tank": [
+      "U07QH2K1A"
+    ],
+    "Diaphragm Spray Pump": [
+      "U07QH2K1A"
+    ],
+    "Power Distribution Board": [
+      "U07QH3M8B"
+    ],
+    "14S 22Ah Flight Battery Pack": [
+      "U07QH3M8B"
+    ],
+    "Electronic Speed Controller 80A": [
+      "U07QH3M8B"
+    ],
+    "Brushless Propulsion Motor 10kW": [
+      "U07QH3M8B"
+    ],
+    "Flight Controller": [
+      "U07QJ9F2C"
+    ],
+    "Flow Control Board": [
+      "U07QJ9F2C"
+    ],
+    "Terrain-Following Radar Module MR-24": [
+      "U07QJ9F2C"
+    ]
+  }
+}

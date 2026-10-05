@@ -1,0 +1,156 @@
+[
+  {
+    "id": "P-FRAME",
+    "official_name": "Carbon Fiber Airframe Rev C",
+    "nicknames": [
+      "spider",
+      "the X",
+      "airframe"
+    ],
+    "subsystem": "Structure",
+    "owner": "U07QH2K1A"
+  },
+  {
+    "id": "P-KNUCKLE",
+    "official_name": "Folding Arm Hinge Assembly",
+    "nicknames": [
+      "knuckle",
+      "knuckles",
+      "elbow",
+      "elbows"
+    ],
+    "subsystem": "Structure",
+    "owner": "U07QH2K1A"
+  },
+  {
+    "id": "P-ARMTUBE",
+    "official_name": "Carbon Arm Tube 30mm OD",
+    "nicknames": [
+      "carbon tubes",
+      "arm tubes",
+      "sticks"
+    ],
+    "subsystem": "Structure",
+    "owner": "U07QH2K1A"
+  },
+  {
+    "id": "P-BOOM",
+    "official_name": "Folding Spray Boom",
+    "nicknames": [
+      "wings",
+      "boom"
+    ],
+    "subsystem": "Spray System",
+    "owner": "U07QH2K1A"
+  },
+  {
+    "id": "P-TANK",
+    "official_name": "16L Payload Tank",
+    "nicknames": [
+      "the jug",
+      "jug"
+    ],
+    "subsystem": "Spray System",
+    "owner": "U07QH2K1A"
+  },
+  {
+    "id": "P-PUMP",
+    "official_name": "Diaphragm Spray Pump",
+    "nicknames": [
+      "pumpy",
+      "the heart"
+    ],
+    "subsystem": "Spray System",
+    "owner": "U07QH2K1A"
+  },
+  {
+    "id": "P-NOZZLE",
+    "official_name": "Flat Fan Nozzle 110-02",
+    "nicknames": [
+      "tips",
+      "drippers"
+    ],
+    "subsystem": "Spray System",
+    "owner": null
+  },
+  {
+    "id": "P-PDB",
+    "official_name": "Power Distribution Board",
+    "nicknames": [
+      "pancake",
+      "PDB"
+    ],
+    "subsystem": "Power",
+    "owner": "U07QH3M8B"
+  },
+  {
+    "id": "P-BATT",
+    "official_name": "14S 22Ah Flight Battery Pack",
+    "nicknames": [
+      "the brick",
+      "brick"
+    ],
+    "subsystem": "Power",
+    "owner": "U07QH3M8B"
+  },
+  {
+    "id": "P-ESC",
+    "official_name": "Electronic Speed Controller 80A",
+    "nicknames": [
+      "escs",
+      "the toasters",
+      "toasters"
+    ],
+    "subsystem": "Propulsion",
+    "owner": "U07QH3M8B"
+  },
+  {
+    "id": "P-MOTOR",
+    "official_name": "Brushless Propulsion Motor 10kW",
+    "nicknames": [
+      "big boys",
+      "motors"
+    ],
+    "subsystem": "Propulsion",
+    "owner": "U07QH3M8B"
+  },
+  {
+    "id": "P-FC",
+    "official_name": "Flight Controller",
+    "nicknames": [
+      "the brain",
+      "fc"
+    ],
+    "subsystem": "Avionics",
+    "owner": "U07QJ9F2C"
+  },
+  {
+    "id": "P-FLOWBRD",
+    "official_name": "Flow Control Board",
+    "nicknames": [
+      "flowbo"
+    ],
+    "subsystem": "Spray System",
+    "owner": "U07QJ9F2C"
+  },
+  {
+    "id": "P-RADAR",
+    "official_name": "Terrain-Following Radar Module MR-24",
+    "nicknames": [
+      "the bat",
+      "bat"
+    ],
+    "subsystem": "Avionics",
+    "owner": "U07QJ9F2C"
+  },
+  {
+    "id": "P-GPS",
+    "official_name": "RTK GNSS Receiver",
+    "nicknames": [
+      "the puck",
+      "puck"
+    ],
+    "subsystem": "Avionics",
+    "owner": null
+  }
+]

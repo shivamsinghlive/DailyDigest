@@ -1,0 +1,173 @@
+{
+  "notes": "Converted from holdout3/ground_truth.json by scripts/import_slack_export.py",
+  "events": [
+    {
+      "id": "E1",
+      "section": "personal",
+      "thread_ts": "1789409674.000106",
+      "also_threads": [],
+      "day": "2026-09-14",
+      "what": "Spray pump diaphragm cracking early in endurance test",
+      "should_alert": [
+        {
+          "user": "U07QL1R5E"
+        },
+        {
+          "user": "U07QK4T7D"
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "section": "personal",
+      "thread_ts": "1789490510.000130",
+      "also_threads": [],
+      "day": "2026-09-15",
+      "what": "Radar module lead time slips from 3 to 9 weeks",
+      "should_alert": [
+        {
+          "user": "U07QL1R5E"
+        },
+        {
+          "user": "U07QM6W3F"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "section": "personal",
+      "thread_ts": "1789578340.000160",
+      "also_threads": [],
+      "day": "2026-09-16",
+      "what": "Decision: machined aluminum arm knuckle replaces printed version",
+      "should_alert": [
+        {
+          "user": "U07QK4T7D"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "section": "personal",
+      "thread_ts": "1789665150.000190",
+      "also_threads": [],
+      "day": "2026-09-17",
+      "what": "Unanswered question on required application rate range",
+      "should_alert": [
+        {
+          "user": "U07QM6W3F"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "section": "personal",
+      "thread_ts": "1789753683.000217",
+      "also_threads": [],
+      "day": "2026-09-18",
+      "what": "PDB 5V brownout resets flow board when pump starts",
+      "should_alert": [
+        {
+          "user": "U07QH2K1A"
+        },
+        {
+          "user": "U07QL1R5E"
+        }
+      ]
+    },
+    {
+      "id": "E6",
+      "section": "team_pulse",
+      "thread_ts": "1790006753.000247",
+      "also_threads": [],
+      "day": "2026-09-21",
+      "what": "Customer field demo pulled in from Oct 15 to Oct 6",
+      "should_alert": [
+        {
+          "user": "U07QH3M8B"
+        },
+        {
+          "user": "U07QK4T7D"
+        }
+      ]
+    },
+    {
+      "id": "E7",
+      "section": "personal",
+      "thread_ts": "1790094643.000277",
+      "also_threads": [],
+      "day": "2026-09-22",
+      "what": "Carbon arm tubes fail incoming inspection; replacements after Oct 8",
+      "should_alert": [
+        {
+          "user": "U07QH2K1A"
+        },
+        {
+          "user": "U07QL1R5E"
+        },
+        {
+          "user": "U07QM6W3F"
+        }
+      ]
+    },
+    {
+      "id": "E8",
+      "section": "team_pulse",
+      "thread_ts": "1790179233.000307",
+      "also_threads": [],
+      "day": "2026-09-23",
+      "what": "Airframe rev C design freeze",
+      "should_alert": [
+        {
+          "user": "U07QJ9F2C"
+        },
+        {
+          "user": "U07QK4T7D"
+        },
+        {
+          "user": "U07QM6W3F"
+        }
+      ]
+    },
+    {
+      "id": "E9",
+      "section": "personal",
+      "thread_ts": "1790194241.000319",
+      "also_threads": [],
+      "day": "2026-09-23",
+      "what": "Urgent: battery cell PO approval needed by 3pm",
+      "should_alert": [
+        {
+          "user": "U07QH3M8B"
+        },
+        {
+          "user": "U07QL1R5E"
+        }
+      ]
+    },
+    {
+      "id": "E10",
+      "section": "team_pulse",
+      "thread_ts": "1790197258.000322",
+      "also_threads": [],
+      "day": "2026-09-23",
+      "what": "Decision: Oct 6 demo with single drone and eval radar",
+      "should_alert": [
+        {
+          "user": "U07QH2K1A"
+        },
+        {
+          "user": "U07QH3M8B"
+        },
+        {
+          "user": "U07QJ9F2C"
+        },
+        {
+          "user": "U07QK4T7D"
+        }
+      ]
+    }
+  ],
+  "noise": [],
+  "mentions": []
+}
