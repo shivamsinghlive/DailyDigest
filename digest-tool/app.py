@@ -62,7 +62,8 @@ STYLE = """
 .dd-meta .dd-dim { opacity: 0.7; }
 /* Today at a glance: three big numbers in the greeting block. */
 .dd-kpis { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
-.dd-kpi { flex: 1; min-width: 0; padding: 0.7rem 0.9rem; border-radius: 0.8rem; background: rgba(127, 127, 127, 0.10); }
+.dd-kpi { flex: 1; min-width: 0; padding: 0.75rem 0.95rem; border-radius: 0.8rem; background: rgba(127, 127, 127, 0.07);
+          border: 1px solid rgba(127, 127, 127, 0.16); }
 .dd-kpi b { display: block; font-size: 2rem; line-height: 1.1; font-weight: 700; }
 .dd-kpi span { font-size: 0.8rem; opacity: 0.75; }
 /* Phase track: each subsystem's way through Concept → Production. */
@@ -91,11 +92,60 @@ STYLE = """
 /* "What changed": a tinted box, so memory facts stand apart from the reasons. */
 [class*="st-key-changed-"] { background: rgba(42, 120, 214, 0.10); border-radius: 0.5rem; padding: 0.6rem 0.85rem 0.8rem; }
 [class*="st-key-changed-"] p { margin-bottom: 0.15rem; }
+
+/* ===== Product chrome ===== */
+header[data-testid="stHeader"] { background: transparent; }
+.block-container, [data-testid="stMainBlockContainer"] { padding-top: 1.4rem !important; }
+.dd-topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+             padding: 0.2rem 0 1rem; margin-bottom: 0.9rem; border-bottom: 1px solid rgba(127,127,127,0.18); }
+.dd-brand { display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; }
+.dd-mark { display: inline-flex; align-items: center; justify-content: center; width: 1.9rem; height: 1.9rem; border-radius: 0.55rem;
+           background: linear-gradient(135deg, #2a78d6, #7d6fe0); color: #fff; font-weight: 800; font-size: 0.78rem; letter-spacing: 0.02em; }
+.dd-brand b { font-weight: 700; letter-spacing: -0.01em; }
+.dd-brand .dd-sep { opacity: 0.35; }
+.dd-brand .dd-proj { opacity: 0.75; }
+.dd-right { display: flex; align-items: center; gap: 0.8rem; font-size: 0.85rem; opacity: 0.9; }
+.dd-pill { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.18rem 0.65rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
+.dd-pill i { width: 0.45rem; height: 0.45rem; border-radius: 50%; display: inline-block; }
+.dd-pill.live { background: rgba(26,158,110,0.12); color: #1a9e6e; } .dd-pill.live i { background: #1a9e6e; box-shadow: 0 0 0 3px rgba(26,158,110,0.2); }
+.dd-pill.demo { background: rgba(127,127,127,0.12); color: inherit; } .dd-pill.demo i { background: #8a8f98; }
+
+/* ===== Cards ===== */
+.dd-head { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; font-size: 0.86rem; }
+.dd-head .dd-who b { font-weight: 600; }
+.dd-head .dd-dim, .dd-dim { opacity: 0.62; }
+.dd-head .dd-when { display: flex; align-items: center; gap: 0.6rem; white-space: nowrap; }
+.dd-urg { display: inline-flex; gap: 3px; }
+.dd-urg i { width: 6px; height: 6px; border-radius: 50%; background: rgba(127,127,127,0.28); }
+.dd-urg i.on { background: #8a8f98; }
+.dd-urg.hot i.on { background: #d64545; }
+.dd-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.55rem 0 0.4rem; }
+.dd-chip { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.1rem 0.55rem; border-radius: 999px;
+           font-size: 0.74rem; font-weight: 600; line-height: 1.5; }
+.dd-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.dd-chip.solid::before { display: none; }
+.t-red { color: #d64545; background: rgba(214,69,69,0.11); }   .t-blue { color: #2f7de1; background: rgba(47,125,225,0.11); }
+.t-violet { color: #7c6ce0; background: rgba(124,108,224,0.12); } .t-amber { color: #c58a00; background: rgba(224,161,0,0.13); }
+.t-orange { color: #e07a2e; background: rgba(224,122,46,0.12); } .t-green { color: #1a9e6e; background: rgba(26,158,110,0.12); }
+.t-gray { color: #8a8f98; background: rgba(127,127,127,0.12); }
+.dd-chip.solid.t-red { background: #d64545; color: #fff; }
+.dd-changes { margin: 0.55rem 0 0.2rem; padding: 0.55rem 0.75rem; border-radius: 0.6rem; background: rgba(42,120,214,0.07);
+              display: grid; gap: 0.3rem; font-size: 0.9rem; }
+.dd-change { display: flex; align-items: baseline; gap: 0.5rem; }
+.dd-change .dd-tag { flex: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.85; min-width: 4.6rem; }
+.dd-change s { opacity: 0.5; }
+.dd-change .dd-arrow { opacity: 0.5; }
+.dd-why { font-size: 0.83rem; opacity: 0.72; margin-top: 0.5rem; line-height: 1.45; }
+.dd-why b { font-weight: 600; }
+/* Card actions stay on one line. */
+[class*="st-key-card-"] button p { white-space: nowrap; }
+[class*="st-key-card-"] [data-testid="stButtonGroup"] { width: auto !important; }
+[class*="st-key-card-"] [data-testid="stButtonGroup"] > div { flex-wrap: nowrap !important; width: auto !important; gap: 0.4rem; }
 /* Team Pulse cards: a faint tint, so shared items read differently from personal ones. */
 [class*="st-key-card-"][class*="-pulse-"] { background: rgba(42, 120, 214, 0.035); }
 [class*="st-key-card-"] { transition: box-shadow 0.15s ease; }
 [class*="st-key-card-"]:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10); }
-.dd-summary { font-weight: 600; font-size: 1.04rem; line-height: 1.45; margin: 0.1rem 0 0.4rem; }
+.dd-summary { font-weight: 600; font-size: 1.05rem; line-height: 1.45; letter-spacing: -0.005em; }
 /* One blue accent instead of Streamlit's red, in light and dark mode alike. (A theme color in
    config.toml would do this too, but it switches off the viewer's dark mode.) */
 button[data-baseweb="tab"][aria-selected="true"] p { color: #2a78d6 !important; }
@@ -174,20 +224,53 @@ def digest_for(person, day, since=None):
 
 # ---------- a digest card ----------
 
-def card_badges(item):
-    """At most four badges: how it changed, what it is, schedule risk, don't skip."""
+TONE_COLOR = {"red": "t-red", "blue": "t-blue", "violet": "t-violet", "orange": "t-orange", "green": "t-green", "gray": "t-gray"}
+# What-changed lines from digest.what_changed, by their opening words: (prefix, tag shown, tag color).
+CHANGE_TAGS = [("Still in force: ", "In force", "t-blue"), ("Same issue as ", "Linked", "t-violet"),
+               ("Resolves: ", "Resolves", "t-green"), ("Reopened", "Reopened", "t-orange"),
+               ("Needs clarification: ", "Clarify", "t-red")]
+
+
+def chip(text, tone, solid=False):
+    return f"<span class='dd-chip {tone}{' solid' if solid else ''}'>{html.escape(text)}</span>"
+
+
+def card_chips(item):
+    """At most four chips: how it changed memory, what it is, schedule risk, don't skip."""
     change = item["change"]
-    color, icon, _ = KIND_STYLE.get(change["kind"], ("gray", "info", "update"))
+    color = KIND_STYLE.get(change["kind"], ("gray", "info", "update"))[0]
     out = []
     if item.get("delta_badge"):
-        dcolor, dicon, dlabel, _ = DELTA_STYLE[item["delta_badge"]]
-        out.append(f":{dcolor}-badge[:material/{dicon}: {dlabel}]")
-    out.append(f":{color}-badge[:material/{icon}: {item['label']}]")
+        dcolor, _, dlabel, _ = DELTA_STYLE[item["delta_badge"]]
+        out.append(chip(dlabel, TONE_COLOR.get(dcolor, "t-gray")))
+    out.append(chip(item["label"], "t-amber" if color == "orange" and change["kind"] != "change_after_freeze"
+                    else TONE_COLOR.get(color, "t-gray")))
     if change.get("schedule_risk"):
-        out.append(":orange-badge[:material/schedule: Schedule risk]")
+        out.append(chip("Schedule risk", "t-orange"))
     if item.get("must"):
-        out.append(":red-badge[:material/priority_high: Don't skip]")
-    return " ".join(out)
+        out.append(chip("Don't skip", "t-red", solid=True))
+    return "<div class='dd-chips'>" + "".join(out) + "</div>"
+
+
+def change_row(line):
+    """One "what changed" line: a small tag, and before → after shown as an edit (old struck, new bold)."""
+    tag, tone, body = "Changed", "t-gray", line
+    for prefix, label, t in CHANGE_TAGS:
+        if line.startswith(prefix):
+            tag, tone, body = label, t, line[len(prefix):] if prefix.endswith(": ") else line
+            break
+    m = re.match(r"^(.*?): (.+?) → (.+)$", body)
+    if m and tag == "Changed":
+        text = (f"{html.escape(m.group(1))} <s>{html.escape(m.group(2))}</s> <span class='dd-arrow'>→</span> "
+                f"<b>{html.escape(m.group(3))}</b>")
+    else:
+        text = html.escape(body)
+    return f"<div class='dd-change'><span class='dd-tag {tone}' style='background:none'>{tag}</span><span>{text}</span></div>"
+
+
+def urgency_dots(u):
+    dots = "".join(f"<i class='{'on' if i < u else ''}'></i>" for i in range(5))
+    return f"<span class='dd-urg{' hot' if u >= 4 else ''}' title='Urgency {u}/5'>{dots}</span>"
 
 
 def card_tone(item):
@@ -243,28 +326,28 @@ def reply_box(item, person, uid):
 def card(item, person, day, reasons, section, with_feedback=True, with_reply=True):
     uid = f"{section}-{re.sub(r'[^0-9a-z]', '_', item['thread_ts'])}"
     reasons = list(dict.fromkeys(reasons))  # a pulse item's personal and team reasons can overlap
+    author = item["change"].get("root_author")
+    started = ts_to_dt(item["thread_ts"]).strftime("%a %-d %b · %H:%M")
+    changes = item.get("what_changed") or []
+    body = (f"<div class='dd-head'><div class='dd-who'>{avatar(author)}<b>{html.escape(full_names.get(author, 'Someone'))}</b>"
+            f" <span class='dd-dim'>in #{html.escape(item['channel'])}</span></div>"
+            f"<div class='dd-when'>{urgency_dots(item['urgency'])}<span class='dd-dim'>{started}</span></div></div>"
+            + card_chips(item)
+            + f"<div class='dd-summary'>{html.escape(item['summary'])}</div>"
+            + ("<div class='dd-changes'>" + "".join(change_row(c) for c in changes) + "</div>" if changes else "")
+            + (f"<div class='dd-why'><b>Why you're seeing this:</b> {html.escape(' · '.join(reasons[:2]))}</div>" if reasons else ""))
     with st.container(border=True, key=f"card-{card_tone(item)}-{uid}"):
-        author = item["change"].get("root_author")
-        started = ts_to_dt(item["thread_ts"]).strftime("%a %-d %b, %H:%M")
-        st.markdown(f"<div class='dd-meta'>{avatar(author)}<b>{html.escape(full_names.get(author, 'Someone'))}</b> "
-                    f"<span class='dd-dim'>in #{html.escape(item['channel'])} · {started}</span></div>", unsafe_allow_html=True)
-        st.markdown(card_badges(item))
-        st.markdown(f"<div class='dd-summary'>{html.escape(item['summary'])}</div>", unsafe_allow_html=True)
-        if item.get("what_changed"):  # from project memory: before → after, linked issues, constraints in force
-            with st.container(key=f"changed-{uid}"):
-                st.markdown("  \n".join(f":material/arrow_right_alt: {line}" for line in item["what_changed"]))
-        if reasons:
-            st.caption("**Why you're seeing this:** " + " · ".join(reasons[:2]))
-        meta, reply, thumbs = st.columns([4, 1.6, 1], vertical_alignment="center")
-        link = f" · [Open in Slack]({actions.thread_link(item['change']['channel'], item['thread_ts'])})" if LIVE else ""
-        meta.caption(f"Urgency {item['urgency']}/5{link}")
+        st.markdown(body, unsafe_allow_html=True)
+        reply, slack, _, thumbs = st.columns([1.5, 2.4, 2.4, 1.4], vertical_alignment="center")
         if LIVE and with_reply:
             with reply:
                 reply_box(item, person, uid)
+            slack.link_button("Open in Slack", actions.thread_link(item["change"]["channel"], item["thread_ts"]),
+                              icon=":material/open_in_new:")
         if with_feedback:
             with thumbs:
                 feedback(item, person, day)
-        with st.expander("Conversation and all reasons"):
+        with st.expander("View thread and all reasons"):
             for r in reasons[2:]:
                 st.markdown(f"- {r}")
             conversation(item["thread_ts"], day)
@@ -354,10 +437,7 @@ def step(delta):
 
 
 with st.sidebar:
-    st.markdown("## 📬 Daily Digest")
-    st.caption(team["project"]["name"])
     if LIVE:
-        st.markdown(":green-badge[:material/wifi: Live Slack]")
         if st.button("Refresh from Slack", icon=":material/refresh:", width="stretch",
                      help="Fetch new messages. New threads are read by Claude once (about $0.002 each), then cached."):
             refresh()
@@ -396,6 +476,11 @@ if st.session_state.get("sent"):
 st.html(STYLE)
 
 # ---------- header ----------
+
+status = ("<span class='dd-pill live'><i></i>Live Slack</span>" if LIVE else "<span class='dd-pill demo'><i></i>Demo data</span>")
+st.markdown(f"<div class='dd-topbar'><div class='dd-brand'><span class='dd-mark'>DD</span><b>Daily Digest</b>"
+            f"<span class='dd-sep'>/</span><span class='dd-proj'>{html.escape(team['project']['name'])}</span></div>"
+            f"<div class='dd-right'>{status}<span>{pretty_day(day)}</span></div></div>", unsafe_allow_html=True)
 
 with st.container(key="hero"):
     words, numbers = st.columns([3, 2], vertical_alignment="center")
