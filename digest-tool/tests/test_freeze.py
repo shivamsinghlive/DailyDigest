@@ -37,3 +37,8 @@ def test_the_revised_part_is_the_thread_subject_not_what_a_follow_up_touches(tea
     root = make_msg("tweaking the base casting: thicker boss", day=20)
     t = thread(root, make_msg("moved the boss 2mm to clear the J4 crimps, pushed rev F", thread_ts=root["ts"]))
     assert changed_after_freeze(t, DAY, state(base="DVT", cabling="DVT"), team) == ["base casting"]
+
+
+def test_a_part_named_after_its_subsystem_counts_too(team, make_msg):
+    t = thread(make_msg("Pushed rev C of the gripper finger: moved the pad pocket 1mm"))
+    assert changed_after_freeze(t, DAY, state(gripper="DVT"), team) == ["gripper"]

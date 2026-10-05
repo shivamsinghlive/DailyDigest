@@ -84,9 +84,12 @@ def find_mentions(text, catalog):
                 if window == target:
                     best = (1.0, name)
                     break
-                # A typo keeps the length and first letter. Without this, a bare "connector" would
-                # fuzzy-match "J7 connector" (only 2 characters apart).
-                if (len(target) >= FUZZY_MIN_LENGTH and abs(len(window) - len(target)) <= 1
+                # A typo keeps the first letter and (almost) the length. Without this, a bare "connector"
+                # would fuzzy-match "J7 connector" (only 2 characters apart). A single word must keep its
+                # length exactly: one letter more or less turns real words into others ("hardness" is
+                # not a misspelled "harness").
+                slack = 1 if n > 1 else 0
+                if (len(target) >= FUZZY_MIN_LENGTH and abs(len(window) - len(target)) <= slack
                         and window[:1] == target[:1]):
                     ratio = SequenceMatcher(None, window, target).ratio()
                     if ratio >= FUZZY_MIN_RATIO and (best is None or ratio > best[0]):

@@ -19,12 +19,22 @@ MESSAGE_SOURCE = os.getenv("MESSAGE_SOURCE", "fake")
 SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN", "")
 
 # All "what happened today" boundaries use the team's local time.
-TIMEZONE = "America/Los_Angeles"
+# A dataset can set its own ("project": {"timezone": ...} in its team.json); DIGEST_TIMEZONE overrides both.
+def _dataset_timezone():
+    try:
+        import json
+        return json.loads((DATA_DIR / "team.json").read_text()).get("project", {}).get("timezone")
+    except (OSError, ValueError):
+        return None
+
+
+TIMEZONE = os.getenv("DIGEST_TIMEZONE") or _dataset_timezone() or "America/Los_Angeles"
 
 # ---------- LLM ----------
 # "none" never calls an LLM: cached results are used, and keyword rules fill any gaps.
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "none")
 ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-haiku-4-5")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")  # only checked for presence; the SDK reads it itself
 ANTHROPIC_PRICE_PER_MTOK = {"input": 1.00, "output": 5.00}  # Haiku 4.5, USD; used for cost estimates
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3.5:2b")

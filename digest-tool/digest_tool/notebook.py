@@ -168,6 +168,7 @@ def make_change(kind, day, thread, x, team, **extra):
         "kind": kind,
         "day": day,
         "thread_ts": thread["thread_ts"],
+        "channel": thread["channel"],             # Slack channel id: replies and "Open in Slack" need it
         "channel_name": thread["channel_name"],
         "type": x["type"],
         "summary": x["summary"],
@@ -274,7 +275,9 @@ def changed_after_freeze(thread, day, state, team):
     if not any(REVISION_RE.search(m["text"]) for m in so_far if day_of(m["ts"]) == day):
         return []
     cat = team["catalog"]
-    subject = [p for p in match_parts(thread["messages"][0]["text"], cat) if linkable(p, cat)]
+    # Any hardware part counts here, including one named after its whole subsystem ("gripper"): unlike
+    # linking threads, a revision to the gripper is exactly a change to a frozen subsystem.
+    subject = [p for p in match_parts(thread["messages"][0]["text"], cat) if cat["subsystem_of"].get(p)]
     frozen = PHASES.index("DVT")
     return sorted(p for p in subject if PHASES.index(state["phases"][cat["subsystem_of"][p]]) >= frozen)
 

@@ -65,3 +65,12 @@ def test_a_new_name_for_an_existing_quantity_is_merged(team, monkeypatch):
     out = apply_facts(m, [fact("TBD", "decided", entity="project", attribute="dvt_build_schedule")], THREAD,
                       "2026-09-24", team, OWNERS, provider="anthropic", cache={})
     assert out[0]["key"] == "constraint:project.dvt_build_date" and out[0]["before"] == "10/26"
+
+
+def test_a_target_is_never_merged_into_a_measurement(team, monkeypatch):
+    m = new_store()
+    record(m, "2026-09-01", "fact:base casting.max_weight_measured", "FACT", "790g")
+    monkeypatch.setattr(facts, "call_provider", lambda *a: (_ for _ in ()).throw(AssertionError("no candidates expected")))
+    out = apply_facts(m, [fact("750g", "decided", attribute="max_weight")], THREAD, "2026-09-02", team, OWNERS,
+                      provider="anthropic", cache={})
+    assert out[0]["key"] == "constraint:base casting.max_weight"

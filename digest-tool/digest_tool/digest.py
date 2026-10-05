@@ -129,7 +129,8 @@ def what_changed(change, state):
     linked = change.get("linked_issue")
     if linked:
         n = days_between(linked["since"], day)
-        lines.append(f"Same issue as a problem first reported {n} day{'s' if n != 1 else ''} ago ({pretty_day(linked['since'])})")
+        when = "earlier today" if n == 0 else f"{n} day{'s' if n != 1 else ''} ago ({pretty_day(linked['since'])})"
+        lines.append(f"Same issue as a problem first reported {when}")
     if change.get("delta") == "REOPENED":
         resolved = [e["day"] for e in history(mem, change["memory_key"]) if e["change"] == "RESOLVED" and e["day"] < day]
         lines.append(f"Reopened: open → resolved on {pretty_day(resolved[-1])} → open again" if resolved else "Reopened")

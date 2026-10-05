@@ -111,8 +111,9 @@ def same_quantity(mem, key, f, day, provider, cache):
     "motor driver.tmc9660_dvt_build_constraint = TBD" may really be "project.dvt_build_target".
     Code shortlists existing facts whose names share words; the LLM picks one or "none" (cached)."""
     words_ = name_words(key)
+    kind = key.split(":", 1)[0]  # a target only merges into a target, a measurement into a measurement
     cands = sorted((m for m in current_state(mem, day, types={"FACT", "CONSTRAINT"})
-                    if m["key"] != key and words_ & name_words(m["key"])),
+                    if m["key"] != key and m["key"].split(":", 1)[0] == kind and words_ & name_words(m["key"])),
                    key=lambda m: -len(words_ & name_words(m["key"])))[:5]
     if not cands:
         return None

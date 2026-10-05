@@ -13,3 +13,6 @@ data/feedback.json
 
 # rebuilt from Slack + the cache by `python -m digest_tool.memory`
 data/cache/memory.json
+
+# live Slack workspace data (real names and messages): local only
+data/slack/

@@ -64,3 +64,9 @@ def test_known_parts_are_not_flagged_unknown(catalog):
 
 def test_plain_chatter_flags_nothing(catalog):
     assert find_mentions("pizza in the kitchen at noon", catalog) == ({}, [])
+
+
+def test_a_single_word_one_letter_longer_is_another_word(catalog):
+    # Regression: "failed hardness check" once matched the cable harness.
+    assert "gripper" not in match_parts("the fingerss are fine", catalog)   # one letter more: not a typo
+    assert "J4 connector" in match_parts("ordered 43045-0413 by mistake", catalog)  # same length: a typo

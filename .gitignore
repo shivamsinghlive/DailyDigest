@@ -1,0 +1,2 @@
+# secrets live in digest-tool/.env; never commit a .env anywhere in the repo
+.env

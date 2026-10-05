@@ -62,6 +62,35 @@ def slack_api(method, **params):
         params["cursor"] = cursor
 
 
+# Slack system messages ("X has joined the channel", topic changes, ...) aren't conversation.
+# These subtypes are kept because they carry real content.
+CONTENT_SUBTYPES = {None, "thread_broadcast", "file_share", "me_message"}
+
+
+# Messages this app posts for someone (seeded demo messages, replies sent from the app) are bot messages
+# that carry the person in Slack message metadata. They count as that person's.
+ON_BEHALF_EVENTS = {"digest_seed", "digest_reply"}
+
+
+def is_conversation(msg):
+    if msg.get("subtype") == "bot_message":
+        return on_behalf_of(msg) is not None and bool(msg.get("text"))
+    return msg.get("subtype") in CONTENT_SUBTYPES and bool(msg.get("text") or msg.get("files"))
+
+
+def on_behalf_of(msg):
+    meta = msg.get("metadata") or {}
+    if meta.get("event_type") in ON_BEHALF_EVENTS:
+        return (meta.get("event_payload") or {}).get("as_user")
+    return None
+
+
+def attribute(msg):
+    """A message posted by this app for someone becomes that person's message."""
+    person = on_behalf_of(msg)
+    return {**msg, "user": person, "via_app": True} if person else msg
+
+
 def fetch_from_slack(days_back=14):
     """Pull recent history from every public channel the bot is a member of.
     Bot token scopes needed: channels:read, channels:history."""
@@ -75,13 +104,17 @@ def fetch_from_slack(days_back=14):
     for ch in channels:
         if not ch.get("is_member"):  # bots can only read channels they've been added to
             continue
-        for page in slack_api("conversations.history", channel=ch["id"], oldest=oldest, limit=200):
+        for page in slack_api("conversations.history", channel=ch["id"], oldest=oldest, limit=200,
+                              include_all_metadata="true"):
             for msg in page["messages"]:
-                messages.append({**msg, "channel": ch["id"]})
+                if is_conversation(msg):
+                    messages.append({**attribute(msg), "channel": ch["id"]})
                 # conversations.history only returns thread roots; replies need their own call.
                 if msg.get("reply_count"):
-                    for rpage in slack_api("conversations.replies", channel=ch["id"], ts=msg["ts"], limit=200):
-                        messages += [{**r, "channel": ch["id"]} for r in rpage["messages"] if r["ts"] != msg["ts"]]
+                    for rpage in slack_api("conversations.replies", channel=ch["id"], ts=msg["ts"], limit=200,
+                                           include_all_metadata="true"):
+                        messages += [{**attribute(r), "channel": ch["id"]} for r in rpage["messages"]
+                                     if r["ts"] != msg["ts"] and is_conversation(r)]
     return messages, {c["id"]: c["name"] for c in channels}
 
 
