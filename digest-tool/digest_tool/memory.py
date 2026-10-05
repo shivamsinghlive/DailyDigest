@@ -4,7 +4,7 @@ Unbounded memory, bounded retrieval:
 - Nothing expires. A decision from six months ago stays a memory until something resolves or
   supersedes it. (Recency still matters for *relevance*, e.g. focus and ownership evidence fade,
   but that's ranking, not memory.)
-- Every change is an event in an append-only log: NEW, UPDATED, RESOLVED, REOPENED. Events are never
+- Every change is an event in an append-only log: NEW, UPDATED, RESOLVED, REOPENED, CONFLICTING. Events are never
   edited, so "what was true on day X?" is answered from the log, and "what is true now?" from the
   latest versions.
 - A memory has a key (what it's about: "phase:wrist", "issue:<thread>", "owner:J4 connector") and
@@ -59,6 +59,7 @@ def record(store, day, key, mtype, value, thread_ts=None, summary=None, parts=()
         "status": "ACTIVE", "created_at": cur["created_at"] if cur else day, "updated_at": day,
         "valid_from": day, "valid_to": None,
         "source_threads": [thread_ts] if thread_ts else [], "confidence": confidence,
+        "conflicts": [],   # statements that disagree with this value but weren't authoritative enough to change it
     }
     store["memories"][rec["memory_id"]] = rec
     change = "UPDATED" if cur else "NEW"
@@ -76,6 +77,16 @@ def resolve(store, day, key, thread_ts=None, note=""):
         cur["source_threads"].append(thread_ts)
     _event(store, day, key, "RESOLVED", thread_ts, before="open", after="resolved", note=note)
     return "RESOLVED"
+
+
+def conflict(store, day, key, value, thread_ts=None, note=""):
+    """Someone stated a different value without the authority to change it ("I thought it was 800g?").
+    Keep both: the current value stands, the disagreement is recorded and shown until settled."""
+    cur = latest(store, key)
+    cur["conflicts"].append({"day": day, "value": value, "thread_ts": thread_ts, "note": note})
+    cur["updated_at"] = day
+    _event(store, day, key, "CONFLICTING", thread_ts, before=cur["value"], after=value, note=note)
+    return "CONFLICTING"
 
 
 def reopen(store, day, key, thread_ts=None, note=""):

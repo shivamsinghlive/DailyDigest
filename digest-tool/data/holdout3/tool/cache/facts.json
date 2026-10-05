@@ -1,0 +1,675 @@
+{
+  "ab16a090ec32b008": {
+    "facts": [
+      {
+        "entity": "Diaphragm Spray Pump",
+        "attribute": "endurance_test_duration_1",
+        "value": "41.2 hrs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Diaphragm Spray Pump",
+        "attribute": "rated_pressure",
+        "value": "500",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Diaphragm Spray Pump",
+        "attribute": "endurance_test_duration_2",
+        "value": "38 hrs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e0eb2caaedf35814": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3bbe91c578bcaa31": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "64fedabe918268de": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "0a1e51ad9b8ca7e5": {
+    "facts": [
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "lead_time",
+        "value": "9 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "lead_time_previous",
+        "value": "3 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "delivery_date_estimate",
+        "value": "mid-November",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "order_quantity",
+        "value": "20 units",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "eval_units_available",
+        "value": "2 units",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0673ea983ec8a2e1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:14d56b5b5d8d427e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3b48d6b1fb17563f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d2b84ab626b053ae": {
+    "facts": [
+      {
+        "entity": "Power Distribution Board",
+        "attribute": "fab_quantity",
+        "value": "10 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Power Distribution Board",
+        "attribute": "bring_up_start_date",
+        "value": "tomorrow",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Marcus Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:58ab8bcdedc89e37": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "990169227d0b1295": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "knuckle_material_cost_per_unit",
+        "value": "$38",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "knuckle_weight_increase_total",
+        "value": "+210g",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "auw_wet_max",
+        "value": "24.9 kg",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "pilot_fleet_size",
+        "value": "10",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Hannah Cho"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6e319f521158cdf4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0d329c157869e68c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b0dc92b1c286d337": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "249659dd6639f6d7": {
+    "facts": [
+      {
+        "entity": "Diaphragm Spray Pump",
+        "attribute": "unit_3_clamp_ring_torque",
+        "value": "spec",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "4f441b03fd4dd6ed": {
+    "facts": [
+      {
+        "entity": "Flow Control Board",
+        "attribute": "min_application_rate",
+        "value": "5 L/ha",
+        "kind": "constraint",
+        "certainty": "unsure",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Flow Control Board",
+        "attribute": "max_application_rate",
+        "value": "20 L/ha",
+        "kind": "constraint",
+        "certainty": "unsure",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b832f9e1bdbf01cd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0b6567a182476592": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "90db593be162b30a": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a9dbfb8eb96fc1d1": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "018abbff40bd89fe": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "b103e4d88589939c": {
+    "facts": [
+      {
+        "entity": "Diaphragm Spray Pump",
+        "attribute": "motor_inrush_5v_sag",
+        "value": "~4.3V for 8ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Flow Control Board",
+        "attribute": "pwm_ramp_duration",
+        "value": "200ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e69d652b5551bad7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:820df0eb49ba95a5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6a2d0dbd53f25964": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "unit_3_test_duration",
+        "value": "46 hrs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "unit_3_crack_status",
+        "value": "no crack",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b6fff0a7c3de7759": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "0106fe469cf94c03": {
+    "facts": [
+      {
+        "entity": "Folding Arm Hinge Assembly",
+        "attribute": "test_duration_unit_4",
+        "value": "72 hrs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:84527effa83dc1ff": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3feea7d81ed39907": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "field_demo_date",
+        "value": "10/6",
+        "kind": "constraint",
+        "certainty": "question",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "delivery_status",
+        "value": "not available by 10/6",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Hannah Cho"
+      },
+      {
+        "entity": "14S 22Ah Flight Battery Pack",
+        "attribute": "eval_unit_available",
+        "value": "yes",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Hannah Cho"
+      },
+      {
+        "entity": "Carbon Fiber Airframe Rev C",
+        "attribute": "readiness",
+        "value": "depends on knuckles arrival this week",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ba41b1c7ca7153c2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b735382ed2644f18": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "38314f914ae0cce4": {
+    "facts": [
+      {
+        "entity": "Flow Control Board",
+        "attribute": "pump_pwm_ramp_time",
+        "value": "200ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7c4bb5d0d854e575": {
+    "same_as": "fact:Flow Control Board.pwm_ramp_duration",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "154c85033a1e8c01": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "aluminum_knuckle_po_quantity",
+        "value": "48 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "project",
+        "attribute": "aluminum_knuckle_ship_date",
+        "value": "Wed",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0429f92d987196c9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "f7283b6614947758": {
+    "facts": [
+      {
+        "entity": "Carbon Arm Tube 30mm OD",
+        "attribute": "wall_thickness_measured",
+        "value": "1.6mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Carbon Arm Tube 30mm OD",
+        "attribute": "wall_thickness_spec",
+        "value": "2.0mm",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "14S 22Ah Flight Battery Pack",
+        "attribute": "lead_time",
+        "value": "9 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Carbon Arm Tube 30mm OD",
+        "attribute": "replacement_ship_date_earliest",
+        "value": "after 10/8",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "Carbon Arm Tube 30mm OD",
+        "attribute": "good_units_available",
+        "value": "8",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:19be2d50abdd6af9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:525f6b8c8cffa786": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cdb2b03c404949c5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:49df58c080a28a7a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4772735b1035eb82": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "f47817d56e8ac85a": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "refill_time",
+        "value": "<90s",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f35a60f5f316ed21": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "67c9653bf698cff3": {
+    "facts": [
+      {
+        "entity": "Electronic Speed Controller 80A",
+        "attribute": "case_temp_full_hover",
+        "value": "92C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Electronic Speed Controller 80A",
+        "attribute": "case_temp_max",
+        "value": "105C",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Electronic Speed Controller 80A",
+        "attribute": "thermal_derate_threshold",
+        "value": "95C",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fc6400858fc97245": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:64d6b478c9d8c54e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "c22d73e84cb8c094": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "root_cause_identified",
+        "value": "clamp under-torque from assembly fixture",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "578c50f940460d2d": {
+    "facts": [
+      {
+        "entity": "Carbon Fiber Airframe Rev C",
+        "attribute": "design_freeze_date",
+        "value": "EOD today",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Hannah Cho"
+      },
+      {
+        "entity": "project",
+        "attribute": "electrical_rev_c_freeze_date",
+        "value": "9/30",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Hannah Cho"
+      },
+      {
+        "entity": "Folding Spray Boom",
+        "attribute": "latch_tweak_completion_time",
+        "value": "noon",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8e8ea750693521ac": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "bf0f883c2521659c": {
+    "facts": [
+      {
+        "entity": "14S 22Ah Flight Battery Pack",
+        "attribute": "cells_reserved",
+        "value": "140",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "14S 22Ah Flight Battery Pack",
+        "attribute": "po_approval_deadline",
+        "value": "3pm today",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      },
+      {
+        "entity": "14S 22Ah Flight Battery Pack",
+        "attribute": "next_batch_lead_time",
+        "value": "6 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Diego Alvarez"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:17d96419d01a533c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4e95d0933cdf61a2": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:803669d91411f155": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "4ab65a9b10cb4782": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "ridgeview_demo_date",
+        "value": "10/6",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "project",
+        "attribute": "ridgeview_demo_drone_count",
+        "value": "1",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      },
+      {
+        "entity": "Terrain-Following Radar Module MR-24",
+        "attribute": "ridgeview_demo_included",
+        "value": "yes",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitaker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8da32d25c3b98e3d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:28e6f9c1b92c2330": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "4e19adaee991e39c": {
+    "facts": [
+      {
+        "entity": "Flight Controller",
+        "attribute": "thermal_derate_throttle_ceiling",
+        "value": "95–105C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      },
+      {
+        "entity": "Flight Controller",
+        "attribute": "version",
+        "value": "0.9.5",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Lena Fischer"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8b15617ba8d5d2dc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7946b75db14b8cdf": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ddd0ef35c0a8a428": {
+    "facts": [
+      {
+        "entity": "Diaphragm Spray Pump",
+        "attribute": "clamp_ring_torque",
+        "value": "2.4 Nm",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8fbf646723b44cad": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}

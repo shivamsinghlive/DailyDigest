@@ -16,6 +16,7 @@ from datetime import date
 from . import config
 from .catalog import match_parts
 from .extract import extract, load_cache, match_people, unanswered_hours
+from .facts import apply_facts, extract_facts, load_fact_cache
 from .issues import find_issue, load_links
 from .memory import latest, new_store, record, reopen, resolve
 from .slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
@@ -280,12 +281,13 @@ def changed_after_freeze(thread, day, state, team):
 
 # ---------- the replay ----------
 
-def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None, links=None):
+def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None, links=None, fact_cache=None):
     """Replay all days. Returns {day: {"state": snapshot at end of day, "changes": [...]}}.
     Pass cache={} with provider="none" to see what keyword rules alone produce.
-    `links` caches "is this the same issue?" verdicts (issues.py); it defaults to the one on disk,
-    or starts empty alongside an empty extraction cache."""
+    `links` caches "is this the same issue?" verdicts (issues.py), `fact_cache` extracted facts (facts.py);
+    both default to the ones on disk, or start empty alongside an empty extraction cache."""
     links = (load_links() if cache is None else {}) if links is None else links
+    fact_cache = (load_fact_cache() if cache is None else {}) if fact_cache is None else fact_cache
     cache = load_cache() if cache is None else cache
     start = team["project"]["start_phase"]
     roots = {m["ts"]: m for m in messages if m.get("thread_ts", m["ts"]) == m["ts"]}
@@ -359,8 +361,11 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None, lin
                 for s, p in new_phases.items():
                     before[s] = latest(mem, f"phase:{s}")["value"]
                     record(mem, day, f"phase:{s}", "MILESTONE", p, ts, summary=f"{s} in {p}", subsystems=[s])
+                fact_changes = apply_facts(mem, extract_facts(thread, day, team, provider, fact_cache), thread, day,
+                                           team, state["owners"], provider, fact_cache)  # "freeze done, DVT build 10/26"
                 changes.append(make_change("phase_change", day, thread, x, team, new_phases=new_phases,
-                                           unchanged_phases=unchanged, delta="UPDATED", before=before))
+                                           unchanged_phases=unchanged, delta="UPDATED", before=before,
+                                           **({"fact_changes": fact_changes} if fact_changes else {})))
                 continue
             if x["type"] == "noise":
                 continue
@@ -446,6 +451,10 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None, lin
             if closes:
                 extra["closes"] = [{"thread_ts": p["thread_ts"], "summary": p["summary"], "via_parts": p["via_parts"]} for p in closes]
                 delta = delta if delta not in (None, "UNCHANGED") else "RESOLVED"
+            fact_changes = apply_facts(mem, extract_facts(thread, day, team, provider, fact_cache), thread, day, team,
+                                       state["owners"], provider, fact_cache)
+            if fact_changes:
+                extra["fact_changes"] = fact_changes
             extra.update(delta=delta, memory_key=memory_key, **({"linked_issue": linked} if linked else {}))
             changes.append(make_change(kind, day, thread, x, team, **extra))
 

@@ -1,0 +1,975 @@
+{
+  "8a46556a3dd28e49": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "mech_design_freeze_dvt",
+        "value": "10/10 EOD",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_build_date",
+        "value": "10/27",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "mounting_holes_status",
+        "value": "locked",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5c9bb28ad855f4d5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "22dec5d3aaa274c2": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "905d8512c24faf30": {
+    "facts": [
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "quantity_on_po",
+        "value": "12",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "lead_time",
+        "value": "4 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:615a4770d37c94d0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ad63ebae2098826b": {
+    "facts": [
+      {
+        "entity": "75mm Swivel Caster Wheel",
+        "attribute": "rolling_resistance_increase",
+        "value": "8%",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "75mm Swivel Caster Wheel",
+        "attribute": "material",
+        "value": "PU",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "75mm Swivel Caster Wheel",
+        "attribute": "price_delta",
+        "value": "$3",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4c491e09559dfef3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "22a52be10e467b11": {
+    "facts": [
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "lead_time",
+        "value": "14 weeks",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "lead_time",
+        "value": "4 weeks",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "integration_time_estimate",
+        "value": "2 weeks",
+        "kind": "constraint",
+        "certainty": "unsure",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "height_difference",
+        "value": "12mm taller",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e9633afc4cbc8c4c": {
+    "same_as": "fact:2D Safety LiDAR Sensor LX-270.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4379e5ae72a268ce": {
+    "same_as": "fact:2D Safety LiDAR Sensor LX-270.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:aa69733ec5c08981": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2a1967b5c5089fc4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "aecf6d5672b38c3e": {
+    "facts": [
+      {
+        "entity": "Motor Control Firmware",
+        "attribute": "ramp_soak_duration",
+        "value": "30 min",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Control Firmware",
+        "attribute": "ramp_soak_voltage",
+        "value": "48V",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Control Firmware",
+        "attribute": "ramp_soak_load",
+        "value": "2x nominal",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Control Firmware",
+        "attribute": "version",
+        "value": "0.9.3",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b794e2c814492f64": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e635a7ff6a476d5d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f8564ace930e4875": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e30085a993251604": {
+    "facts": [
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "case_temp_max",
+        "value": "104C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "case_temp_spec_steady_state",
+        "value": "85C",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Control Firmware",
+        "attribute": "pwm_frequency",
+        "value": "40kHz",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Motor Control Firmware",
+        "attribute": "pwm_frequency_previous",
+        "value": "20kHz",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "standoff_size_candidate",
+        "value": "8mm",
+        "kind": "constraint",
+        "certainty": "question",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "design_freeze_deadline",
+        "value": "Thursday",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:307311415812ab17": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:59bc5e73d9275510": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3cc18a20a9992da0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e1243ce1e71737ac": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:017881e4e141d09e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d0ac3e4fb6452f39": {
+    "facts": [
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "operating_temp_min",
+        "value": "2-4C",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Ana Ferreira"
+      },
+      {
+        "entity": "21700 Li-ion Cell HC-21700-35",
+        "attribute": "temp_spec_exists",
+        "value": "yes",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "temp_spec_exists",
+        "value": "yes",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Sam Whitfield"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4f6f1ad40ab5bb22": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "166d5929620c8b1a": {
+    "facts": [
+      {
+        "entity": "Emergency Stop Button and STO Circuit",
+        "attribute": "e_stop_latency_avg",
+        "value": "118ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Emergency Stop Button and STO Circuit",
+        "attribute": "e_stop_latency_worst_case",
+        "value": "160ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Emergency Stop Button and STO Circuit",
+        "attribute": "e_stop_latency_requirement",
+        "value": "<=50ms",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "revision_on_bench_bot_2",
+        "value": "rev A",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "revision_for_dvt",
+        "value": "rev B",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "rev_b_characterization_deadline",
+        "value": "Monday",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fa6a9577ae4a103f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:06b8899da2fcd5e0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1e959f5bc2d3ee4a": {
+    "facts": [
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "fet_peak_temp_20k_pwm",
+        "value": "93C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "case_temp_max_spec",
+        "value": "85C",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "standoff_height",
+        "value": "8mm",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Chassis Weldment",
+        "attribute": "revision",
+        "value": "F",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:084e540e0fe73c79": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:98b8206bb165d3f9": {
+    "same_as": "constraint:Motor Driver Board.case_temp_spec_steady_state",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9da947a04923cc76": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1b2a54af94bb817d": {
+    "facts": [
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "stroke_clearance_requirement",
+        "value": "flat shelf beams (no lip)",
+        "kind": "constraint",
+        "certainty": "question",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "project",
+        "attribute": "decision_deadline",
+        "value": "Friday",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "824944f943ea5bb0": {
+    "facts": [
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "lead_time_partial",
+        "value": "6 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "partial_quantity",
+        "value": "4 units",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "lead_time_full",
+        "value": "14 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_build_date",
+        "value": "10/27",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "project",
+        "attribute": "lx270_units_needed",
+        "value": "10 units",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "project",
+        "attribute": "partial_shipment_target_date",
+        "value": "11/18",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Sam Whitfield"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c3fc048cdeae34a1": {
+    "same_as": "fact:2D Safety LiDAR Sensor LX-270.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9c8854bb239d0dc8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1dc1ea6fbbc48b93": {
+    "same_as": "fact:2D Safety LiDAR Sensor LX-270.lead_time",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f0dc9225d197a8d3": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e569d3016cae3099": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "997367a4dfb7209e": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ec7474b8524a4d3f": {
+    "facts": [
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "revision",
+        "value": "D",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Front Bumper and Sensor Fascia",
+        "attribute": "revision",
+        "value": "C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Drive Wheel Module Assembly",
+        "attribute": "revision",
+        "value": "E",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "revision",
+        "value": "F",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Motor Driver Board",
+        "attribute": "standoff_height",
+        "value": "8mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Chassis Weldment",
+        "attribute": "dv_quantity",
+        "value": "10",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5c7339ab93c3ac2e": {
+    "same_as": "constraint:Motor Driver Board.standoff_height",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:acb7cc2d5c397480": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "062824beaf5d6bcf": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "mech_design_freeze_date",
+        "value": "today",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "project",
+        "attribute": "electrical_freeze_target",
+        "value": "10/17",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5668b30add74f674": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "0443ea5d2f6d8be5": {
+    "facts": [
+      {
+        "entity": "21700 Li-ion Cell HC-21700-35",
+        "attribute": "continuous_discharge_rate",
+        "value": "30A",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "21700 Li-ion Cell HC-21700-35",
+        "attribute": "continuous_discharge_rate_previous",
+        "value": "35A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:660e83138961c979": {
+    "same_as": "fact:21700 Li-ion Cell HC-21700-35.continuous_discharge_rate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "537319c136b89b77": {
+    "facts": [
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "lift_pivot_bore_tolerance",
+        "value": "+/-0.15mm",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "lift_pivot_bore_error",
+        "value": "0.4-0.6mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "fai_sample_size",
+        "value": "5",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "fai_failures",
+        "value": "3 of 5",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Raman"
+      },
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "remake_lead_time",
+        "value": "8 business days",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "Scissor Lift Mechanism",
+        "attribute": "remake_delivery_date",
+        "value": "10/23",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "project",
+        "attribute": "scissor_mechanism_deadline",
+        "value": "10/27",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Sam Whitfield"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:129942c873e15315": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9017dbb34e1bbbeb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f2161d36d415b43a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:14e829c49c895dfb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:0d3bf752124bc8f0": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2679acb7c6192e85": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "2d4bc909f96b1e4c": {
+    "facts": [
+      {
+        "entity": "21700 Li-ion Cell HC-21700-35",
+        "attribute": "continuous_discharge_rating",
+        "value": "30A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "21700 Li-ion Cell HC-21700-35",
+        "attribute": "rating_change_effective_date",
+        "value": "Sep",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "48V Battery Pack",
+        "attribute": "peak_draw_scissor_lift_accel",
+        "value": "32A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "BMS Firmware",
+        "attribute": "discharge_clamp_limit",
+        "value": "30A/string",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Marcus Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7eca8b7bcfeff447": {
+    "same_as": "fact:21700 Li-ion Cell HC-21700-35.continuous_discharge_rate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:17da696f8c4ba091": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:927975e1491e8add": {
+    "same_as": "fact:21700 Li-ion Cell HC-21700-35.continuous_discharge_rate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "fa7c7b3882cdf26b": {
+    "facts": [
+      {
+        "entity": "Emergency Stop Button and STO Circuit",
+        "attribute": "estop_latency_avg",
+        "value": "22ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Emergency Stop Button and STO Circuit",
+        "attribute": "estop_latency_worst_case",
+        "value": "31ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "Emergency Stop Button and STO Circuit",
+        "attribute": "estop_latency_max",
+        "value": "50ms",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Dani Kowalski"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a8cbd459f9497e66": {
+    "same_as": "fact:Emergency Stop Button and STO Circuit.e_stop_latency_avg",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:fb80da060a37f3f1": {
+    "same_as": "fact:Emergency Stop Button and STO Circuit.e_stop_latency_worst_case",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:99ad5e8f041591cd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "8f86d7266697eeb9": {
+    "facts": [
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "sample_arrival_date",
+        "value": "thursday",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "sample_quantity",
+        "value": "2",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "unit_price",
+        "value": "$640",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor LX-270",
+        "attribute": "unit_price",
+        "value": "$910",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "lead_time",
+        "value": "5 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      },
+      {
+        "entity": "2D Safety LiDAR Sensor RL-2 (second source candidate)",
+        "attribute": "moq",
+        "value": "25",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Leo Tran"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:58511c6c2a6a6ebc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:189c26a9b3bda19d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:23a5dc22612beed5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d473da2f1508165b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:df5715c74a593551": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "47aa5f012aa8391e": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "dvt_build_start_date",
+        "value": "11/10",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "project",
+        "attribute": "electrical_freeze_date",
+        "value": "10/31",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "project",
+        "attribute": "pilot_start_date",
+        "value": "early Dec",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sam Whitfield"
+      },
+      {
+        "entity": "Chassis Weldment",
+        "attribute": "remake_delivery_date",
+        "value": "10/23",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Sam Whitfield"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bc1e04e613ed496a": {
+    "same_as": "constraint:project.dvt_build_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:24203e3e054dc638": {
+    "same_as": "constraint:project.electrical_freeze_target",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:3cab2029109c5713": {
+    "same_as": "fact:Scissor Lift Mechanism.remake_delivery_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3599c8d25ca69a52": {
+    "facts": [
+      {
+        "entity": "Main Wiring Harness",
+        "attribute": "length_increase",
+        "value": "18mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Marcus Okafor"
+      },
+      {
+        "entity": "project",
+        "attribute": "design_freeze_status",
+        "value": "post-freeze",
+        "kind": "constraint",
+        "certainty": "question",
+        "said_by": "Marcus Okafor"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:57b6f2dc2bee8f1c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "807da423e22f9fa5": {
+    "facts": [
+      {
+        "entity": "BMS Firmware",
+        "attribute": "discharge_current_clamp",
+        "value": "30A/string",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      },
+      {
+        "entity": "project",
+        "attribute": "lift_accel_change",
+        "value": "~15% slower",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Dani Kowalski"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:34d55da1b83b475a": {
+    "same_as": "fact:21700 Li-ion Cell HC-21700-35.continuous_discharge_rate",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:eeae4a1b79d0fd56": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}

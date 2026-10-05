@@ -1,0 +1,6 @@
+{
+  "match:67b4f88bf199fe7a": {
+    "same_as": "constraint:project.dvt_build_date",
+    "model": "anthropic:claude-haiku-4-5"
+  }
+}
