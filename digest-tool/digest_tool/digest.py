@@ -316,13 +316,16 @@ def to_markdown(d):
     """Plain-text rendering for the CLI. The Streamlit app renders the same dict its own way."""
     stage = " · ".join(f"{s} {p}" for s, p in d["phases"].items())
     out = [f"### {d['person']['name']} · {pretty_day(d['day'])} · {stage}", "", d["intro"], "", "**Team Pulse**"]
+    badge = lambda i: f" [{i['delta_badge']}]" if i.get("delta_badge") else ""
     for i in d["pulse"] or []:
-        out.append(f"- **{i['label']}**: {i['summary']}  _(#{i['channel']})_")
+        out.append(f"- **{i['label']}**{badge(i)}: {i['summary']}  _(#{i['channel']})_")
+        out += [f"   - changed: {line}" for line in i.get("what_changed", [])]
         out += [f"   - why: {r}" for r in i["reasons"]]
         out += [f"   - for you: {r}" for r in i["for_you"]]
     out += ["", "**For You**"] + ([] if d["for_you"] else ["- nothing else today"])
     for n, i in enumerate(d["for_you"], 1):
-        out.append(f"{n}. **{i['label']}**{' ⚑' if i['must'] else ''}: {i['summary']}  _(#{i['channel']})_")
+        out.append(f"{n}. **{i['label']}**{badge(i)}{' ⚑' if i['must'] else ''}: {i['summary']}  _(#{i['channel']})_")
+        out += [f"   - changed: {line}" for line in i.get("what_changed", [])]
         out += [f"   - why: {r}" for r in i["reasons"]]
     return "\n".join(out)
 

@@ -1,33 +1,36 @@
 # Daily Digest
 
-A daily Slack digest for a robotics hardware team. Each digest has two parts:
+A daily Slack digest for a robotics hardware team, built on a **persistent project memory**. Each digest has two parts:
 
-- **Team Pulse**: the same 3 items for everyone, so personalization doesn't split the team into silos.
-- **For You**: what changed that matters to *this* person, with a plain-English reason for every item.
+- **Team Pulse**: the same 0–3 items for everyone (phase changes, schedule risks, big decisions), so personalization doesn't split the team into silos.
+- **For You**: what *changed* that matters to *this* person, with a plain-English reason for every item.
 
-Actual output for one person on one day (`python -m digest_tool.digest 2026-09-17`; the LLM-written intro is
-left out because the 2B model mentioned "production testing", which isn't in any item):
+The tool doesn't put Slack history into an LLM prompt. It turns conversations into structured project memory (issues, decisions, facts with values, constraints, phases, owners), keeps every earlier value, and shows each person only the changes that touch their parts, their recent work or their role.
+
+Actual output (`python -m digest_tool.digest 2026-09-17`, Tom, engineering manager):
 
 ```
-Ravi Menon · Thu Sep 17 · gripper EVT · wrist EVT · base EVT · power EVT · cabling EVT
-
-Team Pulse
-- Still open (#mech): Wrist motor overheating to 92°C at 45°C ambient; electrical engineer suspects
-  driver current issues but retest shows margin too tight.
-   - why: Open problem with no resolution yet (open since Tue Sep 15)
+Tom Becker · Thu Sep 17 · gripper EVT · wrist EVT · base EVT · power EVT · cabling EVT
 
 For You
-1. New problem (#supply-chain): Supply chain is reporting an EOL notice for the J4 connector with a
-   buy deadline of 11/30, requiring a decision on lead time or replacement before DVT.
-   - why: You likely own the J4 connector (mentioned as "43045-0412"): you've mentioned it 1 time,
-          answered 1 question about it, been asked about it once (not on the roster, inferred from activity)
-   - why: Problems are a priority for mechanical engineers at this stage (cabling is in EVT)
-   - why: Posted in #supply-chain, a channel you don't post in
+1. Problem update [UPDATED]: Wrist motor case temperature exceeds 80C spec even with reduced
+   current limit; thermal design needs revision.  (#mech)
+   - changed: wrist motor case temp measured: 92C → 84C
+   - changed: Still in force: wrist motor case temp max = 80C (since Tue Sep 15)
+   - why: Problems are a priority for engineering managers at this stage (wrist is in EVT)
+   - why: Marked urgent (4/5)
 ```
 
-Ravi isn't listed as the J4 owner and never reads #supply-chain. He gets the alert because the
-catalog knows `43045-0412` is the J4 connector, and because two days earlier he answered Priya's
-question about the "J-4 latch".
+And a week later, for the whole team (`2026-09-24`):
+
+```
+- New problem [UPDATED]: DVT build schedule is at risk; motor driver shortage could delay customer pilot.  (#general)
+   - changed: Same issue as a problem first reported 3 days ago (Mon Sep 21)
+   - changed: dvt build date: 10/26 → TBD
+   - why: Schedule risk: this could move the build date
+```
+
+The 92C → 84C, the 80C limit set two days earlier, "same issue as 3 days ago" and 10/26 → TBD all come from project memory, not from re-reading old messages.
 
 ## The problem
 
@@ -59,17 +62,66 @@ Each thread that changes the notebook produces a *change record*. A digest is bu
 - The notebook has inferred Ravi as its likely owner, because he answered a question about the "J-4 latch".
 - So the notice reaches Ravi, though he never reads that channel.
 
+## Project memory: months of context, never months of Slack in a prompt
+
+**Unbounded memory, bounded retrieval.** Nothing expires: a decision or constraint from six months ago stays in memory until something resolves or supersedes it. But no LLM call ever sees more than one thread plus a short, capped list of related memories.
+
+```
+Slack messages
+ → thread extraction            one thread snapshot → type, parts, urgency, summary   (extract.py, LLM, cached)
+ → fact extraction              values stated today: "case temp 84C", "build date TBD" (facts.py, LLM, cached)
+ → entity / issue resolution    parts via the catalog; "same issue as …?" via a shortlist (issues.py)
+ → retrieve related memory      ≤5 issues or ≤5 facts that share parts or name words  (memory.retrieve)
+ → change detection             NEW / UPDATED / RESOLVED / REOPENED / CONFLICTING      (rules in code)
+ → event history + current state                                                         (memory.py)
+ → project notebook             phases, owners, open problems, decisions, questions    (notebook.py)
+ → person relevance ranking     ownership, focus, mentions, role × phase               (ranker.py)
+ → daily delta digest           Team Pulse + For You, each with "what changed" and "why" (digest.py)
+```
+
+**One record type, with history** (`memory.py`). Issues, decisions, questions, milestones (phases), ownership, facts and constraints are all memories with a key (`phase:wrist`, `issue:<thread>`, `constraint:project.dvt_build_date`), a value, parts, subsystems, people, source threads, `valid_from` / `valid_to`, status and confidence.
+
+- **Current state vs event history.** A new value never overwrites the old one: the old version gets `valid_to` and status `SUPERSEDED`. An append-only event log records every NEW, UPDATED, RESOLVED, REOPENED and CONFLICTING. So both questions have answers: "what is the DVT build date now?" (TBD) and "what was it on Sep 21?" (10/26).
+- **Issue identity** (`issues.py`). "Driver draws 2.8A at idle" (#elec) and "wrist motor overheating" (#mech) are one issue. Code shortlists existing issues that share a *specific* part; Haiku picks one or "none", and its answer only counts if it's on the shortlist. Linked threads share one issue: it has one history, a fix in any thread closes all of them, and a report in any thread reopens it.
+- **Facts, authority and contradictions** (`facts.py`). The LLM extracts values with who said them and how sure they were (*decided / reported / unsure / question*). **Code decides** what becomes truth: a measurement changes when reported; a constraint changes on a decision, or when its owner or the engineering manager states it. Anything else that disagrees is recorded as **CONFLICTING**: both values are kept, the current one stands, and the owner and the manager get a "needs clarification" must-read.
+- **Consistent names.** Before a new fact name is created, it's compared with a short list of existing facts that share name words, and Haiku says whether it's the same quantity ("tmc9660_dvt_build_constraint" → "dvt_build_date").
+- **Delta digest.** Every item carries a badge (New, Updated, Resolved, Reopened, Needs clarification) and "what changed" lines: before → after, "same issue as a problem first reported N days ago", "resolves …", and one constraint **still in force** on the same parts, however old. Catch-up mode shows everything since an earlier day, one item per thread.
+- **Recency is relevance, not memory.** "What you've been working on" (7 days) and ownership evidence (7-day half-life) still fade: they answer "what matters to you now". The memory itself never does.
+
+**What each LLM call sees**, and why 60 days cost the same per day as 6:
+
+| Call | Input | Bounded by |
+|---|---|---|
+| Thread extraction | one thread, as of one day | the thread |
+| Fact extraction | one thread, new messages marked | the thread; only threads with numbers that day |
+| Issue linking | the new problem's summary + ≤5 candidate issues | `LINK_MAX_CANDIDATES` |
+| Fact naming | one new fact + ≤5 existing facts sharing name words | 5 |
+| Intro | that day's items for one person | the digest |
+
+Every call is cached by its exact input, so replaying 45 days again with no API key costs nothing. `python -m digest_tool.memory` prints the current state and writes the whole memory to `data/cache/memory.json`.
+
 ## What changed in V2 and why
 
 | Change | Why |
 |---|---|
-| **Team Pulse + For You** | Personalization alone creates silos: everyone sees only their slice. The pulse gives everyone the same top 3 items (phase changes, schedule risks, major decisions), and For You never repeats them. |
+| **Team Pulse + For You** | Personalization alone creates silos: everyone sees only their slice. The pulse gives everyone the same 0–3 items (phase changes, schedule risks, major decisions), and For You never repeats them. |
 | **Parts catalog with nicknames** (`parts.json`, `catalog.py`) | People call the same part by different names. Mapping every mention to one official name makes ownership and focus work at all. Fuzzy matching catches typos, and anything unrecognized is listed for a human to add. |
 | **Phase per subsystem** | Real projects don't move in lockstep. "Problems matter to EMs in EVT" must use the wrist's phase for a wrist thread, not a global one. |
 | **Inferred ownership** with confidence levels | Rosters are always incomplete. Activity fills the gaps, and the reason says how sure we are: *declared*, *likely* or *possible*. |
 | **Holdout stories and honest reporting** | The V1 numbers were measured on the same stories used to tune the weights. Results are now reported separately for tuned and holdout stories, and holdout detail is hidden by default. |
 | **👍/👎 feedback** | The weights are guesses. Votes adjust how much each *type* of item counts for that person, in a way that can be explained in one sentence. |
 | **Cache key includes a content hash** | V1 keyed extractions by thread and message count only, so an edited message silently reused an old extraction. |
+
+**V3** (this round):
+
+| Change | Why |
+|---|---|
+| **Project memory with history** (`memory.py`) | The notebook only knew the latest state of each thread. Memory keeps every value with its dates, so the digest can say *what changed* and anyone can ask what was true on a given day. |
+| **Issue identity across threads** (`issues.py`) | One problem is discussed in several channels with different words. Without one issue ID, a fix in one thread left the others open. |
+| **Facts, authority and conflicts** (`facts.py`) | Targets and measurements ("max 80C", "84C") are what engineers actually track. An unsure remark must not overwrite a decided target. |
+| **Delta digest + catch-up** | The question each morning is "what changed since I last looked?", not "what was said yesterday". |
+| **Freeze, schedule and question rules** | A finished freeze (not a planned one) moves the phase; date moves count as schedule risk; urgent questions reach the manager; role alone isn't a reason, except for the manager. |
+| **Claude Haiku 4.5** with worked examples | The 2B local model mislabelled lead-time slips and invented intro details. Haiku with 4 worked examples gets them right; intros that add a number, name or part fall back to a template. |
 
 ## Architecture
 
@@ -83,12 +135,21 @@ flowchart LR
     T[(team.json<br/>roles, declared owners)] --> N
     X --> N
     K --> N
+    FX[facts.py<br/>values, certainty, speaker] <--> CF[(cache/facts.json)]
+    IS[issues.py<br/>same issue?] <--> CL[(cache/links.json)]
+    N --> FX
+    N --> IS
+    FX --> M
+    IS --> M
     subgraph N[notebook.py: project state per day]
       N1[phase per subsystem]
       N2[owners: declared / likely / possible]
       N3[problems, decisions,<br/>unanswered questions]
       N4[focus, unknown parts]
     end
+    N --> M[(memory.py<br/>versions + event log<br/>current state / as of day X)]
+    M --> R
+    M --> D
     N --> R[ranker.py<br/>For You score + reasons]
     F[(feedback.json)] --> FB[feedback.py<br/>per-type multipliers]
     FB --> R
@@ -107,12 +168,15 @@ flowchart LR
 | `slack_loader.py` | `load_messages("fake" \| "slack")`, groups messages into threads, and shows a thread as of a given day |
 | `catalog.py` | Nickname → official part name (exact, then punctuation-insensitive, then fuzzy for typos), and flags unknown parts |
 | `extract.py` | One thread snapshot → type, parts (official names), unknown parts, urgency 1–5, people, summary. The LLM gets the catalog in its prompt; catalog matching is the backup and the cross-check |
-| `notebook.py` | Replays the days in order: subsystem phases, owner inference, open items, focus, unknown parts |
+| `notebook.py` | Replays the days in order: subsystem phases, owner inference, open items, focus, unknown parts; writes everything to memory |
+| `memory.py` | Persistent project memory: versioned records, append-only event log, current state, value or status on any day, capped retrieval |
+| `issues.py` | Issue identity: shortlist of existing issues sharing a specific part, Haiku picks one or "none" (cached) |
+| `facts.py` | Facts and constraints with values: extraction, authority rules, conflicts, consistent names |
 | `ranker.py` | For You: scores each change for each person and returns the top 5 with reasons |
 | `feedback.py` | 👍/👎 log → per-person, per-item-type multipliers; reset |
-| `digest.py` | Team Pulse (shared) + For You (personal). An LLM writes the intro; items and reasons always come from code |
-| `evaluate.py` | Alerts, Team Pulse, nicknames and ownership, for tuned and holdout separately |
-| `app.py` | Streamlit: person, day, subsystem phase table, Team Pulse first, For You, 👍/👎 on every item, reset, focus chart, notebook view |
+| `digest.py` | Team Pulse (shared) + For You (personal), each item with a delta badge and "what changed" lines from memory; catch-up mode. An LLM writes the intro; items and reasons always come from code |
+| `evaluate.py` | Alerts, Team Pulse, nicknames, ownership and (with an answer key) memory, for tuned and holdout separately |
+| `app.py` | Streamlit: who's reading, day (and catch-up), phase tiles, badges and "what changed" on every card, the Slack conversation behind each item, 👍/👎, two-week activity and focus charts, team view, project notebook with facts and history |
 
 ### What the LLM does, and what it doesn't
 
@@ -123,14 +187,18 @@ Code handles everything that has to be **reliable and explainable**:
 - **"Unanswered for 48h"**, from reply timestamps.
 - **Phase changes**, from phrases like "design freeze", "EVT build done", "DVT units shipped" and "stays in EVT", read one sentence at a time.
 - **Changes after freeze**: a new revision ("pushed rev F", "rev C released") of a part whose subsystem is already in DVT, in a thread with no ECO mentioned.
-- **Closing problems across threads**: a decision or a reported fix that names the same part within 5 days.
+- **Closing problems across threads**: a decision or a reported fix that names the same part within 5 days; and every thread linked to the same issue closes with it.
 - **Ownership evidence.**
 
-The LLM handles what needs language understanding:
+The LLM handles what needs language understanding, and only proposes:
 
 - **The thread type**, its **urgency** and a **summary**.
-- **Parts referred to indirectly.**
-- **Part-like mentions that aren't in the catalog.**
+- **Parts referred to indirectly**, and part-like mentions that aren't in the catalog.
+- **Facts with values**, who stated them and how sure they were.
+- **"Is this the same issue / the same quantity?"**, choosing only from a shortlist that code built.
+- **The intro sentence**, replaced by a template if it mentions any number, name or part not in the items.
+
+Code decides what becomes project truth: which statement may change a constraint, what counts as a conflict, when a problem is resolved or reopened, who gets alerted, and why.
 
 Parts that only the LLM linked count for less, and their reason says so.
 
@@ -167,6 +235,7 @@ The reason in the digest says which kind it is, for example: *"You likely own th
 | Item type matters to your role **at the phase of the subsystem it touches** (only on top of a personal link: your part, focus or name; the engineering manager doesn't need one) | 2 | *Problems are a priority for engineering managers at this stage (wrist is in EVT)* |
 | Recent focus on a named part (2+ mentions this week, decayed) | up to 3 | *You've been working on the cable harness lately (5 mentions in the last week)* |
 | Urgency | 0.5 per level above 2 | *Marked urgent (4/5)* |
+| An urgent question (4–5/5), for the engineering manager | 2 | *An urgent open question: someone is blocked, and unblocking people is the manager's job* |
 | × your feedback for this item type | ×0.5 to ×1.5 | *You've rated updates 👍 0× / 👎 3×, so they count less for you (×0.7)* |
 
 How the numbers are used:
@@ -177,12 +246,15 @@ How the numbers are used:
   - a question to you, or about your (declared or likely) part, has gone unanswered for 48h;
   - a problem with urgency 4 or higher is on your part;
   - a subsystem changed phase;
-  - a frozen part got a new revision with no ECO (for the engineering manager and the part's owner).
+  - a frozen part got a new revision with no ECO (for the engineering manager and the part's owner);
+  - a statement contradicts a fact or constraint on your part (for its owner and the engineering manager).
 - **Top 5** items make For You, minus anything already in the pulse.
+- **Shown, not scored:** a badge and "what changed" lines from project memory (before → after, the issue it belongs to,
+  what it resolves, a constraint still in force). They explain an item; they don't decide whether it's shown.
 
 ### Team Pulse
 
-The Team Pulse holds the same top 3 items for everyone. Each change gets a pulse score:
+The Team Pulse holds the same 0–3 items for everyone. Each change gets a pulse score:
 
 > **type + severity + breadth**
 
@@ -213,6 +285,8 @@ python -m digest_tool.evaluate                 # results: tuned vs holdout (hold
 python -m digest_tool.evaluate --show-holdout  # ...including holdout per-event detail
 python -m digest_tool.digest 2026-09-21        # all digests for one day in the terminal
 python -m digest_tool.notebook                 # day-by-day state: phases, changes, owners, unknown parts
+python -m digest_tool.memory                   # current project memory by type (+ data/cache/memory.json)
+DIGEST_DATA_DIR=data/longrun/tool python -m digest_tool.evaluate   # any other dataset, e.g. the 45-day one
 python -m digest_tool.catalog                  # nickname matching examples
 python scripts/make_fake_data.py               # regenerate data/messages.json + ground truth
 ```
@@ -222,18 +296,22 @@ python scripts/make_fake_data.py               # regenerate data/messages.json +
 ```
 digest-tool/
   app.py                 Streamlit UI (entry point)
-  digest_tool/           the library: config, slack_loader, catalog, extract, notebook,
-                         ranker, feedback, digest, evaluate
-  tests/                 pytest: catalog matching, phase detection, ownership inference
+  digest_tool/           the library: config, slack_loader, catalog, extract, notebook, memory,
+                         issues, facts, ranker, feedback, digest, evaluate
+  tests/                 pytest: tiny made-up inputs only (catalog, phases, ownership, closing,
+                         freeze, memory, issues, facts, delta digest, ranking, intros, scorers)
   scripts/
-    make_fake_data.py    builds the fake dataset (messages + ground truth)
-    sources/             story sources merged by the generator (incl. the holdout: don't read while tuning)
-  data/                  team, parts catalog, messages, ground truth, cache
+    make_fake_data.py    builds the main dataset (messages + ground truth)
+    import_slack_export.py  converts an independently written export into the tool's format
+    sources/             story sources merged by the generator
+  data/                  main dataset: team, parts catalog, messages, ground truth, cache
+    holdout2/ holdout3/  independent 10-day datasets (raw export + converted tool/ folder)
+    longrun/             independent 45-day dataset with a memory answer key
 ```
 
 **No API key needed.** The default `LLM_PROVIDER=none` reads the committed cache in `data/cache/`,
-which was generated with `claude-haiku-4-5` (extraction for all 69 thread snapshots + 45 intros, about
-$0.25 in total). If you delete the cache, it still runs: keyword rules stand in for the LLM, and
+which was generated with `claude-haiku-4-5`: thread extraction, intros, issue links and facts, for
+all datasets (about $2 in total, almost all of it one-off). If you delete the cache, it still runs: keyword rules stand in for the LLM, and
 templates stand in for the intros. An AI intro that names a number, person or part not in the
 digest's items is replaced by the template.
 
@@ -257,87 +335,73 @@ a real workspace.
 
 ## Evaluation
 
-There are two ground-truth files:
+Five datasets. Only the main one was written alongside the code; the others were written by fresh agents that saw only a brief (never the code or `CLAUDE.md`), and were imported unread.
 
-- **Tuned:** `ground_truth.json`, with 20 events, 30 expected alerts and 16 labelled nickname mentions.
-  - Stories 1–5 were written alongside the code.
-  - The F-stories were the previous round's holdout. Once I'd seen their results they were spent, so they became tuned data.
-- **Holdout:** `ground_truth_holdout.json`, with 4 events, 6 expected alerts and 7 labelled mentions. These are 2 stories written by a separate agent.
-  - Its brief forbade opening any code, the ground truth, `team.json` or `true_owners.json`.
-  - The file stayed sealed (unread, and not merged) while I tuned. I merged it once, after freezing the scoring, and changed nothing afterwards.
-  - `evaluate.py` hides holdout per-event detail unless asked.
-  - One leak: the agent's environment loads this project's `CLAUDE.md` automatically. It was told to ignore it, but it could have seen the project overview.
-
-`python -m digest_tool.evaluate` reports the following.
-
-**1. Alerts.** *Seen* = in the person's digest that day (pulse or For You). Precision is measured on For You.
-
-| Tuned (30 alerts) | Seen recall | For You recall | For You precision | Items / person / day |
-|---|---|---|---|---|
-| **Ours (LLM extraction)** | **87%** | 47% | 61% | 2.5 |
-| Ours (keywords only) | 87% | 53% | 67% | 3.2 |
-| Everyone gets everything | 100% | 100% | 26% | 3.5 |
-| Role only | 53% | 53% | 70% | 0.4 |
-
-| Holdout (6 alerts) | Seen recall | For You recall | For You precision | Items / person / day |
-|---|---|---|---|---|
-| **Ours (LLM extraction)** | **83%** | 50% | 75% | 2.5 |
-| Ours (keywords only) | 67% | 67% | 44% | 3.2 |
-| Everyone gets everything | 100% | 100% | 29% | 3.5 |
-| Role only | 0% | 0% | – | 0.4 |
-
-**2. Team Pulse.** Did whole-team items reach the pulse, and did personal ones stay out?
-
-| | Team-wide items in pulse | Personal items in pulse | Noise in pulse |
+| Dataset | Written by | Size | Status |
 |---|---|---|---|
-| Tuned, LLM | 4/4 | 1/16 | 0 |
-| Holdout, LLM | 1/1 | 0/3 | 0 |
-| Holdout, keywords only | 0/1 | 0/3 | 0 |
+| Main, tuned split (`ground_truth.json`) | me, with the code | 103 messages, 14 days, 30 alerts | tuned on |
+| Main, holdout split (`ground_truth_holdout.json`) | separate agent | 6 alerts | aggregates only |
+| `holdout2/` (warehouse robot) | fresh agent | 83 messages, 10 days | **spent**: studied in detail, now tuning data |
+| `holdout3/` (crop-spraying drone) | fresh agent | 80 messages, 10 days, 22 alerts | independent: aggregates only |
+| `longrun/` (rugged scanner) | fresh agent | 200 messages, **45 days**, 22 alerts + memory answer key | independent: aggregates only |
 
-**3. Nicknames.** Mentions mapped to the right official part.
+Rules: a holdout is scored with totals only; once its per-item results have been looked at, it's spent and becomes tuning data. People who already posted in a thread that day are never expected alerts (they've seen it). `python -m digest_tool.evaluate` (with `DIGEST_DATA_DIR=...` for the other datasets) reports all of the below.
 
-| | Catalog matcher | LLM | Either | Unknown parts flagged |
-|---|---|---|---|---|
-| Tuned | 13/13 | 10/13 | 13/13 | 3/3 |
-| Holdout | 4/6 | 5/6 | 5/6 | 0/1 |
+**1. Alerts.** *Reached* = in the person's digest that day (Team Pulse or For You). Precision is measured on For You (the pulse goes to everyone by design).
 
-**4. Ownership** vs `true_owners.json` (19 parts and topics; 11 of the 21 true owner pairs are hidden from `team.json`).
+| | Reached | For You precision | Wrong alerts | | Role only: reached / precision | Send everything: precision |
+|---|---|---|---|---|---|---|
+| Main, tuned (30) | **97%** | 75% | 6 | | 83% / 69% | 26% |
+| Main, holdout (6) | 83% | 50% | 1 | | 83% / 50% | 29% |
+| holdout2, now tuned (12) | 58% | 100% | 0 | | 25% / 30% | 43% |
+| **holdout3** (22) | **64%** | **92%** | 1 | | 55% / 57% | 55% |
+| **longrun** (22) | **55%** | 70% | 3 | | 68% / 65% | 65% |
 
-| Owners counted | Precision | Recall | Hidden owners found |
-|---|---|---|---|
-| Declared only | 100% | 48% | 0/11 |
-| + likely | 100% | 62% | 3/11 |
-| + possible | 76% | 76% | 6/11 |
+**2. Team Pulse.** Main tuned: 4/4 team-wide items reached the pulse, 1/16 personal items wrongly did. On the independent sets the pulse is the weak spot: holdout3 0/3, longrun 2/4.
+
+**3. Nicknames** (main dataset). Known parts mapped correctly: matcher 13/13, Haiku 13/13 on tuned; matcher 4/6, Haiku 6/6 on the holdout. Parts missing from the catalog flagged: 3/3 and 1/1.
+
+**4. Ownership** vs `true_owners.json` (main; 11 of 21 true owner pairs are hidden from `team.json`): declared only 100% precision / 48% recall; + likely 93% / 62% (3/11 hidden found); + possible 89% / 76% (6/11).
+
+**5. Memory** (`longrun/`, 45 days, answer key unread, scored by message timestamps):
+
+| Check | Result |
+|---|---|
+| Value changes captured (set or changed on the right day, from the right thread) | **15/17** |
+| Value in force on a given date | 12/25 |
+| Hedged contradiction flagged as a conflict | 0/1 |
+| …and not written over the value in force | **1/1** |
+| Threads about one issue linked into one issue | 0/2 |
+| Issue resolved / reopened on the right day | 1/2, **1/1** |
+| Issue status at the end | **2/2** |
+| Different issues wrongly merged | **0** |
+| Week-1 constraint shown when its part comes up again in week 6 | 0/1 |
 
 ### What the numbers say
 
-- **The holdout is tiny.** 6 alerts means a single miss moves recall by 17 points. Treat the holdout numbers as a smoke test, not a measurement.
-- **Holdout results were similar to tuned on seen recall** (83% vs 87%), which suggests the tuning isn't purely memorized. The holdout is too small to be sure.
-- **The LLM helped on the holdout but not on the tuned set.** On the tuned set, keyword extraction matches the 2B model. On the holdout, the LLM beat keywords on seen recall (83% vs 67%) and precision (75% vs 44%). The LLM also mapped a nickname the catalog didn't know (5/6 vs 4/6).
-- **Unknown-part detection missed the holdout's out-of-catalog part (0/1).** The pattern backup only catches part numbers and "<word> <hardware word>" phrases.
-- **Role-only filtering is useless on the holdout.** Ownership and catalog matching do the real work.
-- **Ownership:** *likely* is trustworthy (no wrong owners), and *possible* is a mixed bag, which is why it's weighted lower and its reason says "may own". Some true owners are never found:
-  - **the wrist motor**, because nobody names it, they say "wrist";
-  - **the slew bearing**, which was mentioned once.
+- **On fresh 10-day data the tool is precise and fairly complete**: holdout3 reached 64% of the people who should know with 92% precision, ahead of role-only filtering on both. Before this round's fixes, the first independent set (holdout2) reached 33%.
+- **On 45 days it's weaker**: 55% reached, below role-only's 68%. The pulse and multi-week stories are where it loses people.
+- **Memory captures values well (15/17) but doesn't always chain them (12/25).** The values are there; the misses are mostly the same quantity stored under two names, so "the value on day X" looks up the wrong one. That's the consistent-naming problem, and it's the first thing to fix.
+- **Linking is cautious.** It never merged two different issues, but it also didn't link either multi-thread issue in the 45-day set. In the main set it links 4 pairs correctly.
+- **Contradictions are never written over the truth (1/1), but weren't flagged either (0/1)**: the hedged statement was probably stored under a different name, the same naming problem again.
+- **The tuned numbers (97%) are optimistic** by construction: I wrote that data alongside the code.
 
 ## Assumptions & Limitations
 
-- **I wrote the tuned test data myself,** along with the weights, the catalog and the ground truth. The holdout came from a separate agent, but it's very small, and that agent could see this project's `CLAUDE.md`.
-- **The scoring weights are starting guesses.** The thresholds (2.5 for For You, 12 for the pulse, the ownership cut-offs) were tuned by looking at tuned-set results. Feedback adjusts item types per person, not the underlying weights.
-- **The dataset is small:** 103 messages, 5 people and 2 weeks. A real team produces that in an hour. Volume figures (items/day) say little about a real workspace.
-- **Ownership inference is simple:** counting mentions, answers and @-tags with decay. It confuses *doing the work* with *owning the part*, and supply chain or managers sometimes look like owners because they talk about everything.
-- **Phase detection is pattern-based.** It understands "design freeze", "EVT build done", "officially in DVT" and "stays in EVT", but not "we're good to start PVT next sprint".
-- **Fuzzy matching** catches small typos in nicknames of 6 or more characters. It won't catch new nicknames; those go to the unknown-parts list, but only when they look like a part number or a "<word> <hardware word>" phrase.
-- **The 2B local model** sometimes mislabels thread types, and its intros can include things that aren't in the items. Intros are cleaned, and fall back to a template when they look wrong.
-- **Problems close only through a decision in the same thread.** Cross-thread resolution (the driver switch fixing the overheating) isn't detected.
-- **Not tested here:** the Anthropic provider and the live Slack connection.
+- **Test data is synthetic**, and the main set was written by me alongside the code. The independent sets are small (22 alerts each, one 45-day project), so one miss moves a number by 5 points or more.
+- **Fact names drift.** The same quantity can be stored as two facts; the "same quantity?" check catches some cases, not all. It's the main reason for 12/25 above.
+- **Fact extraction is noisy**: it sometimes records statuses or plans as facts, and "still in force" can show a constraint that isn't really relevant to the item.
+- **Issue linking needs a shared specific part** (not "wrist assembly", not a topic). Issues described only by symptoms in one thread and by a supplier in another, with no common part name, aren't linked.
+- **Authority is by role and ownership**: the engineering manager and a part's owner can change its constraints by stating them. A real team may need a richer rule (who approved the ECO).
+- **The scoring weights are tuned guesses.** Feedback adjusts item types per person, not the underlying weights.
+- **Phase detection is pattern-based**: finished freezes and phase moves in plain words, not "we're good to start PVT next sprint".
+- **Roles**: there's no firmware-engineer profile; firmware engineers are treated as electrical engineers.
+- **The live Slack connection** hasn't been run against a real workspace.
 
 ## Next steps
 
-- **Real Slack connection:** a bot in the workspace, a morning run per person, and the digest delivered as a DM with 👍/👎 as message buttons.
-- **Live alerts:** don't wait for the morning for *must-include* items (you're blocked, a phase change, your part going EOL); send them as they happen.
-- **Learn the weights from more feedback:** with enough votes, fit the per-signal weights per role, check them against a fresh holdout every few weeks, and retire each holdout once its results have been looked at.
-- **Build the catalog from the BOM/PLM system:** part numbers, official names and owners from the source of truth, with the unknown-parts list as a review queue (the LLM proposes "arm umbilical → cable harness", and a human approves it).
-- **Better ownership signals:** ECO authorship, drawing owners in PDM, and who closes the problems.
-- **Process rules per phase:** flag "change to a DVT subsystem without an ECO".
-- **A bigger model, plus an extraction-level eval**, so misses can be traced to extraction or to scoring.
+- **Consistent fact names**: a small controlled vocabulary per part type (weight, runtime, lead time, date), and matching new facts against it before asking the LLM.
+- **Link issues by symptom, not only by part**: add the shortlist's lexical similarity on summaries, so "trigger sticks" and "switch supplier recall" can meet even without a shared part name.
+- **Retire holdout3 and longrun** once their per-item results are studied, and write the next independent set before tuning on them.
+- **Real Slack connection**: a bot, a morning run per person, the digest as a DM with 👍/👎 buttons, and live alerts for must-include items.
+- **Build the catalog and ownership from BOM/PLM**: part numbers, official names and owners from the source of truth, with the unknown-parts list as a review queue.

@@ -33,7 +33,8 @@ digest-tool/
     messages.json             # fake Slack messages in real Slack format
     ground_truth.json         # tuned stories: who should be alerted, pulse vs personal, nickname labels
     ground_truth_holdout.json # holdout stories (written separately). Never tune on these.
-    cache/                    # saved LLM outputs (extractions.json, digests.json) — committed
+    cache/                    # saved LLM outputs (extractions, digests, links, facts) — committed
+    holdout2/ holdout3/ longrun/  # independent datasets: raw export + converted tool/ folder
     feedback.json             # 👍/👎 log (not committed)
   app.py                # Streamlit UI (entry point, stays at the root for `streamlit run app.py`)
   digest_tool/          # the library; run modules with `python -m digest_tool.<module>`
@@ -42,6 +43,9 @@ digest-tool/
     catalog.py          # nickname -> official part name (exact, normalized, fuzzy) + unknown parts
     extract.py          # LLM turns each thread into structured data
     notebook.py         # project state: subsystem phases, owners (declared/likely/possible), open items
+    memory.py           # persistent project memory: versions, event log, current state / as of day X, retrieval
+    issues.py           # issue identity across threads (shortlist + LLM pick, cached in cache/links.json)
+    facts.py            # facts/constraints with values, authority rules, conflicts (cache/facts.json)
     ranker.py           # scoring + reasons
     feedback.py         # per-person, per-item-type multipliers from 👍/👎
     digest.py           # Team Pulse + For You per person per day
