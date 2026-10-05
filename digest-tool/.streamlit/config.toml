@@ -1,0 +1,4 @@
+# No [theme] colors on purpose: any custom theme color makes Streamlit ignore the viewer's
+# light/dark setting. The app's own accents (card edges, badges) are styled in app.py.
+[client]
+toolbarMode = "minimal"   # no "Deploy" button in a demo
