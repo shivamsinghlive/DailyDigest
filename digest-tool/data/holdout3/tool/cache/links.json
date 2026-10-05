@@ -18,5 +18,15 @@
     "same_as": "none",
     "reason": "The new report describes a supply chain/procurement deadline issue with Cellforge battery cells and PO approval timing. Issue 1789753683.000217 is about a power distribution board electrical problem (brownout/voltage sag during motor startup). These are fundamentally different problems: one is a supply/ordering issue, the other is a hardware design issue with power delivery. They do not share the same root cause.",
     "model": "anthropic:claude-haiku-4-5"
+  },
+  "c96dabe346cf0e72": {
+    "same_as": "none",
+    "reason": "The existing issue (1789490510.000130) is about scheduling/feasibility of a field demo due to limited hardware availability and tight timeline. The new report is about a specific supplier quality defect (wall thickness out of spec) causing batch quarantine and part shortage. While both involve hardware availability constraints, they have different root causes: one is a scheduling/resource planning issue, the other is a supplier quality/manufacturing defect. These are distinct underlying problems.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "bd1cd87c0085f6a2": {
+    "same_as": "none",
+    "reason": "The new report is a supply chain/procurement issue regarding battery cell release timing and PO approval deadlines. Neither existing issue relates to battery procurement, supplier deadlines, or purchase order management. Issue 1789753683 is about power distribution technical problems, and issue 1789490510 is about field demo scheduling. These are fundamentally different problem domains.",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }

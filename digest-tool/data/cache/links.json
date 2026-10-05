@@ -38,5 +38,15 @@
     "same_as": "issue:1790291400.000095",
     "reason": "The new report describes the exact same slew bearing hardness failure with a 3-week vendor heat treat delay, the same mitigation strategy (using EVT spares for first 4 DVT units), and the same 10/16 partial shipment date. The mention of TMC9660 availability is an additional constraint on top of the same underlying slew bearing issue that was already reported.",
     "model": "anthropic:claude-haiku-4-5"
+  },
+  "fdd40c0b9fa4d9bd": {
+    "same_as": "none",
+    "reason": "The new report describes a slew bearing material quality issue (hardness check failure requiring re-heat-treatment) with supply chain delay impact. The existing issue describes an electrical connector rating problem requiring a different connector type swap. These are fundamentally different root causes (material heat-treatment vs. electrical specification mismatch) affecting different components (bearing vs. connector) with different solutions. No shared underlying problem.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1d4383dad7be0202": {
+    "same_as": "issue:1790291400.000095",
+    "reason": "Both reports describe the same slew bearing procurement issue: a vendor heat treat failure causing identical 3-week lead time slip, the same mitigation of using EVT spares for the first 4 DVT units, and the same 10/16 partial shipment date for remaining units. The new report adds TMC9660 availability as a secondary constraint but the primary failure and timeline are identical.",
+    "model": "anthropic:claude-haiku-4-5"
   }
 }
