@@ -1,7 +1,42 @@
 {
-  "323d997154e16b9c": {
-    "same_as": "issue:INVENTED",
-    "reason": "?",
+  "2ff658218a7f0025": {
+    "same_as": "issue:1789489200.000008",
+    "reason": "Both issues involve the wrist motor driver experiencing excessive current draw leading to thermal problems. The new report identifies the root cause (firmware current limit not functioning) that explains the elevated driver current mentioned as 'under investigation' in the existing issue. The excessive 2.8A RMS idle current directly causes the case temperature overshoot observed in thermal testing.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d6c58b545f979b66": {
+    "same_as": "none",
+    "reason": "The new report is about a supplier part going end-of-life (EOL) and requiring a sourcing/stocking decision. The existing issue is about a mechanical failure (latch popping) on an installed connector during operation. These are distinct problems: one is a supply chain decision, the other is a design/assembly defect. While both involve the same connector part, they have different root causes and require different solutions.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "11763e2443cdb46f": {
+    "same_as": "issue:1789576800.000015",
+    "reason": "Both reports concern the J4 connector and wrist rotation issues. The new report identifies the root cause of the latch popping problem: the cable harness routing is too stiff, restricting wrist rotation and creating stress on the J4 connector at the critical bend. This is the same underlying problem manifesting as mechanical stress on the J4 connector during wrist movement, whereas the EOL issue (1789662600.000024) is a supplier lifecycle matter unrelated to the mechanical routing problem.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3cd8d53bae3e1545": {
+    "same_as": "none",
+    "reason": "The new report is about TMC9660 motor driver lead time and supply chain challenges (16-week lead time, insufficient distributor stock), while the existing issue is about thermal performance of a wrist motor exceeding temperature specifications. These are distinctly different problems: one is a supply/procurement issue, the other is a thermal/design performance issue. They do not share the same root cause or failure mode.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d12dbfb8054843b4": {
+    "same_as": "none",
+    "reason": "The new report is about a material substitution decision for the harness jacket (PVC vs TPE) driven by supplier allocation constraints. The existing issue is about mechanical routing and connector positioning causing stiffness problems. These are different underlying problems: one is a supplier/material decision with engineering implications, the other is a design/assembly issue with physical constraints. The urgency and required decision type are also different.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "2df3b1f516dd5bf0": {
+    "same_as": "issue:1790011800.000041",
+    "reason": "Both issues describe the same underlying problem: TMC9660 motor driver shortage causing schedule risk to DVT build and customer pilot timeline. The new report references motor driver shortage impacting schedule, which is the core supply chain constraint already tracked in issue:1790011800.000041.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "173c4930660569fe": {
+    "same_as": "none",
+    "reason": "The new report describes a slew bearing manufacturing quality issue (hardness check failure requiring re-heat-treat), which is a supplier parts quality/rework problem affecting component availability and shipment timeline. None of the existing issues involve bearing quality, heat-treat processes, or slew bearing suppliers. The existing issues cover cable harness material substitution, XT connector rating limitations, and cable routing mechanical interference—all fundamentally different root causes and component failures.",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "53252a043701e0df": {
+    "same_as": "issue:1790291400.000095",
+    "reason": "The new report describes the exact same slew bearing hardness failure with a 3-week vendor heat treat delay, the same mitigation strategy (using EVT spares for first 4 DVT units), and the same 10/16 partial shipment date. The mention of TMC9660 availability is an additional constraint on top of the same underlying slew bearing issue that was already reported.",
     "model": "anthropic:claude-haiku-4-5"
   }
 }

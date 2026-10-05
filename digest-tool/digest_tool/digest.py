@@ -18,8 +18,9 @@ from datetime import date
 from . import config
 from .catalog import match_parts
 from .extract import call_provider, model_name
-from .notebook import changes_on, state_as_of
-from .ranker import CATEGORY, focus_scores, rank_for_person, score_change
+from .memory import history, retrieve
+from .notebook import changes_since, state_as_of
+from .ranker import CATEGORY, fact_label, focus_scores, rank_for_person, score_change
 
 DIGEST_CACHE = config.CACHE_DIR / "digests.json"
 
@@ -95,11 +96,11 @@ def team_reasons(change, relevant, major, team):
     return reasons
 
 
-def team_pulse(day, timeline, team):
-    """The same items for everyone on `day`. Nobody's feedback changes it, so it stays shared."""
+def team_pulse(day, timeline, team, since=None):
+    """The same items for everyone on `day` (or since `since`). Nobody's feedback changes it, so it stays shared."""
     state = state_as_of(timeline, day)
     scored = []
-    for c in changes_on(timeline, day):
+    for c in changes_since(timeline, since, day):
         relevant = relevant_people(c, state, team)
         score, major = pulse_score(c, relevant)
         if score >= config.PULSE_MIN_SCORE:
@@ -107,7 +108,65 @@ def team_pulse(day, timeline, team):
                                    "thread_ts": c["thread_ts"], "urgency": c["urgency"], "change": c,
                                    "category": CATEGORY[c["kind"]], "reasons": team_reasons(c, relevant, major, team)}))
     scored.sort(key=lambda s: s[0], reverse=True)
-    return [item for _, item in scored[:config.PULSE_SIZE]]
+    best = {}
+    for _, item in scored:  # one item per thread, its most important change
+        best.setdefault(item["thread_ts"], item)
+    return [with_memory(item, state) for item in list(best.values())[:config.PULSE_SIZE]]
+
+
+# ---------- what changed (from project memory) ----------
+
+def days_between(a, b):
+    return (date.fromisoformat(b) - date.fromisoformat(a)).days
+
+
+def what_changed(change, state):
+    """(badge, lines): how this change moved the project's memory, in plain words.
+    badge is one of NEW, UPDATED, RESOLVED, REOPENED, CONFLICT, or None."""
+    mem, day, lines = state["memory"], change["day"], []
+    if change["kind"] == "phase_change":
+        lines += [f"{s}: {change['before'].get(s, '?')} → {p}" for s, p in change["new_phases"].items()]
+    linked = change.get("linked_issue")
+    if linked:
+        n = days_between(linked["since"], day)
+        lines.append(f"Same issue as a problem first reported {n} day{'s' if n != 1 else ''} ago ({pretty_day(linked['since'])})")
+    if change.get("delta") == "REOPENED":
+        resolved = [e["day"] for e in history(mem, change["memory_key"]) if e["change"] == "RESOLVED" and e["day"] < day]
+        lines.append(f"Reopened: open → resolved on {pretty_day(resolved[-1])} → open again" if resolved else "Reopened")
+    for p in change.get("closes", []):
+        lines.append(f"Resolves: {p['summary']}")
+    facts = change.get("fact_changes", [])
+    for f in facts:
+        if f["change"] == "UPDATED":
+            lines.append(f"{fact_label(f['key'])}: {f['before']} → {f['after']}")
+        elif f["change"] == "CONFLICTING":
+            lines.append(f"Needs clarification: {fact_label(f['key'])} is {f['before']}, but this says {f['after']}")
+    # Long-term memory: a constraint on these parts still applies, however long ago it was set. Shown where
+    # it can matter (a problem, a decision, a freeze violation, a changed value), not on every update.
+    if facts or change["kind"] in ("new_problem", "problem_update", "decision", "change_after_freeze"):
+        touched = {f["key"] for f in facts}
+        for m in retrieve(mem, parts=change["parts"], as_of=day, limit=10, types={"CONSTRAINT"}):
+            if m["status"] == "ACTIVE" and m["key"] not in touched and m["valid_from"] < day:
+                lines.append(f"Still in force: {fact_label(m['key'])} = {m['value']} (since {pretty_day(m['valid_from'])})")
+                break
+    if any(f["change"] == "CONFLICTING" for f in facts):
+        badge = "CONFLICT"
+    elif change.get("delta") == "REOPENED":
+        badge = "REOPENED"
+    elif change.get("closes") or change.get("delta") == "RESOLVED":
+        badge = "RESOLVED"
+    elif linked or change.get("delta") == "UPDATED" or any(f["change"] == "UPDATED" for f in facts):
+        badge = "UPDATED"
+    elif change.get("delta") == "NEW":
+        badge = "NEW"
+    else:
+        badge = None
+    return badge, lines
+
+
+def with_memory(item, state):
+    badge, lines = what_changed(item["change"], state)
+    return {**item, "delta_badge": badge, "what_changed": lines}
 
 
 # ---------- For You ----------
@@ -213,14 +272,15 @@ def llm_intro(person, day, phases, pulse, mine, provider):
 
 # ---------- the digest ----------
 
-def build_digest(person, day, timeline, team, provider=config.LLM_PROVIDER, cache=None, prefs=None, pulse=None):
+def build_digest(person, day, timeline, team, provider=config.LLM_PROVIDER, cache=None, prefs=None, pulse=None,
+                 since=None):
     """Team Pulse + For You for one person and day. `prefs` = feedback.type_preferences(person).
-    Pass `pulse` to reuse it across people."""
+    Pass `pulse` to reuse it across people. `since`: catch up on everything after that day."""
     state = state_as_of(timeline, day)
-    pulse = team_pulse(day, timeline, team) if pulse is None else pulse
+    pulse = team_pulse(day, timeline, team, since) if pulse is None else pulse
     pulse = [{**i, "for_you": personal_note(i, person, state, team, prefs)} for i in pulse]
-    mine = to_items(rank_for_person(person, day, timeline, team, prefs=prefs,
-                                    exclude={i["thread_ts"] for i in pulse}))
+    mine = [with_memory(i, state) for i in to_items(rank_for_person(person, day, timeline, team, prefs=prefs,
+                                                                   exclude={i["thread_ts"] for i in pulse}, since=since))]
 
     cache = load_cache() if cache is None else cache
     key = cache_key(person, day, pulse, mine)

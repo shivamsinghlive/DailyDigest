@@ -22,6 +22,17 @@ TINY_PARTS = {
 }
 
 
+@pytest.fixture(autouse=True)
+def no_real_cache(tmp_path, monkeypatch):
+    """Tests never read or write data/cache: LLM verdicts faked in a test must not end up in the real cache."""
+    from digest_tool import digest
+    cache = tmp_path / "cache"
+    monkeypatch.setattr(config, "CACHE_DIR", cache)
+    monkeypatch.setattr(config, "EXTRACTIONS_CACHE", cache / "extractions.json")
+    monkeypatch.setattr(config, "FEEDBACK_FILE", tmp_path / "feedback.json")
+    monkeypatch.setattr(digest, "DIGEST_CACHE", cache / "digests.json")
+
+
 @pytest.fixture
 def catalog(tmp_path, monkeypatch):
     """A 5-part catalog, loaded through the real load_catalog() from a temp parts.json."""

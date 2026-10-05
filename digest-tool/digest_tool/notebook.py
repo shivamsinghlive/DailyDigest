@@ -489,6 +489,14 @@ def changes_on(timeline, day):
     return timeline.get(day, {}).get("changes", [])
 
 
+def changes_since(timeline, since, day):
+    """Every change after `since` up to and including `day` (a catch-up digest after a weekend).
+    since=None means just `day`. A thread can appear more than once; callers keep its best change."""
+    if since is None:
+        return changes_on(timeline, day)
+    return [c for d in sorted(timeline) if since < d <= day for c in changes_on(timeline, d)]
+
+
 def load_notebook(provider=config.LLM_PROVIDER):
     team = load_team()
     return build_notebook(load_messages(), team, provider), team

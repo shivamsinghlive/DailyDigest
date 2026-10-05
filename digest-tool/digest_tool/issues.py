@@ -45,9 +45,9 @@ def candidates(mem, x, team, day, own_key):
     parts = specific_parts(x, team)
     if not parts:
         return []
-    found = retrieve(mem, parts=parts, as_of=day, limit=config.LINK_MAX_CANDIDATES * 2)
-    return [m for m in found if m["type"] == "ISSUE" and m["key"] != own_key
-            and set(m["parts"]) & parts][:config.LINK_MAX_CANDIDATES]
+    # Issues only: other memories (facts, ownership) must not change the shortlist, or cached verdicts go stale.
+    found = retrieve(mem, parts=parts, as_of=day, limit=config.LINK_MAX_CANDIDATES + 1, types={"ISSUE"})
+    return [m for m in found if m["key"] != own_key and set(m["parts"]) & parts][:config.LINK_MAX_CANDIDATES]
 
 
 def link_prompt(x, cands):

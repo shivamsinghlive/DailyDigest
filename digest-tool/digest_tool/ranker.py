@@ -15,7 +15,7 @@ Every point added comes with a plain-English reason, so the digest can say *why*
 from datetime import date
 
 from . import config
-from .notebook import changes_on, overall_phase, state_as_of
+from .notebook import changes_since, overall_phase, state_as_of
 
 # What kinds of change each role cares about in each phase. Ownership and focus are
 # handled separately, so this table only covers "I'd want to know even if it's not my part".
@@ -134,6 +134,12 @@ def ownership_reason(part, owner, evidence_of_mention):
     return f"You {word} the {part}{where}: {evidence_text(owner['evidence'])} (not on the roster, inferred from activity)"
 
 
+def fact_label(key):
+    """"constraint:base casting.max_weight" -> "base casting max weight"."""
+    entity, attribute = key.split(":", 1)[1].split(".", 1)
+    return f"{'' if entity == 'project' else entity + ' '}{attribute.replace('_', ' ')}"
+
+
 def score_change(change, person, state, team, focus, prefs=None):
     """Return (score, must_include, reasons) for one change and one person.
     `prefs` is {category: multiplier} from this person's 👍/👎 (feedback.py)."""
@@ -164,6 +170,15 @@ def score_change(change, person, state, team, focus, prefs=None):
         reasons.append(f"A question about your {sorted(confident)[0]} has had no answer for {change.get('waiting_hours', 48)}h")
     if category == "problem" and confident and change["urgency"] >= 4:
         must = True  # a serious problem on your own part is blocking you whether or not you're tagged
+    # A disputed constraint or fact needs its owner (and the manager) to settle it.
+    for f in change.get("fact_changes", []):
+        if f["change"] != "CONFLICTING":
+            continue
+        entity = f["key"].split(":", 1)[1].split(".", 1)[0]
+        owns = any(o["person"] == pid and o["confidence"] in ("declared", "likely") for o in state["owners"].get(entity, []))
+        if owns or person["role"] == "engineering_manager":
+            must = True
+            reasons.append(f"Needs clarification: {fact_label(f['key'])} is {f['before']}, but this says {f['after']}")
     if change["kind"] == "change_after_freeze":
         # The manager approves ECOs; the owner has to know their frozen part just changed.
         owns_frozen = [p for p in change["frozen_parts"] for o in state["owners"].get(p, [])
@@ -234,14 +249,15 @@ def score_change(change, person, state, team, focus, prefs=None):
     return score, must, reasons
 
 
-def rank_for_person(person, day, timeline, team, top_n=config.TOP_N, prefs=None, exclude=()):
+def rank_for_person(person, day, timeline, team, top_n=config.TOP_N, prefs=None, exclude=(), since=None):
     """Top items for one person on one day, most important first.
     `prefs`: this person's feedback multipliers per item type (feedback.type_preferences).
-    `exclude`: thread_ts already shown elsewhere (the Team Pulse), so they aren't repeated."""
+    `exclude`: thread_ts already shown elsewhere (the Team Pulse), so they aren't repeated.
+    `since`: catch up on everything after that day (one item per thread, its most important change)."""
     state = state_as_of(timeline, day)
     focus = focus_scores(person["id"], state, day)
     items = []
-    for change in changes_on(timeline, day):
+    for change in changes_since(timeline, since, day):
         # You already took part in this thread today, so you've seen it.
         if person["id"] in change["authors_today"] or change["thread_ts"] in exclude:
             continue
@@ -249,7 +265,10 @@ def rank_for_person(person, day, timeline, team, top_n=config.TOP_N, prefs=None,
         if must or score >= config.MIN_SCORE:
             items.append({"change": change, "score": score, "must": must, "reasons": reasons, "category": CATEGORY[change["kind"]]})
     items.sort(key=lambda i: (i["must"], i["score"]), reverse=True)
-    return items[:top_n]
+    best = {}
+    for i in items:  # in catch-up mode a thread can have several changes: keep the most important
+        best.setdefault(i["change"]["thread_ts"], i)
+    return list(best.values())[:top_n]
 
 
 if __name__ == "__main__":

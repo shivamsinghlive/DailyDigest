@@ -136,13 +136,13 @@ def history(store, key):
     return [e for e in store["events"] if e["key"] == key]
 
 
-def retrieve(store, parts=(), subsystems=(), people=(), as_of=None, limit=15):
+def retrieve(store, parts=(), subsystems=(), people=(), as_of=None, limit=15, types=None):
     """Bounded retrieval: the few memories most related to something new, never the whole log.
     Shared parts count most, then subsystems, then people; open items before closed ones;
     then the most recently updated. Age alone never drops a memory, it only breaks ties."""
     parts, subsystems, people = set(parts), set(subsystems), set(people)
     scored = []
-    for m in current_state(store, as_of):
+    for m in current_state(store, as_of, types):
         overlap = 3 * len(parts & set(m["parts"])) + 2 * len(subsystems & set(m["subsystems"])) + len(people & set(m["people"]))
         if overlap:
             scored.append((overlap + (2 if m["status"] == "ACTIVE" else 0), m["updated_at"], m))

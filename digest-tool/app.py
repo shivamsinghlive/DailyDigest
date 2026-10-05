@@ -11,8 +11,9 @@ import streamlit as st
 from digest_tool import config
 from digest_tool.digest import build_digest, load_cache, pretty_day, team_pulse
 from digest_tool.feedback import record_feedback, reset_feedback, type_preferences, votes_by
+from digest_tool.memory import current_state, history
 from digest_tool.notebook import load_notebook, state_as_of
-from digest_tool.ranker import CATEGORY_LABEL, focus_scores
+from digest_tool.ranker import CATEGORY_LABEL, fact_label, focus_scores
 from digest_tool.slack_loader import clean_text, end_of_day, group_into_threads, load_messages, ts_to_dt
 
 st.set_page_config(page_title="Daily Digest", page_icon="📬", layout="wide")
@@ -31,6 +32,12 @@ KIND_BADGE = {
     "new_question": ("gray", "help"), "question_unanswered": ("orange", "hourglass_top"),
     "question_answered": ("green", "check_circle"), "update": ("gray", "info"),
     "change_after_freeze": ("orange", "lock"),
+}
+# How the item moved the project's memory (digest.what_changed).
+DELTA_BADGE = {
+    "NEW": ("blue", "fiber_new", "New"), "UPDATED": ("violet", "update", "Updated"),
+    "RESOLVED": ("green", "task_alt", "Resolved"), "REOPENED": ("orange", "replay", "Reopened"),
+    "CONFLICT": ("red", "report", "Needs clarification"),
 }
 
 
@@ -54,9 +61,10 @@ def pulse_by_day():
     return {d: team_pulse(d, timeline, team) for d in days}  # shared: nobody's feedback changes it
 
 
-def digest_for(person, day):
+def digest_for(person, day, since=None):
+    pulse = pulse_by_day()[day] if since is None else team_pulse(day, timeline, team, since)
     return build_digest(person, day, timeline, team, "none", digest_cache,
-                        type_preferences(person["id"]), pulse_by_day()[day])
+                        type_preferences(person["id"]), pulse, since=since)
 
 
 # ---------- pieces of a card ----------
@@ -65,7 +73,11 @@ def badges(item):
     """One line of badges: what kind of item, where it was posted, how urgent, whether to skip it."""
     change = item["change"]
     color, icon = KIND_BADGE.get(change["kind"], ("gray", "info"))
-    out = [f":{color}-badge[:material/{icon}: {item['label']}]"]
+    out = []
+    if item.get("delta_badge"):
+        dcolor, dicon, dlabel = DELTA_BADGE[item["delta_badge"]]
+        out.append(f":{dcolor}-badge[:material/{dicon}: {dlabel}]")
+    out.append(f":{color}-badge[:material/{icon}: {item['label']}]")
     if change.get("schedule_risk"):
         out.append(":orange-badge[:material/schedule: Schedule risk]")
     if item.get("must"):
@@ -104,6 +116,8 @@ def card(item, person, day, reasons, with_feedback=True):
     with st.container(border=True):
         st.markdown(badges(item))
         st.markdown(f"**{item['summary']}**")
+        if item.get("what_changed"):  # from project memory: before → after, linked issues, constraints in force
+            st.markdown("\n".join(f"- :material/subdirectory_arrow_right: {line}" for line in item["what_changed"]))
         # The first two reasons answer "why am I seeing this"; the rest are one click away.
         st.markdown("\n".join(f"- {r}" for r in reasons[:2]) or "")
         with st.expander("All reasons and the Slack conversation"):
@@ -201,6 +215,12 @@ with st.sidebar:
     a.button("‹ Prev", on_click=step, args=(-1,), width="stretch", disabled=st.session_state.day == days[0])
     b.button("Next ›", on_click=step, args=(1,), width="stretch", disabled=st.session_state.day == days[-1])
     st.select_slider("Day", options=days, key="day", format_func=pretty_day, label_visibility="collapsed")
+    earlier = days[:days.index(st.session_state.day)]
+    since = None
+    if earlier and st.toggle("Catch up since an earlier day", help="E.g. on Monday: everything since Friday, "
+                                                                   "one item per thread"):
+        since = st.select_slider("Changes since", options=earlier, value=earlier[max(0, len(earlier) - 3)],
+                                 format_func=pretty_day)
     with st.expander("How to read a digest"):
         st.markdown(
             "- **Team Pulse**: the same 0-3 items for everyone (phase changes, schedule risks, big decisions).\n"
@@ -215,12 +235,13 @@ with st.sidebar:
 
 person, day = people[pid], st.session_state.day
 state = state_as_of(timeline, day)
-d = digest_for(person, day)
+d = digest_for(person, day, since)
 
 # ---------- header ----------
 
 st.markdown(f"## Good morning, {first[pid]} 👋")
-st.caption(f"{pretty_day(day)} · {role_label(person)} · {team['project']['name']}")
+st.caption(f"{pretty_day(day)}{f' · catching up since {pretty_day(since)}' if since else ''} · {role_label(person)} · "
+           f"{team['project']['name']}")
 st.markdown(d["intro"])
 
 m1, m2, m3, m4 = st.columns(4)
@@ -310,6 +331,30 @@ with tab_notebook:
         waiting = [q for q in state["unanswered_questions"].values() if q["flagged"]]
         st.markdown("\n".join(f"- {q['summary']} (asked {pretty_day(q['since'])})" for q in waiting) or "None over 48h.")
     with b:
+        st.markdown("#### 📐 Facts and constraints")
+        st.caption("Current values, with every earlier value kept. A disagreement without the authority to change "
+                   "a value is shown here, not written over it.")
+        mem = state["memory"]
+        changed = {e["key"] for e in mem["events"] if e["change"] == "UPDATED" and e["day"] <= day}
+        # Disputed first, then values that changed, then constraints, then the rest.
+        rows = sorted(current_state(mem, as_of=day, types={"FACT", "CONSTRAINT"}),
+                      key=lambda m: (not m["conflicts"], m["key"] not in changed, m["type"] != "CONSTRAINT", m["key"]))
+        lines = []
+        for m in rows[:25]:
+            trail = [e["after"] for e in history(mem, m["key"]) if e["change"] in ("NEW", "UPDATED") and e["day"] <= day]
+            flag = "".join(f" :red-badge[needs clarification: {c['value']}, {c['note']}]" for c in m["conflicts"] if c["day"] <= day)
+            kind = ":blue-badge[constraint]" if m["type"] == "CONSTRAINT" else ":gray-badge[fact]"
+            lines.append(f"- {kind} **{fact_label(m['key'])}** = {m['value']}"
+                         + (f" · was {' → '.join(map(str, trail[:-1]))}" if len(trail) > 1 else "")
+                         + f" :gray-badge[since {pretty_day(m['valid_from'])}]{flag}")
+        st.markdown("\n".join(lines) or "None yet.")
+        if len(rows) > 25:
+            st.caption(f"…and {len(rows) - 25} more.")
+        with st.expander(f"Memory log for {pretty_day(day)}: what changed in the project's memory"):
+            log = [e for e in mem["events"] if e["day"] == day]
+            st.markdown("\n".join(f"- **{e['change']}** `{e['key']}`"
+                                   + (f": {e['before']} → {e['after']}" if e["before"] is not None else f": {e['after']}")
+                                   + (f" ({e['note']})" if e["note"] else "") for e in log) or "Nothing changed.")
         st.markdown("#### 🔒 Changes after design freeze")
         freeze = [c for dd in days if dd <= day for c in timeline[dd]["changes"] if c["kind"] == "change_after_freeze"]
         st.markdown("\n".join(f"- {pretty_day(c['day'])}: {c['summary']}" for c in freeze) or "None.")

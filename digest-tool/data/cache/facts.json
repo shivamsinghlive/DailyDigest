@@ -1,6 +1,1346 @@
 {
-  "match:67b4f88bf199fe7a": {
-    "same_as": "constraint:project.dvt_build_date",
+  "0dc3aa98ed46860f": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "evt_exit_review_date",
+        "value": "9/21",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "project",
+        "attribute": "prd_update_date",
+        "value": "thurs",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sara Kim"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "9a0591bfdd1f57ac": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "dd0e992c47d32bce": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "6062bec58deba419": {
+    "facts": [
+      {
+        "entity": "base casting",
+        "attribute": "evt3_material",
+        "value": "6061 aluminum",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "base casting",
+        "attribute": "evt3_delivery_date",
+        "value": "9/24",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e2452a786a2c1b4c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "5384b100787862ab": {
+    "facts": [
+      {
+        "entity": "wrist motor",
+        "attribute": "case_temp_max",
+        "value": "80C",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "case_temp_measured",
+        "value": "92C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "test_ambient_temp",
+        "value": "45C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "test_duration",
+        "value": "40 min",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1792ea72cea48f57": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e788ef57542003f5": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a6bf39748e22b6ed": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "bd22359e08b7031b": {
+    "facts": [
+      {
+        "entity": "base casting",
+        "attribute": "flatness",
+        "value": "0.05",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "base casting",
+        "attribute": "revision",
+        "value": "B",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f685c23944564505": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "b69fecfd42f49adf": {
+    "facts": [
+      {
+        "entity": "gripper",
+        "attribute": "grip_force_avg",
+        "value": "38N",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "gripper",
+        "attribute": "grip_force_target",
+        "value": "40N",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4cc0927a920a6254": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "0c974fc6bb3feba8": {
+    "facts": [
+      {
+        "entity": "J4 connector",
+        "attribute": "rotation_angle_limit",
+        "value": "160°",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "ec02166a004f2a53": {
+    "facts": [
+      {
+        "entity": "motor driver",
+        "attribute": "current_rms_holding",
+        "value": "2.8A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5335d4bc91a82350": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "7fc32a2a5f9b577a": {
+    "facts": [
+      {
+        "entity": "wrist motor",
+        "attribute": "current_limit",
+        "value": "4A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "current_limit",
+        "value": "2A",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:21d2079b08b614ca": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:45b3cae9fd50d143": {
+    "same_as": "fact:wrist motor.current_limit",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "d9e25df1e5244325": {
+    "facts": [
+      {
+        "entity": "gripper",
+        "attribute": "shore_pads_quantity",
+        "value": "50",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "gripper",
+        "attribute": "shore_pads_lead_time",
+        "value": "1 day",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:90a9e5382f081d09": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:abf6703f7713face": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3dbb02a8105d6494": {
+    "facts": [
+      {
+        "entity": "battery pack",
+        "attribute": "cell_balancing_status",
+        "value": "fine after overnight soak",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "4a26a20faed3f942": {
+    "facts": [
+      {
+        "entity": "J4 connector",
+        "attribute": "last_time_buy_deadline",
+        "value": "11/30",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:50ecf15c5c48184e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "637d7dc84ec1e366": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "87f90ea44c315e4c": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "payload",
+        "value": "3kg",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sara Kim"
+      },
+      {
+        "entity": "project",
+        "attribute": "reach",
+        "value": "+20mm",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Sara Kim"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4e667ee0492f27fd": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:931ee97da9124499": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "686fa92e38de578b": {
+    "facts": [
+      {
+        "entity": "wrist motor",
+        "attribute": "case_temp_max",
+        "value": "80C",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "case_temp_retest",
+        "value": "84C",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "torque_margin_at_2a",
+        "value": "1.1x",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "motor driver",
+        "attribute": "current_limit_test",
+        "value": "2A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8e7e3fbfd54695cf": {
+    "same_as": "fact:wrist motor.case_temp_measured",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c8476de6185d24d9": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8e34e5def5172573": {
+    "same_as": "fact:wrist motor.current_limit",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "7622a8eff0e3a1c8": {
+    "facts": [
+      {
+        "entity": "gripper",
+        "attribute": "closing_force_avg",
+        "value": "41N",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e60e47ec75fc7a71": {
+    "same_as": "fact:gripper.grip_force_avg",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3d9208e14a1b938a": {
+    "facts": [
+      {
+        "entity": "wrist motor",
+        "attribute": "temp_reduction_with_tmc9660",
+        "value": "18C cooler",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "motor driver",
+        "attribute": "model_selected_for_dvt",
+        "value": "TMC9660",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ad4dd9905d3c691c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:f0682c584d0fa32f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1c85e25a8edfb6f8": {
+    "facts": [
+      {
+        "entity": "wrist motor",
+        "attribute": "lead_time",
+        "value": "16 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "project",
+        "attribute": "distributor_stock_tmc9660",
+        "value": "50 pcs",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "project",
+        "attribute": "tmc9660_needed_dvt",
+        "value": "120 pcs",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_build_date_original",
+        "value": "10/26",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_build_date_delayed",
+        "value": "late January",
+        "kind": "constraint",
+        "certainty": "unsure",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:789b88e2a71e34fc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:cc40686d501042c8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4846d50495a4f904": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8107b4930801dfda": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3aca1aaeafd0ba74": {
+    "facts": [
+      {
+        "entity": "cable harness",
+        "attribute": "service_loop_length",
+        "value": "30mm",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "1f2311cbdbecbec3": {
+    "facts": [
+      {
+        "entity": "gripper",
+        "attribute": "design_phase",
+        "value": "DVT",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "base casting",
+        "attribute": "design_phase",
+        "value": "DVT",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "design_phase",
+        "value": "DVT",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "design_phase",
+        "value": "EVT",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_build_date",
+        "value": "10/26",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:09f96a08f7805d82": {
+    "same_as": "constraint:project.dvt_build_date_original",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "532a57e352eb135c": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "143d11808765ca3b": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "218d70be1061810f": {
+    "facts": [
+      {
+        "entity": "base casting",
+        "attribute": "dvt_quantity",
+        "value": "120",
+        "kind": "fact",
+        "certainty": "decided",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "base casting",
+        "attribute": "lead_time",
+        "value": "6 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:b9f82cffa63f849e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:526c480f24b54304": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "0cceb5f71823525e": {
+    "facts": [
+      {
+        "entity": "battery pack",
+        "attribute": "current_spike_decel",
+        "value": "38A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "battery pack",
+        "attribute": "current_spike_decel_duration",
+        "value": "200ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "J4 connector",
+        "attribute": "current_rating",
+        "value": "30A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "power board",
+        "attribute": "connector_change_to_xt60",
+        "value": "rev 3",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "connector_change_to_xt60",
+        "value": "rev 3",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:898c6711243267b1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7b4daf6e52785d5f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:193847f7ef75c98a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d05dc5a3dc1d8958": {
+    "same_as": "constraint:power board.connector_change_to_xt60",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "2bd462e338f4d738": {
+    "facts": [
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_zero_offset_drift",
+        "value": "~1.5deg",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_zero_offset_drift_trigger",
+        "value": "thermal cycle",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7aa76df1ebb0af8e": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a277730839318bf1": {
+    "facts": [
+      {
+        "entity": "battery pack",
+        "attribute": "current_spike_max",
+        "value": "38A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "battery pack",
+        "attribute": "current_spike_duration",
+        "value": "200ms",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "J4 connector",
+        "attribute": "current_rating",
+        "value": "30A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "base casting",
+        "attribute": "cable_pass_thru_slot_width",
+        "value": "12mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "J4 connector",
+        "attribute": "replacement_type",
+        "value": "XT60",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "battery pack",
+        "attribute": "pigtail_length",
+        "value": "10cm",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5845aeeb069115d0": {
+    "same_as": "fact:battery pack.current_spike_decel",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:25964b257a52e959": {
+    "same_as": "fact:battery pack.current_spike_decel_duration",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:898f419bad112591": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5b45d7ca406cf1d7": {
+    "same_as": "constraint:power board.connector_change_to_xt60",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a186606e97f3a78d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "046809e6578ed60d": {
+    "facts": [
+      {
+        "entity": "wrist motor bracket",
+        "attribute": "revision",
+        "value": "E",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "cf24388f20cb8472": {
+    "facts": [
+      {
+        "entity": "cable harness",
+        "attribute": "tpe_jacket_allocation_end",
+        "value": "Nov",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "eng_decision_deadline",
+        "value": "Thu",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "pvc_jacket_feasible",
+        "value": "no",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "santoprene_tpe_durometer",
+        "value": "85A",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:6ccfaf5b5256eb5a": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "065ca1c5dd3997d9": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "2c4d81a0f0597a67": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "7129e17260fff891": {
+    "facts": [
+      {
+        "entity": "J7 connector",
+        "attribute": "pinout",
+        "value": "unknown",
+        "kind": "constraint",
+        "certainty": "question",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "347aab3027bff06c": {
+    "facts": [
+      {
+        "entity": "J4 connector",
+        "attribute": "ltb_qty_calc_due",
+        "value": "10/2",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "J4 connector",
+        "attribute": "ltb_cost_estimate",
+        "value": "$9k",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "J4 connector",
+        "attribute": "ltb_duration",
+        "value": "2 years",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:16b17712a3cc77f8": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4f48f12cc67e9669": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:5351ab459ed944fb": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "9620611aa03866f0": {
+    "facts": [
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_part_nrnd_status",
+        "value": "NRND",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_buyable_until",
+        "value": "2027",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_recommended_replacement",
+        "value": "AS5047P",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8d81e0dc0bcf7530": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:94abb1ce18580676": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "48f42232c2e89205": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "dvt_build_date",
+        "value": "TBD",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "project",
+        "attribute": "customer_date_deadline",
+        "value": "EOM",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Sara Kim"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:757472ada19a38ce": {
+    "same_as": "constraint:project.dvt_build_date_original",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "f12e98b2ded0c8f8": {
+    "facts": [
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_ship_date_original",
+        "value": "10/9",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_ship_date_revised",
+        "value": "10/30",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_ship_delay_weeks",
+        "value": "3 wk",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "evt_spares_available",
+        "value": "4",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9d8f9bf077763b2d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:05acc29fba10068f": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:27b205564a1de13c": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:64b9b358b36e1ba7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "de96d53fcc9fe302": {
+    "facts": [
+      {
+        "entity": "cable harness",
+        "attribute": "tpe_jacket_allocation_end",
+        "value": "November",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "eng_decision_deadline",
+        "value": "Thursday",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "eco_number",
+        "value": "ECO-031",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "cable harness",
+        "attribute": "flex_cycle_test_count",
+        "value": "10k",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7d7398779da31741": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:a3bb9d08373a68e1": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "0004eb4682859f5e": {
+    "facts": [
+      {
+        "entity": "power board",
+        "attribute": "fab_lead_time",
+        "value": "8 days",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e8a01c13d9332abc": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "3f82da5390716326": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "wrist_mag_encoder_nrnd_date",
+        "value": "2027",
+        "kind": "constraint",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "project",
+        "attribute": "wrist_mag_encoder_replacement",
+        "value": "AS5047P",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d8c900599331307b": {
+    "same_as": "fact:wrist assembly.encoder_buyable_until",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:20e26b9bfdbb34b8": {
+    "same_as": "fact:wrist assembly.encoder_recommended_replacement",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "a9bd0b318050df00": {
+    "facts": [
+      {
+        "entity": "cable harness",
+        "attribute": "material_approval",
+        "value": "santoprene TPE jacket",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "5d9e4eb46b8bffa9": {
+    "facts": [
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_ship_date_original",
+        "value": "10/9",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_ship_date_new",
+        "value": "10/30",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_slip_duration",
+        "value": "3 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "evt_spare_count",
+        "value": "4",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_units_from_evt_spares",
+        "value": "4",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "partial_shipment_qty",
+        "value": "40 pcs",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Mei Lin"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "partial_shipment_date",
+        "value": "10/16",
+        "kind": "fact",
+        "certainty": "unsure",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:405075058690a739": {
+    "same_as": "fact:slew bearing.dvt_ship_date_revised",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:7c44efb6b3e88020": {
+    "same_as": "fact:slew bearing.dvt_ship_delay_weeks",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:ed2cec70826ae319": {
+    "same_as": "fact:slew bearing.evt_spares_available",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:4d0facca1552bfa4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:2812bf06ae6e9920": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:c35d31e5c3444376": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "154ff25dd1c7f510": {
+    "facts": [
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_zero_offset_drift",
+        "value": "~1.5deg",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "startup_delay_from_rezero",
+        "value": "~2s",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:de720994493785d4": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "e584daaca069afc2": {
+    "facts": [
+      {
+        "entity": "J7 connector",
+        "attribute": "pinout",
+        "value": "1 VM, 2 GND, 3-5 phase A/B/C, 6 NTC",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:449e7a54519d231b": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "dfc5baa528f1bec7": {
+    "facts": [
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_lead_time_delay",
+        "value": "3 weeks",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "slew bearing",
+        "attribute": "dvt_partial_ship_date",
+        "value": "10/16",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "project",
+        "attribute": "dvt_build_quantity_on_evt_spares",
+        "value": "4 units",
+        "kind": "constraint",
+        "certainty": "decided",
+        "said_by": "Tom Becker"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:9b99465c7ee30a0f": {
+    "same_as": "fact:slew bearing.dvt_ship_delay_weeks",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:e91d7e1892f1c3f2": {
+    "same_as": "fact:slew bearing.partial_shipment_date",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:bb9e252c18f055c5": {
+    "same_as": "constraint:slew bearing.dvt_units_from_evt_spares",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "05814bc11e06f25c": {
+    "facts": [],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "8fe834b97ceeac82": {
+    "facts": [
+      {
+        "entity": "project",
+        "attribute": "validation_status",
+        "value": "passed",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "dvt_build_date",
+        "value": "today",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "power board",
+        "attribute": "stage",
+        "value": "EVT",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Tom Becker"
+      },
+      {
+        "entity": "wrist motor bracket",
+        "attribute": "revision",
+        "value": "E",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Mei Lin"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "01b72e77c9c270b3": {
+    "facts": [
+      {
+        "entity": "wrist motor bracket",
+        "attribute": "revision",
+        "value": "F",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "wrist motor bracket",
+        "attribute": "pad_pocket_offset",
+        "value": "2mm",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:1debec3850ad941d": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "5009d4da70c24d2f": {
+    "facts": [
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_zero_offset_drift",
+        "value": "~1.5deg",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "wrist assembly",
+        "attribute": "encoder_zero_offset_drift_trigger",
+        "value": "thermal cycle",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "magnet_attachment",
+        "value": "glued (loctite 638)",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "wrist motor",
+        "attribute": "bore_tolerance",
+        "value": "H7",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Ravi Menon"
+      },
+      {
+        "entity": "project",
+        "attribute": "startup_time_impact",
+        "value": "~2s",
+        "kind": "fact",
+        "certainty": "reported",
+        "said_by": "Priya Shah"
+      }
+    ],
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:d3d25b2ced4716d7": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:79983e4b22649734": {
+    "same_as": "none",
+    "model": "anthropic:claude-haiku-4-5"
+  },
+  "match:8b14a6036b1c958d": {
+    "same_as": "none",
     "model": "anthropic:claude-haiku-4-5"
   }
 }
