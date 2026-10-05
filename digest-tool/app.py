@@ -47,6 +47,38 @@ ROLE_ICON = {"mechanical_engineer": "🔧", "electrical_engineer": "⚡", "suppl
 
 STYLE = """
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Inter for text. Icons set their own font on their own element, so they are unaffected. */
+.stApp, .stApp p, .stApp li, .stApp label, .stApp button, .stApp input, .stApp h1, .stApp h2, .stApp h3,
+.stApp h4, .stApp [data-testid="stCaptionContainer"], .stApp [data-testid="stMarkdownContainer"] {
+  font-family: 'Inter', 'Source Sans Pro', sans-serif; }
+.stApp h2 { letter-spacing: -0.02em; font-weight: 700; }
+/* Avatars: initials on a fixed color per person. */
+.dd-avatar { display: inline-flex; align-items: center; justify-content: center; width: 1.6rem; height: 1.6rem;
+             border-radius: 50%; color: #fff; font-size: 0.68rem; font-weight: 700; margin-right: 0.45rem;
+             vertical-align: middle; letter-spacing: 0.02em; }
+.dd-meta { font-size: 0.86rem; opacity: 0.85; margin-bottom: 0.2rem; }
+.dd-meta .dd-dim { opacity: 0.7; }
+/* Today at a glance: three big numbers in the greeting block. */
+.dd-kpis { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
+.dd-kpi { flex: 1; min-width: 0; padding: 0.7rem 0.9rem; border-radius: 0.8rem; background: rgba(127, 127, 127, 0.10); }
+.dd-kpi b { display: block; font-size: 2rem; line-height: 1.1; font-weight: 700; }
+.dd-kpi span { font-size: 0.8rem; opacity: 0.75; }
+/* Phase track: each subsystem's way through Concept → Production. */
+.dd-phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.7rem; margin: 0.3rem 0 0.4rem; }
+.dd-phase { padding: 0.55rem 0.75rem; border-radius: 0.7rem; border: 1px solid rgba(127, 127, 127, 0.22); }
+.dd-phase .dd-sub { font-size: 0.8rem; opacity: 0.75; text-transform: capitalize; }
+.dd-phase .dd-now { font-weight: 700; font-size: 1.05rem; }
+.dd-phase .dd-moved { color: #1baf7a; font-size: 0.75rem; font-weight: 600; margin-left: 0.3rem; }
+.dd-track { display: flex; gap: 3px; margin-top: 0.35rem; }
+.dd-track i { flex: 1; height: 5px; border-radius: 3px; background: rgba(127, 127, 127, 0.25); }
+.dd-track i.done { background: #9d93ea; }
+.dd-track i.now { background: #2a78d6; }
+.dd-problems { color: #d03b3b; font-weight: 600; font-size: 0.9rem; }
+/* Section headings with a count bubble. */
+.dd-h { font-size: 1.25rem; font-weight: 700; margin: 0.6rem 0 0.1rem; }
+.dd-count { display: inline-block; min-width: 1.5rem; padding: 0 0.45rem; margin-left: 0.4rem; border-radius: 999px;
+            background: rgba(42, 120, 214, 0.15); color: #2a78d6; font-size: 0.85rem; text-align: center; vertical-align: middle; }
 /* Digest cards: a colored left edge says what kind of item it is, before you read a word. */
 [class*="st-key-card-"] { border-left: 5px solid #9a9a94 !important; }
 [class*="st-key-card-problem"]  { border-left-color: #d03b3b !important; }
@@ -73,7 +105,10 @@ label[data-baseweb="checkbox"]:has(input:checked) > div:first-child { background
 button[kind="segmented_controlActive"] { color: #2a78d6 !important; border-color: #2a78d6 !important;
                                          background-color: rgba(42, 120, 214, 0.12) !important; z-index: 1; }
 /* The day timeline: compact chips, so two weeks fit on one line. */
-.st-key-timeline button { padding: 4px 9px !important; }
+.st-key-timeline button { padding: 3px 7px !important; }
+.st-key-timeline button p { font-size: 0.82rem !important; }
+/* Sidebar: a touch smaller, so labels stay on one line. */
+section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] label { font-size: 0.92rem; }
 /* The greeting block. */
 .st-key-hero { background: linear-gradient(135deg, rgba(42,120,214,0.10), rgba(125,111,224,0.06));
                border-radius: 0.9rem; padding: 1.1rem 1.4rem 0.6rem; }
@@ -95,6 +130,19 @@ people = {p["id"]: p for p in team["people"]}
 first = {p["id"]: p["name"].split()[0] for p in team["people"]}
 full_names = {p["id"]: p["name"] for p in team["people"]}
 role_label = lambda p: p["role"].replace("_", " ")
+# One fixed avatar color per person (categorical palette order), white initials on top.
+AVATAR_COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#7d6fe0", "#e87ba4", "#008300", "#e34948", "#c98500"]
+avatar_color = {pid: AVATAR_COLORS[i % len(AVATAR_COLORS)] for i, pid in enumerate(people)}
+
+
+def avatar(pid):
+    initials = "".join(w[0] for w in full_names.get(pid, "?").split()[:2]).upper()
+    return f"<span class='dd-avatar' style='background:{avatar_color.get(pid, '#8a8a85')}'>{initials}</span>"
+
+
+def heading(text, count=None):
+    bubble = f"<span class='dd-count'>{count}</span>" if count is not None else ""
+    st.markdown(f"<div class='dd-h'>{text}{bubble}</div>", unsafe_allow_html=True)
 
 
 @st.cache_data
@@ -159,6 +207,10 @@ def card(item, person, day, reasons, section, with_feedback=True):
     uid = f"{section}-{re.sub(r'[^0-9a-z]', '_', item['thread_ts'])}"
     reasons = list(dict.fromkeys(reasons))  # a pulse item's personal and team reasons can overlap
     with st.container(border=True, key=f"card-{card_tone(item)}-{uid}"):
+        author = item["change"].get("root_author")
+        started = ts_to_dt(item["thread_ts"]).strftime("%a %-d %b, %H:%M")
+        st.markdown(f"<div class='dd-meta'>{avatar(author)}<b>{html.escape(full_names.get(author, 'Someone'))}</b> "
+                    f"<span class='dd-dim'>in #{html.escape(item['channel'])} · {started}</span></div>", unsafe_allow_html=True)
         st.markdown(card_badges(item))
         st.markdown(f"<div class='dd-summary'>{html.escape(item['summary'])}</div>", unsafe_allow_html=True)
         if item.get("what_changed"):  # from project memory: before → after, linked issues, constraints in force
@@ -167,9 +219,7 @@ def card(item, person, day, reasons, section, with_feedback=True):
         if reasons:
             st.caption("**Why you're seeing this:** " + " · ".join(reasons[:2]))
         meta, thumbs = st.columns([5, 1], vertical_alignment="center")
-        poster = first.get(item["change"].get("root_author"), "")
-        meta.caption(" · ".join(x for x in (f"started by {poster}" if poster else "", f"#{item['channel']}",
-                                             f"urgency {item['urgency']}/5" if item["urgency"] >= 4 else "") if x))
+        meta.caption(f"Urgency {item['urgency']}/5")
         if with_feedback:
             with thumbs:
                 feedback(item, person, day)
@@ -233,19 +283,21 @@ def focus_chart(person, day):
 
 
 def project_status(state, day):
-    """One line: each subsystem's phase (violet once frozen), an arrow on the day it moved, open problems."""
+    """A tile per subsystem with its way through Concept → Production, and the open-problem count."""
     since = {h["subsystem"]: h["since"] for h in state["phase_history"]}
-    frozen = PHASES.index("DVT")
-    parts = []
+    tiles = []
     for sub, phase in state["phases"].items():
-        color = "violet" if PHASES.index(phase) >= frozen else "gray"
-        moved = " :green-badge[:material/arrow_upward: today]" if since.get(sub) == day else ""
-        parts.append(f"{sub} :{color}-badge[{phase}]{moved}")
+        n = PHASES.index(phase)
+        track = "".join(f"<i class='{'now' if i == n else 'done' if i < n else ''}' title='{p}'></i>" for i, p in enumerate(PHASES))
+        moved = "<span class='dd-moved'>↑ today</span>" if since.get(sub) == day else ""
+        tiles.append(f"<div class='dd-phase'><div class='dd-sub'>{html.escape(sub)}</div>"
+                     f"<div class='dd-now'>{phase}{moved}</div><div class='dd-track'>{track}</div></div>")
     open_now = len(state["open_problems"])
     new_today = sum(p["since"] == day for p in state["open_problems"].values())
-    problems = f":red-badge[:material/error: {open_now} open problem{'s' if open_now != 1 else ''}" + \
-               (f" · {new_today} new today]" if new_today else "]")
-    st.markdown("**Project** &nbsp; " + " &nbsp;·&nbsp; ".join(parts) + " &nbsp;&nbsp; " + problems)
+    tiles.append(f"<div class='dd-phase'><div class='dd-sub'>open problems</div>"
+                 f"<div class='dd-now dd-problems'>{open_now}{f'<span class=dd-moved style=color:#d03b3b>+{new_today} today</span>' if new_today else ''}</div>"
+                 f"<div class='dd-track'>{''.join('<i class=now style=background:#d03b3b></i>' for _ in range(min(open_now, 5)))}</div></div>")
+    st.markdown(f"<div class='dd-phases'>{''.join(tiles)}</div>", unsafe_allow_html=True)
 
 
 # ---------- sidebar: who and when ----------
@@ -272,7 +324,7 @@ with st.sidebar:
         since = st.selectbox("Changes since", options=earlier[::-1], index=min(2, len(earlier) - 1),
                              format_func=pretty_day)
     st.divider()
-    with st.expander("How to read a digest"):
+    with st.expander("How to read this"):
         st.markdown(
             "- **Team Pulse**: the same 0-3 items for everyone (phase changes, schedule risks, big decisions).\n"
             "- **For you**: up to 5 items picked for you, each with the reasons why.\n"
@@ -296,14 +348,17 @@ st.html(STYLE)
 # ---------- header ----------
 
 with st.container(key="hero"):
-    st.markdown(f"## Good morning, {first[pid]} 👋")
-    st.caption(f"{pretty_day(day)}{f' · catching up since {pretty_day(since)}' if since else ''} · "
-               f"{role_label(person)} · {team['project']['name']}")
-    st.markdown(d["intro"])
+    words, numbers = st.columns([3, 2], vertical_alignment="center")
+    with words:
+        st.markdown(f"<h2>{avatar(pid)} Good morning, {html.escape(first[pid])} 👋</h2>", unsafe_allow_html=True)
+        st.caption(f"{pretty_day(day)}{f' · catching up since {pretty_day(since)}' if since else ''} · "
+                   f"{role_label(person)} · {team['project']['name']}")
+        st.markdown(d["intro"])
     must = sum(i["must"] for i in d["for_you"])
-    st.markdown(f":blue-badge[:material/groups: {len(d['pulse'])} for the whole team] "
-                f":violet-badge[:material/person: {len(d['for_you'])} for you] "
-                + (f":red-badge[:material/priority_high: {must} don't skip]" if must else ""))
+    kpi = lambda n, label, color: f"<div class='dd-kpi'><b style='color:{color}'>{n}</b><span>{label}</span></div>"
+    numbers.markdown("<div class='dd-kpis'>" + kpi(len(d["pulse"]), "team-wide", "#2a78d6")
+                     + kpi(len(d["for_you"]), "for you", "#7d6fe0")
+                     + kpi(must, "don't skip", "#d03b3b" if must else "#8a8a85") + "</div>", unsafe_allow_html=True)
 project_status(state, day)
 
 # The whole period as a row of day chips; ◆ marks a day a subsystem changed phase.
@@ -322,13 +377,13 @@ tab_digest, tab_team, tab_notebook = st.tabs(["📬 My digest", "👥 Team view"
 with tab_digest:
     left, right = st.columns([3, 2], gap="large")
     with left:
-        st.markdown("#### 🧭 Team Pulse")
+        heading("🧭 Team Pulse", len(d["pulse"]))
         st.caption("The same items for everyone, so the whole team works from one picture.")
         if not d["pulse"]:
             st.info("A quiet day for the team: nothing everyone needs to know.", icon=":material/check:")
         for item in d["pulse"]:
             card(item, person, day, item.get("for_you", []) + item["reasons"], "pulse")  # personal reasons first
-        st.markdown("#### 👤 For you")
+        heading("👤 For you", len(d["for_you"]))
         if not d["for_you"]:
             st.success("You're all caught up 🎉 Nothing else needs your attention.", icon=":material/done_all:")
         for item in d["for_you"]:
