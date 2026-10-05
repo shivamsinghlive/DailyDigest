@@ -10,12 +10,13 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-from digest_tool import config
-from digest_tool.digest import build_digest, load_cache, pretty_day, team_pulse
+from digest_tool import actions, config
+from digest_tool.digest import KIND_LABEL, build_digest, load_cache, pretty_day, team_pulse, with_memory
 from digest_tool.feedback import record_feedback, reset_feedback, type_preferences, votes_by
 from digest_tool.memory import current_state, history
 from digest_tool.notebook import PHASES, load_notebook, state_as_of
-from digest_tool.ranker import CATEGORY_LABEL, fact_label, focus_scores
+from digest_tool.lookup import conversations, part_profile, person_profile, query_words, resolve
+from digest_tool.ranker import CATEGORY, CATEGORY_LABEL, fact_label, focus_scores
 from digest_tool.slack_loader import clean_text, end_of_day, group_into_threads, load_messages, ts_to_dt
 
 st.set_page_config(page_title="Daily Digest", page_icon="📬", layout="wide")
@@ -102,6 +103,9 @@ button[data-baseweb="tab"][aria-selected="true"] p { color: #2a78d6 !important; 
 label[data-baseweb="radio"]:has(input:checked) > div:first-child { background-color: #2a78d6 !important; }
 label[data-baseweb="checkbox"]:has(input:checked) > div:first-child { background-color: #2a78d6 !important; }
 [data-testid="stSlider"] [data-baseweb="slider"] { filter: hue-rotate(212deg); }
+button[kind^="primary"] { background-color: #2a78d6 !important; border-color: #2a78d6 !important; color: #fff !important; }
+button[kind^="primary"]:hover { background-color: #1c5cab !important; border-color: #1c5cab !important; }
+[data-baseweb="textarea"]:focus-within, [data-baseweb="input"]:focus-within { border-color: #2a78d6 !important; }
 button[kind="segmented_controlActive"] { color: #2a78d6 !important; border-color: #2a78d6 !important;
                                          background-color: rgba(42, 120, 214, 0.12) !important; z-index: 1; }
 /* The day timeline: compact chips, so two weeks fit on one line. */
@@ -117,11 +121,23 @@ section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] label { fon
 """
 
 
+LIVE = actions.live_mode()  # a real Slack workspace (MESSAGE_SOURCE=slack + a bot token), not the demo data
+
+
 @st.cache_data
 def get_data():
-    # The app never calls an LLM itself: it reads whatever the cache has, keywords otherwise.
-    timeline, team = load_notebook("none")
+    # Demo: the app never calls an LLM, it reads the committed cache (keywords otherwise).
+    # Live Slack: new threads go through Claude once (about $0.002 each) and are cached like the rest.
+    provider = "anthropic" if LIVE and config.ANTHROPIC_API_KEY else "none"
+    timeline, team = load_notebook(provider)
     return timeline, team, load_cache(), load_messages()
+
+
+def refresh():
+    """Re-read Slack (live) and rebuild everything; cached LLM results are reused."""
+    get_data.clear()
+    pulse_by_day.clear()
+    st.rerun()
 
 
 timeline, team, digest_cache, messages = get_data()
@@ -203,7 +219,28 @@ def feedback(item, person, day):
         st.rerun()
 
 
-def card(item, person, day, reasons, section, with_feedback=True):
+def reply_box(item, person, uid):
+    """Type a reply and post it into the item's Slack thread, as this person (via the app's bot)."""
+    starter = first.get(item["change"].get("root_author"), "the")
+    with st.popover("Reply", icon=":material/reply:"):
+        st.caption(f"Posts to **#{item['channel']}**, in {starter}'s thread, as **{person['name']} (via Daily Digest)**.")
+        with st.form(f"reply-{uid}", clear_on_submit=True, border=False):
+            text = st.text_area("Your reply", height=110, placeholder="Write a reply…", label_visibility="collapsed")
+            sent = st.form_submit_button("Send to Slack", type="primary", icon=":material/send:")
+        if sent:
+            if not text.strip():
+                st.warning("Write something first.")
+                return
+            try:
+                link = actions.reply_in_thread(person, item["change"]["channel"], item["thread_ts"], text)
+            except Exception as err:  # show Slack's reason (missing scope, channel not joined, ...) instead of crashing
+                st.error(f"Not sent: {err}")
+                return
+            st.session_state.sent = (item["channel"], link)
+            refresh()  # the reply is now part of the thread: re-read Slack so the digest reflects it
+
+
+def card(item, person, day, reasons, section, with_feedback=True, with_reply=True):
     uid = f"{section}-{re.sub(r'[^0-9a-z]', '_', item['thread_ts'])}"
     reasons = list(dict.fromkeys(reasons))  # a pulse item's personal and team reasons can overlap
     with st.container(border=True, key=f"card-{card_tone(item)}-{uid}"):
@@ -218,8 +255,12 @@ def card(item, person, day, reasons, section, with_feedback=True):
                 st.markdown("  \n".join(f":material/arrow_right_alt: {line}" for line in item["what_changed"]))
         if reasons:
             st.caption("**Why you're seeing this:** " + " · ".join(reasons[:2]))
-        meta, thumbs = st.columns([5, 1], vertical_alignment="center")
-        meta.caption(f"Urgency {item['urgency']}/5")
+        meta, reply, thumbs = st.columns([4, 1.6, 1], vertical_alignment="center")
+        link = f" · [Open in Slack]({actions.thread_link(item['change']['channel'], item['thread_ts'])})" if LIVE else ""
+        meta.caption(f"Urgency {item['urgency']}/5{link}")
+        if LIVE and with_reply:
+            with reply:
+                reply_box(item, person, uid)
         if with_feedback:
             with thumbs:
                 feedback(item, person, day)
@@ -315,6 +356,11 @@ def step(delta):
 with st.sidebar:
     st.markdown("## 📬 Daily Digest")
     st.caption(team["project"]["name"])
+    if LIVE:
+        st.markdown(":green-badge[:material/wifi: Live Slack]")
+        if st.button("Refresh from Slack", icon=":material/refresh:", width="stretch",
+                     help="Fetch new messages. New threads are read by Claude once (about $0.002 each), then cached."):
+            refresh()
     pid = st.radio("Who's reading?", list(people), format_func=lambda i: f"{ROLE_ICON.get(people[i]['role'], '👤')} {people[i]['name']}",
                    captions=[role_label(p) for p in people.values()])
     earlier = days[:days.index(st.session_state.day)]
@@ -343,6 +389,10 @@ with st.sidebar:
 person, day = people[pid], st.session_state.day
 state = state_as_of(timeline, day)
 d = digest_for(person, day, since)
+if st.session_state.get("sent"):
+    channel, link = st.session_state.pop("sent")
+    st.toast(f"Reply sent to #{channel}", icon=":material/check_circle:")
+    st.success(f"Reply posted in #{channel}. [View it in Slack]({link})", icon=":material/send:")
 st.html(STYLE)
 
 # ---------- header ----------
@@ -370,7 +420,7 @@ with strip.container(key="timeline"):
                          format_func=lambda x: f"{date.fromisoformat(x):%a %-d}{' ◆' if x in phase_days else ''}")
 next_col.button("›", on_click=step, args=(1,), disabled=day == days[-1], help="Next day", key="next")
 
-tab_digest, tab_team, tab_notebook = st.tabs(["📬 My digest", "👥 Team view", "📓 Project notebook"])
+tab_digest, tab_lookup, tab_team, tab_notebook = st.tabs(["📬 My digest", "🔎 Lookup", "👥 Team view", "📓 Project notebook"])
 
 # ---------- my digest ----------
 
@@ -410,6 +460,94 @@ with tab_digest:
                 st.markdown("**Your feedback so far**")
                 st.markdown("\n".join(f"- {CATEGORY_LABEL.get(c, c)}: ×{v['multiplier']} (👍{v['up']} 👎{v['down']})"
                                       for c, v in prefs.items()))
+
+# ---------- lookup: a part, a person or a keyword ----------
+
+TYPE_FILTERS = {"Problems": {"new_problem", "problem_update"}, "Decisions": {"decision"},
+                "Questions": {"new_question", "question_unanswered", "question_answered"},
+                "Phase changes": {"phase_change"}, "Changes after freeze": {"change_after_freeze"}, "Updates": {"update"}}
+
+
+def show_part(part, state, day):
+    prof = part_profile(part, state, team, day)
+    slug = re.sub(r"[^0-9a-z]", "_", part.lower())
+    with st.container(border=True, key=f"card-decision-part-{slug}"):
+        where = f" :violet-badge[{prof['subsystem']} · {prof['phase']}]" if prof["subsystem"] else " :gray-badge[topic]"
+        st.markdown(f"<div class='dd-summary'>🔧 {html.escape(part)}</div>", unsafe_allow_html=True)
+        st.markdown(where + "".join(f" :blue-badge[{first.get(o['person'], o['person'])} · {o['confidence']}]" for o in prof["owners"]))
+        if prof["aliases"]:
+            st.caption("Also called: " + ", ".join(prof["aliases"]))
+        left, right = st.columns(2, gap="medium")
+        with left:
+            st.markdown("**Facts and constraints**")
+            for f in prof["facts"][:8]:
+                was = f" · was {' → '.join(map(str, f['earlier']))}" if f["earlier"] else ""
+                flag = "".join(f" :red-badge[needs clarification: {c['value']}]" for c in f["disputed"])
+                st.markdown(f"{'📌' if f['constraint'] else '📏'} {f['label']} = **{f['value']}**{was}{flag}")
+            if not prof["facts"]:
+                st.caption("No values recorded yet.")
+        with right:
+            st.markdown("**Issues**")
+            for m in prof["open_issues"]:
+                st.markdown(f":red-badge[open] {m['summary']}")
+            for m in prof["closed_issues"]:
+                st.markdown(f":green-badge[resolved] ~~{m['summary']}~~")
+            for dcs in prof["decisions"]:
+                st.markdown(f":blue-badge[decision] {dcs['summary']}")
+            if not (prof["open_issues"] or prof["closed_issues"] or prof["decisions"]):
+                st.caption("No issues or decisions yet.")
+
+
+def show_person(p, state, day):
+    prof = person_profile(p, state, timeline, day)
+    with st.container(border=True, key=f"card-update-person-{p['id']}"):
+        st.markdown(f"<div class='dd-meta'>{avatar(p['id'])}<b>{html.escape(p['name'])}</b> "
+                    f"<span class='dd-dim'>{role_label(p)}</span></div>", unsafe_allow_html=True)
+        st.markdown("**Owns:** " + (" ".join(f":{'blue' if c == 'declared' else 'gray'}-badge[{part} · {c}]"
+                                               for part, c in prof["owns"]) or "nothing yet"))
+        if prof["waiting_on_them"]:
+            st.markdown("**Waiting on them:** " + "; ".join(q["summary"] for q in prof["waiting_on_them"]))
+        st.caption(f"Started {len(prof['started'])} conversation{'s' if len(prof['started']) != 1 else ''} up to {pretty_day(day)}.")
+
+
+with tab_lookup:
+    q_col, range_col = st.columns([3, 2], vertical_alignment="bottom")
+    query = q_col.text_input("Look up a part, a person or a keyword",
+                             placeholder="e.g. J4, wrist conn, 43045-0412, Laddu, lead time", key="lookup_q")
+    picked = range_col.date_input("Between", value=(date.fromisoformat(days[0]), date.fromisoformat(day)),
+                                  min_value=date.fromisoformat(days[0]), max_value=date.fromisoformat(days[-1]),
+                                  format="MM/DD/YYYY")
+    # While the second date is being picked, the range has one date: use it for both ends.
+    picked = list(picked) if isinstance(picked, (tuple, list)) else [picked]
+    start, end = (picked[0], picked[-1]) if picked else (date.fromisoformat(days[0]), date.fromisoformat(day))
+    shown_kinds = st.pills("Show", list(TYPE_FILTERS), selection_mode="multi", key="lookup_kinds",
+                           help="Leave empty to show every kind of conversation")
+    if not query.strip():
+        st.info("Type a part (any nickname works, even with a typo), a person, or words like *lead time*.",
+                icon=":material/search:")
+    else:
+        parts, people_found = resolve(query, team)
+        words = [] if (parts or people_found) else query_words(query)
+        for part in parts:
+            show_part(part, state, day)
+        for p in people_found:
+            show_person(p, state, day)
+        kinds = set().union(*(TYPE_FILTERS[k] for k in shown_kinds)) if shown_kinds else None
+        found = conversations(timeline, start.isoformat(), end.isoformat(), parts=parts,
+                              people=[p["id"] for p in people_found], words=words, kinds=kinds)
+        heading("💬 Conversations", len(found))
+        st.caption(f"{pretty_day(start.isoformat())} to {pretty_day(end.isoformat())}, newest first. "
+                   + ("Matched by part: " + ", ".join(parts) if parts else
+                      "Matched by person" if people_found else "Matched by words in the summary"))
+        if not found:
+            st.info("Nothing in this date range.", icon=":material/search_off:")
+        for c in found[:20]:
+            item = with_memory({"label": KIND_LABEL[c["kind"]], "summary": c["summary"], "channel": c["channel_name"],
+                                "thread_ts": c["thread_ts"], "urgency": c["urgency"], "change": c, "must": False,
+                                "category": CATEGORY[c["kind"]]}, state_as_of(timeline, c["day"]))
+            card(item, person, c["day"], [], "lookup", with_feedback=False)
+        if len(found) > 20:
+            st.caption(f"…and {len(found) - 20} more. Narrow the dates or pick a kind.")
 
 # ---------- team view: who got what ----------
 
