@@ -16,6 +16,7 @@ from datetime import date
 from . import config
 from .catalog import match_parts
 from .extract import extract, load_cache, match_people, unanswered_hours
+from .memory import latest, new_store, record, reopen, resolve
 from .slack_loader import all_days, day_of, end_of_day, group_into_threads, load_messages, load_team, threads_active_on
 
 # ---------- phases ----------
@@ -298,7 +299,12 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
         "unknown_parts": {},         # phrase -> {written, threads, first_day, last_day}: for a human to catalog
         "activity": {},              # person -> day -> {part: mentions}; drives "current focus"
         "channels": {},              # person -> channels they've posted in; explains cross-team alerts
+        "memory": new_store(),       # persistent project memory with history (memory.py); shared, not per day
     }
+    mem = state["memory"]
+    first_day = all_days(messages)[0]
+    for s in team["catalog"]["subsystems"]:
+        record(mem, first_day, f"phase:{s}", "MILESTONE", start, summary=f"{s} in {start}", subsystems=[s])
     timeline = {}
 
     for day in all_days(messages):
@@ -319,6 +325,12 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
             if m["channel_name"] not in seen:
                 seen.append(m["channel_name"])
         state["owners"] = infer_owners(state, day, team)
+        for part, owners in state["owners"].items():
+            firm = sorted(o["person"] for o in owners if o["confidence"] in ("declared", "likely"))
+            if firm:  # "possible" owners are too tentative to be project memory
+                record(mem, day, f"owner:{part}", "OWNERSHIP", firm, summary=f"{part} owned by {', '.join(firm)}",
+                       parts=[part], subsystems=[team["catalog"]["subsystem_of"][part]] if team["catalog"]["subsystem_of"][part] else [],
+                       people=firm)
 
         active = threads_active_on(messages, day)
         for thread in active:
@@ -338,8 +350,12 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 state["phase_history"] += [{"subsystem": s, "phase": p, "since": day, "thread_ts": ts}
                                            for s, p in new_phases.items()]
                 unchanged = {s: p for s, p in state["phases"].items() if s not in new_phases}
-                changes.append(make_change("phase_change", day, thread, x, team,
-                                           new_phases=new_phases, unchanged_phases=unchanged))
+                before = {}
+                for s, p in new_phases.items():
+                    before[s] = latest(mem, f"phase:{s}")["value"]
+                    record(mem, day, f"phase:{s}", "MILESTONE", p, ts, summary=f"{s} in {p}", subsystems=[s])
+                changes.append(make_change("phase_change", day, thread, x, team, new_phases=new_phases,
+                                           unchanged_phases=unchanged, delta="UPDATED", before=before))
                 continue
             if x["type"] == "noise":
                 continue
@@ -362,6 +378,24 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 state["closed_problems"].append(closes[-1])
             closes += close_linked_problems(state, thread, resolving_parts(thread, x, day, team), day)
 
+            # Project memory: the same facts, with history. delta = what this change did to memory.
+            about = dict(thread_ts=ts, summary=x["summary"], parts=x["parts"], people=x["people_mentioned"],
+                         subsystems=[team["catalog"]["subsystem_of"][p] for p in x["parts"] if team["catalog"]["subsystem_of"].get(p)])
+            delta, memory_key = None, None
+            if kind in ("new_problem", "problem_update"):
+                memory_key = f"issue:{ts}"
+                if (latest(mem, memory_key) or {}).get("status") == "RESOLVED":
+                    delta = reopen(mem, day, memory_key, ts, note="problem reported again")
+                    record(mem, day, memory_key, "ISSUE", x["summary"], **about)
+                else:
+                    delta = record(mem, day, memory_key, "ISSUE", x["summary"], **about)
+            elif kind == "decision":
+                memory_key = f"decision:{ts}"
+                delta = record(mem, day, memory_key, "DECISION", x["summary"], **about)
+            for p in closes:
+                how = f"via {', '.join(p['via_parts'])}" if p["via_parts"] else "in its own thread"
+                resolve(mem, day, f"issue:{p['thread_ts']}", ts, note=f"closed by #{thread['channel_name']} {how}")
+
             # Questions are tracked by reply behaviour, whatever type the LLM gave the thread.
             waiting = unanswered_hours(thread, eod)
             open_q = state["unanswered_questions"].get(ts)
@@ -369,6 +403,7 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 if open_q is None:
                     open_q = state["unanswered_questions"][ts] = {
                         **open_item(x, thread, day, day_of(ts)), "people_mentioned": x["people_mentioned"], "flagged": False}
+                    record(mem, day, f"question:{ts}", "QUESTION", x["summary"], **about)
                 open_q["last_day"] = day
                 if waiting >= config.UNANSWERED_AFTER_HOURS and not open_q["flagged"]:
                     open_q["flagged"] = True
@@ -376,15 +411,21 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
             elif open_q is not None:
                 del state["unanswered_questions"][ts]
                 kind = "question_answered"
+                memory_key = f"question:{ts}"
+                delta = resolve(mem, day, memory_key, ts, note="answered")
 
             extra = {"waiting_hours": round(waiting)} if waiting else {}
             frozen = [] if ts in state["flagged_after_freeze"] else changed_after_freeze(thread, day, state, team)
             if frozen:  # a process problem outranks whatever else the thread is: report it as that
                 state["flagged_after_freeze"].append(ts)
                 kind = "change_after_freeze"
+                memory_key = f"freeze:{ts}"
+                delta = record(mem, day, memory_key, "ISSUE", x["summary"], **about)
                 extra.update(frozen_parts=frozen, frozen_phases={team["catalog"]["subsystem_of"][p]: state["phases"][team["catalog"]["subsystem_of"][p]] for p in frozen})
             if closes:
                 extra["closes"] = [{"thread_ts": p["thread_ts"], "summary": p["summary"], "via_parts": p["via_parts"]} for p in closes]
+                delta = delta if delta not in (None, "UNCHANGED") else "RESOLVED"
+            extra.update(delta=delta, memory_key=memory_key)
             changes.append(make_change(kind, day, thread, x, team, **extra))
 
         # Quiet threads can still change state: a question crosses 48h without any new message.
@@ -399,7 +440,11 @@ def build_notebook(messages, team, provider=config.LLM_PROVIDER, cache=None):
                 x = extract(thread, team, cache, provider)  # cached: same snapshot as when it was asked
                 changes.append(make_change("question_unanswered", day, thread, x, team, waiting_hours=round(waiting)))
 
-        timeline[day] = {"state": copy.deepcopy(state), "changes": changes}
+        # Each day's snapshot shares the one memory store: its event log answers "what was true on day X".
+        state.pop("memory")
+        snapshot = copy.deepcopy(state)
+        state["memory"] = snapshot["memory"] = mem
+        timeline[day] = {"state": snapshot, "changes": changes}
     return timeline
 
 
