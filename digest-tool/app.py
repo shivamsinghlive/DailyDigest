@@ -2,6 +2,7 @@
 
 Run:  streamlit run app.py
 """
+import html
 import re
 from datetime import date
 
@@ -57,6 +58,22 @@ STYLE = """
 /* "What changed": a tinted box, so memory facts stand apart from the reasons. */
 [class*="st-key-changed-"] { background: rgba(42, 120, 214, 0.10); border-radius: 0.5rem; padding: 0.6rem 0.85rem 0.8rem; }
 [class*="st-key-changed-"] p { margin-bottom: 0.15rem; }
+/* Team Pulse cards: a faint tint, so shared items read differently from personal ones. */
+[class*="st-key-card-"][class*="-pulse-"] { background: rgba(42, 120, 214, 0.035); }
+[class*="st-key-card-"] { transition: box-shadow 0.15s ease; }
+[class*="st-key-card-"]:hover { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10); }
+.dd-summary { font-weight: 600; font-size: 1.04rem; line-height: 1.45; margin: 0.1rem 0 0.4rem; }
+/* One blue accent instead of Streamlit's red, in light and dark mode alike. (A theme color in
+   config.toml would do this too, but it switches off the viewer's dark mode.) */
+button[data-baseweb="tab"][aria-selected="true"] p { color: #2a78d6 !important; }
+[data-baseweb="tab-highlight"] { background-color: #2a78d6 !important; }
+label[data-baseweb="radio"]:has(input:checked) > div:first-child { background-color: #2a78d6 !important; }
+label[data-baseweb="checkbox"]:has(input:checked) > div:first-child { background-color: #2a78d6 !important; }
+[data-testid="stSlider"] [data-baseweb="slider"] { filter: hue-rotate(212deg); }
+button[kind="segmented_controlActive"] { color: #2a78d6 !important; border-color: #2a78d6 !important;
+                                         background-color: rgba(42, 120, 214, 0.12) !important; z-index: 1; }
+/* The day timeline: compact chips, so two weeks fit on one line. */
+.st-key-timeline button { padding: 4px 9px !important; }
 /* The greeting block. */
 .st-key-hero { background: linear-gradient(135deg, rgba(42,120,214,0.10), rgba(125,111,224,0.06));
                border-radius: 0.9rem; padding: 1.1rem 1.4rem 0.6rem; }
@@ -140,16 +157,19 @@ def feedback(item, person, day):
 
 def card(item, person, day, reasons, section, with_feedback=True):
     uid = f"{section}-{re.sub(r'[^0-9a-z]', '_', item['thread_ts'])}"
+    reasons = list(dict.fromkeys(reasons))  # a pulse item's personal and team reasons can overlap
     with st.container(border=True, key=f"card-{card_tone(item)}-{uid}"):
         st.markdown(card_badges(item))
-        st.markdown(f"**{item['summary']}**")
+        st.markdown(f"<div class='dd-summary'>{html.escape(item['summary'])}</div>", unsafe_allow_html=True)
         if item.get("what_changed"):  # from project memory: before → after, linked issues, constraints in force
             with st.container(key=f"changed-{uid}"):
                 st.markdown("  \n".join(f":material/arrow_right_alt: {line}" for line in item["what_changed"]))
         if reasons:
             st.caption("**Why you're seeing this:** " + " · ".join(reasons[:2]))
         meta, thumbs = st.columns([5, 1], vertical_alignment="center")
-        meta.caption(f"#{item['channel']}" + (f" · urgency {item['urgency']}/5" if item["urgency"] >= 4 else ""))
+        poster = first.get(item["change"].get("root_author"), "")
+        meta.caption(" · ".join(x for x in (f"started by {poster}" if poster else "", f"#{item['channel']}",
+                                             f"urgency {item['urgency']}/5" if item["urgency"] >= 4 else "") if x))
         if with_feedback:
             with thumbs:
                 feedback(item, person, day)
@@ -230,8 +250,9 @@ def project_status(state, day):
 
 # ---------- sidebar: who and when ----------
 
-if "day" not in st.session_state:
-    st.session_state.day = days[min(7, len(days) - 1)]
+if st.session_state.get("day") is None:  # first visit, or the selected day chip was clicked off
+    st.session_state.day = st.session_state.get("last_day", days[min(7, len(days) - 1)])
+st.session_state.last_day = st.session_state.day
 
 
 def step(delta):
@@ -244,17 +265,12 @@ with st.sidebar:
     st.caption(team["project"]["name"])
     pid = st.radio("Who's reading?", list(people), format_func=lambda i: f"{ROLE_ICON.get(people[i]['role'], '👤')} {people[i]['name']}",
                    captions=[role_label(p) for p in people.values()])
-    st.markdown("**Which morning?**")
-    a, b = st.columns(2)
-    a.button("‹ Prev", on_click=step, args=(-1,), width="stretch", disabled=st.session_state.day == days[0])
-    b.button("Next ›", on_click=step, args=(1,), width="stretch", disabled=st.session_state.day == days[-1])
-    st.select_slider("Day", options=days, key="day", format_func=pretty_day, label_visibility="collapsed")
     earlier = days[:days.index(st.session_state.day)]
     since = None
     if earlier and st.toggle("Catch up since an earlier day", help="E.g. on Monday: everything since Friday, "
                                                                    "one item per thread"):
-        since = st.select_slider("Changes since", options=earlier, value=earlier[max(0, len(earlier) - 3)],
-                                 format_func=pretty_day)
+        since = st.selectbox("Changes since", options=earlier[::-1], index=min(2, len(earlier) - 1),
+                             format_func=pretty_day)
     st.divider()
     with st.expander("How to read a digest"):
         st.markdown(
@@ -289,6 +305,15 @@ with st.container(key="hero"):
                 f":violet-badge[:material/person: {len(d['for_you'])} for you] "
                 + (f":red-badge[:material/priority_high: {must} don't skip]" if must else ""))
 project_status(state, day)
+
+# The whole period as a row of day chips; ◆ marks a day a subsystem changed phase.
+phase_days = {d for d in days for c in timeline[d]["changes"] if c["kind"] == "phase_change"}
+prev_col, strip, next_col = st.columns([1, 16, 1], vertical_alignment="center")
+prev_col.button("‹", on_click=step, args=(-1,), disabled=day == days[0], help="Previous day", key="prev")
+with strip.container(key="timeline"):
+    st.segmented_control("Day", options=days, key="day", label_visibility="collapsed",
+                         format_func=lambda x: f"{date.fromisoformat(x):%a %-d}{' ◆' if x in phase_days else ''}")
+next_col.button("›", on_click=step, args=(1,), disabled=day == days[-1], help="Next day", key="next")
 
 tab_digest, tab_team, tab_notebook = st.tabs(["📬 My digest", "👥 Team view", "📓 Project notebook"])
 
